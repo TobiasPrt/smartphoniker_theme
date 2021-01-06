@@ -1,0 +1,34 @@
+// main
+
+@charset 'utf-8';
+
+@import "abstracts/fonts";
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+@import "base/reset";
+@import "base/typography";
+
+@import "layout/navigation";
+@import "layout/header";
+@import "layout/footer";
+
+@import "components/buttons";
+
+@import "pages/agb";
+@import "pages/datenschutz";
+@import "pages/home";
+@import "pages/impressum";
+@import "pages/karriere";
+@import "pages/stellenangebot";
+@import "pages/kontakt";
+@import "pages/nachhaltigkeit";
+@import "pages/partner";
+@import "pages/services";
+@import "pages/standorte";
+@import "pages/standort";
+@import "pages/ueberuns";
+
+* {
+  outline: 0.5px dashed red;
+}
