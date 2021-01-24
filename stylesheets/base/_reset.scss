@@ -10,3 +10,10 @@
 html {
   font-size: 62.5%;
 }
+
+a,
+a:visited {
+  @include fg(black);
+  text-decoration: none;
+  cursor: pointer;
+}

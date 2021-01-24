@@ -8,19 +8,24 @@
   </head>
   <body>
     <!-- Banner -->
-    <div class="banner" id="banner">
-      <p class="banner__text">Wir reparieren weiter! Schreib uns per</p>
-      <a
-        class="banner__link banner__link--whatsapp"
-        href="https://wa.me/491628282353"
-      >
-        <img
-          class="banner__linkimg"
-          src="images/icons/whatsapp_button_orange.svg"
-          alt="WhatsApp"
-        />
-      </a>
-      <p class="banner__text">unter 0162-8282353.</p>
+    <div class="banner" id="banner" style="display: none">
+      <div class="banner__content">
+        <p class="banner__text">
+          Wir reparieren mit Lieferservice und Abholung weiter! Schreib uns per
+
+          <a
+            class="banner__link banner__link--whatsapp"
+            href="https://wa.me/491628282353"
+          >
+            <img
+              class="banner__linkimg"
+              src="images/icons/whatsapp_button_orange.svg"
+              alt="WhatsApp"
+            />
+          </a>
+          unter 0162-8282353.
+        </p>
+      </div>
       <button class="banner__closebtn">
         <img src="images/icons/banner_cross.svg" alt="Close Banner" />
       </button>
@@ -28,26 +33,38 @@
 
     <!-- Header -->
     <header>
-      <img
-        class="logo logo--primary"
-        src="img/logo.svg"
-        alt="Smartphoniker Logo"
-      />
-      <nav class="navigation">
-        <ul class="navigation__list">
+      <nav class="nav">
+        <a href="#" class="logo">
+          <img
+            class="logo__img logo__img--primary"
+            src="images/logo/logo_blackorange.svg"
+            alt="Smartphoniker Logo"
+          />
+        </a>
+
+        <input id="nav_button" type="checkbox" class="hidden" />
+
+        <label for="nav_button" class="nav__button">
+          <span class="nav__icon"></span>
+        </label>
+
+        <div class="nav__overlay"></div>
+
+        <ul class="nav__list">
           <li><a href="#">Services</a></li>
           <li><a href="#">Standort</a></li>
           <li><a href="#">Nachhaltigkeit</a></li>
           <li><a href="#">Über Uns</a></li>
-          <a href="tel:+4943190700390"
-            ><img src="img/phone.svg" alt="Jetzt anrufen"
-          /></a>
         </ul>
+
+        <a href="tel:+4943190700390"
+          ><img src="images/icons/phone_orange.svg" alt="Jetzt anrufen"
+        /></a>
       </nav>
     </header>
 
     <!-- Main -->
-    <main>
+    <main style="display: none">
       <h1>Überschrift 1</h1>
       <h2>Überschrift</h2>
       <h3>Überschrift</h3>

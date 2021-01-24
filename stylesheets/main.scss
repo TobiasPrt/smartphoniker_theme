@@ -9,11 +9,14 @@
 @import "base/reset";
 @import "base/typography";
 
+@import "layout/body";
 @import "layout/navigation";
 @import "layout/header";
 @import "layout/footer";
 
 @import "components/buttons";
+@import "components/banner";
+@import "components/logo";
 
 @import "pages/agb";
 @import "pages/datenschutz";

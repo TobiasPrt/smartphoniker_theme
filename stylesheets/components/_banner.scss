@@ -1,1 +1,42 @@
 // Banner
+
+.banner {
+  @include fg(white);
+  @include bg(orange);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 40px;
+  align-items: center;
+
+  &__content {
+    grid-column-start: 1;
+    display: flex;
+
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include md {
+      justify-content: center;
+    }
+  }
+
+  &__text {
+    @extend .text-md;
+    padding: 10px 0 10px 10px;
+  }
+
+  &__link {
+    display: inline-block;
+    height: 30px;
+  }
+
+  &__linkimg {
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  &__closebtn {
+    @include bg(orange);
+    grid-column-start: 2;
+  }
+}
