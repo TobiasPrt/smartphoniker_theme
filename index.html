@@ -7,10 +7,34 @@
     <link rel="stylesheet" href="stylesheets/main.min.css" />
   </head>
   <body>
+    <!-- Banner -->
+    <div class="banner" id="banner">
+      <p class="banner__text">Wir reparieren weiter! Schreib uns per</p>
+      <a
+        class="banner__link banner__link--whatsapp"
+        href="https://wa.me/491628282353"
+      >
+        <img
+          class="banner__linkimg"
+          src="images/icons/whatsapp_button_orange.svg"
+          alt="WhatsApp"
+        />
+      </a>
+      <p class="banner__text">unter 0162-8282353.</p>
+      <button class="banner__closebtn">
+        <img src="images/icons/banner_cross.svg" alt="Close Banner" />
+      </button>
+    </div>
+
+    <!-- Header -->
     <header>
-      <img src="img/logo.svg" alt="Smartphoniker Logo" />
-      <nav>
-        <ul>
+      <img
+        class="logo logo--primary"
+        src="img/logo.svg"
+        alt="Smartphoniker Logo"
+      />
+      <nav class="navigation">
+        <ul class="navigation__list">
           <li><a href="#">Services</a></li>
           <li><a href="#">Standort</a></li>
           <li><a href="#">Nachhaltigkeit</a></li>
@@ -21,14 +45,18 @@
         </ul>
       </nav>
     </header>
+
+    <!-- Main -->
     <main>
-      <h1>Überschrift</h1>
+      <h1>Überschrift 1</h1>
       <h2>Überschrift</h2>
       <h3>Überschrift</h3>
       <h4>Überschrift</h4>
       <p>Text, das ist langer normaler Text</p>
       <p class="text-sm">Das ist wirklich kleiner Text</p>
     </main>
+
+    <!-- Footer -->
     <footer></footer>
   </body>
 </html>
