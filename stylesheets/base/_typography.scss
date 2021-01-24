@@ -61,7 +61,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Oswald", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 // Text Size
@@ -87,9 +87,11 @@ h4,
 
 p,
 .text-md {
+  font-family: "Lato", sans-serif;
   font-size: var(--text-md);
 }
 
 .text-sm {
+  font-family: "Lato", sans-serif;
   font-size: var(--text-sm);
 }
