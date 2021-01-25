@@ -1,0 +1,26 @@
+// Menuicon - Hamburger Menu
+
+.menuicon {
+  @include bg(white);
+
+  &__line {
+    @include bg(black);
+    width: 3rem;
+    height: 0.5rem;
+    margin: 5px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &--active .menuicon__line {
+    &--1 {
+      transform: rotate(-405deg) translate(-8px, 6px);
+    }
+    &--2 {
+      opacity: 0;
+    }
+    &--3 {
+      transform: rotate(+405deg) translate(-8px, -6px);
+    }
+  }
+}

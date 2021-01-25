@@ -1,0 +1,69 @@
+// Navigation
+
+.nav {
+  @include bg(white);
+  position: fixed;
+  top: -1px;
+  width: 100%;
+
+  &__wrapper {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    min-height: 6rem;
+  }
+
+  &__phone {
+    width: 3.5rem;
+    margin-right: 1rem;
+    margin-left: auto;
+  }
+
+  &__list {
+    @include bg(white);
+    position: fixed;
+    right: 0;
+    top: 11.9rem;
+    min-height: 94.5vh;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    list-style: none;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(100vw);
+    transition: transform 0.5s ease-in-out;
+
+    &--bannerIsHidden {
+      top: 5.9rem;
+    }
+
+    &--active {
+      transform: translateX(0vw);
+    }
+  }
+
+  &__listitem {
+    @extend .text-xl;
+    margin: 0 0 4rem;
+    opacity: 0;
+
+    &:first-of-type {
+      margin-top: -20vh;
+    }
+  }
+}
+
+// Animations
+@keyframes navListitemFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -4,76 +4,541 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Condensed:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="stylesheets/main.min.css" />
   </head>
   <body>
+    <style>
+      * {
+        /* outline: 1px dashed red !important; */
+      }
+    </style>
     <!-- Banner -->
-    <div class="banner" id="banner" style="display: none">
-      <div class="banner__content">
-        <p class="banner__text">
-          Wir reparieren mit Lieferservice und Abholung weiter! Schreib uns per
-
-          <a
-            class="banner__link banner__link--whatsapp"
-            href="https://wa.me/491628282353"
-          >
-            <img
-              class="banner__linkimg"
-              src="images/icons/whatsapp_button_orange.svg"
-              alt="WhatsApp"
-            />
-          </a>
-          unter 0162-8282353.
-        </p>
-      </div>
-      <button class="banner__closebtn">
-        <img src="images/icons/banner_cross.svg" alt="Close Banner" />
-      </button>
-    </div>
 
     <!-- Header -->
-    <header>
-      <nav class="nav">
-        <a href="#" class="logo">
-          <img
-            class="logo__img logo__img--primary"
-            src="images/logo/logo_blackorange.svg"
-            alt="Smartphoniker Logo"
-          />
-        </a>
+    <header id="header" class="header">
+      <nav class="header__nav nav">
+        <div class="banner" id="banner">
+          <div class="banner__content">
+            <p class="banner__text">
+              Wir reparieren weiter! Schreib uns per
 
-        <input id="nav_button" type="checkbox" class="hidden" />
+              <a
+                class="banner__link banner__link--whatsapp"
+                href="https://wa.me/491628282353"
+              >
+                <img
+                  class="banner__linkimg"
+                  src="images/icons/whatsapp_button_orange.svg"
+                  alt="WhatsApp"
+                />
+              </a>
+              unter 0162-8282353.
+            </p>
+          </div>
+          <button id="closeBanner" class="banner__closebtn">
+            <img src="images/icons/banner_cross.svg" alt="Close Banner" />
+          </button>
+        </div>
+        <div class="nav__wrapper">
+          <a class="nav__item logo" href="#">
+            <img
+              class="logo__img"
+              src="images/logo/logo_blackorange.svg"
+              alt="Smartphoniker Logo"
+            />
+          </a>
 
-        <label for="nav_button" class="nav__button">
-          <span class="nav__icon"></span>
-        </label>
+          <ul id="nav" class="nav__list">
+            <li class="nav__listitem"><a href="#">Shop</a></li>
+            <li class="nav__listitem"><a href="#">Services</a></li>
+            <li class="nav__listitem"><a href="#">Standort</a></li>
+            <li class="nav__listitem"><a href="#">Nachhaltigkeit</a></li>
+            <li class="nav__listitem"><a href="#">Über Uns</a></li>
+          </ul>
 
-        <div class="nav__overlay"></div>
-
-        <ul class="nav__list">
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Standort</a></li>
-          <li><a href="#">Nachhaltigkeit</a></li>
-          <li><a href="#">Über Uns</a></li>
-        </ul>
-
-        <a href="tel:+4943190700390"
-          ><img src="images/icons/phone_orange.svg" alt="Jetzt anrufen"
-        /></a>
+          <a class="nav__phone" href="tel:+4943190700390">
+            <img
+              class="nav__img"
+              src="images/icons/phone_orangewhite.svg"
+              alt="Jetzt anrufen"
+            />
+          </a>
+          <button class="nav__menuicon menuicon" id="menuicon">
+            <div class="menuicon__line menuicon__line--1"></div>
+            <div class="menuicon__line menuicon__line--2"></div>
+            <div class="menuicon__line menuicon__line--3"></div>
+          </button>
+        </div>
       </nav>
     </header>
 
     <!-- Main -->
-    <main style="display: none">
-      <h1>Überschrift 1</h1>
-      <h2>Überschrift</h2>
-      <h3>Überschrift</h3>
-      <h4>Überschrift</h4>
-      <p>Text, das ist langer normaler Text</p>
-      <p class="text-sm">Das ist wirklich kleiner Text</p>
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <h1 class="hero__heading">Nachhaltig. Qualitativ. Unkompliziert.</h1>
+
+        <p class="hero__text">
+          Reparaturen, Zubehör oder Gebrauchtgeräte An- und Verkauf. Wir sind
+          Dein Partner für nachhaltige Lösungen in der mobilen Kommunikation.
+          <!-- Komm einfach in einen unserer Shops vorbei und lass dich von einem
+          unserer erfahrenen Mitarbeit beraten oder fülle das folgende Formular
+          aus und erfahre unkompliziert die Kosten für eine Reparatur. -->
+        </p>
+        <img
+          class="hero__image"
+          src="images/hero_image_phone.svg"
+          alt="Nachhaltiges Handy"
+        />
+        <div class="hero__form">
+          <form class="form" action="#">
+            <div class="form__wrapper">
+              <label class="form__label" for="select-manufacturer">
+                Hersteller wählen
+              </label>
+              <select
+                class="form__select"
+                name="manufacturer"
+                id="select-manufacturer"
+              >
+                <option value="apple">Apple</option>
+                <option value="htc">HTC</option>
+                <option value="huawei">Huawei</option>
+                <option value="lg">LG</option>
+                <option value="samsung">Samsung</option>
+                <option value="sony">Sony</option>
+                <option value="xiaomi">Xiaomi</option>
+                <option value="other">nicht dabei?</option>
+              </select>
+            </div>
+            <div class="form__wrapper">
+              <label class="form__label" for="select-modell"
+                >Modell wählen</label
+              >
+              <select class="form__select" name="modell" id="select-modell">
+                <option value="ip6">iPhone 6</option>
+                <option value="other">nicht dabei?</option>
+              </select>
+            </div>
+
+            <button class="form__button button" type="submit">
+              Handy reparieren lassen
+            </button>
+          </form>
+        </div>
+        <ul class="hero__brands">
+          <li class="hero__brand">
+            <img
+              class="hero__brandimage"
+              src="images/partner_logos/bartels_langness.svg"
+              alt="bartels_langness"
+            />
+          </li>
+          <li class="hero__brand">
+            <img
+              class="hero__brandimage"
+              src="images/partner_logos/coop.svg"
+              alt="coop"
+            />
+          </li>
+          <li class="hero__brand">
+            <img
+              class="hero__brandimage"
+              src="images/partner_logos/chefs_culinar.svg"
+              alt="chefs_culinar"
+            />
+          </li>
+          <li class="hero__brand">
+            <img
+              class="hero__brandimage"
+              src="images/partner_logos/vater.svg"
+              alt="vater"
+            />
+          </li>
+          <li class="hero__brand">
+            <img
+              class="hero__brandimage"
+              src="images/partner_logos/der_echte_norden.svg"
+              alt="der_echte_norden"
+            />
+          </li>
+        </ul>
+      </section>
+
+      <!-- News -->
+      <section class="news">
+        <h2 class="news__heading">Das gibt es Neues:</h2>
+        <div class="news__content imgtxtblock">
+          <img src="images/phone01.jpg" alt="Handy" class="imgtxtblock__img" />
+          <div class="imgtxtblock__block">
+            <h3 class="imgtxtblock__text">
+              Bei uns kannst du nicht nur dein altes Gerät zur Reparatur
+              vorbeibringen, sondern auch ein Gebrauchtgerät kaufen und
+              verkaufen, sollte sich die Reparatur einmal doch nicht mehr
+              lohnen.
+            </h3>
+            <a class="imgtxtblock__button button" href="#">Standort ansehen</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Benefits -->
+      <section class="benefits">
+        <h2 class="benefits__heading">Warum Smartphoniker?</h2>
+        <div class="benefits__content">
+          <div class="columns-3">
+            <div class="columns-3__column">
+              <img
+                class="columns-3__icon"
+                src="images/icons/clock.svg"
+                alt="Uhr"
+              />
+              <h3 class="columns-3__heading">kurze Reparaturdauer</h3>
+              <p class="columns-3__text">
+                Die Reparatur dauert in der Regel nicht länger als 1-2 Stunden
+                Gerne kannst du auch einen Termin für den Einbau vereinbaren.
+                Während du wartest kannst du dich in unserem gemütlichen
+                Loungebereich entspannen oder in unserem Sharing-Bücherregal
+                stöbern.
+              </p>
+            </div>
+            <div class="columns-3__column">
+              <img
+                class="columns-3__icon"
+                src="images/icons/hands.svg"
+                alt="Uhr"
+              />
+              <h3 class="columns-3__heading">Lebenslange Garantie</h3>
+              <p class="columns-3__text">
+                Seit über 7 Jahren bieten wir hochqualitative Smartphone- &
+                Tablet- Reparaturen an. Wir sind von unserer Qualität überzeugt
+                und geben daher eine lebenslange Garantie auf alle
+                Display-Reparaturen. Dein Gerät ist bei uns in guten Händen
+              </p>
+            </div>
+            <div class="columns-3__column">
+              <img
+                class="columns-3__icon"
+                src="images/icons/map_needle.svg"
+                alt="Uhr"
+              />
+              <h3 class="columns-3__heading">Wir reparieren vor Ort</h3>
+              <p class="columns-3__text">
+                Augenkontakt ist uns wichtig und schafft Vertrauen. Unsere
+                Standorte sind zentral gelegen und wir sind direkt telefonisch
+                und per e-Mail erreichbar. Deinen Termin bei uns kannst du
+                wunderbar mit einer Einkaufstour verbinden.
+              </p>
+            </div>
+          </div>
+          <div class="benefits__video"></div>
+        </div>
+      </section>
+
+      <!-- Feature -->
+      <section class="feature">
+        <h2 class="feature__heading">Unser Nachhaltigkeitsversprechen</h2>
+        <div class="feature__content imgtxtblock">
+          <img
+            src="images/people/bene_new.jpg"
+            alt="Bene im Laden"
+            class="imgtxtblock__img"
+          />
+          <div class="imgtxtblock__block">
+            <h3 class="imgtxtblock__text">
+              „Auch traditionelles Zubehör schadet der Umwelt. Bei uns gibt es
+              deshalb ausgewählte und nachhaltige Produkte von Firmen, die sich
+              für die Umwelt einsetzen. Ob Bäume pflanzen oder die Meere von
+              Plastik befreien - jedes Produkt unterstützt ein nachhaltiges
+              Projekt.”
+            </h3>
+            <a class="imgtxtblock__button button" href="#">mehr zum Thema</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonial -->
+      <section class="testimonial">
+        <h2 class="testimonial__heading">Das sagen unsere Kund:innen!</h2>
+        <div class="testimonial__content">
+          <div class="columns-3">
+            <div class="columns-3__column">
+              <img
+                class="columns-3__icon"
+                src="images/icons/5-stars.svg"
+                alt="Uhr"
+              />
+              <p class="columns-3__text">
+                „Tolle Beratung mein Smartphone hat nicht mehr richtig
+                funktioniert und durch die schnelle und professionelle Betreuung
+                konnte das Problem fix gelöst werden.“
+              </p>
+              <p class="columns-3__subtitle">Marina H.</p>
+            </div>
+            <div class="columns-3__column">
+              <img
+                class="columns-3__icon"
+                src="images/icons/5-stars.svg"
+                alt="Uhr"
+              />
+              <p class="columns-3__text">
+                „Ich war heute im Shop und bin begeistert, der Kollege ist sehr
+                professionell und kann alles super erklären. Es standen viele
+                Menschen an, trotzdem hat er sich Die Zeit genommen. Kompetent,
+                schnell und günstig.“
+              </p>
+              <p class="columns-3__subtitle">Gerd H.</p>
+            </div>
+            <div class="columns-3__column">
+              <img
+                class="columns-3__icon"
+                src="images/icons/5-stars.svg"
+                alt="Uhr"
+              />
+              <p class="columns-3__text">
+                „Danke für die schnelle Reparatur und die kompetente Beratung.
+                Es wurde ein originales Display verbaut und war sogar noch etwas
+                günstiger als bei der Konkurrenz!“
+              </p>
+              <p class="columns-3__subtitle">Julian K.</p>
+            </div>
+          </div>
+          <div class="testimonial__rating columns-2">
+            <img
+              src="images/googlerating.svg"
+              alt="4.5 Sterne auf Google"
+              class="columns-2__left columns-2__left--small"
+            />
+            <div class="columns-2__right columns-2__right--big">
+              <h3 class="columns-2__heading">
+                Bewertet uns auf Google und sichert euch einen 10 Euro Gutschein
+              </h3>
+              <a href="#" class="columns-2__button">Jetzt bewerten</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Info -->
+      <section class="info">
+        <h2 class="info__heading">Zuverlässiger Handy-Reparatur-Service</h2>
+        <p class="info__text">
+          Ein Leben ohne Smartphone – in der heutigen Zeit ist ein solches
+          Szenario für viele Menschen nahezu undenkbar. Ein Handy wird als
+          Wecker, Nachrichtenquelle, zum Online-Shoppen, für Games und – man
+          höre und staune – auch tatsächlich noch als mobiles Telefon benutzt.
+          Doch was tun, wenn das geliebte Smartphone defekt ist und all diese
+          Dinge, die mit einem Handy machbar und vor allem so angenehm praktisch
+          sind, nicht mehr funktionieren? Falls Sie dann einen überaus
+          erfahrenen Handy-Reparatur-Service im hohen Norden Deutschlands
+          suchen, der Ihr Smartphone schnellstmöglich wieder auf Kurs bringt,
+          stehen die Experten von Smartphoniker bereit. Besuchen Sie unsere
+          Stores in Kiel, Lübeck, Rendsburg, Schwentinental oder Itzehoe, wenn
+          Sie die Reparatur Ihres Smartphones ausgewiesenen Fachleuten
+          überlassen möchten.
+        </p>
+        <div class="columns-3">
+          <div class="columns-3__column">
+            <h3
+              class="columns-3__heading columns-3__heading--left columns-3__heading--altcolor"
+            >
+              iPhone-Reparatur in Kiel
+            </h3>
+            <p class="columns-3__text columns-3__text--left">
+              iPhones sind immer noch Kult! Wer auf die innovativen Smartphones
+              schwört, macht keinen Schritt mehr ohne sie. Ist das Gerät jedoch
+              nicht mehr voll funktionsfähig und liegt ein Display-
+              beziehungsweise Hard- oder Software-Schaden vor, ist das noch
+              lange kein Weltuntergang: Sie können gerne jederzeit eine
+              iPhone-Reparatur in Kiel oder Lübeck sowie an unseren weiteren
+              Standorten vornehmen lassen. Unser versierter Reparaturservice
+              kennt alle iPhone-Versionen aus dem Effeff und ist in der Lage,
+              das beliebte Apple-Handy wieder in Top-Zustand zu versetzen.
+              Machen auch Sie sich jetzt unser umfassendes
+              iPhone-Reparatur-Know-how zunutze!
+            </p>
+          </div>
+          <div class="columns-3__column">
+            <h3
+              class="columns-3__heading columns-3__heading--left columns-3__heading--altcolor"
+            >
+              Samsung Galaxy-Reparatur
+            </h3>
+            <p class="columns-3__text columns-3__text--left">
+              Reparatur geben müssen, haben Sie in uns einen Partner gefunden,
+              der Ihnen schnell weiterhilft. Das gilt natürlich auch, wenn ein
+              Huawei-Reparatur-Service benötigt wird. Entweder Sie besuchen uns
+              in den Stores in Schleswig-Holstein oder Sie senden uns Ihr
+              defektes Handy per Post. In diesem Fall wäre es von Vorteil, wenn
+              Sie uns vorab per Telefon oder E-Mail kontaktieren und uns
+              mitteilen, was an Ihrem Handy gemacht werden muss. Nach Erhalt
+              nehmen wir uns der Reparatur Ihres Smartphones sofort an.
+            </p>
+          </div>
+          <div
+            class="columns-3__column columns-3__heading--left columns-3__heading--altcolor"
+          >
+            <h3 class="columns-3__heading">Daten von defektem Handy retten</h3>
+            <p class="columns-3__text columns-3__text--left">
+              Sei es durch einen Sturz oder Virus – wenn Sie befürchten, dass
+              Fotos, Videos, Dokumente etc. auf Ihrem Smartphone nicht mehr
+              abrufbar sind, sollten Sie zu uns kommen. Daten vom defekten Handy
+              retten oder einen Displayschaden beheben – für unseren erfahrenen
+              Handy-Reparatur-Service ist das Alltag! Wir kennen uns mit allen
+              Smartphone-Marken aus und stehen Ihnen ebenfalls zur Verfügung,
+              wenn Sie Probleme mit Ihrem Tablet oder PC haben. Wir reparieren
+              Ihre Consumer Elektronik-Geräte und retten Ihre Daten zum
+              Festpreis! Unter “Reparatur“ steht auf unserer Website die
+              Smartphoniker-Preisleiste zum Download bereit. Wir freuen uns auf
+              Ihre Kontaktaufnahme!
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
-    <footer></footer>
+    <footer class="footer" style="display: none">
+      <ul class="footer__payments">
+        <li>
+          <img
+            src="images/payment_method_icons/barzahlung.svg"
+            alt="barzahlung"
+          />
+        </li>
+        <li>
+          <img src="images/payment_method_icons/girocard.svg" alt="girocard" />
+        </li>
+        <li><img src="images/payment_method_icons/visa.svg" alt="visa" /></li>
+        <li>
+          <img
+            src="images/payment_method_icons/mastercard.svg"
+            alt="mastercard"
+          />
+        </li>
+        <li><img src="images/payment_method_icons/amex.svg" alt="amex" /></li>
+        <li>
+          <img src="images/payment_method_icons/paypal.svg" alt="paypal" />
+        </li>
+        <li>
+          <img
+            src="images/payment_method_icons/rechnung.svg"
+            alt="auf Rechnung"
+          />
+        </li>
+        <li>
+          <img
+            src="images/payment_method_icons/google_pay.svg"
+            alt="google_pay"
+          />
+        </li>
+        <li>
+          <img
+            src="images/payment_method_icons/apple_pay.svg"
+            alt="apple_pay"
+          />
+        </li>
+      </ul>
+      <img src="images/logo/logo_orangewhite.svg" alt="Smartphoniker" />
+      <div class="footer__content">
+        <div class="footer__information">
+          <p class="footer__heading">Über Uns</p>
+          <p class="footer__text">
+            Professionelle und hochqualitative Smartphone- und Tabletreparaturen
+            seit 2013.
+          </p>
+          <p class="footer__heading">Kontaktinformationen</p>
+          <a class="footer__link" href="tel:+4943190700390"
+            >+49 431 90 700 39 - 0</a
+          >
+          <br />
+          <a class="footer__link" href="mail:support@smartphoniker.de"
+            >support@smartphoniker.de</a
+          >
+        </div>
+        <div class="footer__links">
+          <p class="footer__heading">Hilfreiche Links</p>
+          <ul>
+            <li><a class="footer__link" href="">Karriere</a></li>
+            <li><a class="footer__link" href="">Kontakt</a></li>
+            <li><a class="footer__link" href="">Unsere Partner</a></li>
+            <li>
+              <a class="footer__link" href="">Affiliate Partner werden</a>
+            </li>
+            <li><a class="footer__link" href="">Geschäftskunde werden</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <p class="footer__heading">Informationen</p>
+          <ul>
+            <li><a class="footer__link" href="">AGB</a></li>
+            <li><a class="footer__link" href="">Datenschutz</a></li>
+            <li><a class="footer__link" href="">Impressum</a></li>
+            <li><a class="footer__link" href="">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <div class="footer__end">
+        <div class="footer__socialmedia">
+          <img
+            class="footer__socialicon"
+            src="images/icons/facebook.svg"
+            alt="facebook"
+          />
+          <img
+            class="footer__socialicon"
+            src="images/icons/instagram.svg"
+            alt="instagram"
+          />
+        </div>
+        <span class="footer__credits"
+          >Made by <a href="https://tobiaspoertner.com">Tobias</a></span
+        >
+      </div>
+    </footer>
+
+    <script>
+      const closeBanner = document.getElementById("closeBanner");
+      const nav = document.getElementById("nav");
+      const menuicon = document.getElementById("menuicon");
+
+      closeBanner.addEventListener("click", () => {
+        const banner = document.getElementById("banner");
+        const header = document.getElementById("header");
+
+        // hide banner
+        banner.classList.toggle("banner--isHidden");
+        // reduce heigt of header
+        header.classList.toggle("header--bannerIsHidden");
+        // adjust starting point of overlay
+        nav.classList.toggle("nav__list--bannerIsHidden");
+      });
+
+      menuicon.addEventListener("click", () => {
+        // Slide in Navigation
+        nav.classList.toggle("nav__list--active");
+
+        // Show Nav Links
+        const navLinks = document.querySelectorAll(".nav__listitem");
+        navLinks.forEach((link, index) => {
+          if (link.style.animation) {
+            link.style.animation = "";
+          } else {
+            link.style.animation = `navListitemFade 0.5s ease forwards ${
+              index / 7 + 0.2
+            }s`;
+          }
+        });
+
+        // Toggle Burger and Cross
+        menuicon.classList.toggle("menuicon--active");
+      });
+    </script>
   </body>
 </html>
