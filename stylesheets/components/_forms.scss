@@ -8,10 +8,10 @@
   max-width: 1024px;
 
   &__label {
-    @extend .text-xs;
+    @extend .text-xxs;
     @include fg(white);
     display: block;
-    margin: 1rem 0;
+    margin: 1rem 0 0.5rem;
   }
 
   &__select {

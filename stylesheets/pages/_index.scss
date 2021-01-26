@@ -16,24 +16,30 @@
     transform: scale(1);
   }
 
+  &__wrapper {
+    order: 2;
+  }
+
   &__heading {
     width: 100%;
     line-height: 4rem;
-    order: 2;
     text-align: center;
   }
 
   &__text {
     @extend .text-sm;
     line-height: normal;
-    order: 3;
     text-align: center;
     margin: 1rem 0;
+
+    &--hidden {
+      display: none;
+    }
   }
 
   &__form {
     @include bg(orange);
-    margin: 2rem 0;
+    margin: 1rem 0 2rem;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -59,13 +65,79 @@
 // 768+
 @include md() {
   .hero {
+    margin-top: 10rem;
+
     &__image {
       height: 35rem;
+    }
+
+    &__heading {
+      margin-top: 3rem;
+    }
+
+    &__text {
+      margin: 1rem 0;
+    }
+
+    &__form {
+      margin: 3rem 0 2rem;
     }
 
     &__brands {
       width: 90%;
       column-gap: 3rem;
+    }
+  }
+}
+
+// 992+
+@include lg {
+  .hero {
+    width: 100%;
+    margin: 10rem auto 0;
+    max-width: 1024px;
+
+    &__wrapper {
+      order: 1;
+      width: 55%;
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      align-items: flex-start;
+      margin-left: 5%;
+    }
+
+    &__heading {
+      text-align: left;
+      margin: 0;
+      margin-top: 8rem;
+      white-space: nowrap;
+    }
+
+    &__text {
+      text-align: left;
+      width: 100%;
+
+      &--hidden {
+        display: inline;
+      }
+    }
+
+    &__image {
+      width: 35%;
+      margin: 0;
+      margin-left: 5%;
+    }
+
+    &__form {
+      width: 100%;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    &__brands {
+      width: 80%;
+      column-gap: 5rem;
     }
   }
 }
@@ -79,6 +151,16 @@
     border-radius: 0.2rem;
     height: 50vw;
     width: 100%;
+  }
+}
+
+@include lg {
+  .benefits {
+    &__video {
+      height: 37.5vw;
+      width: 75%;
+      margin: 2rem auto 0;
+    }
   }
 }
 
@@ -96,11 +178,37 @@
   }
 }
 
+// 768+
+@include md {
+  .googlerating {
+    width: 80%;
+  }
+}
+
+// 992+
+@include lg {
+  .testimonial {
+    &__rating {
+      margin-top: 0;
+    }
+  }
+}
+
 // ------------------------------------------
 // Info Section
 .info {
   &__text {
+    width: 90%;
     text-align: center;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
+  }
+}
+
+// 1200+
+@include xl {
+  .info {
+    &__text {
+      width: 80%;
+    }
   }
 }

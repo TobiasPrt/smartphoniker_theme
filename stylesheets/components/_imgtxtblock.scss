@@ -39,7 +39,9 @@
   }
 
   &__text {
+    @extend .text-md;
     @include fg(white);
+    font-size: 1.8rem;
   }
 
   &__button {
@@ -68,5 +70,26 @@
       border-top-right-radius: 0.2rem;
       border-bottom-right-radius: 0.2rem;
     }
+  }
+}
+
+// 992+
+@include lg {
+  .imgtxtblock {
+    &__block {
+      justify-content: space-evenly;
+    }
+
+    &__button {
+      margin-top: 0;
+    }
+  }
+}
+
+// 1200+
+@include xl {
+  .imgtxtblock {
+    width: 80%;
+    margin: 0 auto;
   }
 }

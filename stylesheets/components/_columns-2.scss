@@ -21,3 +21,48 @@
     margin: 2rem auto 0;
   }
 }
+
+// 768+
+@include md {
+  .columns-2 {
+    &__wrapper {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__heading {
+      margin-top: 0;
+    }
+
+    &__left {
+      display: flex;
+      align-items: center;
+      width: 50%;
+    }
+
+    &__right {
+      width: 50%;
+    }
+  }
+}
+
+// 992+
+@include lg {
+  .columns-2 {
+    &__left {
+      width: 35%;
+    }
+
+    &__right {
+      width: 65%;
+    }
+  }
+}
+
+// 1200+
+@include xl {
+  .columns-2 {
+    width: 80%;
+  }
+}

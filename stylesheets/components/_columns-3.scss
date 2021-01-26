@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin: 0 auto;
 
   &__column {
     display: flex;
@@ -34,6 +35,7 @@
   }
 
   &__text {
+    @extend .text-sm;
     margin: 2rem 0 0;
     &--left {
       text-align: left;
@@ -43,5 +45,26 @@
   &__subtitle {
     @include fg(orange);
     margin: 1rem 0 0;
+  }
+}
+
+// 768+
+@include md {
+  .columns-3 {
+    width: 90%;
+    max-width: 1024px;
+  }
+}
+
+// 992+
+@include lg {
+  .columns-3 {
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__column {
+      margin-bottom: 0;
+      width: 30%;
+    }
   }
 }

@@ -36,7 +36,7 @@ h3,
   font-size: 2rem;
 
   @include md {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
   }
 }
 
@@ -53,6 +53,10 @@ p,
   font-family: $font-text;
   font-size: 1.8rem;
   font-weight: 300;
+
+  @include md {
+    font-size: 2rem;
+  }
 }
 
 .text-sm {
