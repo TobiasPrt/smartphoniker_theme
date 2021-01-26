@@ -1,5 +1,7 @@
 // Index - Home
 
+// ------------------------------------------
+// Hero-Section
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -22,7 +24,6 @@
   }
 
   &__text {
-    // display: none;
     @extend .text-sm;
     line-height: normal;
     order: 3;
@@ -55,45 +56,22 @@
   }
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 90%;
+// 768+
+@include md() {
+  .hero {
+    &__image {
+      height: 35rem;
+    }
 
-  &__label {
-    @extend .text-xs;
-    @include fg(white);
-    display: block;
-    margin: 1rem 0;
-  }
-
-  &__select {
-    appearance: none;
-    border: none;
-    height: 4.4rem;
-    border-radius: 0.5rem;
-    padding: 0 1rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    @extend .text-md;
-    background: url(../../images/icons/triangle_down.svg) no-repeat right white;
-    background-size: 6%;
-    background-position: 95%;
-  }
-
-  &__button {
-    @include bg(white);
-    @include fg(orange);
-    @extend .text-lg;
-    margin: 3rem auto;
-    padding: 0 1rem;
-    height: 4.4rem;
-    border-radius: 0.5rem;
+    &__brands {
+      width: 90%;
+      column-gap: 3rem;
+    }
   }
 }
 
+// ------------------------------------------
+// Benefits-Section
 .benefits {
   &__video {
     @include bg(black);
@@ -104,18 +82,22 @@
   }
 }
 
+// ------------------------------------------
+// Testimonial Section
 .testimonial {
   &__rating {
     @include bg(orange);
     margin: 4rem auto 0;
     border-radius: 0.2rem;
   }
+
+  & .googlerating {
+    border-radius: 0.5rem;
+  }
 }
 
-.googlerating {
-  border-radius: 0.5rem;
-}
-
+// ------------------------------------------
+// Info Section
 .info {
   &__text {
     text-align: center;

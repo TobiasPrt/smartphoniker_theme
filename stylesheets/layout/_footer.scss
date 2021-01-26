@@ -1,1 +1,109 @@
 // Footer
+
+.footer {
+  @include bg(nearly_black);
+  margin-top: 5rem;
+
+  &__wrapper {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 95%;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__payments {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 3rem;
+  }
+
+  &__logo {
+    margin: 3rem 0 0;
+    width: 50%;
+  }
+
+  &__heading {
+    @include fg(orange);
+    @extend .text-sm;
+    margin: 3rem 0 0.5rem;
+  }
+
+  &__text {
+    @include fg(dark_grey);
+    @extend .text-xs;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__info {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  &__links {
+    width: 50%;
+
+    & li {
+      list-style-type: none;
+      margin: 0.5rem 0 0;
+    }
+  }
+
+  &__link {
+    @include fg(dark_grey);
+    @extend .text-xs;
+  }
+
+  &__line {
+    @include bg(dark_grey);
+    margin: 2rem 0;
+    height: 0.2rem;
+    border-radius: 1rem;
+    border: none;
+  }
+
+  &__end {
+    display: grid;
+    grid-template-columns: 8rem auto 8rem;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  &__socialmedia {
+    // background-color: aqua;
+    grid-column-start: 2;
+    width: 50%;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__socialicon {
+    padding: 0;
+    margin: 0 auto;
+    display: block;
+
+    & img {
+      display: block;
+      width: 2.5rem;
+    }
+  }
+
+  &__credits {
+    grid-column-start: 3;
+    justify-self: end;
+    @include fg(dark_grey);
+    @extend .text-xxs;
+
+    & > a {
+      @include fg(dark_grey);
+      @extend .text-xxs;
+    }
+  }
+}

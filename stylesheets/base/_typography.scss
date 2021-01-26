@@ -16,16 +16,28 @@ h6,
 h1,
 .text-xxxl {
   font-size: 3rem;
+
+  @include md {
+    font-size: 4rem;
+  }
 }
 
 h2,
 .text-xxl {
   font-size: 2.6rem;
+
+  @include md {
+    font-size: 3rem;
+  }
 }
 
 h3,
 .text-xl {
   font-size: 2rem;
+
+  @include md {
+    font-size: 1.8rem;
+  }
 }
 
 h4,
@@ -36,7 +48,8 @@ h4,
 p,
 .text-md,
 .text-sm,
-.text-xs {
+.text-xs,
+.text-xxs {
   font-family: $font-text;
   font-size: 1.8rem;
   font-weight: 300;
@@ -48,4 +61,8 @@ p,
 
 .text-xs {
   font-size: 1.4rem;
+}
+
+.text-xxs {
+  font-size: 1.2rem;
 }
