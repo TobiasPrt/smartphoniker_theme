@@ -18,7 +18,6 @@ body {
 
 a,
 a:visited {
-  @include fg(black);
   text-decoration: none;
   cursor: pointer;
 }

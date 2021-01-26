@@ -171,8 +171,8 @@
       </section>
 
       <!-- News -->
-      <section class="news">
-        <h2 class="news__heading">Das gibt es Neues:</h2>
+      <section class="news content">
+        <h2 class="news__heading content__heading">Das gibt es Neues:</h2>
         <div class="news__content imgtxtblock">
           <img src="images/phone01.jpg" alt="Handy" class="imgtxtblock__img" />
           <div class="imgtxtblock__block">
@@ -182,14 +182,14 @@
               verkaufen, sollte sich die Reparatur einmal doch nicht mehr
               lohnen.
             </h3>
-            <a class="imgtxtblock__button button" href="#">Standort ansehen</a>
+            <a class="imgtxtblock__button button" href="#">Standorte ansehen</a>
           </div>
         </div>
       </section>
 
       <!-- Benefits -->
-      <section class="benefits">
-        <h2 class="benefits__heading">Warum Smartphoniker?</h2>
+      <section class="benefits content">
+        <h2 class="benefits__heading content__heading">Warum Smartphoniker?</h2>
         <div class="benefits__content">
           <div class="columns-3">
             <div class="columns-3__column">
@@ -241,9 +241,11 @@
       </section>
 
       <!-- Feature -->
-      <section class="feature">
-        <h2 class="feature__heading">Unser Nachhaltigkeitsversprechen</h2>
-        <div class="feature__content imgtxtblock">
+      <section class="feature content">
+        <h2 class="feature__heading content__heading">
+          Unser Nachhaltigkeitsversprechen
+        </h2>
+        <div class="feature__content imgtxtblock--green">
           <img
             src="images/people/bene_new.jpg"
             alt="Bene im Laden"
@@ -263,13 +265,15 @@
       </section>
 
       <!-- Testimonial -->
-      <section class="testimonial">
-        <h2 class="testimonial__heading">Das sagen unsere Kund:innen!</h2>
+      <section class="testimonial content">
+        <h2 class="testimonial__heading content__heading">
+          Das sagen unsere Kund:innen!
+        </h2>
         <div class="testimonial__content">
           <div class="columns-3">
             <div class="columns-3__column">
               <img
-                class="columns-3__icon"
+                class="columns-3__icon columns-3__icon--small"
                 src="images/icons/5-stars.svg"
                 alt="Uhr"
               />
@@ -282,7 +286,7 @@
             </div>
             <div class="columns-3__column">
               <img
-                class="columns-3__icon"
+                class="columns-3__icon columns-3__icon--small"
                 src="images/icons/5-stars.svg"
                 alt="Uhr"
               />
@@ -296,7 +300,7 @@
             </div>
             <div class="columns-3__column">
               <img
-                class="columns-3__icon"
+                class="columns-3__icon columns-3__icon--small"
                 src="images/icons/5-stars.svg"
                 alt="Uhr"
               />
@@ -308,39 +312,45 @@
               <p class="columns-3__subtitle">Julian K.</p>
             </div>
           </div>
-          <div class="testimonial__rating columns-2">
-            <img
-              src="images/googlerating.svg"
-              alt="4.5 Sterne auf Google"
-              class="columns-2__left columns-2__left--small"
-            />
-            <div class="columns-2__right columns-2__right--big">
-              <h3 class="columns-2__heading">
-                Bewertet uns auf Google und sichert euch einen 10 Euro Gutschein
-              </h3>
-              <a href="#" class="columns-2__button">Jetzt bewerten</a>
+          <div class="testimonial__rating columns-2 columns-2--small">
+            <div class="columns-2__wrapper">
+              <a
+                href="https://g.page/Smartphoniker-Express-S?gm"
+                class="columns-2__left columns-2__left--small"
+              >
+                <img
+                  class="googlerating"
+                  src="images/googlerating.svg"
+                  alt="4.5 Sterne auf Google"
+                />
+              </a>
+
+              <div class="columns-2__right columns-2__right--big">
+                <h3 class="columns-2__heading">
+                  Bewertet uns auf Google und sichert euch einen 10 Euro
+                  Gutschein.
+                </h3>
+                <a href="#" class="columns-2__button button">Jetzt bewerten</a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Info -->
-      <section class="info">
-        <h2 class="info__heading">Zuverlässiger Handy-Reparatur-Service</h2>
+      <section class="info content">
+        <h2 class="info__heading content__heading">
+          Zuverlässiger Handy-Reparatur-Service
+        </h2>
         <p class="info__text">
           Ein Leben ohne Smartphone – in der heutigen Zeit ist ein solches
-          Szenario für viele Menschen nahezu undenkbar. Ein Handy wird als
-          Wecker, Nachrichtenquelle, zum Online-Shoppen, für Games und – man
-          höre und staune – auch tatsächlich noch als mobiles Telefon benutzt.
-          Doch was tun, wenn das geliebte Smartphone defekt ist und all diese
-          Dinge, die mit einem Handy machbar und vor allem so angenehm praktisch
-          sind, nicht mehr funktionieren? Falls Sie dann einen überaus
-          erfahrenen Handy-Reparatur-Service im hohen Norden Deutschlands
-          suchen, der Ihr Smartphone schnellstmöglich wieder auf Kurs bringt,
-          stehen die Experten von Smartphoniker bereit. Besuchen Sie unsere
-          Stores in Kiel, Lübeck, Rendsburg, Schwentinental oder Itzehoe, wenn
-          Sie die Reparatur Ihres Smartphones ausgewiesenen Fachleuten
-          überlassen möchten.
+          Szenario für viele Menschen nahezu undenkbar. Doch was tun, wenn das
+          geliebte Smartphone defekt ist und all diese Dinge, die mit einem
+          Handy machbar und vor allem so angenehm praktisch sind, nicht mehr
+          funktionieren? Falls Sie dann einen überaus erfahrenen
+          Handy-Reparatur-Service im hohen Norden Deutschlands suchen, der Ihr
+          Smartphone schnellstmöglich wieder auf Kurs bringt, stehen die
+          Experten von Smartphoniker bereit.
         </p>
         <div class="columns-3">
           <div class="columns-3__column">
@@ -355,12 +365,10 @@
               nicht mehr voll funktionsfähig und liegt ein Display-
               beziehungsweise Hard- oder Software-Schaden vor, ist das noch
               lange kein Weltuntergang: Sie können gerne jederzeit eine
-              iPhone-Reparatur in Kiel oder Lübeck sowie an unseren weiteren
-              Standorten vornehmen lassen. Unser versierter Reparaturservice
-              kennt alle iPhone-Versionen aus dem Effeff und ist in der Lage,
-              das beliebte Apple-Handy wieder in Top-Zustand zu versetzen.
-              Machen auch Sie sich jetzt unser umfassendes
-              iPhone-Reparatur-Know-how zunutze!
+              iPhone-Reparatur an unseren weiteren Standorten vornehmen lassen.
+              Unser versierter Reparaturservice kennt alle iPhone-Versionen aus
+              dem Effeff und ist in der Lage, das beliebte Apple-Handy wieder in
+              Top-Zustand zu versetzen.
             </p>
           </div>
           <div class="columns-3__column">
@@ -370,20 +378,22 @@
               Samsung Galaxy-Reparatur
             </h3>
             <p class="columns-3__text columns-3__text--left">
-              Reparatur geben müssen, haben Sie in uns einen Partner gefunden,
-              der Ihnen schnell weiterhilft. Das gilt natürlich auch, wenn ein
+              Wenn Sie Ihr Samsung Galaxy-Handy in die Reparatur geben müssen,
+              haben Sie in uns einen Partner gefunden, der Ihnen schnell
+              weiterhilft. Das gilt natürlich auch, wenn ein
               Huawei-Reparatur-Service benötigt wird. Entweder Sie besuchen uns
               in den Stores in Schleswig-Holstein oder Sie senden uns Ihr
               defektes Handy per Post. In diesem Fall wäre es von Vorteil, wenn
               Sie uns vorab per Telefon oder E-Mail kontaktieren und uns
-              mitteilen, was an Ihrem Handy gemacht werden muss. Nach Erhalt
-              nehmen wir uns der Reparatur Ihres Smartphones sofort an.
+              mitteilen, was an Ihrem Handy gemacht werden muss.
             </p>
           </div>
-          <div
-            class="columns-3__column columns-3__heading--left columns-3__heading--altcolor"
-          >
-            <h3 class="columns-3__heading">Daten von defektem Handy retten</h3>
+          <div class="columns-3__column">
+            <h3
+              class="columns-3__heading columns-3__heading--left columns-3__heading--altcolor"
+            >
+              Daten von defektem Handy retten
+            </h3>
             <p class="columns-3__text columns-3__text--left">
               Sei es durch einen Sturz oder Virus – wenn Sie befürchten, dass
               Fotos, Videos, Dokumente etc. auf Ihrem Smartphone nicht mehr
@@ -393,9 +403,7 @@
               Smartphone-Marken aus und stehen Ihnen ebenfalls zur Verfügung,
               wenn Sie Probleme mit Ihrem Tablet oder PC haben. Wir reparieren
               Ihre Consumer Elektronik-Geräte und retten Ihre Daten zum
-              Festpreis! Unter “Reparatur“ steht auf unserer Website die
-              Smartphoniker-Preisleiste zum Download bereit. Wir freuen uns auf
-              Ihre Kontaktaufnahme!
+              Festpreis!
             </p>
           </div>
         </div>

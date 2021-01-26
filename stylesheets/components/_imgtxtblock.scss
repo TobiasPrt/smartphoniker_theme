@@ -1,0 +1,44 @@
+// Image-Text-Block
+
+.imgtxtblock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &--green {
+    & > .imgtxtblock__block {
+      @include bg(green);
+    }
+    & .imgtxtblock__button {
+      @include fg(green);
+    }
+  }
+
+  &__block {
+    @include bg(orange);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2.5rem;
+    border-bottom-left-radius: 0.2rem;
+    border-bottom-right-radius: 0.2rem;
+  }
+
+  &__img {
+    width: 100%;
+    display: flex;
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0.2rem;
+  }
+
+  &__text {
+    @include fg(white);
+  }
+
+  &__button {
+    @include fg(orange);
+    @include bg(white);
+    margin-top: 2rem;
+  }
+}

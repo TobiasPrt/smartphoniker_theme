@@ -53,6 +53,9 @@
     &:first-of-type {
       margin-top: -20vh;
     }
+    & > a {
+      @include fg(black);
+    }
   }
 }
 
