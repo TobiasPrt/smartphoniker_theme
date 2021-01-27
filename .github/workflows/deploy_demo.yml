@@ -17,8 +17,7 @@ jobs:
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /web/personal/smartphoniker.tobiaspoertner.com/
-          exclude:
-            - .git*/**
+          exclude: .git*/**
             - .git*
             - "*.scss"
           dry-run: true
