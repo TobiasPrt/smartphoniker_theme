@@ -7,18 +7,18 @@ on:
 
 jobs:
   deploy:
-  name: deploy demo to personal server
-  runs-on: ubuntu-latest
-  steps:
-    - name: Deploy website
-      uses: SamKirkland/FTP-Deploy-Action@3.1.1
-      with:
-        ftp-server: ${{ secrets.FTP_SERVER }}
-        ftp-username: ${{ secrets.FTP_USERNAME }}
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /web/personal/smartphoniker.tobiaspoertner.com/
-        exclude:
-          - .git*/**
-          - .git*
-          - "*.scss"
-        dry-run: true
+    name: deploy demo to personal server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy website
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        with:
+          ftp-server: ${{ secrets.FTP_SERVER }}
+          ftp-username: ${{ secrets.FTP_USERNAME }}
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /web/personal/smartphoniker.tobiaspoertner.com/
+          exclude:
+            - .git*/**
+            - .git*
+            - "*.scss"
+          dry-run: true
