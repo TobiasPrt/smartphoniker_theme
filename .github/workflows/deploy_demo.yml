@@ -25,4 +25,5 @@ jobs:
             - **/*.scss
             - stylesheets/main.min.css.map
             - **/.*
-          # dry-run: true
+            - **/.sh
+          dry-run: ${{ secrets.ENVIRONMENT }}
