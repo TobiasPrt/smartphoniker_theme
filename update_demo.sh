@@ -9,6 +9,8 @@ if [[ -n "$branchname" ]]; then
     git merge $1
     echo "Attempting to push the changes made to branch demo."
     git push origin demo
+    echo "Show state of current deployment."
+    actions-cli
 else
     echo "argument error"
 fi
