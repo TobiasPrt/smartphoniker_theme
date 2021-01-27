@@ -65,22 +65,22 @@
 // 768+
 @include md() {
   .hero {
-    margin-top: 10rem;
+    margin-top: 16rem;
 
     &__image {
       height: 35rem;
     }
 
     &__heading {
-      margin-top: 3rem;
+      margin-top: 4rem;
     }
 
     &__text {
-      margin: 1rem 0;
+      margin: 1rem 0 3rem;
     }
 
     &__form {
-      margin: 3rem 0 2rem;
+      margin: 3rem 0 4rem;
     }
 
     &__brands {
@@ -132,7 +132,7 @@
     &__form {
       width: 100%;
       margin-top: 0;
-      margin-bottom: 1.5rem;
+      margin-bottom: 3.5rem;
     }
 
     &__brands {
@@ -190,25 +190,6 @@
   .testimonial {
     &__rating {
       margin-top: 0;
-    }
-  }
-}
-
-// ------------------------------------------
-// Info Section
-.info {
-  &__text {
-    width: 90%;
-    text-align: center;
-    margin: 0 auto 2rem;
-  }
-}
-
-// 1200+
-@include xl {
-  .info {
-    &__text {
-      width: 80%;
     }
   }
 }

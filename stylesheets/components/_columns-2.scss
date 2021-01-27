@@ -10,7 +10,7 @@
 
   &__heading {
     @include fg(white);
-    @extend .text-xl;
+    @extend .text-lg;
     margin-top: 2rem;
     text-align: center;
   }

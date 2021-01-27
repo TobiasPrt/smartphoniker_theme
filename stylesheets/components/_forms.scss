@@ -32,7 +32,6 @@
   &__button {
     @include bg(white);
     @include fg(orange);
-    @extend .text-lg;
     margin: 3rem auto;
     padding: 0 1rem;
     height: 4rem;

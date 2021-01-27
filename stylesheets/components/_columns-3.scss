@@ -24,7 +24,7 @@
   }
 
   &__heading {
-    @extend .text-xl;
+    @extend .text-lg;
     margin: 0.5rem 0 0;
     &--altcolor {
       @include fg(orange);
@@ -63,7 +63,7 @@
     justify-content: space-between;
 
     &__column {
-      margin-bottom: 0;
+      margin-bottom: 4rem;
       width: 30%;
     }
   }

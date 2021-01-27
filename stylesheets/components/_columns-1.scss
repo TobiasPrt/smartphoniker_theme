@@ -1,0 +1,14 @@
+// 1 Column Component
+
+.columns-1 {
+  width: 90%;
+  text-align: center;
+  margin: 0 auto 5rem;
+}
+
+// 1200+
+@include xl {
+  .columns-1 {
+    width: 80%;
+  }
+}
