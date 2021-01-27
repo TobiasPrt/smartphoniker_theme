@@ -21,6 +21,10 @@
     margin-left: auto;
   }
 
+  &__img {
+    display: flex;
+  }
+
   &__list {
     @include bg(white);
     position: fixed;
