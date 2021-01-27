@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy website
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
           ftp-server: ${{ secrets.FTP_SERVER }}
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /web/personal/smartphoniker.tobiaspoertner.com/
+          server-dir: web/personal/smartphoniker.tobiaspoertner.com/
           exclude: .git*/**
             - .git*
             - "*.scss"
