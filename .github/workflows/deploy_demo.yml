@@ -1,0 +1,21 @@
+name: deploy demo to personal server
+
+on:
+  push:
+    branches:
+      - demo
+
+jobs:
+  deploy:
+    - name: Deploy website
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      with:
+        ftp-server: ${{ secrets.FTP_SERVER }}
+        ftp-username: ${{ secrets.FTP_USERNAME }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: /web/personal/smartphoniker.tobiaspoertner.com/
+        exclude: 
+          - .git*/**
+          - .git*
+          - *.scss
+        dry-run: true
