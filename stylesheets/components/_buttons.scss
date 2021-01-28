@@ -1,17 +1,23 @@
 // Buttons
 
 .button {
+  @include bg(white);
+  @include fg(orange);
   @extend .text-lg;
   font-size: 1.8rem;
   height: 4rem;
   max-height: 4rem;
+  min-width: 20rem;
   max-width: 22rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 0.5rem;
-
   padding: 0 1rem;
+
+  &--green {
+    @include fg(green);
+  }
 }
 
 @include lg {

@@ -1,99 +1,62 @@
-// Image-Text-Block
+// // Image-Text-Block
 
-.imgtxtblock {
-  $this: &;
+.block-2 {
+  @include bg(orange);
   width: 100%;
+  border-radius: 0.2rem;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
 
   &--green {
-    & #{$this}__block {
-      @include bg(green);
-    }
-    & #{$this}__button {
-      @include fg(green);
-    }
+    @include bg(green);
   }
 
   &__block {
-    @include bg(orange);
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    padding: 2.5rem;
-    border-bottom-left-radius: 0.2rem;
-    border-bottom-right-radius: 0.2rem;
-  }
+    align-items: center;
 
-  &__img {
-    display: block;
-    width: 100%;
-
-    & img {
-      display: flex;
-      width: 100%;
-      object-fit: cover;
-      height: 100%;
-      border-top-left-radius: 0.2rem;
-      border-top-right-radius: 0.2rem;
+    &--text {
+      padding: 2.5rem;
     }
   }
 
   &__text {
-    @extend .text-md;
     @include fg(white);
-    font-size: 1.8rem;
   }
 
   &__button {
-    @include fg(orange);
-    @include bg(white);
     margin-top: 2rem;
   }
 }
 
 // 768+
 @include md {
-  .imgtxtblock {
+  .block-2 {
     flex-direction: row;
-    justify-content: space-between;
-    height: 28rem;
-
-    &__img {
-      & img {
-        border-top-left-radius: 0.2rem;
-        border-bottom-left-radius: 0.2rem;
-        border-top-right-radius: 0;
-      }
-    }
 
     &__block {
-      border-bottom-left-radius: 0;
-      border-top-right-radius: 0.2rem;
-      border-bottom-right-radius: 0.2rem;
-    }
-  }
-}
-
-// 992+
-@include lg {
-  .imgtxtblock {
-    height: 40rem;
-    &__block {
-      justify-content: space-evenly;
+      width: 50%;
+      align-items: flex-start;
+      justify-content: center;
     }
 
     &__button {
-      margin-top: 0;
+      margin-top: 4rem;
     }
   }
 }
 
 // 1200+
 @include xl {
-  .imgtxtblock {
-    width: 80%;
-    margin: 0 auto;
+  .block-2 {
+    width: 90%;
+
+    &__text {
+      font-size: 2.2rem;
+    }
   }
 }

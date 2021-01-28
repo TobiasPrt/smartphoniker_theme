@@ -13,7 +13,7 @@
 
     <style>
       * {
-        /* outline: 1px dashed red !important; */
+        outline: 1px dashed red !important;
       }
     </style>
   </head>
@@ -24,26 +24,23 @@
     <header id="header" class="header">
       <nav class="header__nav nav">
         <div class="banner" id="banner">
-          <div class="banner__content">
+          <div class="banner__wrapper">
             <p class="banner__text">
-              Wir reparieren weiter! Schreib uns per
+              Wir reparieren weiter! Schreib uns per &nbsp;
 
-              <a
-                class="banner__link banner__link--whatsapp"
-                href="https://wa.me/491628282353"
-              >
+              <a class="banner__link" href="https://wa.me/491628282353">
                 <img
-                  class="banner__linkimg"
+                  class="banner__image"
                   src="images/icons/whatsapp_button_orange.svg"
                   alt="WhatsApp"
                 />
               </a>
-              unter 0162-8282353.
+              &nbsp; unter 0162-8282353.
             </p>
+            <button id="closeBanner" class="banner__button">
+              <img src="images/icons/banner_cross.svg" alt="Close Banner" />
+            </button>
           </div>
-          <button id="closeBanner" class="banner__closebtn">
-            <img src="images/icons/banner_cross.svg" alt="Close Banner" />
-          </button>
         </div>
         <div class="nav__wrapper">
           <a class="nav__item logo" href="#">
@@ -181,21 +178,21 @@
       <!-- News -->
       <section class="news content">
         <h2 class="news__heading content__heading">Das gibt es Neues:</h2>
-        <div class="news__content imgtxtblock">
-          <div class="imgtxtblock__img">
+        <div class="news__content block-2">
+          <div class="block-2__block">
             <picture>
               <img src="images/phone01.jpg" alt="Handy" />
             </picture>
           </div>
 
-          <div class="imgtxtblock__block">
-            <p class="imgtxtblock__text">
+          <div class="block-2__block block-2__block--text">
+            <p class="block-2__text">
               Bei uns kannst du nicht nur dein altes Gerät zur Reparatur
               vorbeibringen, sondern auch ein Gebrauchtgerät kaufen und
               verkaufen, sollte sich die Reparatur einmal doch nicht mehr
               lohnen.
             </p>
-            <a class="imgtxtblock__button button" href="#">Standorte ansehen</a>
+            <a class="block-2__button button" href="#">Standorte ansehen</a>
           </div>
         </div>
       </section>
@@ -258,21 +255,23 @@
         <h2 class="feature__heading content__heading">
           Unser Nachhaltigkeitsversprechen
         </h2>
-        <div class="feature__content imgtxtblock imgtxtblock--green">
-          <div class="imgtxtblock__img">
+        <div class="feature__content block-2 block-2--green">
+          <div class="block-2__block">
             <picture>
               <img src="images/people/bene_new.jpg" alt="Bene im Laden" />
             </picture>
           </div>
-          <div class="imgtxtblock__block">
-            <p class="imgtxtblock__text">
+          <div class="block-2__block block-2__block--text">
+            <p class="block-2__text">
               „Auch traditionelles Zubehör schadet der Umwelt. Bei uns gibt es
               deshalb ausgewählte und nachhaltige Produkte von Firmen, die sich
               für die Umwelt einsetzen. Ob Bäume pflanzen oder die Meere von
               Plastik befreien - jedes Produkt unterstützt ein nachhaltiges
               Projekt.”
             </p>
-            <a class="imgtxtblock__button button" href="#">mehr zum Thema</a>
+            <a class="block-2__button button button--green" href="#"
+              >mehr zum Thema</a
+            >
           </div>
         </div>
       </section>
@@ -325,33 +324,29 @@
               <p class="columns-3__subtitle">Julian K.</p>
             </div>
           </div>
-          <div
-            class="testimonial__rating columns-2 columns-2--small colums-2--white"
-          >
+          <div class="testimonial__rating columns-2">
             <div class="columns-2__wrapper">
-              <a
-                href="https://g.page/Smartphoniker-Express-S?gm"
-                class="columns-2__left columns-2__left--small"
+              <div
+                class="columns-2__column columns-2__column--center columns-2__column--sm"
               >
-                <img
-                  class="googlerating"
-                  src="images/googlerating.svg"
-                  alt="4.5 Sterne auf Google"
-                />
-              </a>
-
-              <div class="columns-2__right columns-2__right--big">
-                <p
-                  class="columns-2__heading columns-2__heading--white columns-2__heading--small"
-                >
-                  Bewertet uns auf Google und sichert euch einen 10 Euro
-                  Gutschein.
-                </p>
-                <a
-                  href="#"
-                  class="columns-2__button columns-2__button--white button"
-                  >Jetzt bewerten</a
-                >
+                <a href="https://g.page/Smartphoniker-Express-S?gm">
+                  <img
+                    class="googlerating"
+                    src="images/googlerating.svg"
+                    alt="4.5 Sterne auf Google"
+                  />
+                </a>
+              </div>
+              <div class="columns-2__column columns-2__column--lg">
+                <div class="contentwrapper">
+                  <p class="columns-2__text columns-2__text--lg white center">
+                    Bewertet uns auf Google und sichert euch einen 10 Euro
+                    Gutschein.
+                  </p>
+                  <a class="button columns-2__button center" href="#"
+                    >Jetzt bewerten</a
+                  >
+                </div>
               </div>
             </div>
           </div>
@@ -537,20 +532,20 @@
       </div>
     </footer>
 
-    <script src="scripts/main.js">
+    <script src="scripts/main.js"></script>
+    <script>
       const closeBanner = document.getElementById("closeBanner");
-      const nav = document.getElementById("nav");
 
       closeBanner.addEventListener("click", () => {
-          const banner = document.getElementById("banner");
-          const header = document.getElementById("header");
+        const banner = document.getElementById("banner");
+        const header = document.getElementById("header");
 
-          // hide banner
-          banner.classList.toggle("banner--isHidden");
-          // reduce heigt of header
-          header.classList.toggle("header--bannerIsHidden");
-          // adjust starting point of overlay
-          nav.classList.toggle("nav__list--bannerIsHidden");
+        // hide banner
+        banner.classList.toggle("banner--isHidden");
+        // reduce heigt of header
+        header.classList.toggle("header--bannerIsHidden");
+        // adjust starting point of overlay
+        nav.classList.toggle("nav__list--bannerIsHidden");
       });
     </script>
   </body>

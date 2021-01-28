@@ -1,32 +1,50 @@
 //  2-Column Layout
 .columns-2 {
+  width: 100%;
+
   &__wrapper {
-    padding: 2.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
 
-  &__heading {
-    margin-top: 2rem;
-    text-align: center;
+  &__column {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
 
-    &--white {
-      @include fg(white);
+    &:not(:last-of-type) {
+      margin-bottom: 5rem;
     }
 
-    &--small {
+    &--center {
+      justify-content: center;
+      align-items: center;
+    }
+
+    & > a {
+      width: 80%;
+      max-width: 300px;
+    }
+  }
+
+  &__text {
+    &--lg {
       @extend .text-lg;
     }
   }
 
   &__button {
-    @include fg(orange);
-    margin: 2rem auto 0;
+    margin-top: 2rem;
+    width: 100%;
+  }
 
-    &--white {
-      @include bg(white);
-    }
+  &__icon {
+    max-width: 15%;
+    margin-right: 5%;
+  }
+
+  &__heading {
+    margin-bottom: 1rem;
   }
 }
 
@@ -35,42 +53,42 @@
   .columns-2 {
     &__wrapper {
       flex-direction: row;
+      flex-wrap: wrap;
       justify-content: space-between;
-      align-items: center;
     }
 
-    &__heading {
-      margin-top: 0;
-    }
+    &__column {
+      width: 49%;
 
-    &__left {
-      display: flex;
-      align-items: center;
-      width: 50%;
-    }
+      &:not(:last-of-type) {
+        margin-bottom: 0rem;
+      }
 
-    &__right {
-      width: 50%;
+      &:nth-of-type(n + 3) {
+        margin-top: 2rem;
+      }
+
+      &--sm {
+        width: 34%;
+      }
+
+      &--lg {
+        width: 64%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+    &__button {
+      margin-bottom: 0;
     }
   }
 }
 
-// 992+
 @include lg {
   .columns-2 {
-    &__left {
-      width: 35%;
+    &__wrapper {
+      width: 80%;
+      margin: 0 auto;
     }
-
-    &__right {
-      width: 65%;
-    }
-  }
-}
-
-// 1200+
-@include xl {
-  .columns-2 {
-    width: 80%;
   }
 }

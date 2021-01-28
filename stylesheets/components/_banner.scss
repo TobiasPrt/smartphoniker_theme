@@ -1,53 +1,43 @@
 // Banner
 
 .banner {
-  @include fg(white);
   @include bg(orange);
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 40px;
-  align-items: center;
   max-height: 6rem;
-  height: 6rem;
+  min-height: 6rem;
 
   &--isHidden {
     display: none;
   }
 
-  &__content {
-    grid-column-start: 1;
+  &__wrapper {
+    margin: 0 auto;
+    width: 95%;
+    max-width: 1280px;
+    height: 6rem;
     display: flex;
-    flex-wrap: wrap;
-    max-height: 6rem;
-
-    @include md {
-      justify-content: center;
-    }
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__text {
+    @include fg(white);
     @extend .text-sm;
-    padding-left: 1rem;
-    line-height: 2.2rem;
+    display: inline;
+    line-height: 1.6;
   }
 
-  &__link {
-    display: inline-block;
-    height: 22px;
-    margin: 0 0.3rem;
+  &__image {
+    display: inline;
+    max-height: 2rem;
+    width: auto;
+    vertical-align: text-bottom;
   }
 
-  &__linkimg {
-    height: 100%;
-    vertical-align: top;
-  }
-
-  &__closebtn {
-    @include bg(orange);
-    grid-column-start: 2;
-    display: flex;
-    justify-content: center;
-    transition: transform 0.3s ease-in-out;
+  &__button {
+    min-width: 20px;
+    width: 20px;
+    transition: transform 0.3s ease;
 
     &:hover {
       transform: rotate(180deg);
