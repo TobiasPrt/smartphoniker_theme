@@ -183,7 +183,9 @@
         <h2 class="news__heading content__heading">Das gibt es Neues:</h2>
         <div class="news__content imgtxtblock">
           <div class="imgtxtblock__img">
-            <img src="images/phone01.jpg" alt="Handy" />
+            <picture>
+              <img src="images/phone01.jpg" alt="Handy" />
+            </picture>
           </div>
 
           <div class="imgtxtblock__block">
@@ -258,7 +260,9 @@
         </h2>
         <div class="feature__content imgtxtblock imgtxtblock--green">
           <div class="imgtxtblock__img">
-            <img src="images/people/bene_new.jpg" alt="Bene im Laden" />
+            <picture>
+              <img src="images/people/bene_new.jpg" alt="Bene im Laden" />
+            </picture>
           </div>
           <div class="imgtxtblock__block">
             <p class="imgtxtblock__text">
@@ -321,7 +325,9 @@
               <p class="columns-3__subtitle">Julian K.</p>
             </div>
           </div>
-          <div class="testimonial__rating columns-2 columns-2--small">
+          <div
+            class="testimonial__rating columns-2 columns-2--small colums-2--white"
+          >
             <div class="columns-2__wrapper">
               <a
                 href="https://g.page/Smartphoniker-Express-S?gm"
@@ -335,11 +341,17 @@
               </a>
 
               <div class="columns-2__right columns-2__right--big">
-                <p class="columns-2__heading">
+                <p
+                  class="columns-2__heading columns-2__heading--white columns-2__heading--small"
+                >
                   Bewertet uns auf Google und sichert euch einen 10 Euro
                   Gutschein.
                 </p>
-                <a href="#" class="columns-2__button button">Jetzt bewerten</a>
+                <a
+                  href="#"
+                  class="columns-2__button columns-2__button--white button"
+                  >Jetzt bewerten</a
+                >
               </div>
             </div>
           </div>
@@ -525,41 +537,20 @@
       </div>
     </footer>
 
-    <script>
+    <script src="scripts/main.js">
       const closeBanner = document.getElementById("closeBanner");
       const nav = document.getElementById("nav");
-      const menuicon = document.getElementById("menuicon");
 
       closeBanner.addEventListener("click", () => {
-        const banner = document.getElementById("banner");
-        const header = document.getElementById("header");
+          const banner = document.getElementById("banner");
+          const header = document.getElementById("header");
 
-        // hide banner
-        banner.classList.toggle("banner--isHidden");
-        // reduce heigt of header
-        header.classList.toggle("header--bannerIsHidden");
-        // adjust starting point of overlay
-        nav.classList.toggle("nav__list--bannerIsHidden");
-      });
-
-      menuicon.addEventListener("click", () => {
-        // Slide in Navigation
-        nav.classList.toggle("nav__list--active");
-
-        // Show Nav Links
-        const navLinks = document.querySelectorAll(".nav__listitem");
-        navLinks.forEach((link, index) => {
-          if (link.style.animation) {
-            link.style.animation = "";
-          } else {
-            link.style.animation = `navListitemFade 0.5s ease forwards ${
-              index / 7 + 0.2
-            }s`;
-          }
-        });
-
-        // Toggle Burger and Cross
-        menuicon.classList.toggle("menuicon--active");
+          // hide banner
+          banner.classList.toggle("banner--isHidden");
+          // reduce heigt of header
+          header.classList.toggle("header--bannerIsHidden");
+          // adjust starting point of overlay
+          nav.classList.toggle("nav__list--bannerIsHidden");
       });
     </script>
   </body>

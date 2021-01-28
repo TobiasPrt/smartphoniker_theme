@@ -1,8 +1,6 @@
 // Menuicon - Hamburger Menu
 
 .menuicon {
-  @include bg(white);
-
   &__line {
     @include bg(black);
     display: block;

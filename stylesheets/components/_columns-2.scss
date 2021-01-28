@@ -1,24 +1,32 @@
 //  2-Column Layout
 .columns-2 {
-  padding: 2.5rem;
-
   &__wrapper {
+    padding: 2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
   &__heading {
-    @include fg(white);
-    @extend .text-lg;
     margin-top: 2rem;
     text-align: center;
+
+    &--white {
+      @include fg(white);
+    }
+
+    &--small {
+      @extend .text-lg;
+    }
   }
 
   &__button {
     @include fg(orange);
-    @include bg(white);
     margin: 2rem auto 0;
+
+    &--white {
+      @include bg(white);
+    }
   }
 }
 
