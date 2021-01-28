@@ -33,6 +33,8 @@
     & img {
       display: flex;
       width: 100%;
+      object-fit: cover;
+      height: 100%;
       border-top-left-radius: 0.2rem;
       border-top-right-radius: 0.2rem;
     }
@@ -56,6 +58,7 @@
   .imgtxtblock {
     flex-direction: row;
     justify-content: space-between;
+    height: 28rem;
 
     &__img {
       & img {
@@ -76,6 +79,7 @@
 // 992+
 @include lg {
   .imgtxtblock {
+    height: 40rem;
     &__block {
       justify-content: space-evenly;
     }
