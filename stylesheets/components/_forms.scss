@@ -18,7 +18,7 @@
     appearance: none;
     border: none;
     height: 4rem;
-    border-radius: 0.5rem;
+    border-radius: $border-radius;
     padding: 0 1rem;
     width: 100%;
     display: flex;
@@ -34,7 +34,7 @@
     @include fg(orange);
     margin: 3rem auto;
     height: 4rem;
-    border-radius: 0.5rem;
+    border-radius: $border-radius;
   }
 }
 

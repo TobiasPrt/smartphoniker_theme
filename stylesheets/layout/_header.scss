@@ -14,30 +14,6 @@
     min-height: 6rem;
   }
 
-  &--orange {
-    @include bg(orange);
-
-    & .nav {
-      @include bg(orange);
-
-      &__list {
-        @include bg(orange);
-      }
-      &__listitem {
-        & > a {
-          @include fg(white);
-
-          &:hover {
-            @include fg(black);
-          }
-        }
-      }
-      & .menuicon__line {
-        @include bg(white);
-      }
-    }
-  }
-
   &__heading {
     @include fg(white);
     margin-top: 14rem;

@@ -3,7 +3,7 @@
 .block-2 {
   @include bg(orange);
   width: 100%;
-  border-radius: 0.2rem;
+  border-radius: $border-radius;
   overflow: hidden;
   display: flex;
   flex-direction: column;
