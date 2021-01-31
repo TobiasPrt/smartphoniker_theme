@@ -17,9 +17,14 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+
+    & picture img {
+      object-fit: cover;
+      height: 100%;
+    }
 
     &--text {
+      align-items: center;
       padding: 2.5rem;
     }
   }
