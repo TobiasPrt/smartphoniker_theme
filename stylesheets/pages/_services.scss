@@ -1,23 +1,23 @@
-.header {
-  @include bg(orange);
+// .header {
+//   @include bg(orange);
 
-  & .nav {
-    @include bg(orange);
+//   & .nav {
+//     @include bg(orange);
 
-    &__list {
-      @include bg(orange);
-    }
-    &__listitem {
-      & > a {
-        @include fg(white);
+//     &__list {
+//       @include bg(orange);
+//     }
+//     &__listitem {
+//       & > a {
+//         @include fg(white);
 
-        &:hover {
-          @include fg(black);
-        }
-      }
-    }
-    & .menuicon__line {
-      @include bg(white);
-    }
-  }
-}
+//         &:hover {
+//           @include fg(black);
+//         }
+//       }
+//     }
+//     & .menuicon__line {
+//       @include bg(white);
+//     }
+//   }
+// }
