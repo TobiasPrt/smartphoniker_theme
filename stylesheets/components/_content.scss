@@ -14,9 +14,6 @@
 @include md {
   .content {
     margin-top: 16rem;
-    &__heading {
-      // margin-bottom: 8rem;
-    }
   }
 }
 
@@ -24,8 +21,5 @@
 @include xl {
   .content {
     margin-top: 20rem;
-    &__heading {
-      // margin-bottom: 8rem;
-    }
   }
 }
