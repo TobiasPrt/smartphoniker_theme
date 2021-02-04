@@ -75,20 +75,6 @@
     <main>
       <!-- Hero -->
       <section class="hero">
-        <div class="hero__wrapper">
-          <h1 class="hero__heading">Nachhaltig. Qualitativ. Unkompliziert.</h1>
-          <p class="hero__text">
-            Reparaturen, Zubehör oder Gebrauchtgeräte An- und Verkauf. Wir sind
-            Dein Partner für nachhaltige Lösungen in der mobilen Kommunikation.
-            <span class="hero__text hero__text--hidden">
-              Komm einfach in einen unserer Shops vorbei und lass dich von einem
-              unserer erfahrenen Mitarbeit beraten oder fülle das folgende
-              Formular aus und erfahre unkompliziert die Kosten für eine
-              Reparatur.
-            </span>
-          </p>
-        </div>
-
         <img
           width="1"
           height="1"
@@ -96,42 +82,53 @@
           src="images/hero_image_phone.svg"
           alt="Nachhaltiges Handy"
         />
-        <div class="hero__form">
-          <form class="form" action="#">
-            <div class="form__wrapper">
-              <label class="form__label" for="select-manufacturer">
-                Hersteller wählen
-              </label>
-              <select
-                class="form__select"
-                name="manufacturer"
-                id="select-manufacturer"
-              >
-                <option value="apple">Apple</option>
-                <option value="htc">HTC</option>
-                <option value="huawei">Huawei</option>
-                <option value="lg">LG</option>
-                <option value="samsung">Samsung</option>
-                <option value="sony">Sony</option>
-                <option value="xiaomi">Xiaomi</option>
-                <option value="other">nicht dabei?</option>
-              </select>
-            </div>
-            <div class="form__wrapper">
-              <label class="form__label" for="select-modell"
-                >Modell wählen</label
-              >
-              <select class="form__select" name="modell" id="select-modell">
-                <option value="ip6">iPhone 6</option>
-                <option value="other">nicht dabei?</option>
-              </select>
-            </div>
+        <h1 class="hero__heading">Nachhaltig. Qualitativ. Unkompliziert.</h1>
+        <p class="hero__text">
+          Reparaturen, Zubehör oder Gebrauchtgeräte An- und Verkauf. Wir sind
+          Dein Partner für nachhaltige Lösungen in der mobilen Kommunikation.
+          <span class="hero__text hero__text--hidden">
+            Komm einfach in einen unserer Shops vorbei und lass dich von einem
+            unserer erfahrenen Mitarbeit beraten oder fülle das folgende
+            Formular aus und erfahre unkompliziert die Kosten für eine
+            Reparatur.
+          </span>
+        </p>
 
-            <button class="form__button button" type="submit">
-              Handy reparieren lassen
-            </button>
-          </form>
-        </div>
+        <form class="hero__form block-form" action="#">
+          <div class="block-form__wrapper select">
+            <label class="select__label" for="select-manufacturer">
+              Hersteller wählen
+            </label>
+            <select
+              class="select__select"
+              name="manufacturer"
+              id="select-manufacturer"
+            >
+              <option value="apple">Apple</option>
+              <option value="htc">HTC</option>
+              <option value="huawei">Huawei</option>
+              <option value="lg">LG</option>
+              <option value="samsung">Samsung</option>
+              <option value="sony">Sony</option>
+              <option value="xiaomi">Xiaomi</option>
+              <option value="other">nicht dabei?</option>
+            </select>
+          </div>
+          <div class="block-form__wrapper select">
+            <label class="select__label" for="select-modell"
+              >Modell wählen</label
+            >
+            <select class="select__select" name="modell" id="select-modell">
+              <option value="ip6">iPhone 6</option>
+              <option value="other">nicht dabei?</option>
+            </select>
+          </div>
+
+          <button class="block-form__button button" type="submit">
+            Handy reparieren lassen
+          </button>
+        </form>
+
         <ul class="hero__brands">
           <li class="hero__brand">
             <img
