@@ -8,6 +8,7 @@
 
   & .nav {
     @include bg(white);
+    z-index: 2;
   }
 
   &--bannerIsHidden {
@@ -16,13 +17,37 @@
 
   &__heading {
     @include fg(white);
-    margin-top: 14rem;
+    margin-top: 18rem;
     text-align: center;
   }
 
   &__button {
     @include fg(orange);
     @include bg(white);
-    margin: 2rem auto 4rem;
+    margin: 2rem auto 6rem;
+  }
+
+  &--orange {
+    @include bg(orange);
+
+    & .nav {
+      @include bg(orange);
+
+      &__list {
+        @include bg(orange);
+      }
+      &__listitem {
+        & > a {
+          @include fg(white);
+
+          &:hover {
+            @include fg(black);
+          }
+        }
+      }
+      & .menuicon__line {
+        @include bg(white);
+      }
+    }
   }
 }

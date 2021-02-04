@@ -1,23 +1,9 @@
-// .header {
-//   @include bg(orange);
+.services {
+  margin-top: 6rem;
 
-//   & .nav {
-//     @include bg(orange);
+  &__images {
+    margin: 4rem auto;
+  }
+}
 
-//     &__list {
-//       @include bg(orange);
-//     }
-//     &__listitem {
-//       & > a {
-//         @include fg(white);
-
-//         &:hover {
-//           @include fg(black);
-//         }
-//       }
-//     }
-//     & .menuicon__line {
-//       @include bg(white);
-//     }
-//   }
-// }
+@include md;
