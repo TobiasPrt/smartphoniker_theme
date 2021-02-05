@@ -28,26 +28,10 @@
   }
 
   &--orange {
-    @include bg(orange);
+    @include headercolor(orange);
+  }
 
-    & .nav {
-      @include bg(orange);
-
-      &__list {
-        @include bg(orange);
-      }
-      &__listitem {
-        & > a {
-          @include fg(white);
-
-          &:hover {
-            @include fg(black);
-          }
-        }
-      }
-      & .menuicon__line {
-        @include bg(white);
-      }
-    }
+  &--grey {
+    @include headercolor(grey);
   }
 }

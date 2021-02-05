@@ -44,3 +44,28 @@
     @content;
   }
 }
+
+// Mixin for header
+@mixin headercolor($color) {
+  @include bg($color);
+
+  & .nav {
+    @include bg($color);
+
+    &__list {
+      @include bg($color);
+    }
+    &__listitem {
+      & > a {
+        @include fg(white);
+
+        &:hover {
+          @include fg(black);
+        }
+      }
+    }
+    & .menuicon__line {
+      @include bg(white);
+    }
+  }
+}

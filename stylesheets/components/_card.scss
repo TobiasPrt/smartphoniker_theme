@@ -1,0 +1,15 @@
+// Card componentent like on standorte page
+
+.card {
+  @include bg(light_grey);
+  width: 100%;
+  border-radius: $border-radius;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  &__img {
+    height: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,16 +1,12 @@
 // 3-Column Component
 .columns-3 {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 5rem;
 
   &__column {
     display: flex;
     flex-direction: column;
-
-    &:not(:last-of-type) {
-      margin-bottom: 4rem;
-    }
   }
 
   &__icon {
@@ -25,6 +21,7 @@
   &__heading {
     @extend .text-lg;
     margin: 0.5rem 0 0;
+    text-align: center;
 
     &--altcolor {
       @include fg(orange);
@@ -37,6 +34,8 @@
   &__text {
     @extend .text-sm;
     margin: 2rem 0 0;
+    text-align: center;
+
     &--left {
       text-align: left;
     }
@@ -45,19 +44,13 @@
   &__subtitle {
     @include fg(orange);
     margin: 1rem 0 0;
+    text-align: center;
   }
 }
 
 @include lg {
   .columns-3 {
-    flex-direction: row;
-    justify-content: space-between;
-
-    &__column {
-      width: 30%;
-      &:not(:last-of-type) {
-        margin-bottom: 0rem;
-      }
-    }
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5rem;
   }
 }

@@ -13,19 +13,19 @@
 
     <style>
       * {
-        /* outline: 1px dashed red !important; */
+        outline: 1px dashed red !important;
       }
     </style>
   </head>
   <body>
     <!-- Header -->
-    <header id="header" class="header header--orange header--bannerIsHidden">
+    <header id="header" class="header header--grey header--bannerIsHidden">
       <nav class="header__nav nav">
         <div class="nav__wrapper">
           <a class="nav__item logo" href="#">
             <img
               class="logo__img"
-              src="images/logo/logo_blackwhite.svg"
+              src="images/logo/logo_blackorange.svg"
               alt="Smartphoniker Logo"
             />
           </a>
@@ -41,7 +41,7 @@
           <a class="nav__phone" href="tel:+4943190700390">
             <img
               class="nav__img"
-              src="images/icons/phone_whiteorange.svg"
+              src="images/icons/phone_orangewhite.svg"
               alt="Jetzt anrufen"
             />
           </a>
@@ -58,7 +58,47 @@
     </header>
 
     <!-- Main -->
-    <main class="content"></main>
+    <main class="content">
+      <section class="content__section section">
+        <h2 class="section__heading">5x in Schleswig Holstein für Dich da</h2>
+        <div class="section__content columns-1">
+          <p class="columns-1__text">
+            Lust vorbeizukommen? An diesen Standorten kannst du uns finden. Lass
+            dich persönlich von unseren erfahrenen Team beraten oder komm zum
+            stöbern vorbei. Du weißt schon, was du willst? Jetzt Gerät und
+            Schaden wählen und einen Termin buchen. Vor Ort in einem unserer
+            Shops dauert die Reparatur lediglich 90 Minuten.
+          </p>
+        </div>
+        <div class="section__contnent map"></div>
+      </section>
+      <section class="content__section section">
+        <h2 class="section__heading">
+          Erfahre mehr über das Angebot in unseren Shops
+        </h2>
+        <div class="section__content columns-3">
+          <div class="columns-3__column">
+            <picture>
+              <img
+                class="card__image"
+                src="/images/shops/kiel_juridicum01.jpg"
+                alt="Shop Kiel Juridicum"
+              />
+            </picture>
+            <h3 class="card__heading">Kiel - Juridicum</h3>
+            <span class="card__text">Leibnizstraße 4</span>
+            <span class="card__text">24118 Kiel</span>
+            <span class="card__text">Mo-Fr. 10:00 - 17.00 Uhr</span>
+            <a href="#" class="card__link"
+              ><img
+                src="images/icons/arrowright_box.svg"
+                alt="Arrow right"
+              />mehr erfahren</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
