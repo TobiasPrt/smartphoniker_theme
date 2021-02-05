@@ -1,0 +1,41 @@
+// 5 Column layout, like the brands on the landing page
+
+.columns-5 {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+
+  &__column {
+    width: 25%;
+
+    &:nth-child(3),
+    &:nth-child(4) {
+      display: none;
+    }
+  }
+}
+
+@include md {
+  .columns-5 {
+    &__column {
+      width: 15%;
+
+      &:nth-child(3),
+      &:nth-child(4) {
+        display: list-item;
+      }
+    }
+  }
+}
+
+@include lg {
+  .columns-5 {
+    justify-content: space-evenly;
+
+    &__column {
+      width: 10%;
+    }
+  }
+}

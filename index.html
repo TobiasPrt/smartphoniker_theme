@@ -72,9 +72,9 @@
     </header>
 
     <!-- Main -->
-    <main>
+    <main class="content">
       <!-- Hero -->
-      <section class="hero">
+      <section class="content__section section hero">
         <img
           width="1"
           height="1"
@@ -82,17 +82,21 @@
           src="images/hero_image_phone.svg"
           alt="Nachhaltiges Handy"
         />
-        <h1 class="hero__heading">Nachhaltig. Qualitativ. Unkompliziert.</h1>
-        <p class="hero__text">
-          Reparaturen, Zubehör oder Gebrauchtgeräte An- und Verkauf. Wir sind
-          Dein Partner für nachhaltige Lösungen in der mobilen Kommunikation.
-          <span class="hero__text hero__text--hidden">
-            Komm einfach in einen unserer Shops vorbei und lass dich von einem
-            unserer erfahrenen Mitarbeit beraten oder fülle das folgende
-            Formular aus und erfahre unkompliziert die Kosten für eine
-            Reparatur.
-          </span>
-        </p>
+        <div class="hero__wrapper">
+          <h1 class="section__heading hero__heading">
+            Nachhaltig. Qualitativ. Unkompliziert.
+          </h1>
+          <p class="hero__text">
+            Reparaturen, Zubehör oder Gebrauchtgeräte An- und Verkauf. Wir sind
+            Dein Partner für nachhaltige Lösungen in der mobilen Kommunikation.
+            <span class="hero__text hero__text--hidden">
+              Komm einfach in einen unserer Shops vorbei und lass dich von einem
+              unserer erfahrenen Mitarbeit beraten oder fülle das folgende
+              Formular aus und erfahre unkompliziert die Kosten für eine
+              Reparatur.
+            </span>
+          </p>
+        </div>
 
         <form class="hero__form block-form" action="#">
           <div class="block-form__wrapper select">
@@ -129,38 +133,38 @@
           </button>
         </form>
 
-        <ul class="hero__brands">
-          <li class="hero__brand">
+        <ul class="hero__brands columns-5">
+          <li class="columns-5__column">
             <img
-              class="hero__brandimage"
+              class="columns-5__image"
               src="images/partner_logos/bartels_langness.svg"
               alt="bartels_langness"
             />
           </li>
-          <li class="hero__brand">
+          <li class="columns-5__column">
             <img
-              class="hero__brandimage"
+              class="columns-5__image"
               src="images/partner_logos/coop.svg"
               alt="coop"
             />
           </li>
-          <li class="hero__brand">
+          <li class="columns-5__column">
             <img
-              class="hero__brandimage"
+              class="columns-5__image"
               src="images/partner_logos/chefs_culinar.svg"
               alt="chefs_culinar"
             />
           </li>
-          <li class="hero__brand">
+          <li class="columns-5__column">
             <img
-              class="hero__brandimage"
+              class="columns-5__image"
               src="images/partner_logos/vater.svg"
               alt="vater"
             />
           </li>
-          <li class="hero__brand">
+          <li class="columns-5__column">
             <img
-              class="hero__brandimage"
+              class="columns-5__image"
               src="images/partner_logos/der_echte_norden.svg"
               alt="der_echte_norden"
             />
@@ -169,9 +173,9 @@
       </section>
 
       <!-- News -->
-      <section class="news content">
-        <h2 class="news__heading content__heading">Das gibt es Neues:</h2>
-        <div class="news__content block-2">
+      <section class="content__section section">
+        <h2 class="section__heading">Das gibt es Neues:</h2>
+        <div class="block-2">
           <div class="block-2__block">
             <picture>
               <img class="block-2__img" src="images/phone01.jpg" alt="Handy" />
@@ -191,9 +195,9 @@
       </section>
 
       <!-- Benefits -->
-      <section class="benefits content">
-        <h2 class="benefits__heading content__heading">Warum Smartphoniker?</h2>
-        <div class="benefits__content">
+      <section class="content__section section">
+        <h2 class="section__heading">Warum Smartphoniker?</h2>
+        <div class="sections__content">
           <div class="columns-3">
             <div class="columns-3__column">
               <img
@@ -239,20 +243,20 @@
               </p>
             </div>
           </div>
-          <div class="benefits__video">
-            <iframe
-              src="https://www.youtube.com/embed/R5J75Pl-n_k?ps=docs&controls=1"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
+        </div>
+        <div class="sections__content video">
+          <iframe
+            src="https://www.youtube.com/embed/R5J75Pl-n_k?ps=docs&controls=1"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
       </section>
 
       <!-- Feature -->
-      <section class="feature content">
-        <h2 class="feature__heading content__heading">
+      <section class="content__section section">
+        <h2 class="feature__heading section__heading">
           Unser Nachhaltigkeitsversprechen
         </h2>
         <div class="feature__content block-2 block-2--green">
@@ -281,8 +285,8 @@
       </section>
 
       <!-- Testimonial -->
-      <section class="testimonial content">
-        <h2 class="testimonial__heading content__heading">
+      <section class="content__section section">
+        <h2 class="testimonial__heading section__heading">
           Das sagen unsere Kund:innen!
         </h2>
         <div class="testimonial__content">
@@ -360,8 +364,8 @@
       </section>
 
       <!-- Info -->
-      <section class="info content">
-        <h2 class="info__heading content__heading">
+      <section class="content__section section">
+        <h2 class="info__heading section__heading">
           Zuverlässiger Handy-Reparatur-Service
         </h2>
         <p class="info__text columns-1">
