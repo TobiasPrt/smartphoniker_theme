@@ -1,7 +1,7 @@
 // Main Content Layout
 
 .content {
-  margin: 0 auto;
+  margin: 0 auto $section-distance;
   max-width: 1280px;
   width: 95%;
 
@@ -12,6 +12,8 @@
 
 @include md {
   .content {
+    margin-bottom: $section-distance * 1.6;
+
     &__section {
       margin-top: $section-distance * 1.6;
     }
@@ -20,6 +22,8 @@
 
 @include xl {
   .content {
+    margin-bottom: $section-distance * 2;
+
     &__section {
       margin-top: $section-distance * 2;
     }

@@ -18,9 +18,14 @@
     display: flex;
     flex-direction: column;
 
-    &--text {
+    &--center {
       align-items: center;
       padding: 2.5rem;
+
+      & img {
+        max-width: 350px;
+        border-radius: $border-radius;
+      }
     }
   }
 
@@ -31,6 +36,10 @@
 
   &__text {
     @include fg(white);
+
+    &--center {
+      text-align: center;
+    }
   }
 
   &__button {
@@ -47,6 +56,10 @@
       width: 50%;
       align-items: flex-start;
       justify-content: center;
+
+      &--center {
+        align-items: center;
+      }
     }
 
     &__button {

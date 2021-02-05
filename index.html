@@ -11,7 +11,11 @@
     />
     <link rel="stylesheet" href="stylesheets/main.min.css" />
 
-    <style></style>
+    <style>
+      * {
+        outline: 1px dashed red !important;
+      }
+    </style>
   </head>
   <body>
     <!-- Banner -->
@@ -175,14 +179,14 @@
       <!-- News -->
       <section class="content__section section">
         <h2 class="section__heading">Das gibt es Neues:</h2>
-        <div class="section__content block-2">
+        <div class="section__content section__content--large block-2">
           <div class="block-2__block">
             <picture>
               <img class="block-2__img" src="images/phone01.jpg" alt="Handy" />
             </picture>
           </div>
 
-          <div class="block-2__block block-2__block--text">
+          <div class="block-2__block block-2__block--center">
             <p class="block-2__text">
               Bei uns kannst du nicht nur dein altes Gerät zur Reparatur
               vorbeibringen, sondern auch ein Gebrauchtgerät kaufen und
@@ -258,10 +262,8 @@
 
       <!-- Feature -->
       <section class="content__section section">
-        <h2 class="feature__heading section__heading">
-          Unser Nachhaltigkeitsversprechen
-        </h2>
-        <div class="feature__content block-2 block-2--green">
+        <h2 class="section__heading">Unser Nachhaltigkeitsversprechen</h2>
+        <div class="section__content section__content--large block-2 block-2--green">
           <div class="block-2__block">
             <picture>
               <img
@@ -271,7 +273,7 @@
               />
             </picture>
           </div>
-          <div class="block-2__block block-2__block--text">
+          <div class="block-2__block block-2__block--center">
             <p class="block-2__text">
               „Auch traditionelles Zubehör schadet der Umwelt. Bei uns gibt es
               deshalb ausgewählte und nachhaltige Produkte von Firmen, die sich
@@ -288,10 +290,8 @@
 
       <!-- Testimonial -->
       <section class="content__section section">
-        <h2 class="testimonial__heading section__heading">
-          Das sagen unsere Kund:innen!
-        </h2>
-        <div class="testimonial__content">
+        <h2 class="section__heading">Das sagen unsere Kund:innen!</h2>
+        <div class="section__content">
           <div class="columns-3">
             <div class="columns-3__column">
               <img
@@ -334,32 +334,25 @@
               <p class="columns-3__subtitle">Julian K.</p>
             </div>
           </div>
-          <div class="testimonial__rating columns-2">
-            <div class="columns-2__wrapper">
-              <div
-                class="columns-2__column columns-2__column--center columns-2__column--sm"
+        </div>
+        <div class="section__content section__content--large block-2">
+          <div class="block-2__block block-2__block--center">
+            <a href="https://g.page/Smartphoniker-Express-S?gm">
+              <img
+              class="block-2__img"
+                src="images/googlerating.svg"
+                alt="4.5 Sterne auf Google"
+              />
+            </a>
+          </div>
+          <div class="block-2__block block-2__block--center">
+              <p class="block-2__text block-2__text--center">
+                Bewertet uns auf Google und sichert euch einen 10 Euro
+                Gutschein.
+              </p>
+              <a class="block-2__button button" href="#"
+                >Jetzt bewerten</a
               >
-                <a href="https://g.page/Smartphoniker-Express-S?gm">
-                  <img
-                    class="googlerating"
-                    src="images/googlerating.svg"
-                    alt="4.5 Sterne auf Google"
-                  />
-                </a>
-              </div>
-              <div
-                class="columns-2__column columns-2__column--center columns-2__column--lg"
-              >
-                <div class="contentwrapper">
-                  <p class="columns-2__text columns-2__text--lg white center">
-                    Bewertet uns auf Google und sichert euch einen 10 Euro
-                    Gutschein.
-                  </p>
-                  <a class="button columns-2__button center" href="#"
-                    >Jetzt bewerten</a
-                  >
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -370,8 +363,9 @@
         <h2 class="info__heading section__heading">
           Zuverlässiger Handy-Reparatur-Service
         </h2>
-        <p class="info__text columns-1">
-          Ein Leben ohne Smartphone – in der heutigen Zeit ist ein solches
+        <div class="section__content section__content--small columns-1">
+          <p class="columns-1__text">
+            Ein Leben ohne Smartphone – in der heutigen Zeit ist ein solches
           Szenario für viele Menschen nahezu undenkbar. Doch was tun, wenn das
           geliebte Smartphone defekt ist und all diese Dinge, die mit einem
           Handy machbar und vor allem so angenehm praktisch sind, nicht mehr
@@ -379,8 +373,10 @@
           Handy-Reparatur-Service im hohen Norden Deutschlands suchen, der Ihr
           Smartphone schnellstmöglich wieder auf Kurs bringt, stehen die
           Experten von Smartphoniker bereit.
-        </p>
-        <div class="columns-3">
+          </p>
+          
+        </div>
+        <div class="section__content columns-3">
           <div class="columns-3__column">
             <h3
               class="columns-3__heading columns-3__heading--left columns-3__heading--altcolor"

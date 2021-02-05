@@ -14,6 +14,10 @@
   &__content {
     max-width: 1024px;
 
+    &:nth-of-type(n + 2) {
+      margin-top: $section-distance / 2;
+    }
+
     &--small {
       max-width: 900px;
     }
@@ -26,8 +30,9 @@
       margin: 0 auto;
       width: 90%;
 
-      &:nth-of-type(n + 2) {
-        margin-top: $section-distance / 2;
+      &--large {
+        max-width: none;
+        width: 100%;
       }
     }
   }

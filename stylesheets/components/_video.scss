@@ -1,6 +1,7 @@
 // Video Komponenten
 .video {
   border-radius: $border-radius;
+  overflow: hidden; // border radius is not working otherwise (because iframe)
   position: relative;
   padding-bottom: 56.25%; // Seitenverhältnis bei 16:9 Videos
   z-index: 0;
