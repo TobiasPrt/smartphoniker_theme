@@ -1,9 +1,5 @@
 .services {
-  margin-top: 6rem;
-
-  &__images {
-    margin: 4rem auto;
+  & .section {
+    margin-top: 6rem;
   }
 }
-
-@include md;

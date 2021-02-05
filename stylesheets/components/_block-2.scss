@@ -7,7 +7,6 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
 
   &--green {
     @include bg(green);

@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin: 0 auto;
 
   &__column {
     display: flex;
@@ -49,9 +48,6 @@
   }
 }
 
-// 768+
-
-// 992+
 @include lg {
   .columns-3 {
     flex-direction: row;
