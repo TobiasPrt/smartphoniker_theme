@@ -1,7 +1,27 @@
-// Body Layout
+// Main Content Layout
 
-main {
+.content {
   margin: 0 auto;
   max-width: 1280px;
   width: 95%;
+
+  &__section {
+    margin-top: $section-distance;
+  }
+}
+
+@include md {
+  .content {
+    &__section {
+      margin-top: $section-distance * 1.6;
+    }
+  }
+}
+
+@include xl {
+  .content {
+    &__section {
+      margin-top: $section-distance * 2;
+    }
+  }
 }

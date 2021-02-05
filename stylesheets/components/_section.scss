@@ -1,0 +1,14 @@
+//  styles sections
+
+.section {
+  &__heading {
+    text-align: center;
+    margin-bottom: $section-distance / 2;
+    @extend .text-xl;
+  }
+
+  &:first-of-type &__heading {
+    @extend .text-xxl;
+    margin-bottom: 2rem;
+  }
+}
