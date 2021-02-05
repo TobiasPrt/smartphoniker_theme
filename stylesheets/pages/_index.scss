@@ -35,7 +35,6 @@
   }
 }
 
-// 992+
 @include lg {
   .hero {
     justify-content: space-between;
@@ -84,50 +83,6 @@
   .hero {
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
-  }
-}
-
-// ------------------------------------------
-// Benefits-Section
-.video {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin: 4rem auto 0;
-  border-radius: $border-radius;
-  overflow: hidden;
-  position: relative;
-  padding-bottom: 56.25%;
-  z-index: 0;
-
-  & > iframe {
-    z-index: 2;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-@include md {
-  .benefits {
-    &__video {
-      width: 85%;
-      padding-bottom: 47.8125%;
-    }
-  }
-}
-
-@include lg {
-  .benefits {
-    &__video {
-      width: 75%;
-      padding-bottom: 42.1875%;
-    }
   }
 }
 

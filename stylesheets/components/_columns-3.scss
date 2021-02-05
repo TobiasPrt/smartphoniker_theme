@@ -50,12 +50,6 @@
 }
 
 // 768+
-@include md {
-  .columns-3 {
-    width: 90%;
-    max-width: 1024px;
-  }
-}
 
 // 992+
 @include lg {

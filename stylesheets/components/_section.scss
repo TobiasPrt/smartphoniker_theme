@@ -11,4 +11,38 @@
     @extend .text-xxl;
     margin-bottom: 2rem;
   }
+  &__content {
+    max-width: 1024px;
+
+    &--small {
+      max-width: 900px;
+    }
+  }
+}
+
+@include md {
+  .section {
+    &__content {
+      margin: 0 auto;
+      width: 90%;
+
+      &:nth-of-type(n + 2) {
+        margin-top: $section-distance / 2;
+      }
+    }
+  }
+}
+
+@include lg {
+  .section {
+    &__content {
+      &:nth-of-type(n + 2) {
+        margin-top: $section-distance / 1.5;
+      }
+
+      &--small {
+        width: 80%;
+      }
+    }
+  }
 }
