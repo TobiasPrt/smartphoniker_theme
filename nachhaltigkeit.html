@@ -1,0 +1,70 @@
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nachhaltigkeit</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Condensed:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="stylesheets/main.min.css" />
+
+    <style>
+      * {
+        /* outline: 1px dashed red !important; */
+      }
+    </style>
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header id="header" class="header header--green header--bannerIsHidden">
+      <nav class="header__nav nav">
+        <div class="nav__wrapper">
+          <a class="nav__item logo" href="#">
+            <img
+              class="logo__img"
+              src="images/logo/logo_blackwhite.svg"
+              alt="Smartphoniker Logo"
+            />
+          </a>
+
+          <ul id="nav" class="nav__list nav__list--bannerIsHidden">
+            <li class="nav__listitem"><a href="#">Shop</a></li>
+            <li class="nav__listitem"><a href="#">Services</a></li>
+            <li class="nav__listitem"><a href="#">Standort</a></li>
+            <li class="nav__listitem"><a href="#">Nachhaltigkeit</a></li>
+            <li class="nav__listitem"><a href="#">Über Uns</a></li>
+          </ul>
+
+          <a class="nav__phone" href="tel:+4943190700390">
+            <img
+              class="nav__img"
+              src="images/icons/phone_whitegreen.svg"
+              alt="Jetzt anrufen"
+            />
+          </a>
+          <button class="nav__menuicon menuicon" id="menuicon">
+            <span class="menuicon__line menuicon__line--1"></span>
+            <span class="menuicon__line menuicon__line--2"></span>
+            <span class="menuicon__line menuicon__line--3"></span>
+          </button>
+        </div>
+      </nav>
+
+      <h1 class="header__heading">Nachhaltigkeit bei Smartphoniker</h1>
+      <button class="header__button button">Handy reparieren lassen</button>
+    </header>
+
+    <!-- Main -->
+    <main class="content"></main>
+
+    <!-- Footer -->
+    <iframe
+      src="footer.html"
+      onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
+    ></iframe>
+  </body>
+</html>

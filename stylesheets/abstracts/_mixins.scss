@@ -46,7 +46,7 @@
 }
 
 // Mixin for header
-@mixin headercolor($color) {
+@mixin headercolor($color, $buttoncolor: false) {
   @include bg($color);
 
   & .nav {
@@ -66,6 +66,13 @@
     }
     & .menuicon__line {
       @include bg(white);
+    }
+  }
+
+  // only if buttoncolor is defined, button has different fg color than primary
+  @if $buttoncolor {
+    & .header__button {
+      @include fg($buttoncolor);
     }
   }
 }

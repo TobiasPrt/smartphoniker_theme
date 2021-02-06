@@ -34,4 +34,8 @@
   &--grey {
     @include headercolor(grey);
   }
+
+  &--green {
+    @include headercolor(green, green);
+  }
 }
