@@ -18,6 +18,11 @@
   &--green {
     @include fg(green);
   }
+
+  &--orange {
+    @include fg(white);
+    @include bg(orange);
+  }
 }
 
 @include lg {

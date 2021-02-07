@@ -38,4 +38,8 @@
   &--green {
     @include headercolor(green, green);
   }
+
+  &--blue {
+    @include headercolor(dark_blue);
+  }
 }

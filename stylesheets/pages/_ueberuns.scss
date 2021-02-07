@@ -1,1 +1,17 @@
 // Über Uns
+
+.history {
+  & .section__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+  }
+}
+
+@include md {
+  .history {
+    & .section__content {
+      row-gap: 0;
+    }
+  }
+}

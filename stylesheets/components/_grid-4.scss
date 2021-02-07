@@ -1,0 +1,25 @@
+// Raster Komponente mit maximal 4 Spalten
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  column-gap: 2rem;
+  row-gap: 5rem;
+
+  &__element {
+    min-width: 100%;
+  }
+}
+
+@include md {
+  .grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@include lg {
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
