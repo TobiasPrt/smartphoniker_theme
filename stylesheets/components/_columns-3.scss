@@ -52,5 +52,9 @@
   .columns-3 {
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 5rem;
+
+    &__heading {
+      margin-top: 2rem;
+    }
   }
 }

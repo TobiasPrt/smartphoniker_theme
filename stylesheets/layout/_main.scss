@@ -1,31 +1,44 @@
 // Main Content Layout
 
 .content {
+  $this: &;
   margin: 0 auto $section-distance;
   max-width: 1280px;
   width: 95%;
 
   &__section {
-    margin-top: $section-distance;
+    margin-top: $section-distance / 2;
+
+    &--hero {
+      margin-top: $section-distance;
+    }
   }
 }
 
 @include md {
   .content {
-    margin-bottom: $section-distance * 1.6;
+    margin-bottom: $section-distance * 1.2;
 
     &__section {
-      margin-top: $section-distance * 1.6;
+      margin-top: $section-distance / 1.6;
+
+      &--hero {
+        margin-top: $section-distance * 1.6;
+      }
     }
   }
 }
 
 @include xl {
   .content {
-    margin-bottom: $section-distance * 2;
+    margin-bottom: $section-distance * 1.6;
 
     &__section {
-      margin-top: $section-distance * 2;
+      margin-top: $section-distance * 1.2;
+
+      &--hero {
+        margin-top: $section-distance * 2;
+      }
     }
   }
 }

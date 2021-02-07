@@ -1,0 +1,47 @@
+// List component with custom counter style like on nachhaltigkeit.html
+
+.list {
+  list-style: none;
+  counter-reset: item;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1024px;
+
+  &__item {
+    display: flex;
+    counter-increment: item;
+
+    &:not(:last-of-type) {
+      margin-bottom: 5rem;
+    }
+
+    &:before {
+      @include bg(green);
+      @include fg(white);
+      @extend .text-lg;
+      margin-right: 1rem;
+      content: counter(item);
+      border-radius: 100%;
+      display: grid;
+      place-items: center;
+      height: 5rem;
+      min-width: 5rem;
+    }
+  }
+
+  &__text {
+    @extend .text-sm;
+    display: inline;
+  }
+
+  &__source {
+    display: inline;
+
+    & img {
+      display: inline;
+      max-height: 1.5rem;
+      width: 1.5rem;
+      vertical-align: text-bottom;
+    }
+  }
+}

@@ -11,7 +11,7 @@
     max-width: 1024px;
     margin: 0 auto;
 
-    &:nth-of-type(n + 2) {
+    &:nth-child(n + 3) {
       margin-top: $section-distance / 2;
     }
 
@@ -33,7 +33,7 @@
       }
 
       &--space {
-        &:nth-of-type(n + 2) {
+        &:nth-child(n + 3) {
           margin-top: $section-distance;
         }
       }
@@ -44,12 +44,12 @@
 @include lg {
   .section {
     &__content {
-      &:nth-of-type(n + 2) {
+      &:nth-child(n + 3) {
         margin-top: $section-distance / 1.5;
       }
 
       &--space {
-        &:nth-of-type(n + 2) {
+        &:nth-child(n + 3) {
           margin-top: $section-distance * 1.2;
         }
       }

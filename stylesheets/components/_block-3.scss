@@ -13,21 +13,11 @@
   .block-3 {
     grid-template-rows: 25rem;
     grid-template-columns: repeat(3, 1fr);
+    overflow: hidden;
+    border-radius: $border-radius;
 
     &__img {
       border-radius: 0;
-    }
-
-    & picture {
-      &:first-of-type img {
-        border-top-left-radius: $border-radius;
-        border-bottom-left-radius: $border-radius;
-      }
-
-      &:last-of-type img {
-        border-top-right-radius: $border-radius;
-        border-bottom-right-radius: $border-radius;
-      }
     }
   }
 }
