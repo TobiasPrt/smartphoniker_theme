@@ -1,0 +1,26 @@
+// Small info block like in the footer
+
+.infoblock {
+  &__heading {
+    @include fg(orange);
+    @extend .text-sm;
+    margin: 0 0 0.5rem;
+  }
+
+  &__text {
+    @include fg(dark_grey);
+    @extend .text-xs;
+    width: 100%;
+    display: block;
+
+    &:not(:last-of-type) {
+      margin-bottom: 0.5rem;
+    }
+
+    &--link {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
