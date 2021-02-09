@@ -436,24 +436,15 @@
     </main>
 
     <!-- Footer -->
+      
+
+
+
     <iframe
       src="footer.html"
       onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
     ></iframe>
-    <script>
-      const closeBanner = document.getElementById("closeBanner");
-
-      closeBanner.addEventListener("click", () => {
-        const banner = document.getElementById("banner");
-        const header = document.getElementById("header");
-
-        // hide banner
-        banner.classList.toggle("banner--isHidden");
-        // reduce heigt of header
-        header.classList.toggle("header--bannerIsHidden");
-        // adjust starting point of overlay
-        nav.classList.toggle("nav__list--bannerIsHidden");
-      });
-    </script>
+    
+    <?php wp_footer(); ?>
   </body>
 </html>

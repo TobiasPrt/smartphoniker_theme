@@ -19,3 +19,17 @@ menuicon.addEventListener("click", () => {
     // Toggle Burger and Cross
     menuicon.classList.toggle("menuicon--active");
 });
+
+const closeBanner = document.getElementById("closeBanner");
+
+closeBanner.addEventListener("click", () => {
+    const banner = document.getElementById("banner");
+    const header = document.getElementById("header");
+
+    // hide banner
+    banner.classList.toggle("banner--isHidden");
+    // reduce heigt of header
+    header.classList.toggle("header--bannerIsHidden");
+    // adjust starting point of overlay
+    nav.classList.toggle("nav__list--bannerIsHidden");
+});
