@@ -9,7 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Condensed:wght@700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="stylesheets/main.min.css" />
+
+    <?php
+    wp_head()
+    ?>
 
     <style>
       * {
