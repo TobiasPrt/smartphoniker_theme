@@ -1,0 +1,245 @@
+{
+    "key": "group_60228c2f53ebb",
+    "title": "Home",
+    "fields": [
+        {
+            "key": "field_60228c3a2ab7e",
+            "label": "Seitentitel",
+            "name": "pagetitle",
+            "type": "text",
+            "instructions": "Maximal 50 Buchstaben, da es sonst nicht gut aussieht",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Nachhaltig. Qualitativ. Unkompliziert.",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 50
+        },
+        {
+            "key": "field_60228cb52ab7f",
+            "label": "Untertitel - mobile",
+            "name": "subtitle-mobile",
+            "type": "textarea",
+            "instructions": "Das ist der Teil des Untertitels der auf Handys dargestellt wird.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Reparaturen, Zubehör oder Gebrauchtgeräte An- und Verkauf. Wir sind Dein Partner für nachhaltige Lösungen in der mobilen Kommunikation.",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_60228dad2ab80",
+            "label": "Untertitel-desktop",
+            "name": "subtitle-desktop",
+            "type": "textarea",
+            "instructions": "Das wird an den Untertitel für Handys auf Geräten mit höherer Breite angehängt.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Komm einfach in einen unserer Shops vorbei und lass dich von einem unserer erfahrenen Mitarbeit beraten oder fülle das Formular aus und erfahre unkompliziert die Kosten für eine Reparatur.",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_602291aaf0e15",
+            "label": "Label - Hersteller",
+            "name": "label-manufacturer",
+            "type": "text",
+            "instructions": "Label für das Dropdown-Menu zur Auswahl der Hersteller.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Hersteller wählen",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_60229a4e027cd",
+            "label": "Label - Gerät",
+            "name": "label-modell",
+            "type": "text",
+            "instructions": "Label für das Dropdown-Menu zur Auswahl der Hersteller.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Modell wählen",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6022c671dd8a0",
+            "label": "Label - Formular absenden",
+            "name": "label-button",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Handy reparieren lassen",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_60229a78027ce",
+            "label": "1. Kategorie",
+            "name": "category1",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Das gibt es neues!",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_60229aa9027cf",
+            "label": "2. Kategorie",
+            "name": "category2",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Warum Smartphoniker?",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_60229ac9027d0",
+            "label": "3. Kategorie",
+            "name": "category3",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Unser Nachhaltigkeitsversprechen",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_60229af6027d1",
+            "label": "4. Kategorie",
+            "name": "category4",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Das sagen unsere Kund:innen!",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_60229b24027d2",
+            "label": "5. Kategorie",
+            "name": "category5",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Zuverlässiger Handy-Reparatur-Service",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "modified": 1612892219
+}

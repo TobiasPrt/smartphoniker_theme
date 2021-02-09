@@ -1,82 +1,27 @@
-<!DOCTYPE html>
-<html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Condensed:wght@700&display=swap"
-      rel="stylesheet"
-    />
+<!-- Header -->
+<?php 
 
-    <?php
-    wp_head()
-    ?>
+get_header();
 
-    <style>
-      * {
-        /* outline: 1px dashed red !important; */
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Banner -->
+$pagetitle = get_field("pagetitle");
+$subtitlemobile = get_field("subtitle-mobile");
+$subtitledesktop = get_field("subtitle-desktop");
 
-    <!-- Header -->
-    <header id="header" class="header">
-      <nav class="header__nav nav">
-        <div class="banner" id="banner">
-          <div class="banner__wrapper">
-            <p class="banner__text">
-              Wir reparieren weiter! Schreib uns per &nbsp;
+$label_manufacturer = get_field("label-manufacturer");
+$label_device = get_field("label-modell");
+$label_button = get_field("label-button");
 
-              <a class="banner__link" href="https://wa.me/491628282353">
-                <img
-                  class="banner__image"
-                  src="images/icons/whatsapp_button_orange.svg"
-                  alt="WhatsApp"
-                />
-              </a>
-              &nbsp; unter 0162-8282353.
-            </p>
-            <button id="closeBanner" class="banner__button">
-              <img src="images/icons/banner_cross.svg" alt="Close Banner" />
-            </button>
-          </div>
-        </div>
-        <div class="nav__wrapper">
-          <a class="nav__item logo" href="#">
-            <img
-              class="logo__img"
-              src="images/logo/logo_blackorange.svg"
-              alt="Smartphoniker Logo"
-            />
-          </a>
-
-          <ul id="nav" class="nav__list">
-            <li class="nav__listitem"><a href="#">Shop</a></li>
-            <li class="nav__listitem"><a href="#">Services</a></li>
-            <li class="nav__listitem"><a href="#">Standort</a></li>
-            <li class="nav__listitem"><a href="#">Nachhaltigkeit</a></li>
-            <li class="nav__listitem"><a href="#">Über Uns</a></li>
-          </ul>
-
-          <a class="nav__phone" href="tel:+4943190700390">
-            <img
-              class="nav__img"
-              src="images/icons/phone_orangewhite.svg"
-              alt="Jetzt anrufen"
-            />
-          </a>
-          <button class="nav__menuicon menuicon" id="menuicon">
-            <span class="menuicon__line menuicon__line--1"></span>
-            <span class="menuicon__line menuicon__line--2"></span>
-            <span class="menuicon__line menuicon__line--3"></span>
-          </button>
-        </div>
-      </nav>
-    </header>
+$news = array(
+  "heading" => get_field("category1"),
+  "content" => array(
+    "image" => "image"
+  )
+);
+$benefits = get_field("category2");
+$feature = get_field("category3");
+$testimonial = get_field("category4");
+$info = get_field("category5");
+?>
 
     <!-- Main -->
     <main class="content">
@@ -91,16 +36,12 @@
         />
         <div class="hero__wrapper">
           <h1 class="section__heading hero__heading">
-            Nachhaltig. Qualitativ. Unkompliziert.
+            <?= $pagetitle ?>
           </h1>
           <p class="hero__text">
-            Reparaturen, Zubehör oder Gebrauchtgeräte An- und Verkauf. Wir sind
-            Dein Partner für nachhaltige Lösungen in der mobilen Kommunikation.
+          <?= $subtitlemobile ?>
             <span class="hero__text hero__text--hidden">
-              Komm einfach in einen unserer Shops vorbei und lass dich von einem
-              unserer erfahrenen Mitarbeit beraten oder fülle das folgende
-              Formular aus und erfahre unkompliziert die Kosten für eine
-              Reparatur.
+            <?= $subtitledesktop ?>
             </span>
           </p>
         </div>
@@ -108,7 +49,7 @@
         <form class="hero__form block-form" action="#">
           <div class="block-form__wrapper select">
             <label class="select__label" for="select-manufacturer">
-              Hersteller wählen
+            <?= $label_manufacturer ?>
             </label>
             <select
               class="select__select"
@@ -127,7 +68,7 @@
           </div>
           <div class="block-form__wrapper select">
             <label class="select__label" for="select-modell"
-              >Modell wählen</label
+              ><?= $label_device ?></label
             >
             <select class="select__select" name="modell" id="select-modell">
               <option value="ip6">iPhone 6</option>
@@ -136,7 +77,7 @@
           </div>
 
           <button class="block-form__button button" type="submit">
-            Handy reparieren lassen
+          <?= $label_button ?>
           </button>
         </form>
 
@@ -180,26 +121,9 @@
       </section>
 
       <!-- News -->
-      <section class="content__section section">
-        <h2 class="section__heading">Das gibt es Neues:</h2>
-        <div class="section__content section__content--large block-2">
-          <div class="block-2__block">
-            <picture>
-              <img class="block-2__img" src="images/phone01.jpg" alt="Handy" />
-            </picture>
-          </div>
+      <?php get_template_part( "template-parts/component", "section", $news ); ?>
 
-          <div class="block-2__block block-2__block--center">
-            <p class="block-2__text">
-              Bei uns kannst du nicht nur dein altes Gerät zur Reparatur
-              vorbeibringen, sondern auch ein Gebrauchtgerät kaufen und
-              verkaufen, sollte sich die Reparatur einmal doch nicht mehr
-              lohnen.
-            </p>
-            <a class="block-2__button button" href="#">Standorte ansehen</a>
-          </div>
-        </div>
-      </section>
+      
 
       <!-- Benefits -->
       <section class="content__section section">
@@ -435,16 +359,5 @@
       </section>
     </main>
 
-    <!-- Footer -->
-      
-
-
-
-    <iframe
-      src="footer.html"
-      onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
-    ></iframe>
-    
-    <?php wp_footer(); ?>
-  </body>
-</html>
+<!-- Footer -->
+<?php get_footer(); ?>
