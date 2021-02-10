@@ -17,218 +17,178 @@ get_header();
     <!-- Main -->
     <main class="content">
 
+
       <!-- Hero -->
       <?php 
-        $hero = array(
-          "heading" => get_field("pagetitle"),
-          "subtitlemobile" => get_field("subtitle-mobile"),
-          "subtitledesktop" => get_field("subtitle-desktop"),
-          "components" => array(
-            array(
-              "type" => "block-form",
-              "content" => array(
-                "label_manufacturer" => get_field("label-manufacturer"),
-                "label_device" => get_field("label-modell"),
-                "label_button" => get_field("label-button"),
-              ),
+      $hero = array(
+        "heading" => get_field("pagetitle"),
+        "subtitlemobile" => get_field("subtitle-mobile"),
+        "subtitledesktop" => get_field("subtitle-desktop"),
+        "components" => array(
+          array(
+            "type" => "block-form",
+            "content" => array(
+              "label_manufacturer" => get_field("label-manufacturer"),
+              "label_device" => get_field("label-modell"),
+              "label_button" => get_field("label-button"),
             ),
-            array (
-              "type" => "columns-5",
-              "content" => array(
-                "images" => array(
-                  get_field("logo1"),
-                  get_field("logo2"),
-                  get_field("logo3"),
-                  get_field("logo4"),
-                  get_field("logo5"),
-                ),
-              )
-            )
           ),
-        );
+          array (
+            "type" => "columns-5",
+            "content" => array(
+              "images" => array(
+                get_field("logo1"),
+                get_field("logo2"),
+                get_field("logo3"),
+                get_field("logo4"),
+                get_field("logo5"),
+              ),
+            )
+          )
+        ),
+      );
 
-        get_template_part( "template-parts/component", "hero", $hero );
+      get_template_part( "template-parts/component", "hero", $hero );
       ?>
 
-      <!-- News -->
-      <?php 
+
+
+        <!-- News -->
+        <?php 
         $news = array(
-          "heading" => get_field("category1"),
+          "heading" => get_field("news_heading"),
           "components" => array(
             array(
               "type" => "block-2",
-              "large" => true,
-              "color" => "orange",
               "content" => array(
-                "image" => "image",
+                "large" => true,
+                "color" => get_field("news_color"),
+                "image" => get_field("news_image"),
                 "text" => get_field("news_text"),
+                "link" => get_field("news_link"),
               ),
             ),
           ),
         );
 
         get_template_part( "template-parts/component", "section", $news ); 
-      ?>
+        ?>
 
-      
+          
 
-      <!-- Benefits -->
-      <section class="content__section section">
-        <h2 class="section__heading">Warum Smartphoniker?</h2>
-          <div class="section__content columns-3">
-            <div class="columns-3__column">
-              <img
-                class="columns-3__icon"
-                src="images/icons/clock.svg"
-                alt="Uhr"
-              />
-              <h3 class="columns-3__heading">kurze Reparaturdauer</h3>
-              <p class="columns-3__text">
-                Die Reparatur dauert in der Regel nicht länger als 1-2 Stunden
-                Gerne kannst du auch einen Termin für den Einbau vereinbaren.
-                Während du wartest kannst du dich in unserem gemütlichen
-                Loungebereich entspannen oder in unserem Sharing-Bücherregal
-                stöbern.
-              </p>
-            </div>
-            <div class="columns-3__column">
-              <img
-                class="columns-3__icon"
-                src="images/icons/hands.svg"
-                alt="Uhr"
-              />
-              <h3 class="columns-3__heading">Lebenslange Garantie</h3>
-              <p class="columns-3__text">
-                Seit über 7 Jahren bieten wir hochqualitative Smartphone- &
-                Tablet- Reparaturen an. Wir sind von unserer Qualität überzeugt
-                und geben daher eine lebenslange Garantie auf alle
-                Display-Reparaturen. Dein Gerät ist bei uns in guten Händen
-              </p>
-            </div>
-            <div class="columns-3__column">
-              <img
-                class="columns-3__icon"
-                src="images/icons/map_needle.svg"
-                alt="Uhr"
-              />
-              <h3 class="columns-3__heading">Wir reparieren vor Ort</h3>
-              <p class="columns-3__text">
-                Augenkontakt ist uns wichtig und schafft Vertrauen. Unsere
-                Standorte sind zentral gelegen und wir sind direkt telefonisch
-                und per e-Mail erreichbar. Deinen Termin bei uns kannst du
-                wunderbar mit einer Einkaufstour verbinden.
-              </p>
-            </div>
-          </div>
-        <div class="section__content section__content--small">
-          <div class="video">
-            <iframe
-              src="https://www.youtube.com/embed/R5J75Pl-n_k?ps=docs&controls=1"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
-      </section>
+        <!-- Benefits -->
+        <?php 
+        $benefits = array(
+          "heading" => get_field("benefits_heading"),
+          "components" => array(
+            array(
+              "type" => "columns-3",
+              "content" => array(
+                "modifications" => array(
+                  "headings"
+                ),
+                "columns" => array(
+                  array(
+                    "image" => get_field("benefit1_image"),
+                    "heading" => get_field("benefit1_heading"),
+                    "text" => get_field("benefit1_text"),
+                  ),
+                  array(
+                    "image" => get_field("benefit2_image"),
+                    "heading" => get_field("benefit2_heading"),
+                    "text" => get_field("benefit2_text"),
+                  ),
+                  array(
+                    "image" => get_field("benefit3_image"),
+                    "heading" => get_field("benefit3_heading"),
+                    "text" => get_field("benefit3_text"),
+                  ),
+                ),
+              ),
+            ),
+            array(
+              "type" => "video",
+              "content" => array(
+                "url" => get_field("benefits_video_url"),
+              ),
+            ),
+          ),
+        );
+        
+        get_template_part( "template-parts/component", "section", $benefits );
+        ?>
 
-      <!-- Feature -->
-      <section class="content__section section">
-        <h2 class="section__heading">Unser Nachhaltigkeitsversprechen</h2>
-        <div class="section__content section__content--large block-2 block-2--green">
-          <div class="block-2__block">
-            <picture>
-              <img
-                class="block-2__img"
-                src="images/people/bene_new.jpg"
-                alt="Bene im Laden"
-              />
-            </picture>
-          </div>
-          <div class="block-2__block block-2__block--center">
-            <p class="block-2__text">
-              „Auch traditionelles Zubehör schadet der Umwelt. Bei uns gibt es
-              deshalb ausgewählte und nachhaltige Produkte von Firmen, die sich
-              für die Umwelt einsetzen. Ob Bäume pflanzen oder die Meere von
-              Plastik befreien - jedes Produkt unterstützt ein nachhaltiges
-              Projekt.”
-            </p>
-            <a class="block-2__button button button--green" href="#"
-              >mehr zum Thema</a
-            >
-          </div>
-        </div>
-      </section>
+
+
+
+        <!-- Feature -->
+        <?php 
+        $feature = array(
+          "heading" => get_field("feature_heading"),
+          "components" => array(
+            array(
+              "type" => "block-2",
+              "content" => array(
+                "large" => true,
+                "color" => get_field("feature_color"),
+                "image" => get_field("feature_image"),
+                "text" => get_field("feature_text"),
+                "link" => get_field("feature_link"),
+              ),
+            ),
+          ),
+        );
+
+        get_template_part( "template-parts/component", "section", $feature ); 
+        ?>
+
+
+
 
       <!-- Testimonial -->
-      <section class="content__section section">
-        <h2 class="section__heading">Das sagen unsere Kund:innen!</h2>
-        <div class="section__content">
-          <div class="columns-3">
-            <div class="columns-3__column">
-              <img
-                class="columns-3__icon columns-3__icon--small"
-                src="images/icons/5-stars.svg"
-                alt="Uhr"
-              />
-              <p class="columns-3__text">
-                „Tolle Beratung mein Smartphone hat nicht mehr richtig
-                funktioniert und durch die schnelle und professionelle Betreuung
-                konnte das Problem fix gelöst werden.“
-              </p>
-              <p class="columns-3__subtitle">Marina H.</p>
-            </div>
-            <div class="columns-3__column">
-              <img
-                class="columns-3__icon columns-3__icon--small"
-                src="images/icons/5-stars.svg"
-                alt="Uhr"
-              />
-              <p class="columns-3__text">
-                „Ich war heute im Shop und bin begeistert, der Kollege ist sehr
-                professionell und kann alles super erklären. Es standen viele
-                Menschen an, trotzdem hat er sich Die Zeit genommen. Kompetent,
-                schnell und günstig.“
-              </p>
-              <p class="columns-3__subtitle">Gerd H.</p>
-            </div>
-            <div class="columns-3__column">
-              <img
-                class="columns-3__icon columns-3__icon--small"
-                src="images/icons/5-stars.svg"
-                alt="Uhr"
-              />
-              <p class="columns-3__text">
-                „Danke für die schnelle Reparatur und die kompetente Beratung.
-                Es wurde ein originales Display verbaut und war sogar noch etwas
-                günstiger als bei der Konkurrenz!“
-              </p>
-              <p class="columns-3__subtitle">Julian K.</p>
-            </div>
-          </div>
-        </div>
-        <div class="section__content section__content--large block-2">
-          <div class="block-2__block block-2__block--center">
-            <a href="https://g.page/Smartphoniker-Express-S?gm">
-              <img
-              class="block-2__img"
-                src="images/googlerating.svg"
-                alt="4.5 Sterne auf Google"
-              />
-            </a>
-          </div>
-          <div class="block-2__block block-2__block--center">
-              <p class="block-2__text block-2__text--center">
-                Bewertet uns auf Google und sichert euch einen 10 Euro
-                Gutschein.
-              </p>
-              <a class="block-2__button button" href="#"
-                >Jetzt bewerten</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
+      <?php 
+        $testimonial = array(
+          "heading" => get_field("testimonial_heading"),
+          "components" => array(
+            array(
+              "type" => "columns-3",
+              "content" => array(
+                "modifications" => array(
+                  "small-icons", "subtitles"
+                ),
+                "columns" => array(
+                  array(
+                    "image" => get_field("rating1_image"),
+                    "subtitle" => get_field("rating1_subtitle"),
+                    "text" => get_field("rating1_text"),
+                  ),
+                  array(
+                    "image" => get_field("rating2_image"),
+                    "subtitle" => get_field("rating2_subtitle"),
+                    "text" => get_field("rating2_text"),
+                  ),
+                  array(
+                    "image" => get_field("rating3_image"),
+                    "subtitle" => get_field("rating3_subtitle"),
+                    "text" => get_field("rating3_text"),
+                  ),
+                ),
+              ),
+            ),
+            array(
+              "type" => "google-rating-block",
+              "content" => array(
+                "text" => get_field("google_rating_text"),
+                "link" => get_field("google_rating_link"),
+              ),
+            ),
+          ),
+        );
+        
+        get_template_part( "template-parts/component", "section", $testimonial );
+        ?>
+
+
 
       <!-- Info -->
       <section class="content__section section">

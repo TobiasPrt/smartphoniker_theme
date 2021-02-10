@@ -67,10 +67,10 @@
                 "id": ""
             },
             "choices": {
-                "orange: Orange": "orange: Orange",
-                "grey: Grau": "grey: Grau",
-                "green: Grün": "green: Grün",
-                "blue: Blau": "blue: Blau"
+                "orange": "Orange",
+                "grey": "Grau",
+                "green": "Grün",
+                "blue": "Blau"
             },
             "default_value": "orange",
             "allow_null": 0,
@@ -129,6 +129,49 @@
                 "id": ""
             },
             "return_format": "array"
+        },
+        {
+            "key": "field_6024013c4bee1",
+            "label": "Telefonnummer",
+            "name": "header_phone_number",
+            "type": "text",
+            "instructions": "In internationalen Format und ohne Leerzeichen angeben z.B. 4943190700390.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "+4943190700390",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_602401964bee2",
+            "label": "Telefon-Icon",
+            "name": "header_phone_icon",
+            "type": "image",
+            "instructions": "Nur .svg.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ".svg"
         }
     ],
     "location": [
@@ -155,5 +198,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1612970388
+    "modified": 1612972564
 }

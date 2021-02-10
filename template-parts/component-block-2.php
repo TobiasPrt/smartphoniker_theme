@@ -1,17 +1,25 @@
-<div class="section__content <?= array_key_exists("large", $args) ? "section__content--large" : "" ?> block-2">
+<div class="
+    section__content 
+    <?= array_key_exists("large", $args) ? "section__content--large" : "" ?> 
+    block-2 
+    <?= "block-2--".$args["color"] ?>"
+    >
     <div class="block-2__block">
         <picture>
-            <img class="block-2__img" src="images/phone01.jpg" alt="Handy" />
+            <img class="block-2__img" src="<?= $args["image"]["sizes"]["medium"] ?>" alt="<?= $args["image"]["alt"] ?>" />
         </picture>
     </div>
 
     <div class="block-2__block block-2__block--center">
         <p class="block-2__text">
-            Bei uns kannst du nicht nur dein altes Gerät zur Reparatur
-            vorbeibringen, sondern auch ein Gebrauchtgerät kaufen und
-            verkaufen, sollte sich die Reparatur einmal doch nicht mehr
-            lohnen.
+            <?= $args['text']?>
         </p>
-        <a class="block-2__button button" href="#">Standorte ansehen</a>
+        <a 
+            class="block-2__button button <?= "button--".$args["color"] ?>" 
+            href="<?= $args["link"]["url"] ?>" 
+            target="<?= $args["link"]['target']?>"
+        >
+            <?= $args["link"]["title"] ?>
+        </a>
     </div>
 </div>
