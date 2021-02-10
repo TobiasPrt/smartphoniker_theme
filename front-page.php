@@ -1,127 +1,74 @@
-<!-- Header -->
-<?php 
-
-get_header();
-
-$pagetitle = get_field("pagetitle");
-$subtitlemobile = get_field("subtitle-mobile");
-$subtitledesktop = get_field("subtitle-desktop");
-
-$label_manufacturer = get_field("label-manufacturer");
-$label_device = get_field("label-modell");
-$label_button = get_field("label-button");
-
-$news = array(
-  "heading" => get_field("category1"),
-  "content" => array(
-    "image" => "image"
-  )
-);
+<!-- Custom Field Deklarationen -->
+<?php
 $benefits = get_field("category2");
 $feature = get_field("category3");
 $testimonial = get_field("category4");
 $info = get_field("category5");
 ?>
 
+
+
+
+<!-- Header -->
+<?php 
+get_header();
+?>
+
     <!-- Main -->
     <main class="content">
+
       <!-- Hero -->
-      <section class="content__section content__section--hero section hero">
-        <img
-          width="1"
-          height="1"
-          class="hero__image"
-          src="images/hero_image_phone.svg"
-          alt="Nachhaltiges Handy"
-        />
-        <div class="hero__wrapper">
-          <h1 class="section__heading hero__heading">
-            <?= $pagetitle ?>
-          </h1>
-          <p class="hero__text">
-          <?= $subtitlemobile ?>
-            <span class="hero__text hero__text--hidden">
-            <?= $subtitledesktop ?>
-            </span>
-          </p>
-        </div>
+      <?php 
+        $hero = array(
+          "heading" => get_field("pagetitle"),
+          "subtitlemobile" => get_field("subtitle-mobile"),
+          "subtitledesktop" => get_field("subtitle-desktop"),
+          "components" => array(
+            array(
+              "type" => "block-form",
+              "content" => array(
+                "label_manufacturer" => get_field("label-manufacturer"),
+                "label_device" => get_field("label-modell"),
+                "label_button" => get_field("label-button"),
+              ),
+            ),
+            array (
+              "type" => "columns-5",
+              "content" => array(
+                "images" => array(
+                  get_field("logo1"),
+                  get_field("logo2"),
+                  get_field("logo3"),
+                  get_field("logo4"),
+                  get_field("logo5"),
+                ),
+              )
+            )
+          ),
+        );
 
-        <form class="hero__form block-form" action="#">
-          <div class="block-form__wrapper select">
-            <label class="select__label" for="select-manufacturer">
-            <?= $label_manufacturer ?>
-            </label>
-            <select
-              class="select__select"
-              name="manufacturer"
-              id="select-manufacturer"
-            >
-              <option value="apple">Apple</option>
-              <option value="htc">HTC</option>
-              <option value="huawei">Huawei</option>
-              <option value="lg">LG</option>
-              <option value="samsung">Samsung</option>
-              <option value="sony">Sony</option>
-              <option value="xiaomi">Xiaomi</option>
-              <option value="other">nicht dabei?</option>
-            </select>
-          </div>
-          <div class="block-form__wrapper select">
-            <label class="select__label" for="select-modell"
-              ><?= $label_device ?></label
-            >
-            <select class="select__select" name="modell" id="select-modell">
-              <option value="ip6">iPhone 6</option>
-              <option value="other">nicht dabei?</option>
-            </select>
-          </div>
-
-          <button class="block-form__button button" type="submit">
-          <?= $label_button ?>
-          </button>
-        </form>
-
-        <ul class="hero__brands columns-5">
-          <li class="columns-5__column">
-            <img
-              class="columns-5__image"
-              src="images/partner_logos/bartels_langness.svg"
-              alt="bartels_langness"
-            />
-          </li>
-          <li class="columns-5__column">
-            <img
-              class="columns-5__image"
-              src="images/partner_logos/coop.svg"
-              alt="coop"
-            />
-          </li>
-          <li class="columns-5__column">
-            <img
-              class="columns-5__image"
-              src="images/partner_logos/chefs_culinar.svg"
-              alt="chefs_culinar"
-            />
-          </li>
-          <li class="columns-5__column">
-            <img
-              class="columns-5__image"
-              src="images/partner_logos/vater.svg"
-              alt="vater"
-            />
-          </li>
-          <li class="columns-5__column">
-            <img
-              class="columns-5__image"
-              src="images/partner_logos/der_echte_norden.svg"
-              alt="der_echte_norden"
-            />
-          </li>
-        </ul>
-      </section>
+        get_template_part( "template-parts/component", "hero", $hero );
+      ?>
 
       <!-- News -->
-      <?php get_template_part( "template-parts/component", "section", $news ); ?>
+      <?php 
+        $news = array(
+          "heading" => get_field("category1"),
+          "components" => array(
+            array(
+              "type" => "block-2",
+              "large" => true,
+              "color" => "orange",
+              "content" => array(
+                "image" => "image",
+                "text" => get_field("news_text"),
+              ),
+            ),
+          ),
+        );
+
+        get_template_part( "template-parts/component", "section", $news ); 
+      ?>
 
       
 

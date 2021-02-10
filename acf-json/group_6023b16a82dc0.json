@@ -1,0 +1,159 @@
+{
+    "key": "group_6023b16a82dc0",
+    "title": "Header",
+    "fields": [
+        {
+            "key": "field_6023b55c9572d",
+            "label": "Logo",
+            "name": "header_logo",
+            "type": "image",
+            "instructions": "Nur .svg, damit es gut skaliert. Darauf achten, dass es zur Hintergrundfarbe passt.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ".svg"
+        },
+        {
+            "key": "field_6023b5c19572e",
+            "label": "Großer Header-Bereich?",
+            "name": "header_is_large",
+            "type": "true_false",
+            "instructions": "Soll ein großer Headerbereich dargestellt werden?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_6023b19b366a5",
+            "label": "Hintergrundfarbe",
+            "name": "header_color",
+            "type": "select",
+            "instructions": "Hintergrundfarbe für Headerbereich. Logos, Schrift und Icons werden automatisch angepasst.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6023b5c19572e",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "orange: Orange": "orange: Orange",
+                "grey: Grau": "grey: Grau",
+                "green: Grün": "green: Grün",
+                "blue: Blau": "blue: Blau"
+            },
+            "default_value": "orange",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6023b20d366a6",
+            "label": "Seitentitel",
+            "name": "header_title",
+            "type": "text",
+            "instructions": "Weniger als 50 Zeichen, damit es am besten aussieht.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6023b5c19572e",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Smartphoniker",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 50
+        },
+        {
+            "key": "field_6023b5fe9572f",
+            "label": "Link \/ Button",
+            "name": "header_link",
+            "type": "link",
+            "instructions": "Wohin soll im Header verlinkt werden? Zum Beispiel zum Shop oder auf eine andere Seite.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6023b5c19572e",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "7"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "!=",
+                "value": "7"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1612970388
+}

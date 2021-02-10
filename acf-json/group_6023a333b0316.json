@@ -1,0 +1,144 @@
+{
+    "key": "group_6023a333b0316",
+    "title": "Banner",
+    "fields": [
+        {
+            "key": "field_6023a3b96d5a6",
+            "label": "Banner",
+            "name": "banner",
+            "type": "true_false",
+            "instructions": "Schaltet das Banner ein und aus. Mehrere Banner-Varianten kommen noch.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_6023be0e88dd8",
+            "label": "Farbe",
+            "name": "banner_color",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6023a3b96d5a6",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "orange": "Orange",
+                "green": "Grün",
+                "grey": "Grau"
+            },
+            "default_value": "orange",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6023be4088dd9",
+            "label": "Variante",
+            "name": "banner_variant",
+            "type": "select",
+            "instructions": "Momentan ist nur das WhatsApp-Banner oder freier Text möglich. Ich kann aber auf Wunsch weitere Banner anfertigen.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6023a3b96d5a6",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "whatsapp": "WhatsApp",
+                "free": "Freier Text (100 Zeichen)"
+            },
+            "default_value": "free",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6023bfb2a6a14",
+            "label": "Text",
+            "name": "banner_text",
+            "type": "text",
+            "instructions": "Freier Text für ein Banner. Ist begrenzt auf 100 Zeichen, damit es auch auf mobilen Geräten gut dargestellt wird.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6023be4088dd9",
+                        "operator": "==",
+                        "value": "free"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 100
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "!=",
+                "value": "7"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "7"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1612956043
+}

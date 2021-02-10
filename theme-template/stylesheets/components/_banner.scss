@@ -1,13 +1,23 @@
 // Banner
-
 .banner {
-  @include bg(orange);
   width: 100%;
   max-height: 6rem;
   min-height: 6rem;
 
   &--isHidden {
     display: none;
+  }
+
+  &--orange {
+    @include bg(orange);
+  }
+
+  &--green {
+    @include bg(green);
+  }
+
+  &--grey {
+    @include bg(grey);
   }
 
   &__wrapper {

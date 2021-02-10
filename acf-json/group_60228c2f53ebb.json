@@ -117,6 +117,126 @@
             "maxlength": ""
         },
         {
+            "key": "field_60239e11bcbf1",
+            "label": "Logo1",
+            "name": "logo1",
+            "type": "image",
+            "instructions": "Am besten .svg Dateien benutzen, damit es sauber skaliert",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_60239eacbcbf3",
+            "label": "Logo2",
+            "name": "logo2",
+            "type": "image",
+            "instructions": "Am besten .svg Dateien benutzen, damit es sauber skaliert",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_60239eb5bcbf4",
+            "label": "Logo3",
+            "name": "logo3",
+            "type": "image",
+            "instructions": "Am besten .svg Dateien benutzen, damit es sauber skaliert",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_60239ec0bcbf5",
+            "label": "Logo4",
+            "name": "logo4",
+            "type": "image",
+            "instructions": "Am besten .svg Dateien benutzen, damit es sauber skaliert",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_60239ec9bcbf6",
+            "label": "Logo5",
+            "name": "logo5",
+            "type": "image",
+            "instructions": "Am besten .svg Dateien benutzen, damit es sauber skaliert",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_60229a78027ce",
             "label": "1. Kategorie",
             "name": "category1",
@@ -215,13 +335,13 @@
     "location": [
         [
             {
-                "param": "page_type",
+                "param": "page",
                 "operator": "==",
-                "value": "front_page"
+                "value": "7"
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 3,
     "position": "normal",
     "style": "seamless",
     "label_placement": "top",
@@ -241,5 +361,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1612892219
+    "modified": 1612953383
 }
