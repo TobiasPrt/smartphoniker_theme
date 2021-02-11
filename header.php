@@ -119,3 +119,5 @@ $banner_settings = array(
 
 
     </header>
+
+    <main class="content">

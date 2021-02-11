@@ -22,5 +22,10 @@
         text-decoration: underline;
       }
     }
+
+    & > a {
+      @include fg(dark_grey);
+      @extend .text-xs;
+    }
   }
 }
