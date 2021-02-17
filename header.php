@@ -30,8 +30,9 @@ $banner_settings = array(
   </head>
   <body>
 
-
-
+  Smartphoniker  – Handy Reparatur, Zubehör, An- & Verkauf
+  Create good titles and snippets in Search Results - Google ...
+  Brandon's Baseball Cards - Buy Cards, Baseball News, Card Prices
 
     <!-- Header -->
     <header 
