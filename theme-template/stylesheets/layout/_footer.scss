@@ -97,6 +97,10 @@
       &:nth-last-of-type(2) {
         justify-self: end;
       }
+
+      &:last-of-type {
+        justify-self: center;
+      }
     }
   }
 }

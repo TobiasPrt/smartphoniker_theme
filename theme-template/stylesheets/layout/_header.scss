@@ -9,6 +9,7 @@
   & .nav {
     @include bg(white);
     z-index: 2;
+    top: 0;
   }
 
   &--bannerIsHidden {
