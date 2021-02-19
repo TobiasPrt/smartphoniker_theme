@@ -14,13 +14,16 @@ jobs:
       - name: Sync
         env:
           dest: "ssh-410673-tobias@smartgg.de:/webseiten/smartgg-de/wp-content/themes/smartphoniker_theme"
-        run: |
-          echo "${{secrets.SSH_KEY}}" > deploy_key
-          chmod 600 ./deploy_key
-          rsync -chav --delete \
-            -e 'ssh -i ./deploy_key -o StrictHostKeyChecking=no' \
-            --exclude /deploy_key \
-            --exclude /.git/ \
-            --exclude /.github/ \
-            --exclude /theme-template/ \
-            ./ ${{env.dest}}
+          # run: |
+          #   echo "${{secrets.SSH_KEY}}" > deploy_key
+          #   chmod 600 ./deploy_key
+          #   rsync -chav --delete \
+          #     -e 'ssh -i ./deploy_key -o StrictHostKeyChecking=no' \
+          #     --exclude /deploy_key \
+          #     --exclude /.git/ \
+          #     --exclude /.github/ \
+          #     --exclude /theme-template/ \
+          #     ./ ${{env.dest}}
+          run: echo "${{secrets.SSH_KEY}}" > deploy_key
+            chmod 600 ./deploy_key
+            rsync --list-only ${{env.dest}}
