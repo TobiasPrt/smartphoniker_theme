@@ -13,7 +13,7 @@ jobs:
 
       - name: Sync
         env:
-          dest: "ssh-410673-tobias@smartgg.de"
+          dest: "ssh-410673-tobias@smartgg.de:/"
         run: |
           echo "${{secrets.SSH_KEY}}" > deploy_key
           chmod 600 ./deploy_key
