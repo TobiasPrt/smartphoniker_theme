@@ -17,7 +17,7 @@ jobs:
         run: |
           echo "${{secrets.SSH_KEY}}" > deploy_key
           chmod 600 ./deploy_key
-          rsync -e 'ssh -i ./deploy_key -o StrictHostKeyChecking=no' \ 
+          rsync -e 'ssh -i ./deploy_key -o StrictHostKeyChecking=no' \
             --list-only ${{env.dest}}
         # run: |
         #   echo "${{secrets.SSH_KEY}}" > deploy_key
