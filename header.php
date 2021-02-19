@@ -1,4 +1,10 @@
-<?php 
+<?php
+/**
+ * Header Template
+ * 
+ * @package Smartphoniker_Theme
+ */
+
 $header_logo = get_field('header_logo');
 $header_is_large = get_field('header_is_large');
 $header_color = get_field('header_color');
@@ -18,23 +24,17 @@ $banner_settings = array(
 
 <!-- Document Head -->
 <!DOCTYPE html>
-<html lang="de">
+<html <?php language_attributes(); ?>>
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="<?php bloginfo( 'charset' ) ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
 
     <?php wp_head(); ?>
-
-    </style>
   </head>
   <body>
 
-  Smartphoniker  – Handy Reparatur, Zubehör, An- & Verkauf
-  Create good titles and snippets in Search Results - Google ...
-  Brandon's Baseball Cards - Buy Cards, Baseball News, Card Prices
-
-    <!-- Header -->
+  <!-- Header -->
     <header 
       id="header" 
       class="

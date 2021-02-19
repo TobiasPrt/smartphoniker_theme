@@ -1,3 +1,11 @@
+<?php
+/**
+ * Footer Template
+ * 
+ * @package Smartphoniker_Theme
+ */
+?>
+
 </main>
 
 <footer class="footer">

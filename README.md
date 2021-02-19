@@ -23,6 +23,7 @@
 <p align="center">
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
+  <a href="#credits">Credits</a> •
   <a href="#license">License</a>
 </p>
 
@@ -39,6 +40,15 @@
 ## How To Use
 
 Clone the repository into `/wp-content/themes/` and activate it in the WordPress backend.
+
+## Credits
+
+Contains assets made by:
+
+- <a href="http://www.grafisch-sagt-moin.com/"> mit salz und pfeffer </a>
+- <a href="http://www.freepik.com">macrovector / Freepik</a>
+- <a href="https://www.flaticon.com/de/autoren/pixel-perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/de/" title="Flaticon">www.flaticon.com</a>
+- <a href="https://www.flaticon.com/authors/freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
 
 ## License
 

@@ -3,7 +3,7 @@
         width="1"
         height="1"
         class="hero__image"
-        src="<?= get_template_directory_uri() ?>/assets/images/hero_image_phone.png"
+        src="<?= get_template_directory_uri() ?>/assets/images/hero_image_phone.svg"
         alt="Nachhaltiges Handy"
     />
     <div class="hero__wrapper">
