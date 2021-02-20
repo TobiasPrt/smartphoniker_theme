@@ -5,8 +5,17 @@
  * @package Smartphoniker_Theme
  */
 
-get_header();
-?>
 
-<?php
+use Carbon_Fields\Field;
+
+get_header();
+
+// $blocks = parse_blocks( get_the_content());
+
+// print_r(sizeof($blocks));
+
+the_content();
+
+
+
 get_footer();
