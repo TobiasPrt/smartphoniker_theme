@@ -2,9 +2,14 @@
 /**
  * Custom Block: Section
  *
- * @package Smartphoniker_Theme
+ * @package Smartphoniker-Theme
  */
-Block::make( __( 'Section' ) )
+
+use Carbon_Fields\Block;
+use Carbon_Fields\Field;
+
+function block_section() {
+	Block::make( __( 'Section' ) )
     	->add_fields(
     		array(
         		Field::make( 'text', 'heading', __( 'Section Heading' ) ),
@@ -23,4 +28,5 @@ Block::make( __( 'Section' ) )
 
 
     <?php
-}; );
+		});
+}
