@@ -8,7 +8,7 @@
 
 <!-- Document Head -->
 <!DOCTYPE html>
-<html <?= language_attributes(); ?>>
+<html lang="de-DE">
 
 <head>
     <meta charset="<?= bloginfo('charset') ?>" />
