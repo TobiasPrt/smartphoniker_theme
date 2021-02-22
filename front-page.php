@@ -1,13 +1,13 @@
 <?php
 /**
  * Landing Page
- * 
+ *
  * @package Smartphoniker
  */
 
-get_header();
+get_header('home');
 
-the_title();
+get_template_part('template-parts/component', 'hero');
 
 the_content();
 

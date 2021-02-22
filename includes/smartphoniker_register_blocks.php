@@ -4,7 +4,7 @@
  * 
  * @package Smartphoniker
  */
-function smartphoniker_register_cf_blocks() {
+function smartphoniker_register_blocks() {
 
     foreach ( glob( __DIR__ . "/../blocks/*.php" ) as $filename ) {
         require_once $filename;

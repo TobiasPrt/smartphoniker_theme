@@ -20,14 +20,5 @@ if( ! function_exists( 'smartphoniker_theme_setup' ) ) :
                 'footer_legal' => 'Footer Informationen',
             )
         );
-
-        /**
-         * Disallow all built-in Gutenberg blocks.
-         */
-        // function smartphoniker_theme_allowed_block_types() {
-        //     return array( 'carbon-fields/col1', 'carbon-fields/section' );
-        // }
-        // add_filter( 'allowed_block_types', 'smartphoniker_theme_allowed_block_types');
-     
     }
 endif;
