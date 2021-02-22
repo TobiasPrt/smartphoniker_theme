@@ -2,11 +2,5 @@
 /**
  * Main Template File
  * 
- * @package Smartphoniker_Theme
+ * @package Smartphoniker
  */
-
-get_header();
-?>
-
-<?php
-get_footer();
