@@ -2,7 +2,7 @@
 /**
  * Theme Header
  *
- * @package Smartphoniker_Theme_CF
+ * @package Smartphoniker
  */
 
 ?>

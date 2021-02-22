@@ -2,7 +2,7 @@
 /**
  * Custom Block: Columns-1
  *
- * @package Smartphoniker-Theme
+ * @package Smartphoniker
  */
 
 use Carbon_Fields\Block;
