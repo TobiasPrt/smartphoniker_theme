@@ -19,7 +19,7 @@ use Carbon_Fields\Field;
  * @since 1.0.0
  */
 function block_col1() {
-    Block::make( __( 'Col1' ) )
+    Block::make( __( 'Col-1' ) )
         ->add_fields(
             array(
                 Field::make( 'textarea', 'text', __( 'Col Text' ) )

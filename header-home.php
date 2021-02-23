@@ -25,9 +25,9 @@
 
 <!-- Header -->
 <?php if (carbon_get_theme_option('banner_is_enabled')): ?>
-    <header id="header" class="header header--bannerIsHidden">
-<?php else: ?>
     <header id="header" class="header">
+<?php else: ?>
+    <header id="header" class="header header--bannerIsHidden">
 <?php endif; ?>
 
 
