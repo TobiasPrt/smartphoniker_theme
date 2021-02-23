@@ -17,6 +17,7 @@
 function smartphoniker_allowed_block_types(): array {
     $allowed_block_types = array( 
         'carbon-fields/col-1',
+        'carbon-fields/col-3',
         'carbon-fields/section',
         'carbon-fields/block-2',
     );

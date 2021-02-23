@@ -27,6 +27,8 @@ function block_section() {
         )
         ->set_inner_blocks( true )
         ->set_inner_blocks_position( 'below' )
+        // Disable preview mode as long as there is not a custom editor stylesheet.
+        ->set_mode( 'edit' )
         // Only the blocks that have this block as a parent can be inserted.
         ->set_allowed_inner_blocks( array() )
         ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {

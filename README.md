@@ -32,9 +32,10 @@
 - Continuus Deployment for staging and production server
 - minimal fully responsive design
 - 7-1 Architecture Pattern with Sass
-- 95+ Performance Score in Google Page Speed Insights
+- 95+ Performance Score in Google Page Speed Insights [wip]
 - no JQuery, no CSS-Library
 - simple and semantic HTML
+- 20+ custom Gutenberg Blocks for easy non-coding use [wip]
 - compliant with the [WordPress Coding Standard](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#formatting-sql-statements)
 - 0 paid plugins
 

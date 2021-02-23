@@ -22,6 +22,7 @@ function block_block2() {
     Block::make( __( 'Block-2' ) )
         ->add_fields(
             array(
+                // Block Color
                 Field::make( 'select', 'color', __( 'Block-Hintergrundfarbe' ) )
                     ->set_options( array(
                         'orange' => __( 'Orange' ),
@@ -29,12 +30,19 @@ function block_block2() {
                         'grey' => __( 'Grau' ),
                         'blue' => __( 'Dunkelblau' ),
                     ) ),
+
+                // Block component types
                 Field::make( 'complex', 'content', __( 'Inhalt wählen' ) )
                     ->set_min( 2 )
                     ->set_max( 2 )
+                    ->set_layout( 'tabbed-horizontal' )
+                    
+                    // Image
                     ->add_fields( 'image', array(
                         Field::make( 'image', 'image', __( 'Bild wählen' ) )
                     ) )
+
+                    // Content
                     ->add_fields( 'content', array(
                         Field::make( 'textarea', 'text', __( 'Text' ) ),
                         Field::make( 'checkbox', 'button_is_enabled', __( 'Button anzeigen?' ) ),
@@ -67,6 +75,8 @@ function block_block2() {
                 <div class="section__content section__content--large block-2 block-2--<?php echo esc_html( $fields[ 'color' ] ); ?>">
                     
                     <?php foreach ( $fields[ 'content' ] as $content ): ?>
+                        
+                        <!-- Image -->
                         <?php if ( 'image' === $content[ '_type' ] ): ?>
 
                             <div class="block-2__block">
@@ -75,13 +85,16 @@ function block_block2() {
                                 </picture>
                             </div>
                         
+                        <!-- Content -->
                         <?php else: ?>
-                        
                             <div class="block-2__block block-2__block--center">
+
+                                <!-- Text -->
                                 <p class="block-2__text">
                                     <?php echo esc_html( $content[ 'text' ] ); ?>
                                 </p>
-
+                            
+                                <!-- Button -->
                                 <?php if ( $content[ 'button_is_enabled' ] ): ?>
                                     <a 
                                         class="block-2__button button button--<?php echo esc_html( $fields[ 'color' ] ); ?>" 
@@ -89,12 +102,13 @@ function block_block2() {
                                         target="<?php echo esc_html( $content[ 'button_target' ] ?? '_self' ); ?>"
                                     >
                                         <?php echo esc_html( $content[ 'button_text' ] ); ?>
+                            
                                     </a>
                                 <?php endif; ?>
-
+                            
                             </div>
-                        
                         <?php endif; ?>
+                        
                     <?php endforeach; ?>
 
                 </div>

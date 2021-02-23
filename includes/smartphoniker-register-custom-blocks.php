@@ -18,6 +18,7 @@ foreach ( glob( __DIR__ . "/custom-blocks/*.php" ) as $filename ) {
  */
 function smartphoniker_register_custom_blocks() {
     block_col1();
+    block_col3();
     block_section();
     block_block2();
 }
