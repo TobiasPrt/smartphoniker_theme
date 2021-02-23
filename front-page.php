@@ -1,13 +1,14 @@
 <?php
 /**
- * Landing Page
- * 
+ * Template: Landing Page
+ *
  * @package Smartphoniker
+ * @since 1.0.0
  */
 
-get_header();
+get_header( 'home' );
 
-the_title();
+get_template_part( 'template-parts/component', 'hero' );
 
 the_content();
 

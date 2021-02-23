@@ -35,20 +35,24 @@
 - 95+ Performance Score in Google Page Speed Insights
 - no JQuery, no CSS-Library
 - simple and semantic HTML
+- compliant with the [WordPress Coding Standard](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#formatting-sql-statements)
 - 0 paid plugins
 
 ## How To Use
 
-Clone the repository into `/wp-content/themes/` and activate it in the WordPress backend.
+Just download or clone this repository and move it to `/wp-content/themes/`. Then activate it in the WordPress backend.
 
 ## Credits
 
-Contains assets made by:
+Thanks to the community for the following open source projects besides WordPress:
+- [Carbon Fields](https://github.com/htmlburger/carbon-fields)
 
-- <a href="http://www.grafisch-sagt-moin.com/"> mit salz und pfeffer </a>
-- <a href="http://www.freepik.com">macrovector / Freepik</a>
-- <a href="https://www.flaticon.com/de/autoren/pixel-perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/de/" title="Flaticon">www.flaticon.com</a>
-- <a href="https://www.flaticon.com/authors/freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+Thanks for some of the assets, which are made by:
+
+- [mit salz und pfeffer](https://www.grafisch-sagt-moin.com/)
+- [macrovector / Freepik](https://www.freepik.com)
+- [Pixel perfect](https://www.flaticon.com/de/autoren/pixel-perfect)
+- [Freepik](https://www.flaticon.com/authors/freepik)
 
 ## License
 
