@@ -9,9 +9,9 @@
 
 <!-- Document Head -->
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php echo language_attributes() ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ) ?>" />
+	<meta charset="<?php bloginfo('charset') ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
 
@@ -24,8 +24,8 @@
     id="header" 
     class="
     header
-    <?= 'header--'.$header_color ?> 
-    <?= !$banner_is_activated ? 'header--bannerIsHidden' : ''; ?>
+    <?php echo 'header--'.$header_color ?> 
+    <?php echo !$banner_is_activated ? 'header--bannerIsHidden' : ''; ?>
     ">
     <nav class="header__nav nav">
 
@@ -34,8 +34,8 @@
 
     <!-- Banner -->
     <?php
-    if($banner_is_activated):
-    get_template_part( "template-parts/component", "banner", $banner_settings );
+    if ($banner_is_activated):
+    get_template_part("template-parts/component", "banner", $banner_settings);
     endif;
     ?>
 
@@ -43,10 +43,10 @@
     
     <!-- Logo -->
     <div class="nav__wrapper">
-        <a class="nav__item logo" href="<?= get_home_url() ?>">
+        <a class="nav__item logo" href="<?php echo get_home_url() ?>">
         <img
             class="logo__img"
-            src="<?= $header_logo["sizes"]["thumbnail"] ?>"
+            src="<?php echo $header_logo["sizes"]["thumbnail"] ?>"
             alt="Smartphoniker Logo"
         />
         </a>
@@ -57,7 +57,8 @@
         <!-- Navigation -->
         <?php
             $banner_is_hidden_class = $header_is_large ? 'nav__list--bannerIsHidden'  : '';
-            wp_nav_menu( array(
+            wp_nav_menu(
+                array(
                 "menu" => "primary",
                 "container" => "",
                 "theme_location" => "primary",
@@ -68,10 +69,10 @@
 
 
         <!-- Telefon-Icon -->
-        <a class="nav__phone" href="tel:+<?= $header_phone_number ?>">
+        <a class="nav__phone" href="tel:+<?php echo $header_phone_number ?>">
         <img
             class="nav__img"
-            src="<?= $header_phone_icon['sizes']['thumbnail'] ?>"
+            src="<?php echo $header_phone_icon['sizes']['thumbnail'] ?>"
             alt="Smartphoniker anrufen"
         />
         </a>
@@ -93,13 +94,13 @@
 
     <!-- Heading and Call-to-Action -->
     <?php if ($header_is_large): ?>
-    <h1 class="header__heading"><?= $header_title ?></h1>
+    <h1 class="header__heading"><?php echo $header_title ?></h1>
         <a 
         class="header__button button" 
-        href="<?= $header_link['url'] ?>" 
-        target="<?= $header_link['target']?>"
+        href="<?php echo $header_link['url'] ?>" 
+        target="<?php echo $header_link['target']?>"
         >
-        <?= $header_link['title']?>
+        <?php echo $header_link['title']?>
         </a>
     <?php endif; ?>
 

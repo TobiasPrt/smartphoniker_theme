@@ -6,7 +6,7 @@
  */
 
 if (isset($args['color'])): ?>
-    <div class="banner banner--<?= $args['color']; ?>" id="banner">
+    <div class="banner banner--<?php echo $args['color']; ?>" id="banner">
 <?php endif; ?>
 
 
@@ -17,17 +17,17 @@ if (isset($args['color'])): ?>
                 <?php if ($args["type"] == "whatsapp-orange"): ?>
                     Wir reparieren weiter! Schreib uns per &nbsp;
                     <a class="banner__link" href="https://wa.me/491628282353">
-                    <img class="banner__image" src="<?= get_template_directory_uri() ?>/assets/images/icons/whatsapp_button_orange.svg" alt="WhatsApp" /> 
+                    <img class="banner__image" src="<?php echo get_template_directory_uri() ?>/assets/images/icons/whatsapp_button_orange.svg" alt="WhatsApp" /> 
                     </a>
                     &nbsp; unter 0162-8282353.
-                <?php else: ?>
-                    <?= $args["content"]; ?>        
-                <?php endif; ?>
+                <?php else:
+                    echo $args["content"];
+                endif; ?>
 
 
         </p>
         <button id="closeBanner" class="banner__button">
-            <img src="<?= get_template_directory_uri() ?>/assets/images/icons/banner_cross.svg" alt="Close Banner" />
+            <img src="<?php echo get_template_directory_uri() ?>/assets/images/icons/banner_cross.svg" alt="Close Banner" />
         </button>
     </div>
 </div>

@@ -3,6 +3,7 @@
  * Landing Page
  *
  * @package Smartphoniker
+ * @since 1.0.0
  */
 
 get_header('home');

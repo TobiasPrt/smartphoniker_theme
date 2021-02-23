@@ -15,7 +15,7 @@
             <ul class="footer__payments columns-9">
                 <?php foreach (carbon_get_theme_option('payment_methods') as $id): ?>
                 <li class="columns-9__element">
-                    <?= wp_get_attachment_image($id); ?>
+                    <?php echo wp_get_attachment_image($id) ?>
 
                 </li>
                 <?php endforeach; ?>
@@ -24,7 +24,7 @@
             <!-- Logo -->
             <img
             class="footer__logo"
-            src="<?= get_template_directory_uri() ?>/assets/images/logo/logo_orangewhite.svg"
+            src="<?php echo get_template_directory_uri() ?>/assets/images/logo/logo_orangewhite.svg"
             alt="Smartphoniker"
             />
 
@@ -35,18 +35,18 @@
                 <!-- Über Uns -->
                 <div class="footer__block infoblock">
                     <p class="infoblock__heading">Über Uns</p>
-                    <p class="infoblock__text"><?= carbon_get_theme_option('about'); ?></p>
+                    <p class="infoblock__text"><?php echo carbon_get_theme_option('about') ?></p>
                 </div>
             
 
                 <!-- Kontaktiere Uns -->
                 <div class="footer__block infoblock">
                     <p class="infoblock__heading">Kontaktiere Uns</p>
-                    <a class="infoblock__text infoblock__text--link" href="tel:+<?= carbon_get_theme_option('phone_number');?>">
-                        <?= carbon_get_theme_option('phone_number_show'); ?>
+                    <a class="infoblock__text infoblock__text--link" href="tel:+<?php echo carbon_get_theme_option('phone_number') ?>">
+                        <?php echo carbon_get_theme_option('phone_number_show') ?>
                     </a>
-                    <a class="infoblock__text infoblock__text--link" href="mail:<?= carbon_get_theme_option('email'); ?>">
-                        <?= carbon_get_theme_option('email'); ?>
+                    <a class="infoblock__text infoblock__text--link" href="mail:<?php echo carbon_get_theme_option('email') ?>">
+                        <?php echo carbon_get_theme_option('email') ?>
                     </a>
                 </div>
             
@@ -87,11 +87,11 @@
 
                 <!-- Footer social media -->
                 <div class="footer__socialmedia">
-                    <a href="<?= carbon_get_theme_option('facebook_link'); ?>" class="footer__socialicon">
-                        <img src="<?= get_template_directory_uri() ?>/assets/images/icons/facebook.svg" alt="facebook" />
+                    <a href="<?php echo carbon_get_theme_option('facebook_link') ?>" class="footer__socialicon">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/images/icons/facebook.svg" alt="facebook" />
                     </a>
-                    <a href="<?= carbon_get_theme_option('instagram_link'); ?>" class="footer__socialicon">
-                        <img src="<?= get_template_directory_uri() ?>/assets/images/icons/instagram.svg" alt="instagram" />
+                    <a href="<?php echo carbon_get_theme_option('instagram_link') ?>" class="footer__socialicon">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/images/icons/instagram.svg" alt="instagram" />
                     </a>
                 </div>
 
