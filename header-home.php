@@ -1,8 +1,11 @@
 <?php
 /**
- * Header Template
+ * Template-Part: Header-Home
+ * 
+ * This header is only used on the landing page.
  *
  * @package Smartphoniker
+ * @since 1.0.0
  */
 ?>
 

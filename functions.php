@@ -1,6 +1,6 @@
 <?php
 /**
- * Main functions file.
+ * Theme functions file.
  *
  * @package Smartphoniker
  * @since 1.0.0
