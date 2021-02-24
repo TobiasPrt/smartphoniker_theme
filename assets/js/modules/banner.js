@@ -12,6 +12,16 @@ const nav = document.getElementById('nav');
 
 
 /**
+ * Adds event listener for banner block.
+ * 
+ * @since 1.0.0
+ */
+export function addBannerEventListener() {
+    banner && banner.addEventListener('click', () => hideBanner())
+}
+
+
+/**
  * Hides banner block.
  *
  * @since 1.0.0
@@ -25,11 +35,3 @@ function hideBanner() {
 }
 
 
-/**
- * Adds event listener for banner block.
- * 
- * @since 1.0.0
- */
-export function addBannerEventListener() {
-    banner && banner.addEventListener('click', hideBanner)
-}
