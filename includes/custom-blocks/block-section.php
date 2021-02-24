@@ -34,7 +34,7 @@ function block_section() {
         ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
             ?>
                 <section class="content__section section">
-                    <h2 class="section__heading"><?php echo esc_html( $fields[ 'heading' ] ); ?></h2>
+                    <h2 class="section__heading"><?php echo esc_html( $fields['heading'] ); ?></h2>
                     <?php echo $inner_blocks; ?>
                 </section>
             <?php

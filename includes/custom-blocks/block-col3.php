@@ -70,9 +70,7 @@ function block_col3() {
             ?>
                 <div class="section__content columns-3">
 
-                <?php var_dump($fields); ?>
-
-                    <?php foreach ( $fields[ 'columns'] as $column ): ?>
+                    <?php foreach ( $fields['columns'] as $column ): ?>
                         
                         <div class="columns-3__column">
 
@@ -81,12 +79,12 @@ function block_col3() {
                             if ( array_key_exists( 'icon', $column ) ) {
                                 $icon_class = 'columns-3__icon';
 
-                                if ( array_key_exists( 'icon_is_small', $fields[ 'column_options' ] ) ) {
+                                if ( array_key_exists( 'icon_is_small', $fields['column_options'] ) ) {
                                     $icon_class .= ' columns-3__icon--small';
                                 }
 
                                 echo wp_get_attachment_image( 
-                                    $column[ 'icon' ], 
+                                    $column['icon'], 
                                     'thumbnail', 
                                     true, 
                                     array( 'class' => $icon_class) );
@@ -94,9 +92,21 @@ function block_col3() {
                             ?>
 
                             <!-- Heading -->
-                            <?php if ( array_key_exists( 'heading', $column ) ): ?>
-                                <h3>
-                            <?php endif; ?>
+                            <?php 
+                            if ( array_key_exists( 'heading', $column ) ) {
+                                $heading_class = 'columns-3__heading';
+
+                                if (array_key_exists( 'text_is_left_aligned', $fields['column_options'] ) ) {
+                                    $heading_class .= ' columns-3__heading--left';
+                                }
+
+                                if (array_key_exists( 'has_orange_accent', $fields['column_options'] ) ) {
+                                    $heading_class .= ' columns-3__heading--altcolor';
+                                }
+                                
+                                echo '<h3 class="' . $heading_class . '">' . $content['heading'] . '</h3>';
+                            }
+                            ?>
 
                         </div>
 

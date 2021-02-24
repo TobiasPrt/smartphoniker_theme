@@ -72,16 +72,16 @@ function block_block2() {
         ->set_parent( 'carbon-fields/section' )
         ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
             ?>
-                <div class="section__content section__content--large block-2 block-2--<?php echo esc_html( $fields[ 'color' ] ); ?>">
+                <div class="section__content section__content--large block-2 block-2--<?php echo esc_html( $fields['color'] ); ?>">
                     
-                    <?php foreach ( $fields[ 'content' ] as $content ): ?>
+                    <?php foreach ( $fields['content'] as $content ): ?>
                         
                         <!-- Image -->
-                        <?php if ( 'image' === $content[ '_type' ] ): ?>
+                        <?php if ( 'image' === $content['_type'] ): ?>
 
                             <div class="block-2__block">
                                 <picture>
-                                    <?php echo wp_get_attachment_image( $content[ 'image' ], '', false, array( 'class' => 'block-2__img' ) ); ?>
+                                    <?php echo wp_get_attachment_image( $content['image'], '', false, array( 'class' => 'block-2__img' ) ); ?>
                                 </picture>
                             </div>
                         
@@ -91,17 +91,17 @@ function block_block2() {
 
                                 <!-- Text -->
                                 <p class="block-2__text">
-                                    <?php echo esc_html( $content[ 'text' ] ); ?>
+                                    <?php echo esc_html( $content['text'] ); ?>
                                 </p>
                             
                                 <!-- Button -->
-                                <?php if ( $content[ 'button_is_enabled' ] ): ?>
+                                <?php if ( $content['button_is_enabled'] ): ?>
                                     <a 
-                                        class="block-2__button button button--<?php echo esc_html( $fields[ 'color' ] ); ?>" 
-                                        href="<?php echo esc_html( $content[ 'button_link' ] ); ?>" 
-                                        target="<?php echo esc_html( $content[ 'button_target' ] ?? '_self' ); ?>"
+                                        class="block-2__button button button--<?php echo esc_html( $fields['color'] ); ?>" 
+                                        href="<?php echo esc_html( $content['button_link'] ); ?>" 
+                                        target="<?php echo esc_html( $content['button_target'] ?? '_self' ); ?>"
                                     >
-                                        <?php echo esc_html( $content[ 'button_text' ] ); ?>
+                                        <?php echo esc_html( $content['button_text'] ); ?>
                             
                                     </a>
                                 <?php endif; ?>

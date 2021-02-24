@@ -30,7 +30,7 @@ function block_col1() {
             ?>
                 <div class="section__content section__content--small columns-1">
                     <p class="columns-1__text">
-                        <?php echo esc_html( $fields[ 'text' ] ); ?>
+                        <?php echo esc_html( $fields['text'] ); ?>
                     </p>
                 </div>
 		    <?php
