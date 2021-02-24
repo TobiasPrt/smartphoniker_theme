@@ -25,15 +25,10 @@ function loadVideo(video) {
  *
  * @since 1.0.0
  */
-function addVideoEventListeners() {
+export function addVideoEventListeners() {
     const videos = document.querySelectorAll('.video');
 
     videos && videos.forEach(video => {
         video.addEventListener('click', () => loadVideo(video));
     });
 }
-
-/**
- * Export all public functions.
- */
-export { addVideoEventListeners };
