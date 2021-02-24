@@ -32,17 +32,8 @@ function block_video() {
             ?>
             <div class="section__content section__content--small">
                 <div id="video" data-yt-id="https://www.youtube.com/embed/<?php echo $fields['video_id']; ?>" class="video">
-
                 </div>
             </div>
-
-            <script>
-                let video = document.getElementById('video');
-                video.addEventListener('click', () => {
-                    let link = video.getAttribute('data-yt-id');
-                    video.innerHTML = '<iframe src="' + link + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-                });
-            </script>
             <?php
         } );
 }
