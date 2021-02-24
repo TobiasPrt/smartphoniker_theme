@@ -15,7 +15,7 @@ foreach (glob(__DIR__ . "/includes/*.php") as $filename) {
 
 // Add Filters
 add_filter('upload_mimes', 'smartphoniker_mime_types', 1);
-// add_filter( 'allowed_block_types', 'smartphoniker_allowed_block_types');
+add_filter( 'allowed_block_types', 'smartphoniker_allowed_block_types');
 
 
 // Add Actions

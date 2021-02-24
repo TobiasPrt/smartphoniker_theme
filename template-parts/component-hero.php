@@ -91,13 +91,16 @@
     <!-- Brands -->
     <ul class="hero__brands columns-5">
 
-        <?php foreach ( $args[ 'images' ] as $image ): ?>
+        <?php foreach ( carbon_get_theme_option('partner_logos') as $partner_logo_id ): ?>
             <li class="columns-5__column">
-                <img
-                    class="columns-5__image"
-                    src="<?php echo $image[ 'sizes' ][ 'thumbnail' ]; ?>"
-                    alt="<?php echo $image[ 'alt' ]; ?>"
-                />
+                <?php
+                echo wp_get_attachment_image(
+                    $partner_logo_id,
+                    'thumbnail',
+                    false,
+                    array( 'class' => 'columns-5__image' )
+                );
+                ?>
             </li>
         <?php endforeach; ?>
 

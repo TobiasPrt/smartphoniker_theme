@@ -19,10 +19,10 @@ use Carbon_Fields\Field;
  * @since 1.0.0
  */
 function block_col1() {
-    Block::make( __( 'Col1' ) )
+    Block::make( __( 'Col-1' ) )
         ->add_fields(
             array(
-                Field::make( 'textarea', 'text', __( 'Col Text' ) )
+                Field::make( 'textarea', 'text', __( 'Text' ) )
             )
         )
         ->set_parent( 'carbon-fields/section' )
@@ -30,7 +30,7 @@ function block_col1() {
             ?>
                 <div class="section__content section__content--small columns-1">
                     <p class="columns-1__text">
-                        <?php echo esc_html( $fields[ 'text' ] ); ?>
+                        <?php echo esc_html( $fields['text'] ); ?>
                     </p>
                 </div>
 		    <?php
