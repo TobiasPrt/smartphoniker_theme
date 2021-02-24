@@ -91,6 +91,7 @@ function block_col3() {
                             }
                             ?>
 
+
                             <!-- Heading -->
                             <?php 
                             if ( array_key_exists( 'heading', $column ) ) {
@@ -104,9 +105,29 @@ function block_col3() {
                                     $heading_class .= ' columns-3__heading--altcolor';
                                 }
                                 
-                                echo '<h3 class="' . $heading_class . '">' . $content['heading'] . '</h3>';
+                                echo '<h3 class="' . $heading_class . '">' . $column['heading'] . '</h3>';
                             }
                             ?>
+
+
+                            <!-- Text -->
+                            <?php
+                            $text_class = 'columns-3__text';
+                            
+                            if ( array_key_exists( 'text_is_left_aligned', $fields['column_options'] ) ) {
+                                $text_class .= ' columns-3__text--left';
+                            }
+
+                            echo '<p class="' . $text_class . '">' . $column['text'] . '</p>';
+                            ?>
+
+
+                            <!-- Subtitle -->
+                            <?php if ( array_key_exists( 'subtitle', $column ) ): ?>
+                                <p class="columns-3__subtitle">
+                                    <?php echo $column['subtitle']; ?>
+                                </p>
+                            <?php endif; ?>
 
                         </div>
 

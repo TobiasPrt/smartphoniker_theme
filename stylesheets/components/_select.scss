@@ -8,13 +8,15 @@
 
   &__select {
     appearance: none;
+    -webkit-appearance: none;
     border: 0;
     height: 4rem;
     @extend .text-md;
-    background: url(../../images/icons/triangle_down.svg) no-repeat right white;
+    background: url(assets/images/icons/triangle_down.svg) no-repeat right white;
     background-size: 6%;
     background-position: 95%;
     padding: 0 1rem;
+    outline: none;
   }
 
   &__label {

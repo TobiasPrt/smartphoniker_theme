@@ -85,6 +85,7 @@ function block_block2() {
                                 </picture>
                             </div>
                         
+                        
                         <!-- Content -->
                         <?php else: ?>
                             <div class="block-2__block block-2__block--center">
