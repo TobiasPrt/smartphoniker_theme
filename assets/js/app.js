@@ -7,6 +7,8 @@
 
 import { addVideoEventListeners } from './modules/video.js';
 import { addBannerEventListener } from './modules/banner.js';
+import { addNavigationEventListener } from './modules/navigation.js';
 
 addVideoEventListeners();
 addBannerEventListener();
+addNavigationEventListener();
