@@ -1,5 +1,5 @@
 /**
- * Module containing all functions relating the video block.
+ * ES6 Module: video block
  * 
  * @package Smartponiker
  * @since 1.0.0
