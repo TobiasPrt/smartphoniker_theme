@@ -6,5 +6,7 @@
  */
 
 import { addVideoEventListeners } from './modules/video.js';
+import { addBannerEventListener } from './modules/banner.js';
 
 addVideoEventListeners();
+addBannerEventListener();
