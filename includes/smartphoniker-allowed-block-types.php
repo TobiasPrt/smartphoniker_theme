@@ -20,6 +20,7 @@ function smartphoniker_allowed_block_types(): array {
         'carbon-fields/col-3',
         'carbon-fields/section',
         'carbon-fields/block-2',
+        'carbon-fields/video',
     );
     return $allowed_block_types;
 }

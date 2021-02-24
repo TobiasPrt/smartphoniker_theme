@@ -21,4 +21,5 @@ function smartphoniker_register_custom_blocks() {
     block_col3();
     block_section();
     block_block2();
+    block_video();
 }
