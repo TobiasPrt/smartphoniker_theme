@@ -46,6 +46,11 @@ function block_block2() {
                     // Content
                     ->add_fields( 'content', array(
                         Field::make( 'textarea', 'text', __( 'Text' ) ),
+                        Field::make( 'set', 'text_options', __( 'Text-Optionen' ) )
+                            ->add_options( array(
+                                'text_is_large' => __( 'Text vergrößern' ),
+                                'text_is_centered' => __( 'Text zentrieren' )
+                            ) ),
                         Field::make( 'checkbox', 'button_is_enabled', __( 'Button anzeigen?' ) ),
                         Field::make( 'text', 'button_text', __( 'Button Text' ) )
                             ->set_help_text( 'Text der im Button stehen soll (max. 40 Zeichen).' )
@@ -96,7 +101,18 @@ function block_block2() {
                             <div class="block-2__block block-2__block--center">
 
                                 <!-- Text -->
-                                <p class="block-2__text">
+                                <?php
+                                $text_class = 'block-2__text';
+                                if ( array_key_exists( 'text_options', $content  ) ) {
+                                    if ( in_array( 'text_is_large', $content['text_options'] ) ) {
+                                        $text_class .= ' block-2__text--large';
+                                    }
+                                    if ( in_array( 'text_is_centered', $content['text_options'] ) ) {
+                                        $text_class .= ' block-2__text--center';
+                                    }
+                                }
+                                ?>
+                                <p class="<?php echo $text_class; ?>">
                                     <?php echo esc_html( $content['text'] ); ?>
                                 </p>
                             
