@@ -86,7 +86,7 @@ function block_block2() {
                         <?php if ( 'image' === $content['_type'] ): ?>
                             <?php 
                             $block_class = 'block-2__block';
-                            if ( array_key_exists( 'image_is_small', $content ) ) {
+                            if ( $content['image_is_small'] ) {
                                 $block_class .= ' block-2__block--center';
                             }
                             ?>
