@@ -39,6 +39,7 @@ function block_block2() {
                     
                     // Image
                     ->add_fields( 'image', array(
+                        Field::make( 'checkbox', 'image_is_small', __( 'Kleines Bild mit Rahmen?' ) ),
                         Field::make( 'image', 'image', __( 'Bild wählen' ) )
                     ) )
 
@@ -78,13 +79,17 @@ function block_block2() {
                         
                         <!-- Image -->
                         <?php if ( 'image' === $content['_type'] ): ?>
-
-                            <div class="block-2__block">
+                            <?php 
+                            $block_class = 'block-2__block';
+                            if ( array_key_exists( 'image_is_small', $content ) ) {
+                                $block_class .= ' block-2__block--center';
+                            }
+                            ?>
+                            <div class="<?php echo $block_class; ?>">
                                 <picture>
                                     <?php echo wp_get_attachment_image( $content['image'], '', false, array( 'class' => 'block-2__img' ) ); ?>
                                 </picture>
                             </div>
-                        
                         
                         <!-- Content -->
                         <?php else: ?>
