@@ -20,7 +20,7 @@ use Carbon_Fields\Field;
  */
 function theme_option_home( Carbon_Fields\Container\Theme_Options_Container $parent ) {
     Container::make( 'theme_options', __( 'Startseite Einstellungen' ) )
-        ->set_page_parent( 'crb_carbon_fields_container_allgemeine_theme_einstellungen.php' )
+        ->set_page_parent( $parent )
         ->add_fields( array(
             Field::make( 'html', 'startseite_description', __( 'Startseite Beschreibung' ) )
                 ->set_html( 'Hier sind ein paar den ersten Abschnitt der Startseite betreffende Einstellungen. Die Inhalte darunter und auf allen anderen Seiten lassen sich im Block-Editor bearbeiten.' ),
