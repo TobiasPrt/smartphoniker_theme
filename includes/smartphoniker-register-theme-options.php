@@ -18,7 +18,7 @@ foreach ( glob( __DIR__ . "/theme-options/*.php" ) as $filename ) {
  * @since 1.0.0
  */
 function smartphoniker_register_theme_options() {
-    $parent = theme_option_general();
-    theme_option_home( $parent );
-    theme_option_page_color( $parent );
+    $parent = smartphoniker_theme_options();
+    smartphoniker_theme_options_home( $parent );
+    smartphoniker_theme_options_page_color( $parent );
 }
