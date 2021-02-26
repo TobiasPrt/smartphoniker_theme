@@ -23,11 +23,11 @@ function smartphoniker_allowed_block_types(): array {
 }
 
 /**
- * Gets all filenames within /custom-blocks/s.
+ * Gets all filenames within /custom-blocks/.
  *
  * @since 1.0.0
  * 
- * @return array filtered filenames within /custom-block/s.
+ * @return array filtered filenames within /custom-blocks/.
  */
 function smartphoniker_get_custom_block_filenames(): array {
     $filenames = scandir( __DIR__ . '/custom-blocks' );
