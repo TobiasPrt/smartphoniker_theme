@@ -5,7 +5,18 @@
  * @package Smartphoniker
  * @since 1.0.0
  */
+add_action( 'wp_enqueue_scripts', 'smartphoniker_enqueue_scripts' );
 
+
+/**
+ * Enqueue all scripts.
+ *
+ * @since 1.0.0
+ */
+function smartphoniker_enqueue_scripts() {
+    smartphoniker_enqueue_stylesheets();
+    smartphoniker_enqueue_javascript();
+}
 
 /**
  * Enqueue stylesheet files.
@@ -26,12 +37,3 @@ function smartphoniker_enqueue_javascript() {
     wp_enqueue_script( 'smartphoniker-app', get_template_directory_uri() . '/assets/js/app.js', array(), wp_get_theme()->get( 'Version' ), true );
 }
 
-/**
- * Enqueue all scripts.
- *
- * @since 1.0.0
- */
-function smartphoniker_enqueue_scripts() {
-    smartphoniker_enqueue_stylesheets();
-    smartphoniker_enqueue_javascript();
-}

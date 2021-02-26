@@ -26,9 +26,9 @@ function block_block2() {
                 Field::make( 'select', 'color', __( 'Block-Hintergrundfarbe' ) )
                     ->set_options( array(
                         'orange' => __( 'Orange' ),
-                        'green' => __( 'Grün' ),
-                        'grey' => __( 'Grau' ),
-                        'blue' => __( 'Dunkelblau' ),
+                        'green'  => __( 'Grün' ),
+                        'grey'   => __( 'Grau' ),
+                        'blue'   => __( 'Dunkelblau' ),
                     ) ),
 
                 // Block component types
@@ -48,7 +48,7 @@ function block_block2() {
                         Field::make( 'textarea', 'text', __( 'Text' ) ),
                         Field::make( 'set', 'text_options', __( 'Text-Optionen' ) )
                             ->add_options( array(
-                                'text_is_large' => __( 'Text vergrößern' ),
+                                'text_is_large'    => __( 'Text vergrößern' ),
                                 'text_is_centered' => __( 'Text zentrieren' )
                             ) ),
                         Field::make( 'checkbox', 'button_is_enabled', __( 'Button anzeigen?' ) ),
@@ -76,11 +76,11 @@ function block_block2() {
             )
         )
         ->set_parent( 'carbon-fields/section' )
-        ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+        ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
             ?>
                 <div class="section__content section__content--large block-2 block-2--<?php echo esc_html( $fields['color'] ); ?>">
                     
-                    <?php foreach ( $fields['content'] as $content ): ?>
+                    <?php foreach ( (array) $fields['content'] as $content ): ?>
                         
                         <!-- Image -->
                         <?php if ( 'image' === $content['_type'] ): ?>

@@ -28,7 +28,7 @@ function theme_option_home( Carbon_Fields\Container\Theme_Options_Container $par
             Field::make( 'radio', 'banner_type', 'Welches Banner soll verwendet werden?' )
                 ->set_options( array(
                     'whatsapp-orange' => __( 'WhatsApp (orange)' ),
-                    'custom' => __( 'Eigener Text' ),
+                    'custom'          => __( 'Eigener Text' ),
                 ) )
                 ->set_conditional_logic( array(
                     array(

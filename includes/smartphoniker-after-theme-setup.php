@@ -5,6 +5,7 @@
  * @package Smartphoniker
  * @since 1.0.0
  */
+add_action( 'after_setup_theme', 'smartphoniker_setup' );
 
 
 /**
@@ -24,7 +25,7 @@ function smartphoniker_setup() {
      */
     register_nav_menus( 
         array(
-            'primary' => 'Main Navigation',
+            'primary'      => 'Main Navigation',
             'footer_links' => 'Footer Hilfreiche Links',
             'footer_legal' => 'Footer Informationen',
         )

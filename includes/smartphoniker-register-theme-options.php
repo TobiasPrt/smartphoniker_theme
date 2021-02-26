@@ -5,6 +5,7 @@
  * @package Smartphoniker
  * @since 1.0.0
  */
+add_action( 'carbon_fields_register_fields', 'smartphoniker_register_theme_options' );
 
 
 foreach ( glob( __DIR__ . "/theme-options/*.php" ) as $filename ) {

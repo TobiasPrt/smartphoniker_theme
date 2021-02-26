@@ -26,7 +26,7 @@ function block_col1() {
             )
         )
         ->set_parent( 'carbon-fields/section' )
-        ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+        ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
             ?>
                 <div class="section__content section__content--small columns-1">
                     <p class="columns-1__text">

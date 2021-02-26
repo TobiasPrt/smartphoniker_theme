@@ -5,6 +5,7 @@
  * @package Smartphoniker
  * @since 1.0.0
  */
+add_filter( 'allowed_block_types', 'smartphoniker_allowed_block_types' );
 
 
 /**

@@ -26,8 +26,8 @@ function block_col3() {
                 Field::make( 'set', 'column_options', __( 'Spaltenoptionen' ) )
                     ->set_options( array(
                         'text_is_left_aligned' => __( 'Text linksbündig ausrichten' ),
-                        'has_orange_accent' => __( 'Orange Überschrift / Untertitel' ),
-                        'icon_is_small' => __( 'Flache Icons verwenden für z.B. Sterne-Bewertung' ),
+                        'has_orange_accent'    => __( 'Orange Überschrift / Untertitel' ),
+                        'icon_is_small'        => __( 'Flache Icons verwenden für z.B. Sterne-Bewertung' ),
                     ) ),
 
                 // Column Types
@@ -66,11 +66,11 @@ function block_col3() {
             )
         )
         ->set_parent( 'carbon-fields/section' )
-        ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+        ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
             ?>
                 <div class="section__content columns-3">
 
-                    <?php foreach ( $fields['columns'] as $column ): ?>
+                    <?php foreach ( (array) $fields['columns'] as $column ): ?>
                         
                         <div class="columns-3__column">
 

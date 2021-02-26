@@ -28,7 +28,7 @@ function block_video() {
                 )
         ) )
         ->set_parent( 'carbon-fields/section' )
-        ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+        ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
             ?>
             <div class="section__content section__content--small">
                 <div id="video" data-yt-id="https://www.youtube.com/embed/<?php echo $fields['video_id']; ?>" class="video">

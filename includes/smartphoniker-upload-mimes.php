@@ -5,6 +5,7 @@
  * @package Smartphoniker
  * @since 1.0.0
  */
+add_filter( 'upload_mimes', 'smartphoniker_mime_types', 1 );
 
 
 /**
@@ -12,9 +13,9 @@
  * 
  * @since 1.0.0
  *
- * @param   array   $mime_types List of all allowed mime types.
+ * @param array  $mime_types List of all allowed mime types.
  * 
- * @return  array   $mime_types Extended list of all allowed mime types.
+ * @return array  $mime_types Extended list of all allowed mime types.
  */
 function smartphoniker_mime_types( array $mime_types ): array {
     $mime_types['svg'] = 'image/svg+xml';

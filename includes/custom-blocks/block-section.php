@@ -31,7 +31,7 @@ function block_section() {
         ->set_mode( 'edit' )
         // Only the blocks that have this block as a parent can be inserted.
         ->set_allowed_inner_blocks( array() )
-        ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+        ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
             ?>
                 <section class="content__section section">
                     <h2 class="section__heading"><?php echo esc_html( $fields['heading'] ); ?></h2>

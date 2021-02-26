@@ -5,6 +5,7 @@
  * @package Smartphoniker
  * @since 1.0.0
  */
+add_filter( 'script_loader_tag', 'smartphoniker_script_loader_tag' , 10, 3 );
 
 
 /**
@@ -12,11 +13,11 @@
  * 
  * @since 1.0.0
  *
- * @param   string  $tag     default script tag
- * @param   string  $handle  handle of script
- * @param   string  $src     url/path of script
- *
- * @return  string           new script tag
+ * @param string $tag default script tag
+ * @param string $handle handle of script
+ * @param string $src url/path of script
+ * 
+ * @return string new script tag
  */
 function smartphoniker_script_loader_tag( string $tag, string $handle, string $src ) {
     if ( 'smartphoniker-app' !== $handle ) {
