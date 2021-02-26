@@ -20,5 +20,4 @@ foreach ( glob( __DIR__ . "/theme-options/*.php" ) as $filename ) {
 function smartphoniker_register_theme_options() {
     $parent = smartphoniker_theme_options();
     smartphoniker_theme_options_home( $parent );
-    smartphoniker_theme_options_page_color( $parent );
 }

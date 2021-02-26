@@ -26,7 +26,7 @@
     <!-- Header -->
     <?php
     $page_id = get_the_ID();
-    $header_color = carbon_get_theme_option( $page_id . '-color' );
+    $header_color = carbon_get_post_meta( get_the_ID(), 'header-color' );
     $header_class = 'header--' . $header_color;
     ?>
     <header id="header" class="header <?php echo $header_class; ?> header--bannerIsHidden">
@@ -109,6 +109,18 @@
                 </button>
             </div>
         </nav>
+
+        <h1 class="header__heading"><?php the_title(); ?></h1>
+        
+        <?php if ( carbon_get_post_meta( get_the_ID(), 'header_button_is_enabled' ) ): ?>
+            <a 
+                class="header__button button" 
+                href="<?php echo carbon_get_post_meta( get_the_ID(), 'header_button_link' ); ?>" 
+                target="<?php echo carbon_get_post_meta( get_the_ID(), 'header_button_text' ); ?>"
+            >
+                <?= $header_link['title']?>
+          </a>
+        <?php endif; ?>
 
     </header>
     <main class="content">
