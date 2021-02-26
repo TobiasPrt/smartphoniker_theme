@@ -18,7 +18,7 @@ use Carbon_Fields\Field;
  * 
  * @since 1.0.0
  */
-function block_section() {
+(function() {
     Block::make( __( 'Section' ) )
         ->add_fields(
             array(
@@ -39,4 +39,4 @@ function block_section() {
                 </section>
             <?php
         } );
-}
+})();

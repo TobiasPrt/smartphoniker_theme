@@ -17,7 +17,7 @@ use Carbon_Fields\Field;
  * 
  * @since 1.0.0
  */
-function block_video() {
+(function() {
     Block::make( __( 'Video' ) )
         ->add_fields( array(
             Field::make( 'text', 'video_id', __('YouTube Video ID' ) )
@@ -36,4 +36,4 @@ function block_video() {
             </div>
             <?php
         } );
-}
+})();

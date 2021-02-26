@@ -18,7 +18,7 @@ use Carbon_Fields\Field;
  *
  * @since 1.0.0
  */
-function block_block2() {
+(function() {
     Block::make( __( 'Block-2' ) )
         ->add_fields(
             array(
@@ -136,4 +136,4 @@ function block_block2() {
                 </div>
 		    <?php
         } );
-}
+})();

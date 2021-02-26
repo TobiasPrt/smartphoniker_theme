@@ -18,7 +18,7 @@ use Carbon_Fields\Field;
  *
  * @since 1.0.0
  */
-function block_col1() {
+(function() {
     Block::make( __( 'Col-1' ) )
         ->add_fields(
             array(
@@ -35,4 +35,4 @@ function block_col1() {
                 </div>
 		    <?php
         } );
-}
+})();
