@@ -29,24 +29,24 @@
     );
 
     $options = array(
-        'label' => __( 'Mitarbeiter:innen' ),
-        'description' => __( 'Alle Mitarbeiter:innen von Smartphoniker.' ),
-        'labels' => $labels,
-        'supports' => array(
+        'label'                 => __( 'Mitarbeiter:innen' ),
+        'description'           => __( 'Alle Mitarbeiter:innen von Smartphoniker.' ),
+        'labels'                => $labels,
+        'supports'              => array(
             'title', 
             'thumbnail'
         ),
-        'hierarchical' => false,
-        'menu_icon' => 'dashicons-groups',
-        'has_archive' => true,
-        'show_in_rest' => true,
-        'public' => false,
-        'publicly_queryable' => true,
-        'show_ui' => true,
-        'exclude_from_search' => true,
-        'show_in_nav_menus' => false,
-        'has_archive' => false,
-        'rewrite' => false,
+        'hierarchical'          => false,
+        'menu_icon'             => 'dashicons-groups',
+        'has_archive'           => true,
+        'show_in_rest'          => true,
+        'public'                => false,
+        'publicly_queryable'    => true,
+        'show_ui'               => true,
+        'exclude_from_search'   => true,
+        'show_in_nav_menus'     => false,
+        'has_archive'           => false,
+        'rewrite'               => false,
     );
     
     register_post_type( 'employee', $options );
