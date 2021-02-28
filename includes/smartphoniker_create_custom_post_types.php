@@ -48,5 +48,5 @@ function smartphoniker_register_employee_post_type() {
         'taxonomies' => array( 'role' ),
     );
     
-    register_post_type( 'Mitarbeiter', $options );
+    register_post_type( 'employee', $options );
 }
