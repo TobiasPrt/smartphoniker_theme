@@ -1,10 +1,36 @@
 // Video Komponenten
 .video {
+  @include bg(black);
   border-radius: $border-radius;
   overflow: hidden; // border radius is not working otherwise (because iframe)
   position: relative;
-  padding-bottom: 56.25%; // Seitenverhältnis bei 16:9 Videos
+  padding-bottom: 56.25%; // 16:9 video format
   z-index: 0;
+
+  // red box in the middle
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: red;
+    width: 90px;
+    height: 60px;
+    top: calc( 50% - 30px );
+    left: calc( 50% - 45px );
+    border-radius: .75rem;
+  }
+
+  // white triangle in the middle
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc( 50% - 15px );
+    left: calc( 50% - 14px );
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 30px solid white;
+  }
 
   & > iframe {
     position: absolute;

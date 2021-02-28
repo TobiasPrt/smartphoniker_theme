@@ -5,6 +5,7 @@
  * @package Smartphoniker
  * @since 1.0.0
  */
+add_action( 'carbon_fields_register_fields', 'smartphoniker_register_theme_options' );
 
 
 foreach ( glob( __DIR__ . "/theme-options/*.php" ) as $filename ) {
@@ -17,6 +18,6 @@ foreach ( glob( __DIR__ . "/theme-options/*.php" ) as $filename ) {
  * @since 1.0.0
  */
 function smartphoniker_register_theme_options() {
-    $parent = theme_option_general();
-    theme_option_home( $parent );
+    $parent = smartphoniker_theme_options();
+    smartphoniker_theme_options_home( $parent );
 }

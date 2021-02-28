@@ -9,3 +9,12 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.no-pseudo-elements {
+  &::after {
+    display: none;
+  }
+  &::before {
+    display: none;
+  }
+}

@@ -18,7 +18,7 @@ use Carbon_Fields\Field;
  *
  * @since 1.0.0
  */
-function block_col3() {
+(function() {
     Block::make( __( 'Col-3' ) )
         ->add_fields(
             array(
@@ -26,8 +26,8 @@ function block_col3() {
                 Field::make( 'set', 'column_options', __( 'Spaltenoptionen' ) )
                     ->set_options( array(
                         'text_is_left_aligned' => __( 'Text linksbündig ausrichten' ),
-                        'has_orange_accent' => __( 'Orange Überschrift / Untertitel' ),
-                        'icon_is_small' => __( 'Flache Icons verwenden für z.B. Sterne-Bewertung' ),
+                        'has_orange_accent'    => __( 'Orange Überschrift / Untertitel' ),
+                        'icon_is_small'        => __( 'Flache Icons verwenden für z.B. Sterne-Bewertung' ),
                     ) ),
 
                 // Column Types
@@ -66,11 +66,11 @@ function block_col3() {
             )
         )
         ->set_parent( 'carbon-fields/section' )
-        ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+        ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
             ?>
                 <div class="section__content columns-3">
 
-                    <?php foreach ( $fields['columns'] as $column ): ?>
+                    <?php foreach ( (array) $fields['columns'] as $column ): ?>
                         
                         <div class="columns-3__column">
 
@@ -79,7 +79,7 @@ function block_col3() {
                             if ( array_key_exists( 'icon', $column ) ) {
                                 $icon_class = 'columns-3__icon';
 
-                                if ( array_key_exists( 'icon_is_small', $fields['column_options'] ) ) {
+                                if ( in_array( 'icon_is_small', $fields['column_options'] ) ) {
                                     $icon_class .= ' columns-3__icon--small';
                                 }
 
@@ -97,11 +97,11 @@ function block_col3() {
                             if ( array_key_exists( 'heading', $column ) ) {
                                 $heading_class = 'columns-3__heading';
 
-                                if (array_key_exists( 'text_is_left_aligned', $fields['column_options'] ) ) {
+                                if ( in_array( 'text_is_left_aligned', $fields['column_options'] ) ) {
                                     $heading_class .= ' columns-3__heading--left';
                                 }
 
-                                if (array_key_exists( 'has_orange_accent', $fields['column_options'] ) ) {
+                                if ( in_array( 'has_orange_accent', $fields['column_options'] ) ) {
                                     $heading_class .= ' columns-3__heading--altcolor';
                                 }
                                 
@@ -114,7 +114,7 @@ function block_col3() {
                             <?php
                             $text_class = 'columns-3__text';
                             
-                            if ( array_key_exists( 'text_is_left_aligned', $fields['column_options'] ) ) {
+                            if ( in_array( 'text_is_left_aligned', $fields['column_options'] ) ) {
                                 $text_class .= ' columns-3__text--left';
                             }
 
@@ -136,4 +136,4 @@ function block_col3() {
                 </div>
 		    <?php
         } );
-}
+})();

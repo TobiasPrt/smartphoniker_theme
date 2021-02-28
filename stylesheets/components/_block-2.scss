@@ -47,6 +47,10 @@
     &--center {
       text-align: center;
     }
+
+    &--large {
+      @extend .text-lg;
+    }
   }
 
   &__button {

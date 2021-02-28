@@ -18,7 +18,7 @@ use Carbon_Fields\Field;
  *
  * @since 1.0.0
  */
-function block_col1() {
+(function() {
     Block::make( __( 'Col-1' ) )
         ->add_fields(
             array(
@@ -26,7 +26,7 @@ function block_col1() {
             )
         )
         ->set_parent( 'carbon-fields/section' )
-        ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+        ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
             ?>
                 <div class="section__content section__content--small columns-1">
                     <p class="columns-1__text">
@@ -35,4 +35,4 @@ function block_col1() {
                 </div>
 		    <?php
         } );
-}
+})();

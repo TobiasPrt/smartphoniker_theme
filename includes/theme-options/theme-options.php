@@ -17,7 +17,7 @@ use Carbon_Fields\Field;
  *
  * @return Carbon_Fields\Container\Theme_Options_Container top-level theme options container
  */
-function theme_option_general(): Carbon_Fields\Container\Theme_Options_Container {
+function smartphoniker_theme_options(): Carbon_Fields\Container\Theme_Options_Container {
     return Container::make( 'theme_options', __( 'Allgemeine Theme Einstellungen' ) )
         ->add_fields( array(
             Field::make( 'html', 'footer_description', __( 'Footer Beschreibung' ) )

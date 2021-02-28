@@ -17,3 +17,23 @@ use Carbon_Fields\Field;
  * 
  * @since 1.0.0
  */
+(function() {
+    Block::make( __( 'Video' ) )
+        ->add_fields( array(
+            Field::make( 'text', 'video_id', __('YouTube Video ID' ) )
+                ->set_help_text(
+                    'Video im Browser aufrufen und den v-Parameter der URL kopieren. 
+                    Bsp: Der Link zum Video ist: https://www.youtube.com/watch?v=zExoGYO_L1s 
+                    Also muss zExoGYO_L1s kopiert und in dieses Feld eingefügt werden.'
+                )
+        ) )
+        ->set_parent( 'carbon-fields/section' )
+        ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
+            ?>
+            <div class="section__content section__content--small">
+                <div id="video" data-yt-id="https://www.youtube.com/embed/<?php echo $fields['video_id']; ?>" class="video">
+                </div>
+            </div>
+            <?php
+        } );
+})();
