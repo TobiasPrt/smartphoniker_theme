@@ -116,9 +116,9 @@
             <a 
                 class="header__button button" 
                 href="<?php echo carbon_get_post_meta( get_the_ID(), 'header_button_link' ); ?>" 
-                target="<?php echo carbon_get_post_meta( get_the_ID(), 'header_button_text' ); ?>"
+                target="<?php echo carbon_get_post_meta( get_the_ID(), 'header_button_target' ); ?>"
             >
-                <?= $header_link['title']?>
+                <?php echo carbon_get_post_meta( get_the_ID(), 'header_button_text' ); ?>
           </a>
         <?php endif; ?>
 
