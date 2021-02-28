@@ -27,6 +27,6 @@ use Carbon_Fields\Field;
         )
         ->set_parent( 'carbon-fields/section' )
         ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
-            get_template_part( 'template-parts/component', 'block-2', $fields );
+            get_template_part( 'template-parts/component', 'col-1', $fields );
         } );
 })();
