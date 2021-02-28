@@ -37,7 +37,7 @@
             'thumbnail'
         ),
         'hierarchical'          => false,
-        'menu_icon'             => 'dashicons-groups',
+        'menu_icon'             => 'dashicons-businessperson',
         'has_archive'           => true,
         'show_in_rest'          => true,
         'public'                => false,
