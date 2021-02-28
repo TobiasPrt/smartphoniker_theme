@@ -55,11 +55,11 @@ use Carbon_Fields\Field;
                                     <a
                                         href="<?php echo $list_item['link']; ?>"
                                         class="list__source"
+                                        target="_blank"
                                     >
                                         <img
                                         src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/arrowright_box-green.svg"
                                         alt="zur Quelle"
-                                        target="_blank"
                                     /></a>
                                 <?php endif; ?>
 
