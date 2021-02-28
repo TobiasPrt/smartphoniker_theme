@@ -2,8 +2,6 @@
 /**
  * Post Meta: Pages
  * 
- * This is the post meta for all pages except the home page.
- * 
  * @package Smartphoniker
  * @since 1.0.0
  */
@@ -13,7 +11,7 @@ use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
 /**
- * Creates post meta for page post type.
+ * Creates post meta for employee post type.
  * 
  * @since 1.0.0
  */
