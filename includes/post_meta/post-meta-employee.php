@@ -16,7 +16,7 @@ use Carbon_Fields\Field;
  * @since 1.0.0
  */
 (function() {
-    Container::make( 'post_meta', _( 'Mitarbeiter:innen Einstellungen' ) )
+    Container::make( 'post_meta', _( 'Mitarbeiter:in Einstellungen' ) )
         ->where( 'post_type', '=', 'employee' )
         ->set_context( 'carbon_fields_after_title' )
         ->add_fields( array(
