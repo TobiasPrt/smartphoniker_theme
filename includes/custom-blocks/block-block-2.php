@@ -69,9 +69,17 @@ use Carbon_Fields\Field;
                                     'value' => true,
                                 ),
                             ) ),
-                        Field::make( 'checkbox', 'button_target', __('Link in neuem Tab öffnen?') )
-                            ->set_option_value( '_blank' )
-                            ->set_help_text( 'Wenn der Haken nicht gesetzt ist, öffnet sich die verlinkte Seite im aktuellen Tab.' ),
+                        Field::make( 'select', 'button_target', __( 'Art des Links wählen' ) )
+                            ->set_conditional_logic( array(
+                                array(
+                                    'field' => 'button_is_enabled',
+                                    'value' => true
+                                )
+                            ) )
+                            ->set_options( array(
+                                '_blank' => __( 'Link in neuem Tab/Fenster öffnen' ),
+                                '_self' => __( 'Link im aktuellen Tab/Fenster öffnen' ),
+                            ) ),
                     ) ),
             )
         )
@@ -121,7 +129,7 @@ use Carbon_Fields\Field;
                                     <a 
                                         class="block-2__button button button--<?php echo esc_html( $fields['color'] ); ?>" 
                                         href="<?php echo esc_html( $content['button_link'] ); ?>" 
-                                        target="<?php echo esc_html( $content['button_target'] ?? '_self' ); ?>"
+                                        target="<?php echo esc_html( $content['button_target'] ); ?>"
                                     >
                                         <?php echo esc_html( $content['button_text'] ); ?>
                             
