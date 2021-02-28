@@ -59,6 +59,7 @@ use Carbon_Fields\Field;
                                         <img
                                         src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/arrowright_box-green.svg"
                                         alt="zur Quelle"
+                                        target="_blank"
                                     /></a>
                                 <?php endif; ?>
 
