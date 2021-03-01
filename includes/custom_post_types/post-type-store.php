@@ -33,8 +33,7 @@
         'description'           => __( 'Alle Standorte von Smartphoniker.' ),
         'labels'                => $labels,
         'supports'              => array(
-            'title', 
-            'thumbnail'
+            'title', 'editor'
         ),
         'hierarchical'          => true,
         'menu_icon'             => 'dashicons-store',
