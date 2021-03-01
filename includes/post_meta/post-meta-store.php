@@ -70,10 +70,11 @@ use Carbon_Fields\Field;
                     'self_repair' => __( 'Self-Repair Station' ),
                     'lounge' => __( 'Lounge-Bereich' ),
                 ) ),
-            Field::make( 'image', 'image_outside', __( 'Header-Bild' ) )
+            Field::make( 'image', 'header_image', __( 'Header-Bild' ) )
                 ->set_width( 50 )
+                ->set_value_type( 'url' )
                 ->set_required( true ),
-            Field::make( 'image', 'image_inside', __( 'Block-Bild' ) )
+            Field::make( 'image', 'block_image', __( 'Block-Bild' ) )
                 ->set_width( 50 )
                 ->set_required( true )
     ) );
