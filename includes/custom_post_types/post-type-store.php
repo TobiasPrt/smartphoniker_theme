@@ -36,17 +36,16 @@
             'title', 
             'thumbnail'
         ),
-        'hierarchical'          => false,
+        'hierarchical'          => true,
         'menu_icon'             => 'dashicons-store',
         'has_archive'           => true,
         'show_in_rest'          => true,
-        'public'                => false,
+        'public'                => true,
         'publicly_queryable'    => true,
         'show_ui'               => true,
         'exclude_from_search'   => true,
         'show_in_nav_menus'     => false,
         'has_archive'           => false,
-        'rewrite'               => false,
     );
     
     register_post_type( 'store', $options );
