@@ -3,7 +3,7 @@
  * Custom Block: Services
  * 
  * Gutenberg block which represents a 2-column layout filled
- * with all services within a specific group.
+ * with all services within the widget group.
  *
  * @package Smartphoniker
  * @since 1.0.0
