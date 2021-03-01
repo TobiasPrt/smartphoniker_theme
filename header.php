@@ -30,8 +30,10 @@
                 left: 0;
                 height: 100%;
                 width: 100%;
-                opacity: 0.5;
-                background: black url('<?php echo get_post_meta( get_the_ID(), '_header_image')[0]; ?>') !important;
+                opacity: 0.4;
+                background: black url('<?php echo get_post_meta( get_the_ID(), '_header_image')[0]; ?>');
+                background-position: center;
+                background-size: cover;
             }
         </style>
     <?php endif; ?>
