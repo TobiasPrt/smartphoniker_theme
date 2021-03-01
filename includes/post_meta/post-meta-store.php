@@ -17,8 +17,8 @@ use Carbon_Fields\Field;
  */
 (function() {
     Container::make( 'post_meta', _( 'Standort Einstellungen' ) )
+        ->set_context( 'normal' )
         ->where( 'post_type', '=', 'store' )
-        ->set_context( 'carbon_fields_after_title' )
         ->add_fields( array(
             /** * @todo implement Google Maps for choosing adress */
             Field::make( 'select', 'state', __( 'Aktueller Status' ) )
@@ -55,27 +55,9 @@ use Carbon_Fields\Field;
                 ->add_fields( array(
                     Field::make( 'text', 'line', __( 'Zeile' ) )
                 ) ),
-            Field::make( 'textarea', 'description', __( 'Standortbeschreibung' ) )
-                ->set_help_text( 'Abschnitt erscheint direkt unter der Abschnittsüberschrift vor den Services. Kann auch leer bleiben.' ),
-            Field::make( 'set', 'services', __( 'Services auswählen' ) )
-                ->set_required( true )
-                ->set_help_text( 'Am besten eine gerade Anzahl auswählen, maximal jedoch 6.')
-                ->set_options( array(
-                    'repairs' => __( 'Reparaturen' ),
-                    'used_devices' => __( 'Gebrauchtgeräte An- und Verkauf' ),
-                    'accessoires' => __( 'Zubehör' ),
-                    'free_parking' => __( 'kostenloses parken' ),
-                    'sharing_shelf' => __( 'Sharing Bücherregal' ),
-                    'shopping_and_food' => __( 'Gastronomie & Einkaufsmöglichkeiten' ),
-                    'self_repair' => __( 'Self-Repair Station' ),
-                    'lounge' => __( 'Lounge-Bereich' ),
-                ) ),
             Field::make( 'image', 'header_image', __( 'Header-Bild' ) )
                 ->set_width( 50 )
                 ->set_value_type( 'url' )
                 ->set_required( true ),
-            Field::make( 'image', 'block_image', __( 'Block-Bild' ) )
-                ->set_width( 50 )
-                ->set_required( true )
     ) );
 })();
