@@ -1,6 +1,6 @@
 <?php
 /**
- * Template: Service
+ * Template: Service Post Type
  *
  * @package Smartphoniker
  * @since 1.0.0
