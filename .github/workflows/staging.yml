@@ -2,7 +2,7 @@ name: Staging
 
 on:
   push:
-    branches: [staging]
+    branches: [master]
 
 jobs:
   deploy:
@@ -22,5 +22,9 @@ jobs:
             --exclude /deploy_key \
             --exclude /.git/ \
             --exclude /.github/ \
-            --exclude /theme-template/ \
+            --exclude /static-pages/ \
+            --exclude /stylesheets/ \
+            --exclude README.md \
+            --exclude LICENSE \
+            --exclude .gitignore \
             ./ ${{env.dest}}

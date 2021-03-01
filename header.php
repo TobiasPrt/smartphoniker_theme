@@ -19,6 +19,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
 
     <?php wp_head(); ?>
+
+    <?php if ( 'store' === get_post_type() ): ?>
+        <style>
+            .header::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                opacity: 0.4;
+                background: black url('<?php echo get_post_meta( get_the_ID(), '_header_image')[0]; ?>');
+                background-position: center;
+                background-size: cover;
+            }
+        </style>
+    <?php endif; ?>
 </head>
 
 <body>
@@ -27,6 +45,9 @@
     <?php
     $page_id = get_the_ID();
     $header_color = carbon_get_post_meta( get_the_ID(), 'header-color' );
+    if ( 'store' === get_post_type() ) {
+        $header_color = 'black';
+    }
     $header_class = 'header--' . $header_color;
     ?>
     <header id="header" class="header <?php echo $header_class; ?> header--bannerIsHidden">
@@ -39,6 +60,7 @@
                 <!-- Logo -->
                 <?php 
                 switch ($header_color) {
+                    case 'black':
                     case 'blue':
                         $logo = 'orangewhite';
                         break;
@@ -83,6 +105,7 @@
                     case 'green':
                         $phone_icon = 'whitegreen';
                         break;
+                    case 'black':
                     case 'grey':
                         $phone_icon = 'orangewhite';
                         break;

@@ -29,11 +29,6 @@ use Carbon_Fields\Field;
         ) )
         ->set_parent( 'carbon-fields/section' )
         ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
-            ?>
-            <div class="section__content section__content--small">
-                <div id="video" data-yt-id="https://www.youtube.com/embed/<?php echo $fields['video_id']; ?>" class="video">
-                </div>
-            </div>
-            <?php
+            get_template_part( 'template-parts/component', 'video', $fields );
         } );
 })();

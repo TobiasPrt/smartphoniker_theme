@@ -19,11 +19,12 @@ use Carbon_Fields\Field;
  */
 (function() {
     Container::make( 'post_meta', _( 'Header Einstellungen' ) )
-        ->where( 'post_type', '=', 'page' )
+        ->where( 'post_type', 'IN', array( 'page', 'store', 'service' ) )
         ->where( 'post_template', '!=', 'front_page.php' )
         ->set_context( 'normal' )
         ->add_fields( array(
             Field::make( 'select', 'header-color', __( 'Header-Farbe wählen' ) )
+                ->set_help_text( 'Die Auswahl wird bei einzelnen Standorten nicht berücksichtigt, da dort schwarz der Standard ist.' )
                 ->set_options( array(
                     'orange' => __( 'Orange' ),
                     'grey'   => __( 'Grau' ),

@@ -2,8 +2,6 @@
 /**
  * Post Meta: Pages
  * 
- * This is the post meta for all pages except the home page.
- * 
  * @package Smartphoniker
  * @since 1.0.0
  */
@@ -13,12 +11,12 @@ use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
 /**
- * Creates post meta for page post type.
+ * Creates post meta for employee post type.
  * 
  * @since 1.0.0
  */
 (function() {
-    Container::make( 'post_meta', _( 'Mitarbeiter:innen Einstellungen' ) )
+    Container::make( 'post_meta', _( 'Mitarbeiter:in Einstellungen' ) )
         ->where( 'post_type', '=', 'employee' )
         ->set_context( 'carbon_fields_after_title' )
         ->add_fields( array(

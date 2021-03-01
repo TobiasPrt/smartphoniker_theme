@@ -2,6 +2,7 @@
 
 .header {
   min-height: 12rem;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,12 +21,18 @@
     @include fg(white);
     margin-top: 18rem;
     text-align: center;
+    z-index: 1;
+
+    &:last-child {
+      margin-bottom: 6rem;
+    }
   }
 
   &__button {
     @include fg(orange);
     @include bg(white);
     margin: 2rem auto 6rem;
+    z-index: 1;
   }
 
   &--orange {
@@ -42,5 +49,37 @@
 
   &--blue {
     @include headercolor(dark_blue);
+  }
+
+  &--black {
+    @include bg(black);
+
+    & .nav {
+      @include bg(black);
+
+      @include md {  
+          background-color: transparent;
+        }
+
+      &__list {
+        @include bg(black);
+
+        @include md {
+          background-color: transparent;
+        }
+      }
+      &__listitem {
+        & > a {
+          @include fg(white);
+
+          &:hover {
+            @include fg(orange);
+          }
+        }
+      }
+      & .menuicon__line {
+        @include bg(white);
+      }
+    }
   }
 }

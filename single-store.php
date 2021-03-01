@@ -1,6 +1,6 @@
 <?php
 /**
- * Template: Index
+ * Template: Store Post Type
  *
  * @package Smartphoniker
  * @since 1.0.0
