@@ -19,7 +19,7 @@ use Carbon_Fields\Field;
  */
 (function() {
     Container::make( 'post_meta', _( 'Header Einstellungen' ) )
-        ->where( 'post_type', 'IN', array( 'page', 'store' ) )
+        ->where( 'post_type', 'IN', array( 'page', 'store', 'service' ) )
         ->where( 'post_template', '!=', 'front_page.php' )
         ->set_context( 'normal' )
         ->add_fields( array(
