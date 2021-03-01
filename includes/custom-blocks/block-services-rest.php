@@ -19,7 +19,7 @@ use Carbon_Fields\Field;
  * @since 1.0.0
  */
 (function() {
-    Block::make( __( 'Services' ) )
+    Block::make( __( 'Services-Rest' ) )
         ->add_fields ( array(
             Field::make( 'html', 'description', __( 'Services Beschreibung' ) )
                 ->set_html( 'Hier wird eine 3-spaltiges Layout von 3 Services ohne Gruppe ausgegeben.' )
