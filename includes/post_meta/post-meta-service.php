@@ -27,5 +27,10 @@ use Carbon_Fields\Field;
                 ->set_width( 75 )
                 ->set_help_text( 'Erscheint überall wo der Services-Block eingebunden sind.' )
                 ->set_required ( true ),
+            Field::make( 'select', 'group', __( 'Gruppe auswählen' ) )
+                ->set_options( array(
+                    'no_group' => 'ohne Gruppe',
+                    'widget' => 'Widget-Gruppe',
+                ) )
         ) );
 })();
