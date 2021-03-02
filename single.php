@@ -1,6 +1,6 @@
 <?php
 /**
- * Template: Standard Page
+ * Template: Single Post Type
  *
  * @package Smartphoniker
  * @since 1.0.0

@@ -5,7 +5,7 @@ Author: Tobias Pörtner
 Author URI: https://tobiaspoertner.com
 Description: Custom WordPress-Theme for Smartphoniker GmbH
 Tags: responsive, minimal, block, sustainability
-Version: 1.0
+Version: 1.0.0
 Requires at least: 5.6
 Tested up to: 5.6.1
 Requires PHP: 7.0
@@ -37,6 +37,7 @@ Text Domain: smartphoniker
 @import "components/section";
 @import "components/block-2";
 @import "components/block-3";
+@import "components/block-5";
 @import "components/block-form";
 @import "components/navigation";
 @import "components/menuicon";

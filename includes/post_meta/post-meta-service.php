@@ -25,7 +25,7 @@ use Carbon_Fields\Field;
                 ->set_required( true ),
             Field::make( 'textarea', 'description', __( 'Service Kurzbeschreibung' ) )
                 ->set_width( 75 )
-                ->set_help_text( 'Erscheint überall wo der Services-Block eingebunden sind.' )
+                ->set_help_text( 'Die Kurzbschreibung wird überall verwendet, wo Informationen zu diesem Service stehen außer auf der Einzelseite des Service.' )
                 ->set_required ( true ),
             Field::make( 'select', 'group', __( 'Gruppe auswählen' ) )
                 ->set_options( array(

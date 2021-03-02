@@ -14,6 +14,9 @@
   &--blue {
     @include bg(dark_blue);
   }
+  &--grey {
+    @include bg(grey);
+  }
 
   &__block {
     width: 100%;

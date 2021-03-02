@@ -1,0 +1,29 @@
+.block-5 {
+  display: grid;
+  grid-template-rows: repeat(5, 15rem);
+  row-gap: 1rem;
+
+  &__img {
+    border-radius: $border-radius;
+    object-fit: cover;
+  }
+}
+
+@include md {
+  .block-5 {
+    grid-template-rows: 25rem;
+    grid-template-columns: repeat(5, 1fr);
+    overflow: hidden;
+    border-radius: $border-radius;
+
+    &__img {
+      border-radius: 0;
+    }
+  }
+}
+
+@include xl {
+  .block-5 {
+    grid-template-rows: calc(1280px / 5);
+  }
+}

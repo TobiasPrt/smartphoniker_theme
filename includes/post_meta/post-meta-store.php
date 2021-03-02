@@ -37,7 +37,8 @@ use Carbon_Fields\Field;
                         'value' => 'other'
                     )
                 ) ),
-            Field::make( 'complex', 'opening_hours', __( 'Öffnungszeiten' ) )
+
+            Field::make( 'textarea', 'opening_hours', __( 'Öffnungszeiten' ) )
                 ->set_conditional_logic( array(
                     'relation' => 'AND',
                     array(
@@ -51,10 +52,7 @@ use Carbon_Fields\Field;
                         'compare' => '!='
                     )
                 ) )
-                ->set_help_text( 'Öffungszeiten als Text in Zeilen angeben.' )
-                ->add_fields( array(
-                    Field::make( 'text', 'line', __( 'Zeile' ) )
-                ) ),
+                ->set_help_text( esc_html('Zeilenumbruch über <br> erzeugen.' ) ),
             Field::make( 'image', 'header_image', __( 'Header-Bild' ) )
                 ->set_width( 50 )
                 ->set_value_type( 'url' )
