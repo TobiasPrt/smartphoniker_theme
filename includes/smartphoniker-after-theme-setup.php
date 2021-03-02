@@ -30,4 +30,10 @@ function smartphoniker_setup() {
             'footer_legal' => 'Footer Informationen',
         )
     );
+
+    /**
+     * Add support for custom styles for Gutenberg editor.
+     */
+    add_theme_support( 'editor-styles' );
+    add_editor_style( 'editor-styles.css' );
 }
