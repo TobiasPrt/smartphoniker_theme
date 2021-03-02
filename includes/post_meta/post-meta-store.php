@@ -20,7 +20,8 @@ use Carbon_Fields\Field;
         ->set_context( 'normal' )
         ->where( 'post_type', '=', 'store' )
         ->add_fields( array(
-            /** * @todo implement Google Maps for choosing adress */
+            Field::make( 'map', 'address', __( 'Standort-Adresse' ) )
+                ->set_position( 54.327656, 10.0685555, 12),
             Field::make( 'select', 'state', __( 'Aktueller Status' ) )
                 ->set_help_text( 'Öffnungszeiten sind deaktiviert, wenn der Standort geschlossen oder nur mit Termin besuchbar ist.' )
                 ->set_options( array( 
