@@ -24,6 +24,7 @@ use Carbon_Fields\Field;
 (function() {
     Block::make( __( 'Stores' ) )
         ->add_fields( array(
+            Field::make( 'separator', 'separator', __( 'Store-Kacheln' ) ),
             Field::make( 'set', 'stores', __( 'Anzuzeigende Stores auswählen' ) )
                 ->set_options( call_user_func( 'get_all_posts', 'store' ) )
         ) )
