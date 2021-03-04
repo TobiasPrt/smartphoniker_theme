@@ -23,17 +23,16 @@ function get_all_posts( string $post_type = null ): array {
     $query = new WP_Query( array(
         'post_type' => $post_type,
     ) );
+
+    $posts = get_posts( array( 'post_type' => $post_type ) );
     
     // write posts to list
     $list = array();
-    if ($query->have_posts() ) {
-        while ( $query->have_posts() ) {
-            $query->the_post();
-            $list = array(
-                get_the_id() => get_the_title()
+
+    foreach ( (array) $posts as $post) {
+        $list = array(
+                $post->ID => $post->post_title,
             );
-        };
-        wp_reset_postdata();
     }
     return $list;
 }
