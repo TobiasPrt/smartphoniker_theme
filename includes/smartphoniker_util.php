@@ -15,24 +15,29 @@
  * @return array format: [post-id] => [title]
  */
 function get_all_posts( string $post_type = null ): array {
+    $post_list = get_posts( array( 
+        'post_type' => $post_type,
+        'post_status' => array('publish'),
+    ) );
+    
     if ($post_type === null ) {
-        return array();
+        $post_list = get_posts(
+            array(
+            'numberposts' => -1,
+            'post_status' => array('publish'),
+            'post_type' => get_post_types('', 'names'),
+            )
+        );
     }
 
-    // query posts
-    $query = new WP_Query( array(
-        'post_type' => $post_type,
-    ) );
-
-    $posts = get_posts( array( 'post_type' => $post_type ) );
+    
     
     // write posts to list
     $list = array();
 
-    foreach ( (array) $posts as $post) {
-        $list = array(
-                $post->ID => $post->post_title,
-            );
+    foreach ( (array) $post_list as $post_item) {  
+        $list[$post_item->ID] = $post_item->post_title;
     }
-    return $list;
+
+    return array_filter( $list );
 }
