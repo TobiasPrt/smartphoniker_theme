@@ -1,0 +1,46 @@
+// Link List component
+
+.link-list {
+    margin: 0 auto;
+    width: 60%;
+    list-style: none;
+
+    &__item {
+        text-align: center;
+        
+        &:nth-of-type(n + 2) {
+            margin-top: 2rem;
+        }
+    }
+
+    &__link {
+        @extend .text-md;
+        @include fg(orange);
+        font-weight: 400;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+@include lg {
+    .link-list {
+        width: 90%;
+        display: flex;
+        justify-content: space-evenly;
+        
+        &__item {
+            margin-top: 0;
+
+            &:nth-of-type(n + 2) {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+* {
+    // outline: .5px solid red !important;
+}
