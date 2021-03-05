@@ -24,6 +24,6 @@ use Carbon_Fields\Field;
         ) )
         ->set_parent( 'carbon-fields/section' )
         ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
-            echo wpautop( $fields['text'] );
+            echo '<div class="long-text">' . wpautop( $fields['text'] ) . '</div>';
         } );
 })();
