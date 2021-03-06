@@ -14,12 +14,12 @@
  *
  * @return array format: [post-id] => [title]
  */
-function get_all_posts( string $post_type = null ): array {
+function get_all_posts( string $post_type = null, string $category = null ): array {
     $post_list = get_posts( array( 
         'post_type' => $post_type,
         'post_status' => array('publish'),
     ) );
-    
+
     if ($post_type === null ) {
         $post_list = get_posts(
             array(
@@ -28,6 +28,14 @@ function get_all_posts( string $post_type = null ): array {
             'post_type' => get_post_types('', 'names'),
             )
         );
+    }
+
+    if ( $category !== null && $post_type !== null) {
+        $post_list = get_posts( array( 
+            'post_type' => $post_type,
+            'post_status' => array('publish'),
+            'category' => $category,
+        ) );
     }
 
     
