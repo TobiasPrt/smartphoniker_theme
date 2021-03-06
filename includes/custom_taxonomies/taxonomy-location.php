@@ -42,6 +42,7 @@
         'update_count_callback' => '_update_post_term_count',
         'query_var'             => true,
         'rewrite'               => array( 'slug' => 'Category' ),
+        'show_in_rest'          => true
     );
 
     register_taxonomy( 'category', 'location', $args );
