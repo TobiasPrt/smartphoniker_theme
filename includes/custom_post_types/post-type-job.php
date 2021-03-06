@@ -34,7 +34,8 @@
         'labels'                => $labels,
         'supports'              => array(
             'title', 
-            'taxonomies'
+            'taxonomies',
+            'editor'
         ),
         'hierarchical'          => false,
         'menu_icon'             => 'dashicons-id',
