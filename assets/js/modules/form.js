@@ -39,15 +39,15 @@ function processFormEvent(event) {
  *
  * @param {object} form form object
  *
- * @return { FormData } FormData object
+ * @return {FormData} FormData object
  * 
  * @since 1.0.0
  */
 function createFormDataObject(form) {
     const queryString = new URLSearchParams(new FormData(form)).toString();
     let formdata = new FormData;
-    formdata.append('action', form.id);
-    formdata.append(form.id, queryString)
+    formdata.append('action', 'form');
+    formdata.append('data', queryString);
     return formdata;
 }
 
@@ -55,8 +55,8 @@ function createFormDataObject(form) {
 /**
  * Sends the data to the wordpress API endpoint.
  *
- * @param   {string}  endpoint  endpoint url
- * @param   {FormData}  data FormData object for the body
+ * @param {string} endpoint endpoint url
+ * @param {FormData} data FormData object for the body
  *
  * @since 1.0.0
  */
