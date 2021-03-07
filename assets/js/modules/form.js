@@ -46,8 +46,8 @@ function processFormEvent(event) {
 function createFormDataObject(form) {
     const queryString = new URLSearchParams(new FormData(form)).toString();
     let formdata = new FormData;
-    formdata.append('action', 'contact');
-    formdata.append('data', queryString)
+    formdata.append('action', form.id);
+    formdata.append(form.id, queryString)
     return formdata;
 }
 
