@@ -1,4 +1,4 @@
-<form class="section__content form" id="contact">
+<form class="section__content form" id="contact" data-admin-url="<?php echo admin_url( 'admin-ajax.php' ); ?>">
 
     <div class="form__half">
         <label for="contact_fname" class="form__label">
@@ -31,5 +31,5 @@
     </div>
 
     <button class="form__button button button--orange" type="submit">Ab geht die Post</button>
-    
+
 </form>
