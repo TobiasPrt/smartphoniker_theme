@@ -4,26 +4,26 @@
         <label for="contact_fname" class="form__label">
             Vorname<span class="form__required">*</span>
         </label>
-        <input id="contact_fname" class="form__input" name="contact_fname" type="text" required>
+        <input id="contact_fname" class="form__input" name="First_Name" type="text" required>
     </div>
     <div class="form__half">
         <label for="contact_lname" class="form__label">
             Nachname<span class="form__required">*</span>
         </label>
-        <input id="contact_lname" class="form__input" name="contact_lname" type="text" required>
+        <input id="contact_lname" class="form__input" name="Last_Name" type="text" required>
     </div>
     <div class="form__full">
         <label for="contact_email" class="form__label">
             E-Mail<span class="form__required">*</span>
         </label>
-        <input id="contact_email" type="email" class="form__input" name="contact_email" required>
+        <input id="contact_email" type="email" class="form__input" name="Email" required>
     </div>
 
     <div class="form__full">
         <label for="contact_message" class="form__label">
             Nachricht<span class="form__required">*</span>
         </label>
-        <textarea id="contact_message" class="form__textarea" name="contact_message"></textarea>
+        <textarea id="contact_message" class="form__textarea" name="Message"></textarea>
     </div>
 
     <div class="form__info">
