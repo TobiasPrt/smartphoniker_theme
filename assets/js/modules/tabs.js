@@ -23,9 +23,9 @@ export function setupTabs() {
  *
  * @since 1.0.0
  */
-function setDefaultTab() {
-    document.querySelector('.jobs__tab-heading').classList.add('jobs__tab-heading--active');
-    document.querySelector('.jobs__tab-content').classList.add('jobs__tab-content--active');
+function setDefaultTab(tabs) {
+    tabs && document.querySelector('.jobs__tab-heading').classList.add('jobs__tab-heading--active');
+    tabs && document.querySelector('.jobs__tab-content').classList.add('jobs__tab-content--active');
 }
 
 
