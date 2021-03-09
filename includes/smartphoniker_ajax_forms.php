@@ -15,12 +15,93 @@ add_action( 'wp_ajax_nopriv_form', 'form_processor');
  * @since 1.0.0
  */
 function form_processor() {
-    $form_data = get_formdata( $_POST );  
-    $headers = get_email_headers( $form_data );
-    $send_to = get_option( 'admin_email' );
-    $subject = get_subject( $form_data );
-    $message = get_message( $form_data );
-    send_email( $send_to, $subject, $message, $headers );
+    $request_is_valid = validate_request();
+    
+    if ( $request_is_valid ) {
+        $form_data = get_formdata();
+        $headers = get_email_headers( $form_data );
+        $send_to = get_option( 'admin_email' );
+        $subject = get_subject( $form_data );
+        $message = get_message( $form_data );
+        send_email( $send_to, $subject, $message, $headers );
+    } else {
+        wp_send_json_error( 'Ein Fehler ist aufgetreten, die Email konnte nicht gesendet werden.' );
+    }
+}
+
+
+/**
+ * Validates the form data
+ *
+ * @return bool true if valid, else false
+ * 
+ * @since 1.0.0
+ */
+function validate_request() {
+    $payload = get_validation_payload();
+    $curl_config = setup_curl( $payload );
+    $response = send_request_for_validation( $curl_config );
+    $response = json_decode( $response );
+
+    if ( $response->success === true && $response->score >= 0.5 ) {
+        return true;
+    }
+    return false;
+}
+
+
+/**
+ * returns data to be validated
+ *
+ * @return array contains token and secret
+ * +
+ * @since 1.0.0
+ */
+function get_validation_payload() {
+    $secret = RECAPTCHA_TOKEN;
+    $token = $_POST['token'];
+    
+    return array(
+        'secret' => $secret,
+        'response' => $token,
+    );
+}
+
+
+/**
+ * returns correct curl configuration
+ *
+ * @param array $data date to be validated
+ *
+ * @return array curl configuration
+ * 
+ * @since 1.0.0
+ */
+function setup_curl( $data ) {
+    return array(
+        CURLOPT_URL => 'https://www.google.com/recaptcha/api/siteverify',
+        CURLOPT_POST => true,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POSTFIELDS => $data
+    );
+}
+
+
+/**
+ * Sends request to validate with curl
+ *
+ * @param array curl configuration
+ *
+ * @return json reponse of validation server
+ * 
+ * @since 1.0.0
+ */
+function send_request_for_validation( $curl_config ) {
+    $curl_session = curl_init();
+    curl_setopt_array($curl_session, $curl_config);
+    $response = curl_exec($curl_session);
+    curl_close($curl_session);
+    return $response;
 }
 
 
@@ -33,9 +114,9 @@ function form_processor() {
  * 
  * @since 1.0.0
  */
-function get_formdata( $post_data ) {
+function get_formdata() {
     $formdata = array();
-    wp_parse_str( $post_data['data'], $formdata );
+    wp_parse_str( $_POST['data'], $formdata );
     return $formdata;
 }
 
@@ -86,7 +167,9 @@ function get_message($form_data) {
     $message = '';
 
     foreach ( (array) $form_data as $index => $field ) {
-        $message .= '<strong>' . $index . ':</strong> ' . $field . '<br>';
+        if ( $index !== 'token' ) {
+            $message .= '<strong>' . $index . ':</strong> ' . $field . '<br>';
+        }
     }
 
     return $message;
@@ -106,9 +189,9 @@ function get_message($form_data) {
 function send_email( $send_to, $subject, $message, $headers ) {
     try {
         if ( wp_mail( $send_to, $subject, $message, $headers ) ) {
-            wp_send_json_success( 'Die Anfrage wurde erfolgreich versendet' );
+            wp_send_json_success( 'Die Nachricht wurder erfolgreich verschickt. Wir werden uns so schnell wie möglich bei Dir melden!' );
         } else {
-            wp_send_json_error( 'Ein Fehler ist aufgetreten, die Email konnte nicht gesendet werden.' );
+            wp_send_json_error( 'Ein Fehler ist aufgetreten, die Nachricht konnte nicht gesendet werden.' );
         }
     } catch ( Exception $e ) {
         wp_send_json_error( $e->getMessage() );
