@@ -1,5 +1,7 @@
 <form class="section__content form" id="contact" data-admin-url="<?php echo admin_url( 'admin-ajax.php' ); ?>">
+    
     <input type="hidden" name="Type_of_Enquiry" value="Kontaktanfrage">
+    
     <div class="form__half">
         <label for="contact_fname" class="form__label">
             Vorname<span class="form__required">*</span>
@@ -27,9 +29,18 @@
     </div>
 
     <div class="form__info">
-        <span class="form__required">*</span> = muss ausgefüllt werden 
+        Diese Seite ist durch reCAPTCHA geschützt. Es gelten die 
+        <a class="form__required" href="https://policies.google.com/privacy">Datenschutzerklärung</a> und
+        <a class="form__required" href="https://policies.google.com/terms">Geschäftsbedingungen</a> von Google.
     </div>
 
-    <button class="form__button button button--orange" type="submit">Ab geht die Post</button>
+    <input type="hidden" id="g-recaptcha-response" name="token">
+
+    <button
+        data-sitekey="reCAPTCHA_site_key" 
+        data-callback='onSubmit' 
+        data-action='submit' class="g-recaptcha form__button button button--orange" type="submit" id="submit">Ab geht die Post</button>
+   
 
 </form>
+ <script src="https://www.google.com/recaptcha/api.js?render=6LfMjnYaAAAAAGEDka5XbfUwvQPJHNP4hKvSnaed" async defer></script>
