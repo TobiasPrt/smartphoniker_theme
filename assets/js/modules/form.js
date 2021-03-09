@@ -26,11 +26,44 @@ export function addFormEventListener() {
  *
  * @since 1.0.0
  */
-function processFormEvent(event) {
+async function processFormEvent(event) {
     event.preventDefault();
-    const endpoint = this.getAttribute('data-admin-url');
-    const formdata = createFormDataObject(this);
-    sendData(endpoint, formdata);
+
+    /** 
+     * @var {string} message the message delivered to the user 
+     */
+    let message;
+
+    try {
+        const token = await getToken(this);
+        const endpoint = this.getAttribute('data-admin-url');
+        const formdata = createFormDataObject(this, token);
+        message = await sendData(endpoint, formdata);
+    } catch (e) {
+        message = e;
+    } finally {
+        alert(message);
+    }
+}
+
+
+/**
+ * Gets Google reCaptcha v3 token
+ *
+ * @param {object} form form object
+ *
+ * @return {Promise<string>} reCaptcha token
+ * 
+ * @since 1.0.0
+ */
+async function getToken(form) {
+    return new Promise((res, rej) => {
+        grecaptcha.ready(() => {
+            grecaptcha.execute('6LfMjnYaAAAAAGEDka5XbfUwvQPJHNP4hKvSnaed', { action: form.id }).then((token) => {
+                return res(token);
+            })
+        });
+    });
 }
 
 
@@ -43,11 +76,13 @@ function processFormEvent(event) {
  * 
  * @since 1.0.0
  */
-function createFormDataObject(form) {
+function createFormDataObject(form, token) {
+    document.getElementById('g-recaptcha-response').value = token;
     const queryString = new URLSearchParams(new FormData(form)).toString();
     let formdata = new FormData;
     formdata.append('action', 'form');
     formdata.append('data', queryString);
+    formdata.append('token', token);
     return formdata;
 }
 
@@ -57,6 +92,8 @@ function createFormDataObject(form) {
  *
  * @param {string} endpoint endpoint url
  * @param {FormData} data FormData object for the body
+ * 
+ * @return {Promise<string>} message from server
  *
  * @since 1.0.0
  */
@@ -67,10 +104,8 @@ async function sendData(endpoint, data) {
     });
 
     if (!response.ok) {
-        alert(response.status);
+        return response.status;
     }
-
     const body = await response.json();
-
-    alert(body.data);
+    return body.data;
 }
