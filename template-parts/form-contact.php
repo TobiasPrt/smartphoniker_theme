@@ -43,4 +43,6 @@
    
 
 </form>
- <script src="https://www.google.com/recaptcha/api.js?render=6LfMjnYaAAAAAGEDka5XbfUwvQPJHNP4hKvSnaed" async defer></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LfMjnYaAAAAAGEDka5XbfUwvQPJHNP4hKvSnaed" async defer></script>
+
+<?php get_template_part( 'template-parts/form', 'loadingscreen' ); ?>
