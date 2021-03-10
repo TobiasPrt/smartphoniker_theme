@@ -29,6 +29,8 @@ export function addFormEventListener() {
 async function processFormEvent(event) {
     event.preventDefault();
 
+    toggleLoadingScreen();
+
     /** 
      * @var {string} message the message delivered to the user 
      */
@@ -42,7 +44,24 @@ async function processFormEvent(event) {
     } catch (e) {
         message = e;
     } finally {
-        alert(message);
+        toggleLoadingScreen(message);
+        console.log(message);
+    }
+}
+
+
+/**
+ * Toggles loading screena and shows message
+ *
+ * @since 1.0.0
+ */
+function toggleLoadingScreen(message = null) {
+    const loader = document.querySelector('.loadingscreen');
+    if (message) {
+        loader.querySelector('.loadingscreen__message').innerHTML = message;
+        loader.classList.toggle('loadingscreen--done');
+    } else {
+        loader.classList.toggle('loadingscreen--active');
     }
 }
 
