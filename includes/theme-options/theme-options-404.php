@@ -7,7 +7,7 @@
  */
 
 
-require_once __DIR__ . '/../smartphoniker_util.php';
+require_once __DIR__ . '/../smartphoniker-util.php';
 
 
 use Carbon_Fields\Container;
