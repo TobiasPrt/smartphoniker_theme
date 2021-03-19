@@ -23,5 +23,4 @@ function smartphoniker_init_phpmailer( $phpmailer ) {
 	$phpmailer->SMTPSecure = SMTP_SECURE;
 	$phpmailer->From       = SMTP_FROM;
 	$phpmailer->FromName   = SMTP_NAME;
-    $phpmaile->isHTML();
 }
