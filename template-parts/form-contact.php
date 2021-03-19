@@ -35,6 +35,7 @@
     </div>
 
     <input type="hidden" id="g-recaptcha-response" name="token">
+    <?php wp_nonce_field( 'csrf-protection' ); ?>
 
     <button
         data-sitekey="reCAPTCHA_site_key" 
