@@ -102,6 +102,12 @@ function createFormDataObject(form, token) {
     formdata.append('action', 'form');
     formdata.append('data', queryString);
     formdata.append('token', token);
+
+    if (!!document.querySelector('#application_cv')) {
+        console.log(document.querySelector('#application_cv').files[0]);
+        formdata.append('file', document.querySelector('#application_cv').files[0]);
+    }
+
     return formdata;
 }
 

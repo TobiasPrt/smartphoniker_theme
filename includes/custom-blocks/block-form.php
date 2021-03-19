@@ -22,7 +22,8 @@ use Carbon_Fields\Field;
         ->add_fields( array(
             Field::make( 'select', 'form', __( 'Formular auswählen' ) )
                 ->set_options( array(
-                    'contact' => 'Kontaktformular'
+                    'contact' => 'Kontaktformular',
+                    'application' => 'Bewerbungsformular',
                 ) )
                 ->set_required( true ),
         ) )
