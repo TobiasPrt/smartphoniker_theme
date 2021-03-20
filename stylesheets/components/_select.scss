@@ -17,6 +17,11 @@
     background-position: 95%;
     padding: 0 1rem;
     outline: none;
+
+    &[name=modell]:nth-of-type(1) {
+      display: block;
+      visibility: hidden;
+    }
   }
 
   &__label {
