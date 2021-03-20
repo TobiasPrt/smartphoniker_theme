@@ -16,22 +16,22 @@
  */
 (function() {
     $labels = array(
-        'name'                       => _x( 'Kategorien', 'taxonomy general name' ),
+        'name'                       => _x( 'Standorte', 'taxonomy general name' ),
         'singular_name'              => _x( 'Standorte', 'Category singular name' ),
-        'search_items'               => __( 'Kategorien durchsuchen' ),
-        'popular_items'              => __( 'Beliebte Kategorien' ),
-        'all_items'                  => __( 'Alle Kategorien' ),
+        'search_items'               => __( 'Standorte durchsuchen' ),
+        'popular_items'              => __( 'Beliebte Standorte' ),
+        'all_items'                  => __( 'Alle Standorte' ),
         'parent_item'                => null,
         'parent_item_colon'          => null,
-        'edit_item'                  => __( 'Kategorie bearbeiten' ),
-        'update_item'                => __( 'Kategorie aktualisieren' ),
-        'add_new_item'               => __( 'Kategorie hinzufügen' ),
-        'new_item_name'              => __( 'neue Kategoriebezeichnung' ),
-        'separate_items_with_commas' => __( 'Kategorien mit Kommas trennen' ),
-        'add_or_remove_items'        => __( 'Hinzufügen oder Löschen einer Kategorie' ),
-        'choose_from_most_used'      => __( 'Wähle aus den meistgenutzten Kategorien' ),
+        'edit_item'                  => __( 'Standort bearbeiten' ),
+        'update_item'                => __( 'Standort aktualisieren' ),
+        'add_new_item'               => __( 'Standort hinzufügen' ),
+        'new_item_name'              => __( 'neue Standortbezeichnung' ),
+        'separate_items_with_commas' => __( 'Standorte mit Kommas trennen' ),
+        'add_or_remove_items'        => __( 'Hinzufügen oder Löschen einer Standort' ),
+        'choose_from_most_used'      => __( 'Wähle aus den meistgenutzten Standorte' ),
         'not_found'                  => __( 'Keinen Standort gefunden' ),
-        'menu_name'                  => __( 'Kategorien' ),
+        'menu_name'                  => __( 'Standorte' ),
     );
 
     $args = array(
