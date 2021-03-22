@@ -20,6 +20,8 @@ use Carbon_Fields\Field;
         ->set_context( 'normal' )
         ->where( 'post_type', '=', 'store' )
         ->add_fields( array(
+            Field::make( 'text', 'google_maps_url', __( 'Link zu Google Maps Eintrag' ) )
+                ->set_attribute( 'type', 'url' ),
             Field::make( 'map', 'address', __( 'Standort-Adresse' ) )
                 ->set_position( 54.327656, 10.0685555, 12),
             Field::make( 'select', 'state', __( 'Aktueller Status' ) )

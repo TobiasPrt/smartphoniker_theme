@@ -40,3 +40,11 @@ img {
   height: auto;
   object-fit: contain;
 }
+
+.grecaptcha-badge { 
+  visibility: hidden;
+}
+
+.hidden {
+  display: none;
+}

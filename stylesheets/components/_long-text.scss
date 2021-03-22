@@ -1,0 +1,28 @@
+// long text component styling
+
+.long-text {
+    & ol {
+        padding-left: 40px;
+    }
+
+    & *:nth-child(n + 2) {
+        margin-top: 2rem;
+    }
+    & li {
+        @extend .text-md;
+    }
+    & h3 {
+        @include fg(orange);
+
+        &:nth-child(n + 2) {
+            margin-top: 5rem;
+        }
+    }
+}
+
+@include md {
+    .long-text {
+        width: 80%;
+        margin: 0 auto;
+    }
+}

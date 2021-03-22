@@ -23,8 +23,8 @@
         <p class="block-2__text block-2__text--large">
             Öffnungszeiten
         </p>
-
-        <p class="block-2__text">
+    <br>
+        <p class="block-2__text block-2__text--center">
             <?php echo get_post_meta( get_the_ID(), '_opening_hours' )[0]; ?>
         </p>
         <br>
@@ -32,8 +32,16 @@
         <p class="block-2__text block-2__text--large">
             Adresse
         </p>
-        <p class="block-2__text">
-            <?php // get address ?>
-        </p>            
+        <br>
+        <p class="block-2__text block-2__text--center">
+            <?php echo str_replace( ',', '<br>', carbon_get_post_meta( get_the_ID(), 'address' )['address'] ); ?>
+        </p>
+        <a 
+            class="block-2__button button button--orange" 
+            href="<?php echo get_post_meta( get_the_ID(), '_google_maps_url' )[0]; ?>" 
+            target="_blank"
+        >
+            zum Routenplaner
+        </a>
     </div>
 </div>

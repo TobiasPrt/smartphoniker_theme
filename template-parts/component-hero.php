@@ -7,6 +7,21 @@
  * @package Smartphoniker
  * @since 1.0.0
  */
+
+
+$devices = new WP_Query( array(
+    'post_type' => 'device',
+    'orderby' => array(
+        'title' => 'ASC'
+    ),
+) );
+
+$manufacturers = get_categories( array(
+    'taxonomy' => 'manufacturer',
+    'orderby' => 'name',
+    'order' => 'ASC'
+) );
+
 ?>
 
 
@@ -41,49 +56,52 @@
     <!-- Formular -->
     <form class="hero__form block-form" action="#">
 
-        <!-- Manufacturer -->
-        <div class="block-form__wrapper select">
+            <!-- Manufacturer -->
+            <div class="block-form__wrapper select">
 
-            <!-- Label Manufacturer -->
-            <label class="select__label" for="select-manufacturer">
-                Hersteller wählen
-            </label>
+                <!-- Label Manufacturer -->
+                <label class="select__label" for="select-manufacturer">
+                    Hersteller wählen
+                </label>
 
-            <!-- Select Manufacturer-->
-            <select class="select__select" name="manufacturer" id="select-manufacturer">
-                <option value="apple">Apple</option>
-                <option value="htc">HTC</option>
-                <option value="huawei">Huawei</option>
-                <option value="lg">LG</option>
-                <option value="samsung">Samsung</option>
-                <option value="sony">Sony</option>
-                <option value="xiaomi">Xiaomi</option>
-                <option value="other">nicht dabei?</option>
-            </select>
+                <!-- Select Manufacturer-->
+                <select class="select__select" name="manufacturer" id="select-manufacturer">
+                    <?php foreach ( (array) $manufacturers as $manufacturer ):  ?>
+                        <option value="<?php echo $manufacturer->name; ?>"><?php echo $manufacturer->name; ?></option>
+                    <?php endforeach; ?>
+                </select>
 
-        </div>
-        
+            </div>
+            
 
-        <!-- Device -->
-        <div class="block-form__wrapper select">
+            <!-- Device -->
+            <div class="block-form__wrapper select">
 
-            <!-- Label Device -->
-            <label class="select__label" for="select-modell">
-                Modell wählen
-            </label>
+                <!-- Label Device -->
+                <label class="select__label" for="select-modell">
+                    Modell wählen
+                </label>
+                
+                <!-- Select Device -->
+                <?php foreach ( (array) $manufacturers as $manufacturer ):  ?>
+                    <?php if ($devices->have_posts() ) : ?>
+                        <select class="select__select hidden" name="modell" id="<?php echo $manufacturer->name; ?>">
+                            <?php while ( $devices->have_posts() ) : $devices->the_post(); ?>
+                                <?php if ( get_the_terms(get_the_ID(), 'manufacturer')[0]->name === $manufacturer->name ): ?>
+                                    <option value="<?php the_title(); ?>" data-url="<?php echo get_post_meta( get_the_ID(), '_link' )[0] ?>" ><?php the_title(); ?></option>
+                                <?php endif; ?>
+                            <?php endwhile; ?>
+                            <?php wp_reset_postdata(); ?>
+                        </select>
+                    <?php endif; ?>                    
+                <?php endforeach; ?>
 
-            <!-- Select Device -->
-            <select class="select__select" name="modell" id="select-modell">
-                <option value="ip6">iPhone 6</option>
-                <option value="other">nicht dabei?</option>
-            </select>
-
-        </div>
+            </div>
 
         <!-- Submit button -->
-        <button class="block-form__button button" type="submit">
+        <a class="block-form__button button" id="repair-device" href="">
             Handy reparieren lassen
-        </button>
+        </a>
 
     </form>
 

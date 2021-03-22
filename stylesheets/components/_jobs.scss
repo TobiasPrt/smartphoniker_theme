@@ -1,0 +1,71 @@
+// Styles for job component
+
+.jobs {
+    &__tabs {
+        display: flex;
+        margin-bottom: 3rem;
+    }
+
+    &__tab-button {
+        &:nth-child(n + 2) {
+            margin-left: 5rem;
+        }
+    }
+
+    &__tab-heading {
+        @include fg(grey);
+        border-bottom: 2px solid transparent;
+        transition: all .2s ease-in-out;
+
+        &--active {
+            @include fg(orange);
+            border-bottom-color: orange;
+        }
+    }
+
+    &__tab-content {
+        display: none;
+
+        &--active {
+            display: block;
+        }
+    }
+}
+
+.job {
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &__title {
+        @extend .text-lg;
+        font-size: 2rem;
+    }
+
+    &__description {
+        @extend .text-xs;
+        @include fg(grey);
+        margin-top: 1rem;
+    }
+
+    &:nth-last-child(2) {
+         &::after {
+            content: '';
+            display: block;
+            @include bg(light_grey);
+            height: 2px;
+            width: 100%;
+            margin: 2rem auto;
+        }
+    }
+
+   
+}
+
+
+@include md {
+    .jobs {
+        width: 80%;
+    }
+}

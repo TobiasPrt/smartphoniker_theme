@@ -17,5 +17,6 @@ add_filter( 'carbon_fields_map_field_api_key', 'smartphoniker_map_api_key' );
  * @return string Google API Key
  */
 function smartphoniker_map_api_key( string $key ) {
-    return 'AIzaSyDbUlJ_AHZUKMEnANss9pXSQIOZ7YM4YyY';
+    return 'AIzaSyC4QnNCsxxSj4yOixOksho0L4EP7vO-SuI';
 }
+

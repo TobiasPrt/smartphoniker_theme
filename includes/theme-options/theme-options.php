@@ -18,7 +18,7 @@ use Carbon_Fields\Field;
  * @return Carbon_Fields\Container\Theme_Options_Container top-level theme options container
  */
 function smartphoniker_theme_options(): Carbon_Fields\Container\Theme_Options_Container {
-    return Container::make( 'theme_options', __( 'Allgemeine Theme Einstellungen' ) )
+    return Container::make( 'theme_options', __( 'Theme Einstellungen' ) )
         ->add_fields( array(
             Field::make( 'html', 'footer_description', __( 'Footer Beschreibung' ) )
                 ->set_html( 'Hier lassen sich alle inhaltlichen Einstellungen, die alle Seiten betreffen einstellen. Die Einstellungen für die Startseite sind auf einer extra Seite. Die Elemente aus den Navigation befinden sich unter Design > Menüs.' ),

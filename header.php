@@ -20,7 +20,7 @@
 
     <?php wp_head(); ?>
 
-    <?php if ( 'store' === get_post_type() ): ?>
+    <?php if ( 'store' === get_post_type() && ! is_404() ): ?>
         <style>
             .header::after {
                 content: '';
@@ -45,10 +45,19 @@
     <?php
     $page_id = get_the_ID();
     $header_color = carbon_get_post_meta( get_the_ID(), 'header-color' );
+
+    // Store
     if ( 'store' === get_post_type() ) {
         $header_color = 'black';
     }
+    // 404
+    if ( is_404() ) {
+        $header_color = 'orange';
+    }
+
     $header_class = 'header--' . $header_color;
+
+    
     ?>
     <header id="header" class="header <?php echo $header_class; ?> header--bannerIsHidden">
       
@@ -133,7 +142,7 @@
             </div>
         </nav>
 
-        <h1 class="header__heading"><?php the_title(); ?></h1>
+        <h1 class="header__heading"><?php echo is_404() ? carbon_get_theme_option('404-title') : the_title(); ?></h1>
         
         <?php if ( carbon_get_post_meta( get_the_ID(), 'header_button_is_enabled' ) ): ?>
             <a 
