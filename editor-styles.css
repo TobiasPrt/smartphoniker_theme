@@ -1,3 +1,7 @@
 .block-editor-writing-flow__click-redirect {
     display: none;
 }
+
+button[aria-label="Add block"] {
+    padding: 0 !important;
+}
