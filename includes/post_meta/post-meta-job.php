@@ -18,7 +18,7 @@ use Carbon_Fields\Field;
 (function() {
     Container::make( 'post_meta', _( 'Job Einstellungen' ) )
         ->where( 'post_type', '=', 'job' )
-        ->set_context( 'advanced' )
+        ->set_context( 'normal' )
         ->add_fields( array(
             Field::make( 'text', 'short_description', __( 'Job Kurzbeschreibung' ) )
                 ->set_width( 100 )

@@ -18,7 +18,7 @@ use Carbon_Fields\Field;
 (function() {
     Container::make( 'post_meta', _( 'Geräte Einstellungen' ) )
         ->where( 'post_type', '=', 'device' )
-        ->set_context( 'carbon_fields_after_title' )
+        ->set_context( 'normal' )
         ->add_fields( array(
             Field::make( 'text', 'link', __( 'Link zum Smartphoniker Shop' ) )
                 ->set_required( true ),
