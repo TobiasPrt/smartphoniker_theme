@@ -15,7 +15,8 @@
  * @return array format: [post-id] => [title]
  */
 function get_all_posts( string $post_type = null, string $category = null ): array {
-    $post_list = get_posts( array( 
+    $post_list = get_posts( array(
+        'numberposts' => -1,
         'post_type' => $post_type,
         'post_status' => array('publish'),
     ) );
@@ -31,7 +32,7 @@ function get_all_posts( string $post_type = null, string $category = null ): arr
     }
 
     if ( $category !== null && $post_type !== null) {
-        $post_list = get_posts( array( 
+        $post_list = get_posts( array(
             'post_type' => $post_type,
             'post_status' => array('publish'),
             'category' => $category,
