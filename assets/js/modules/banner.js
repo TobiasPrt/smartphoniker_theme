@@ -9,6 +9,7 @@
 const banner = document.getElementById('banner');
 const header = document.getElementById('header');
 const nav = document.getElementById('nav');
+const bannerButton = document.getElementById('closeBanner');
 
 
 /**
@@ -17,7 +18,7 @@ const nav = document.getElementById('nav');
  * @since 1.0.0
  */
 export function addBannerEventListener() {
-    banner && banner.addEventListener('click', () => hideBanner())
+    banner && bannerButton.addEventListener('click', () => hideBanner(), false)
 }
 
 
