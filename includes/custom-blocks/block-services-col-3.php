@@ -3,7 +3,7 @@
  * Custom Block: Services-Rest
  * 
  * Gutenberg block which represents a 3-column layout similar to
- * col-3 heading-text filed with 3 services without group
+ * col-3 heading-text filed with 3 services 
  *
  * @package Smartphoniker
  * @since 1.0.0
