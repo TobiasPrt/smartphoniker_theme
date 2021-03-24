@@ -31,7 +31,7 @@ $employees = new WP_Query( array(
             <?php while ( $employees->have_posts() ) : $employees->the_post(); ?>
                 
                 <div class="grid-4__element person">
-                    <?php echo wp_get_attachment_image( get_post_meta( get_the_ID(), '_image' )[0], 'thumbnail', false, array( 'class' => 'person__img' ) ); ?>
+                    <?php echo wp_get_attachment_image( get_post_meta( get_the_ID(), '_image' )[0], 'medium', false, array( 'class' => 'person__img' ) ); ?>
                     <p class="person__name"> <?php the_title(); ?></p>
                     <p class="person__title"><?php echo get_post_meta( get_the_ID(), '_role' )[0]; ?></p>
                 </div>
