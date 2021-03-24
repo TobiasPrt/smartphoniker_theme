@@ -40,6 +40,7 @@
 </head>
 
 <body>
+    <div class="wrapper">
 
     <!-- Header -->
     <?php
@@ -134,7 +135,7 @@
 
 
                 <!-- Hamburger Menu Icon -->
-                <button class="nav__menuicon menuicon" id="menuicon">
+                <button class="nav__menuicon menuicon" id="menuicon" aria-label="toggle_navigation">
                     <span class="menuicon__line menuicon__line--1"></span>
                     <span class="menuicon__line menuicon__line--2"></span>
                     <span class="menuicon__line menuicon__line--3"></span>
@@ -146,8 +147,8 @@
         
         <?php if ( carbon_get_post_meta( get_the_ID(), 'header_button_is_enabled' ) ): ?>
             <a 
-                class="header__button button" 
-                href="<?php echo carbon_get_post_meta( get_the_ID(), 'header_button_link' ); ?>" 
+                class="header__button button"
+                href="<?php echo get_permalink( carbon_get_post_meta( get_the_ID(), 'header_button_link' ) ); ?>" 
                 target="<?php echo carbon_get_post_meta( get_the_ID(), 'header_button_target' ); ?>"
             >
                 <?php echo carbon_get_post_meta( get_the_ID(), 'header_button_text' ); ?>

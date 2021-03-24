@@ -7,7 +7,7 @@
  */
 ?>
 
-<div id="map" class="map"></div>
+<div id="map" class="map section__content"></div>
 <script>
     function initMap() {
         const mapCenter = {

@@ -27,9 +27,11 @@
       align-items: center;
       padding: 2.5rem;
 
-      & > img {
+      & > picture > img {
         max-width: 350px;
         border-radius: $border-radius;
+        object-fit: contain;
+        margin: 0 auto;
       }
     }
   }
@@ -103,7 +105,7 @@
     }
 
     &__img {
-      max-height: 35rem;
+      max-height: inherit;
     }
 
     &__button {

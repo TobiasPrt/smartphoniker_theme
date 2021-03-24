@@ -22,6 +22,7 @@
 </head>
 
 <body>
+    <div class="wrapper">
 
 <!-- Header -->
 <?php if (carbon_get_theme_option('banner_is_enabled')): ?>
@@ -86,7 +87,7 @@
 
 
                 <!-- Hamburger Menu Icon -->
-                <button class="nav__menuicon menuicon" id="menuicon">
+                <button class="nav__menuicon menuicon" id="menuicon" aria-label="toggle_navigation">
                     <span class="menuicon__line menuicon__line--1"></span>
                     <span class="menuicon__line menuicon__line--2"></span>
                     <span class="menuicon__line menuicon__line--3"></span>

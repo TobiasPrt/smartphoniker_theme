@@ -27,9 +27,9 @@ use Carbon_Fields\Field;
         ) )
         ->set_parent( 'carbon-fields/section' )
         ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
-            $categories = get_categories( array(
-                'parent' => 12, // ID of location parent category
-            ) );
+            $categories = get_categories();
+
+            $jobs = array();
 
             foreach ( (array) $categories as $category ) {
                 $jobs[$category->name] = call_user_func( 'get_all_posts', 'job', $category->slug );

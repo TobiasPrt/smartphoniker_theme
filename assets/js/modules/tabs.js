@@ -13,8 +13,11 @@
  */
 export function setupTabs() {
     const tabs = document.querySelectorAll(".jobs__tab-button");
-    tabs && setDefaultTab();
-    tabs && addTabEventListeners(tabs);
+
+    if (tabs.length > 0) {
+        setDefaultTab(tabs);
+        addTabEventListeners(tabs);
+    }
 }
 
 
