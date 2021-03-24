@@ -60,9 +60,9 @@ use Carbon_Fields\Field;
                                     'value' => true,
                                 ),
                             ) ),
-                        Field::make( 'text', 'button_link', __( 'Button Link' ) )
-                            ->set_help_text( 'Link zu dem der Button führen soll' )
-                            ->set_attribute( 'type', 'url' )
+                        Field::make( 'select', 'button_link', __( 'Button Link' ) )
+                            ->set_options(call_user_func( 'get_all_posts', array('page', 'job', 'service', 'store') ) )
+                            ->set_help_text( 'Seite zu dem der Button führen soll' )
                             ->set_conditional_logic( array(
                                 array(
                                     'field' => 'button_is_enabled',

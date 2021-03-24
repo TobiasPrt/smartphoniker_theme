@@ -49,7 +49,7 @@
                 <?php if ( $content['button_is_enabled'] ): ?>
                     <a 
                         class="block-2__button button button--<?php echo esc_html( $args['color'] ); ?>" 
-                        href="<?php echo esc_html( $content['button_link'] ); ?>" 
+                        href="<?php echo get_permalink( $content['button_link'] ); ?>" 
                         target="<?php echo esc_html( $content['button_target'] ); ?>"
                     >
                         <?php echo esc_html( $content['button_text'] ); ?>
