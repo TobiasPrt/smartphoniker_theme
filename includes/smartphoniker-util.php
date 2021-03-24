@@ -10,11 +10,11 @@
 /**
  * Returns list of all post types of certain post type.
  *
- * @param string $post_type name of post type
+ * @param array|string $post_type name of post type
  *
  * @return array format: [post-id] => [title]
  */
-function get_all_posts( string $post_type = null, string $category = null ): array {
+function get_all_posts( $post_type = null, string $category = null ): array {
     $post_list = get_posts( array(
         'numberposts' => -1,
         'post_type' => $post_type,
