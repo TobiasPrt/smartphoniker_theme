@@ -27,9 +27,11 @@
       align-items: center;
       padding: 2.5rem;
 
-      & > img {
+      & > picture > img {
         max-width: 350px;
         border-radius: $border-radius;
+        object-fit: contain;
+        margin: 0 auto;
       }
     }
   }
