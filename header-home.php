@@ -22,6 +22,7 @@
 </head>
 
 <body>
+    <div class="wrapper">
 
 <!-- Header -->
 <?php if (carbon_get_theme_option('banner_is_enabled')): ?>
