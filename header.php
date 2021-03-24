@@ -147,8 +147,8 @@
         
         <?php if ( carbon_get_post_meta( get_the_ID(), 'header_button_is_enabled' ) ): ?>
             <a 
-                class="header__button button" 
-                href="<?php echo carbon_get_post_meta( get_the_ID(), 'header_button_link' ); ?>" 
+                class="header__button button"
+                href="<?php echo get_permalink( carbon_get_post_meta( get_the_ID(), 'header_button_link' ) ); ?>" 
                 target="<?php echo carbon_get_post_meta( get_the_ID(), 'header_button_target' ); ?>"
             >
                 <?php echo carbon_get_post_meta( get_the_ID(), 'header_button_text' ); ?>
