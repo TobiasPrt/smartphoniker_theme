@@ -61,7 +61,7 @@ use Carbon_Fields\Field;
                                 ),
                             ) ),
                         Field::make( 'select', 'button_link', __( 'Button Link' ) )
-                            ->set_options(call_user_func( 'get_all_posts', array('page', 'job', 'service', 'store') ) )
+                            ->set_options( call_user_func( 'get_all_posts', array( 'page', 'job', 'service', 'store' ) ) )
                             ->set_help_text( 'Seite zu dem der Button führen soll' )
                             ->set_conditional_logic( array(
                                 array(
