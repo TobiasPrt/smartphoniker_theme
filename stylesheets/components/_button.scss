@@ -20,8 +20,13 @@
   }
 
   &--orange {
-    @include bg(orange);
+    @include fg(orange);
+    @include bg(white);
+  }
+
+  &--white {
     @include fg(white);
+    @include bg(orange);
   }
 }
 
