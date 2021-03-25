@@ -49,6 +49,10 @@
 
   &--blue {
     @include headercolor(dark_blue);
+
+    & .nav__listitem > a:hover {
+      @include fg(orange);
+    }
   }
 
   &--black {
