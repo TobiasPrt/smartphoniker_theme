@@ -29,6 +29,7 @@ use Carbon_Fields\Field;
                         'green'  => __( 'Grün' ),
                         'grey'   => __( 'Grau' ),
                         'blue'   => __( 'Dunkelblau' ),
+                        'white'   => __( 'Weiß' ),
                     ) ),
 
                 // Block component types
