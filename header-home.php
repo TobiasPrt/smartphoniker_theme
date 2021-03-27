@@ -25,7 +25,7 @@
     <div class="wrapper">
 
 <!-- Header -->
-<?php if (carbon_get_theme_option('banner_is_enabled')): ?>
+<?php if ( carbon_get_theme_option('banner_is_enabled') ): ?>
     <header id="header" class="header">
 <?php else: ?>
     <header id="header" class="header header--bannerIsHidden">
@@ -65,7 +65,7 @@
 
                 <!-- Navigation -->
                 <?php
-                $banner_is_hidden_class = carbon_get_theme_option('banner_is_enabled') ? 'nav__list--bannerIsHidden'  : '';
+                $banner_is_hidden_class = carbon_get_theme_option('banner_is_enabled') ? '' : 'nav__list--bannerIsHidden'  ;
                 wp_nav_menu(
                     array(
                         "menu" => "primary",
