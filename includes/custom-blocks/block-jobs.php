@@ -22,10 +22,13 @@ use Carbon_Fields\Field;
  */
 (function() {
     Block::make( __( 'Jobs' ) )
-        ->add_fields( array(
-            Field::make( 'separator', 'separator', __( 'Offene Stellen' ) ),
-        ) )
+        ->set_description( __( 'Stellt ein tabbasiertes Widget mit allen offenen Stellenanzeigen sortiert nach Standorten dar.') )
+        ->set_category( 'widgets', __( 'Vorausgefüllte Blocks' ) )
         ->set_parent( 'carbon-fields/section' )
+        ->set_icon( 'id' )
+        ->add_fields( array(
+            Field::make( 'separator', 'separator', __( 'Jobs' ) ),
+        ) )
         ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
             $categories = get_categories();
 

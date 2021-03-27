@@ -20,7 +20,12 @@ use Carbon_Fields\Field;
  */
 (function() {
     Block::make( __( 'List-2' ) )
+        ->set_description( __( 'Stellt eine 2-spaltige Liste aus Elementen mit Icon, Überschrift und Kurzbeschreibung dar.') )
+        ->set_category( 'lists' )
+        ->set_parent( 'carbon-fields/section' )
+        ->set_icon( 'menu-alt3' )
         ->add_fields ( array(
+            Field::make( 'separator', 'separator', __( 'List-2' ) ),
             Field::make( 'complex', 'list', __('Liste (2-6 Elemente)'))
                 ->set_min(2)
                 ->set_max(6)
@@ -30,7 +35,6 @@ use Carbon_Fields\Field;
                     Field::make( 'textarea', 'text', __( 'Kurzbeschreibung' ) ),
                 ) ),
         ) )
-        ->set_parent( 'carbon-fields/section' )
         ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
             get_template_part( 'template-parts/component', 'list-2', $fields );
         } );

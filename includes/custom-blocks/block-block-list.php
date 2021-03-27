@@ -20,7 +20,12 @@ use Carbon_Fields\Field;
  */
 (function() {
     Block::make( __( 'Block-List' ) )
-        ->add_fields( array(  
+        ->set_description( __( 'Ein Block, der aus beliebig vielen Listenelementen besteht, die alle ein Icon und einen Text enthalten.' ) )
+        ->set_category( 'lists', __( 'Listen' ) )
+        ->set_parent( 'carbon-fields/section' )
+        ->set_icon( 'menu-alt3' )
+        ->add_fields( array(
+            Field::make( 'separator', 'separator', __( 'Block-List' ) ),
             Field::make( 'complex', 'list_items', __( 'Listenelemente hinzufügen' ) )
                 ->add_fields( array(
                     Field::make( 'image', 'icon', __( 'Icon wählen' ) )
@@ -29,7 +34,6 @@ use Carbon_Fields\Field;
                         ->set_width( 75 ),
                 ) )
         ) )
-        ->set_parent( 'carbon-fields/section' )
         ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
             get_template_part( 'template-parts/component', 'block-list', $fields );
         } );

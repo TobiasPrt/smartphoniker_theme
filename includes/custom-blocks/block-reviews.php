@@ -21,8 +21,13 @@ use Carbon_Fields\Field;
     $reviews = call_user_func( 'get_all_posts', 'review' );
 
     Block::make( __( 'Reviews' ) )
+        ->set_description( __( 'Stellt 3 zufällige Bewertungen mit 5-Sternen, Text und Name aus einer Auswahl in einer 3-spaltigen Ansicht dar.') )
+        ->set_category( 'widgets' )
+        ->set_parent( 'carbon-fields/section' )
+        ->set_icon( 'admin-comments' )
         ->add_fields(
             array(
+                Field::make( 'separator', 'separator', __( 'Reviews' ) ),
                 Field::make( 'checkbox', 'all_reviews', __( 'Aus allen Bewertungen zufällige anzeigen.' ) )
                     ->set_default_value( true ),
                 Field::make( 'image', 'review_icon', __('Icon wählen') )
@@ -39,7 +44,6 @@ use Carbon_Fields\Field;
                     ) ),
             )
         )
-        ->set_parent( 'carbon-fields/section' )
         ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
 
             $all_reviews = $fields['all_reviews'] ?? false;

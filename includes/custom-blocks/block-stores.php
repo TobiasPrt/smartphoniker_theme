@@ -23,15 +23,17 @@ use Carbon_Fields\Field;
  */
 (function() {
     $stores = call_user_func( 'get_all_posts', 'store' );
-    // var_dump($stores);
-    // die();
+
     Block::make( __( 'Stores' ) )
+        ->set_description( __( 'Stellt eine 3-spaltige Ansicht aus Karten mit Bild, Adresse, Öffnungszeiten und Link von ausgewählten Stores dar.') )
+        ->set_category( 'widgets' )
+        ->set_parent( 'carbon-fields/section' )
+        ->set_icon( 'admin-multisite' )
         ->add_fields( array(
-            Field::make( 'separator', 'separator', __( 'Store-Kacheln' ) ),
+            Field::make( 'separator', 'separator', __( 'Stores' ) ),
             Field::make( 'set', 'stores', __( 'Anzuzeigende Stores auswählen' ) )
                 ->set_options( $stores )
         ) )
-        ->set_parent( 'carbon-fields/section' )
         ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
             $fields['stores'] = array_filter($fields['stores']);
             get_template_part( 'template-parts/component', 'stores', $fields );

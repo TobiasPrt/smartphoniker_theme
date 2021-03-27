@@ -20,17 +20,21 @@ use Carbon_Fields\Field;
  */
 (function() {
     Block::make( __( 'Section' ) )
-        ->add_fields(
-            array(
-                Field::make( 'text', 'heading', __( 'Section Heading' ) ),
-            )
-        )
+        ->set_description( __( 'Dieser Block stellt einen inhaltlichen Abschnitt einer Seite da. Alle anderen Blöcke müssen in einer Section sein.' ) )
+        ->set_category( 'layouts', __( 'Layout' ) )
         ->set_inner_blocks( true )
+        ->set_icon( 'layout' )
         ->set_inner_blocks_position( 'below' )
         // Disable preview mode as long as there is not a custom editor stylesheet.
         ->set_mode( 'edit' )
         // Only the blocks that have this block as a parent can be inserted.
         ->set_allowed_inner_blocks( array() )
+        ->add_fields(
+            array(
+                Field::make( 'separator', 'separator', __( 'Section' ) ),
+                Field::make( 'text', 'heading', __( 'Section Heading' ) ),
+            )
+        )
         ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
             ?>
                 <section class="content__section section">

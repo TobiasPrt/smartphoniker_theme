@@ -20,8 +20,13 @@ use Carbon_Fields\Field;
  */
 (function() {
     Block::make( __( 'Block-2' ) )
+        ->set_description( __( 'Ein Block, der aus zwei gleich großen Hälften besteht, die entweder ein Bild oder ein Text mit einem Button enthalten können.' ) )
+        ->set_category( 'blocks', __( 'Blocks' ) )
+        ->set_parent( 'carbon-fields/section' )
+        ->set_icon( 'screenoptions' )
         ->add_fields(
             array(
+                Field::make( 'separator', 'separator', __( 'Block-2' ) ),
                 // Block Color
                 Field::make( 'select', 'color', __( 'Block-Hintergrundfarbe' ) )
                     ->set_options( array(
@@ -84,7 +89,6 @@ use Carbon_Fields\Field;
                     ) ),
             )
         )
-        ->set_parent( 'carbon-fields/section' )
         ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
             get_template_part( 'template-parts/component', 'block-2', $fields );
         } );

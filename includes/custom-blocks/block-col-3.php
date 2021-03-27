@@ -20,8 +20,13 @@ use Carbon_Fields\Field;
  */
 (function() {
     Block::make( __( 'Col-3' ) )
+        ->set_description( __( 'Ein 3-spaltiges Layout mit 3 verschiedenen Layouts:  1) Icon, Überschrift, Text; 2) Icon, Text, Untertitel; 3) Überschrift, Text;') )
+        ->set_category( 'columns', __( 'Spalten' ) )
+        ->set_parent( 'carbon-fields/section' )
+        ->set_icon( 'columns' )
         ->add_fields(
             array(
+                Field::make( 'separator', 'separator', __( 'Col-3' ) ),
                 // Column Options
                 Field::make( 'set', 'column_options', __( 'Spaltenoptionen' ) )
                     ->set_options( array(
@@ -65,7 +70,6 @@ use Carbon_Fields\Field;
                     ) )
             )
         )
-        ->set_parent( 'carbon-fields/section' )
         ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
             get_template_part( 'template-parts/component', 'col-3', $fields );
         } );
