@@ -49,12 +49,14 @@ use Carbon_Fields\Field;
             $reviews = count( $selected_reviews ) < 3 
                 ? $selected_reviews 
                 : call_user_func( 'get_all_posts', 'review' );
-            
-            $random_reviews = array_slice( shuffle( $reviews ), 0, 3 );
+                
+            $random_reviews = array_rand( $reviews, 3 );
+            shuffle( $random_reviews );
             
             $fields = array(
                 'column_options' => array('icon_is_small', 'has_orange_accent'),
             );
+
 
             foreach( (array) $random_reviews as $review_id ) {
                 $fields['columns'][] = array(
