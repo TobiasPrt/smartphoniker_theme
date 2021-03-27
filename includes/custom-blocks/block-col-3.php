@@ -52,7 +52,7 @@ use Carbon_Fields\Field;
                             ->set_required ( true ),
                         Field::make( 'textarea', 'text', __( 'Text' ) )
                             ->set_required( true ),
-                        Field::make( 'text', 'column_subtitle', __( 'Untertitel' ) )
+                        Field::make( 'text', 'subtitle', __( 'Untertitel' ) )
                             ->set_required( true ),
                     ) )
 
