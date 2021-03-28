@@ -29,6 +29,7 @@ use Carbon_Fields\Field;
                 ->set_options( array(
                     'contact' => 'Kontaktformular',
                     'application' => 'Bewerbungsformular',
+                    'sell' => 'Geräteankauf',
                 ) )
                 ->set_required( true ),
         ) )

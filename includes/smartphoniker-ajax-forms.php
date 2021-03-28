@@ -16,13 +16,14 @@ add_action( 'wp_ajax_nopriv_form', 'process_ajax_request');
  */
 function process_ajax_request() {
 	$request_is_valid = validate_ajax_request();
-
+	
 	if ( ! $request_is_valid ) {
-        wp_send_json_error( 'Request is invalid!' );
+		wp_send_json_error( 'Request is invalid!' );
 		wp_die();
 	}
-
+	
 	$request_data = get_request_data();
+
 	$message_was_sent = forward_request_by_mail( $request_data );
 
 	delete_uploaded_file( $request_data['attachment'] );
@@ -121,8 +122,13 @@ function get_request_data() {
     $request_data['sender_name'] = "{$decoded_request['First_Name']} {$decoded_request['Last_Name']}";
 	$request_data['sender_email'] = $decoded_request['Email'];
 	$request_data['subject'] = "{$decoded_request['Type_of_Enquiry']} von {$request_data['sender_name']}";
-    $request_data['message'] = "<html>{$decoded_request['Message']}<html>";
+    $request_data['message'] = "<html>{$decoded_request['Message']}</html>";
 
+	if ( $decoded_request['Type_of_Enquiry'] === 'Ankaufanfrage' ) {
+		$device_info = "Hersteller: {$decoded_request['manufacturer']} <br>Modell: {$decoded_request['modell']}<br><br>";
+		$request_data['message'] = substr_replace($request_data['message'], $device_info, 6, 0);
+	}
+	
 	// possibly get attachment
 	$request_data['attachment'] = get_request_attachment();
 		
@@ -140,7 +146,6 @@ function get_request_data() {
 function decode_request() {
 	$request_data = array();
 	wp_parse_str( $_POST['data'], $request_data );
-	
 	return $request_data;
 }
 
@@ -154,7 +159,6 @@ function decode_request() {
  */
 function get_request_attachment() {
     if ( ! isset( $_FILES['file'] ) ) {
-		wp_send_json_success( json_encode( $_FILES ) );
         return array();
     }
 
