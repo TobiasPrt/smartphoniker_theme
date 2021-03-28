@@ -25,7 +25,7 @@ use Carbon_Fields\Field;
     $stores = call_user_func( 'get_all_posts', 'store' );
 
     Block::make( __( 'Stores' ) )
-        ->set_description( __( 'Stellt eine 3-spaltige Ansicht aus Karten mit Bild, Adresse, Öffnungszeiten und Link von ausgewählten Stores dar.') )
+        ->set_description( __( 'Stellt eine 3-spaltige Ansicht aus Kacheln mit Bild, Adresse, Öffnungszeiten und Link von ausgewählten Standorten dar.') )
         ->set_category( 'widgets' )
         ->set_parent( 'carbon-fields/section' )
         ->set_icon( 'admin-multisite' )
