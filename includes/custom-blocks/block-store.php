@@ -19,6 +19,8 @@ use Carbon_Fields\Field;
  * @since 1.0.0
  */
 (function() {
+    $stores = call_user_func( 'get_all_posts', 'store' );
+
     Block::make( __( 'Store' ) )
         ->set_description( __( '(Nur auf Standorte-Seite zu verwenden!) Dieser Block zeigt die Öffnungszeiten und Adresse des jeweiligen Stores dar.') )
         ->set_category( 'widgets' )
@@ -27,9 +29,9 @@ use Carbon_Fields\Field;
         ->add_fields(
             array(
                 Field::make( 'separator', 'separator', __( 'Store' ) ),
-                Field::make( 'html', 'description', __( 'Store-Block Beschreibung' ) )
-                    ->set_html( 'Sieht genauso aus wie block-2, nur entnimmt automatisch Öffnungszeiten und Adresse des jeweiligen Stores.' ),
-                // Block Color
+                Field::make( 'select', 'store', __('Standort auswählen') )
+                    ->set_required( true )
+                    ->set_options( $stores ),
                 Field::make( 'select', 'color', __( 'Block-Hintergrundfarbe' ) )
                     ->set_options( array(
                         'orange' => __( 'Orange' ),

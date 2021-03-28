@@ -25,7 +25,7 @@
         </p>
     <br>
         <p class="block-2__text block-2__text--center">
-            <?php echo get_post_meta( get_the_ID(), '_opening_hours' )[0]; ?>
+            <?php echo get_post_meta( $args['store'], '_opening_hours' )[0]; ?>
         </p>
         <br>
         <br>
@@ -34,11 +34,11 @@
         </p>
         <br>
         <p class="block-2__text block-2__text--center">
-            <?php echo str_replace( ',', '<br>', carbon_get_post_meta( get_the_ID(), 'address' )['address'] ); ?>
+            <?php echo str_replace( ',', '<br>', carbon_get_post_meta( $args['store'], 'address' )['address'] ); ?>
         </p>
         <a 
             class="block-2__button button button--orange" 
-            href="<?php echo get_post_meta( get_the_ID(), '_google_maps_url' )[0]; ?>" 
+            href="<?php echo get_post_meta( $args['store'], '_google_maps_url' )[0]; ?>" 
             target="_blank"
         >
             zum Routenplaner
