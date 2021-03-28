@@ -19,15 +19,20 @@ use Carbon_Fields\Field;
  */
 (function() {
     Block::make( __( 'Form' ) )
+        ->set_description( __( 'Stellt ein ausgewähltes Formular dar.') )
+        ->set_category( 'widgets', __( 'Vorausgefüllte Blocks' ) )
+        ->set_parent( 'carbon-fields/section' )
+        ->set_icon( 'feedback' )
         ->add_fields( array(
+            Field::make( 'separator', 'separator', __( 'Form' ) ),
             Field::make( 'select', 'form', __( 'Formular auswählen' ) )
                 ->set_options( array(
                     'contact' => 'Kontaktformular',
                     'application' => 'Bewerbungsformular',
+                    'sell' => 'Geräteankauf',
                 ) )
                 ->set_required( true ),
         ) )
-        ->set_parent( 'carbon-fields/section' )
         ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
             get_template_part( 'template-parts/form', $fields['form'] );
         } );

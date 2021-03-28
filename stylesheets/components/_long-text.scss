@@ -18,6 +18,11 @@
             margin-top: 5rem;
         }
     }
+
+    & a {
+        @include fg(orange);
+        text-decoration: underline;
+    }
 }
 
 @include md {

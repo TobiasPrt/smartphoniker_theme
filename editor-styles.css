@@ -5,3 +5,13 @@
 button[aria-label="Add block"] {
     padding: 0 !important;
 }
+
+div.cf-block__inner-blocks {
+    padding-left: 20px;
+    border-left: 5px solid rgba(0,0,0, .1);
+}
+
+div.cf-block__inner-blocks > div > div > div:not(:first-of-type) {
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0, .1);
+}

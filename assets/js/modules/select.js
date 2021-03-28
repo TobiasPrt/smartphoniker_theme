@@ -26,7 +26,7 @@ export function setupSelect() {
  * @since 1.0.0
  */
 function setDefaultDeviceSelectField() {
-    const defaultDeviceSelectField = document.querySelector('.select__select[name = modell]:nth-of-type(1)');
+    const defaultDeviceSelectField = document.querySelector('.select__select[name = modell]:nth-of-type(1)') || document.querySelector('.form__select[name = modell]:nth-of-type(1)');
     defaultDeviceSelectField.style.visibility = 'visible';
     setButtonURL(defaultDeviceSelectField);
 }
@@ -41,7 +41,8 @@ function setDefaultDeviceSelectField() {
  */
 function setButtonURL(deviceSelectField) {
     const url = deviceSelectField.options[deviceSelectField.selectedIndex].getAttribute('data-url');
-    document.getElementById('repair-device').setAttribute('href', url);
+    const button = document.getElementById('repair-device');
+    button && button.setAttribute('href', url);
 }
 
 
@@ -66,7 +67,8 @@ function addManufacturerSelectFieldEventListener(manufacturerSelectField) {
 function changeActiveManufacturer() {
     const activeManufacturerOption = this.options[this.selectedIndex].value;
 
-    const allDeviceSelectFields = document.querySelectorAll('.select__select[name = modell]');
+    let allDeviceSelectFields = document.querySelectorAll('.select__select[name = modell]');
+    allDeviceSelectFields = allDeviceSelectFields.length === 0 ? document.querySelectorAll('.form__select[name = modell]') : allDeviceSelectFields;
 
     allDeviceSelectFields.forEach(deviceSelectField => {
         // if the field is the choosen one display it, else hide it

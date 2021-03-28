@@ -19,12 +19,19 @@ use Carbon_Fields\Field;
  * @since 1.0.0
  */
 (function() {
-    Block::make( __( 'Store-Block' ) )
+    $stores = call_user_func( 'get_all_posts', 'store' );
+
+    Block::make( __( 'Store' ) )
+        ->set_description( __( '(Nur auf Standorte-Seite zu verwenden!) Dieser Block zeigt die Öffnungszeiten und Adresse des jeweiligen Stores dar.') )
+        ->set_category( 'widgets' )
+        ->set_parent( 'carbon-fields/section' )
+        ->set_icon( 'store' )
         ->add_fields(
             array(
-                Field::make( 'html', 'description', __( 'Store-Block Beschreibung' ) )
-                    ->set_html( 'Sieht genauso aus wie block-2, nur entnimmt automatisch Öffnungszeiten und Adresse des jeweiligen Stores.' ),
-                // Block Color
+                Field::make( 'separator', 'separator', __( 'Store' ) ),
+                Field::make( 'select', 'store', __('Standort auswählen') )
+                    ->set_required( true )
+                    ->set_options( $stores ),
                 Field::make( 'select', 'color', __( 'Block-Hintergrundfarbe' ) )
                     ->set_options( array(
                         'orange' => __( 'Orange' ),
@@ -33,11 +40,10 @@ use Carbon_Fields\Field;
                         'blue'   => __( 'Dunkelblau' ),
                     ) ),
                 Field::make( 'image', 'image', __( 'Bild wählen' ) )
-                    ->set_help_text( 'Hier zum Beispiel ein Bild von außen und oben eines von innen.' )
+                    ->set_help_text( 'Hier zum Beispiel ein Bild von außen oder von innen des Stores.' )
                     ->set_required( true ),
             )
         )
-        ->set_parent( 'carbon-fields/section' )
         ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
             get_template_part( 'template-parts/component', 'store-block', $fields );
         } );

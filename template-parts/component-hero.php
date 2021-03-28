@@ -33,6 +33,9 @@ $manufacturers = get_categories( array(
         height="1"
         class="hero__image"
         src="<?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phone.svg"
+        srcset="<?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phonex600.png,
+        <?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phonex1000.png 1.5x,
+        <?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phone.svg 2x"
         alt="Nachhaltiges Handy"
     />
 
@@ -54,7 +57,7 @@ $manufacturers = get_categories( array(
 
 
     <!-- Formular -->
-    <form class="hero__form block-form" action="#">
+    <div class="hero__form block-form" action="#">
 
             <!-- Manufacturer -->
             <div class="block-form__wrapper select">
@@ -103,7 +106,7 @@ $manufacturers = get_categories( array(
             Handy reparieren lassen
         </a>
 
-    </form>
+    </div>
 
 
     <!-- Brands -->

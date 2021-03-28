@@ -97,6 +97,8 @@ async function getToken(form) {
  */
 function createFormDataObject(form, token) {
     document.getElementById('g-recaptcha-response').value = token;
+    minimizeFormElements();
+    console.log(form);
     const queryString = new URLSearchParams(new FormData(form)).toString();
     let formdata = new FormData;
     formdata.append('action', 'form');
@@ -109,6 +111,23 @@ function createFormDataObject(form, token) {
     }
 
     return formdata;
+}
+
+/**
+ * Removes unselected device select fields from DOM.
+ *
+ * @since 1.0.0
+ */
+function minimizeFormElements() {
+    const allDeviceSelectFields = document.querySelectorAll('.form__select[name = modell]');
+    const manufacturerSelectField = document.getElementById('select-manufacturer')
+    const currentlySelectedManufacturer = manufacturerSelectField.options[manufacturerSelectField.selectedIndex].value;
+    allDeviceSelectFields.forEach((deviceSelectField) => {
+        console.log(deviceSelectField.id + ' - ' + currentlySelectedManufacturer);
+        if (deviceSelectField.id != currentlySelectedManufacturer) {
+            deviceSelectField.remove();
+        }
+    });
 }
 
 

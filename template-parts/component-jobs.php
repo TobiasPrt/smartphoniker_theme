@@ -42,7 +42,7 @@
                         </p>
                     </div>
                     <!-- right side / button -->
-                    <a href="<?php echo get_permalink( $job_id ); ?>" class="job__button button button--orange">
+                    <a href="<?php echo get_permalink( $job_id ); ?>" class="job__button button button--white">
                         Jetzt bewerben
                     </a>
                 </div>

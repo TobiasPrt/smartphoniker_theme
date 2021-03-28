@@ -14,7 +14,7 @@
   }
 
   &--bannerIsHidden {
-    min-height: 6rem;
+    min-height: 8rem;
   }
 
   &__heading {
@@ -49,6 +49,10 @@
 
   &--blue {
     @include headercolor(dark_blue);
+
+    & .nav__listitem > a:hover {
+      @include fg(orange);
+    }
   }
 
   &--black {

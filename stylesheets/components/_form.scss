@@ -31,6 +31,7 @@
         appearance: none;
         -webkit-appearance: none;
         outline: none;
+        border-radius: $border-radius;
     }
 
     &__input {
@@ -47,6 +48,27 @@
         width: 100%;
         margin: 3rem 0;
         @extend .text-xxs;
+    }
+
+    &__select {
+        @include bg(light_grey);
+        appearance: none;
+        -webkit-appearance: none;
+        border: 0;
+        height: 4.4rem;
+        @extend .text-md;
+        background-image: url(assets/images/icons/triangle_down.svg);
+        background-repeat: no-repeat;
+        background-clip: right;
+        background-size: 6%;
+        background-position: 95%;
+        padding: 0 1rem;
+        outline: none;
+        border-radius: $border-radius;
+        
+        &[name=modell]:nth-of-type(1) {
+            display: block;
+        }
     }
 }
 

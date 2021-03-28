@@ -22,12 +22,15 @@ use Carbon_Fields\Field;
  */
 (function() {
     Block::make( __( 'Map' ) )
+        ->set_description( __( 'Stellt eine Karte dar, auf der ausgewählte Standorte markiert sind.') )
+        ->set_category( 'widgets' )
+        ->set_parent( 'carbon-fields/section' )
+        ->set_icon( 'location-alt' )
         ->add_fields( array(
-            Field::make( 'separator', 'separator', __( 'Karte' ) ),
+            Field::make( 'separator', 'separator', __( 'Map' ) ),
             Field::make( 'set', 'stores', __( 'Anzuzeigende Stores auswählen' ) )
                 ->set_options( call_user_func( 'get_all_posts', 'store' ) )
         ) )
-        ->set_parent( 'carbon-fields/section' )
         ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
 
             $locations = array();
