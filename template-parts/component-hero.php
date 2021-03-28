@@ -57,7 +57,7 @@ $manufacturers = get_categories( array(
 
 
     <!-- Formular -->
-    <form class="hero__form block-form" action="#">
+    <div class="hero__form block-form" action="#">
 
             <!-- Manufacturer -->
             <div class="block-form__wrapper select">
@@ -106,7 +106,7 @@ $manufacturers = get_categories( array(
             Handy reparieren lassen
         </a>
 
-    </form>
+    </div>
 
 
     <!-- Brands -->
