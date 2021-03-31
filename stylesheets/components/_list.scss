@@ -16,7 +16,6 @@
     }
 
     &:before {
-      @include bg(green);
       @include fg(white);
       @extend .text-lg;
       margin-right: 1rem;
@@ -26,6 +25,27 @@
       place-items: center;
       height: 5rem;
       min-width: 5rem;
+    }
+
+    &--orange{
+      &:before {
+        @include bg(orange);
+      }
+    }
+    &--green{
+      &:before {
+        @include bg(green);
+      }
+    }
+    &--dark_blue{
+      &:before {
+        @include bg(dark_blue);
+      }
+    }
+    &--grey{
+      &:before {
+        @include bg(grey);
+      }
     }
   }
 

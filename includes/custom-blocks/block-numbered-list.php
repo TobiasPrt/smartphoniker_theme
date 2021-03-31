@@ -24,7 +24,14 @@ use Carbon_Fields\Field;
         ->set_category( 'lists' )
         ->set_parent( 'carbon-fields/section' )
         ->set_icon( 'menu-alt3' )
-        ->add_fields( array(  
+        ->add_fields( array(
+            Field::make( 'select', 'color', __( 'Farbe wählen ' ) )
+                ->set_options( array(
+                    'orange' => __( 'Orange' ),
+                    'green' => __( 'Grün' ),
+                    'grey' => __( 'Grau' ),
+                    'dark_blue' => __( 'Dunkelblau' ),
+                ) ),
             Field::make( 'complex', 'list_items', __( 'Listenelemente hinzufügen' ) )
                 ->add_fields( array(
                     Field::make( 'separator', 'separator', __( 'Numbered-List' ) ),
