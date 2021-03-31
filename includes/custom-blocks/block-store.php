@@ -22,7 +22,7 @@ use Carbon_Fields\Field;
     $stores = call_user_func( 'get_all_posts', 'store' );
 
     Block::make( __( 'Store' ) )
-        ->set_description( __( '(Nur auf Standorte-Seite zu verwenden!) Dieser Block zeigt die Öffnungszeiten und Adresse des jeweiligen Stores dar.') )
+        ->set_description( __( 'Dieser Block zeigt die Öffnungszeiten und Adresse des jeweiligen Stores dar.') )
         ->set_category( 'widgets' )
         ->set_parent( 'carbon-fields/section' )
         ->set_icon( 'store' )

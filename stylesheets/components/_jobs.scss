@@ -35,8 +35,16 @@
 .job {
 
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
+    // justify-content: space-between;
+    // flex-wrap: wrap;
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
 
     &__title {
         @extend .text-lg;
@@ -47,9 +55,10 @@
         @extend .text-xs;
         @include fg(grey);
         margin-top: 1rem;
+        text-align: end;
     }
 
-    &:nth-last-child(2) {
+    &:nth-last-child(n + 2) {
          &::after {
             content: '';
             display: block;
@@ -58,9 +67,25 @@
             width: 100%;
             margin: 2rem auto;
         }
-    }
+    }   
+}
+@include sm {
+    .job {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
 
-   
+        &__info {
+            display: flex;
+            width: inherit;
+            flex-direction: column;
+            margin-bottom: 0;
+        }
+
+        &__description {
+            text-align: left;
+        }
+    }
 }
 
 

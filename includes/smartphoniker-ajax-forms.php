@@ -119,6 +119,7 @@ function get_request_data() {
 
 	// get request data
 	$request_data = array();
+    $request_data['type'] = $decoded_request['Type_of_Enquiry'];
     $request_data['sender_name'] = "{$decoded_request['First_Name']} {$decoded_request['Last_Name']}";
 	$request_data['sender_email'] = $decoded_request['Email'];
 	$request_data['subject'] = "{$decoded_request['Type_of_Enquiry']} von {$request_data['sender_name']}";
@@ -229,7 +230,22 @@ function verify_file_size() {
  * @since 1.0.0
  */
 function forward_request_by_mail( $request_data ) {
-	$admin_email = get_option('admin_email');
+	$admin_email = get_option('admin_email');	
+
+	switch ( $request_data['type'] ) {
+		case 'Kontaktanfrage':
+			$recipient = carbon_get_theme_option('contact_email');
+			break;
+		case 'Bewerbung':
+			$recipient = carbon_get_theme_option('application_email');
+			break;
+		case 'Ankaufanfrage':
+			$recipient = carbon_get_theme_option('sell_email');
+			break;
+		default:
+			$recipient = get_option('admin_email');
+			break;
+	}
 
 	$headers = array(
         'Content-Type: text/html; charset=UTF-8',
@@ -238,7 +254,7 @@ function forward_request_by_mail( $request_data ) {
     );
 
 	return wp_mail(
-		$admin_email,
+		$recipient,
 		$request_data['subject'],
 		$request_data['message'],
 		$headers,

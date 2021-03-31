@@ -19,7 +19,7 @@ use Carbon_Fields\Field;
  */
 (function() {
     Block::make( __( 'Video' ) )
-        ->set_description( __( 'Stellt eine 3-spaltige Ansicht aus Karten mit Bild, Adresse, Öffnungszeiten und Link von ausgewählten Stores dar.') )
+        ->set_description( __( 'Stellt ein YouTube-Video dar.') )
         ->set_category( 'widgets' )
         ->set_parent( 'carbon-fields/section' )
         ->set_icon( 'video-alt3' )

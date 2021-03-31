@@ -45,7 +45,6 @@ async function processFormEvent(event) {
         message = e;
     } finally {
         toggleLoadingScreen(message);
-        console.log(message);
     }
 }
 
@@ -97,8 +96,11 @@ async function getToken(form) {
  */
 function createFormDataObject(form, token) {
     document.getElementById('g-recaptcha-response').value = token;
-    minimizeFormElements();
-    console.log(form);
+
+    if (!!document.querySelector('#sell')) {
+        minimizeFormElements();
+    }
+
     const queryString = new URLSearchParams(new FormData(form)).toString();
     let formdata = new FormData;
     formdata.append('action', 'form');
@@ -106,7 +108,6 @@ function createFormDataObject(form, token) {
     formdata.append('token', token);
 
     if (!!document.querySelector('#application_cv')) {
-        console.log(document.querySelector('#application_cv').files[0]);
         formdata.append('file', document.querySelector('#application_cv').files[0]);
     }
 
@@ -120,10 +121,9 @@ function createFormDataObject(form, token) {
  */
 function minimizeFormElements() {
     const allDeviceSelectFields = document.querySelectorAll('.form__select[name = modell]');
-    const manufacturerSelectField = document.getElementById('select-manufacturer')
+    const manufacturerSelectField = document.getElementById('select-manufacturer');
     const currentlySelectedManufacturer = manufacturerSelectField.options[manufacturerSelectField.selectedIndex].value;
     allDeviceSelectFields.forEach((deviceSelectField) => {
-        console.log(deviceSelectField.id + ' - ' + currentlySelectedManufacturer);
         if (deviceSelectField.id != currentlySelectedManufacturer) {
             deviceSelectField.remove();
         }

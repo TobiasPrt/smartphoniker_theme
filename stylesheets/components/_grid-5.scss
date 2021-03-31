@@ -1,0 +1,47 @@
+// Grid-Komponente mit maximal 5 Karten
+
+
+.grid-5 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    row-gap: 3rem;
+
+    &__card {
+        @include bg(light_grey);
+        overflow: hidden;
+        border-radius: $border-radius;
+    }
+
+    &__img {
+        padding: 3rem 2rem;
+        border-bottom: 1px solid #a6a6a6;
+    }
+
+    &__subtitle {
+        @include fg(orange);
+        @extend .text-sm;
+        font-weight: 400;
+        padding: 1rem 0;
+        display: block;
+        text-align: center;
+    }
+}
+
+@include sm {
+    .grid-5 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@include md {
+    .grid-5 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@include lg {
+    .grid-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
