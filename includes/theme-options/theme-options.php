@@ -50,5 +50,14 @@ function smartphoniker_theme_options(): Carbon_Fields\Container\Theme_Options_Co
             Field::make( 'text', 'instagram_link', __( 'Instagram Link' ) )
                 ->set_attribute( 'type', 'url' )
                 ->set_required( true ),
+            Field::make( 'text', 'application_email', __( 'Bewerbungen an diese E-Mail senden:' ) )
+                ->set_attribute( 'type', 'email' )
+                ->set_required( true ),
+            Field::make( 'text', 'contact_email', __( 'Kontakanfragen an diese E-Mail senden:' ) )
+                ->set_attribute( 'type', 'email' )
+                ->set_required( true ),
+            Field::make( 'text', 'sell_email', __( 'Ankaufanfragen an diese E-Mail senden:' ) )
+                ->set_attribute( 'type', 'email' )
+                ->set_required( true ),
         ) );
 }
