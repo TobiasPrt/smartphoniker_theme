@@ -63,7 +63,7 @@
     <header id="header" class="header <?php echo $header_class; ?> header--bannerIsHidden">
       
       
-        <nav class="header__nav nav">
+        <nav class="header__nav nav" <?php echo 'store' === get_post_type() && ! is_404() ? 'data-attribute="scroll"' : ''; ?>>
             <div class="nav__wrapper">
 
       

@@ -11,6 +11,7 @@ import { addBannerEventListener } from './modules/banner.js';
 import { addNavigationEventListener } from './modules/navigation.js';
 import { setupTabs } from './modules/tabs.js';
 import { addFormEventListener } from './modules/form.js';
+import { addScrollEventListener } from './modules/scroll.js';
 
 setupSelect();
 addVideoEventListeners();
@@ -18,3 +19,4 @@ addBannerEventListener();
 addNavigationEventListener();
 setupTabs();
 addFormEventListener();
+addScrollEventListener();
