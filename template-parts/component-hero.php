@@ -10,6 +10,7 @@
 
 
 $devices = new WP_Query( array(
+    'posts_per_page'   => -1,
     'post_type' => 'device',
     'orderby' => array(
         'title' => 'ASC'
