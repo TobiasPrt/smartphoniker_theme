@@ -27,5 +27,4 @@ function smartphoniker_remove_menu_pages() {
   remove_menu_page( 'edit.php' ); //Posts
   remove_menu_page( 'edit-comments.php' ); //Comments
   remove_menu_page( 'users.php' ); //Users
-  remove_menu_page( 'tools.php' ); //Tools
 }

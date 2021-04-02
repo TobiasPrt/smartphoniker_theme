@@ -47,7 +47,7 @@
                     <a href="<?php echo get_permalink( $store_id ); ?>" class="card__link"
                     ><img
                         class="card__icon"
-                        src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/arrowright_box.svg"
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/arrowright_box-orange.svg"
                         alt="Arrow right"
                     />mehr erfahren</a
                     >
