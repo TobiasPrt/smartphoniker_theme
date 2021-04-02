@@ -21,13 +21,15 @@ add_filter('mod_rewrite_rules', 'smartphoniker_add_custom_htaccess_content');
  */
 function smartphoniker_add_custom_htaccess_content( string $rules ) : string {
     $hide_author_page = <<<EOD
-        \n # BEGIN My Added Content
+        \n\n # BEGIN My Added Content
         # Hide author page
         RewriteCond %{REQUEST_URI} !^/wp-admin [NC]
         RewriteCond %{QUERY_STRING} author=\d
         RewriteRule ^.*$ - [R=404,L]
         # END My Added Content\n
-        EOD;
-
-    return $my_content . $hide_author_page;
+        EOD;    
+    $position = strpos( $rules, 'RewriteEngine On') + 16;
+    $new_rules = substr_replace( $rules, $position, $position, 0);
+    
+    return $new_rules;
 }
