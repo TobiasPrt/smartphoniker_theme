@@ -48,8 +48,12 @@
                 <!-- Button -->
                 <?php if ( $content['button_is_enabled'] ): ?>
                     <a 
-                        class="block-2__button button button--<?php echo esc_html( $args['color'] ); ?>" 
-                        href="<?php echo get_permalink( $content['button_link'] ); ?>" 
+                        class="block-2__button button button--<?php echo esc_html( $args['color'] ); ?>"
+                        <?php if ( isset( $content['button_extern']) && $content['button_extern'] != '' ):?>
+                            href="<?php echo $content['button_extern']; ?>" 
+                        <?php else: ?>
+                            href="<?php echo get_permalink( $content['button_link'] ); ?>" 
+                        <?php endif; ?>
                         target="<?php echo esc_html( $content['button_target'] ); ?>"
                     >
                         <?php echo esc_html( $content['button_text'] ); ?>
