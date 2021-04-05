@@ -1,0 +1,30 @@
+name: Deploy
+
+on:
+  release:
+    types: [published]
+  
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Sync
+        env:
+          dest: "${{secrets.SSH_USERNAME_DEPLOY}}"
+        run: |
+          echo "${{secrets.SSH_KEY}}" > deploy_key
+          chmod 600 ./deploy_key
+          rsync -chav --delete \
+            -e 'ssh -i ./deploy_key -o StrictHostKeyChecking=no' \
+            --exclude /deploy_key \
+            --exclude /.git/ \
+            --exclude /.github/ \
+            --exclude /static-pages/ \
+            --exclude /stylesheets/ \
+            --exclude README.md \
+            --exclude LICENSE \
+            --exclude .gitignore \
+            ./ ${{env.dest}}
