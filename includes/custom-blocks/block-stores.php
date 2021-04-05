@@ -36,6 +36,9 @@ use Carbon_Fields\Field;
         ) )
         ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
             $fields['stores'] = array_filter($fields['stores']);
+            $fields['stores'] = array_filter($fields['stores'], function ( $key ) {
+                return get_post_status( $key );
+            });
             get_template_part( 'template-parts/component', 'stores', $fields );
         } );
 })();

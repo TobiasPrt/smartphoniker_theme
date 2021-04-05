@@ -66,6 +66,8 @@ use Carbon_Fields\Field;
                                     'value' => true,
                                 ),
                             ) ),
+                        Field::make( 'text', 'button_extern', __( 'Externer Link' ) )
+                            ->set_help_text( 'Feld leer lassen, wenn interner Link verwendet werden soll.' ),
                         Field::make( 'select', 'button_link', __( 'Button Link' ) )
                             ->set_options( call_user_func( 'get_all_posts', array( 'page', 'job', 'service', 'store' ) ) )
                             ->set_help_text( 'Seite zu dem der Button führen soll' )
