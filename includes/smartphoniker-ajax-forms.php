@@ -85,7 +85,7 @@ function validate_recaptcha() {
 function request_recaptcha_validation() {
 	// set payload
 	$payload = array(
-		'secret' => RECAPTCHA_TOKEN,
+		'secret' => RECAPTCHA_SECRET,
         'response' => $_POST['token'],
 	);
 
