@@ -24,6 +24,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f58225">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Condensed:wght@700&display=swap" rel="preload" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" as="image" href="<?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phone.svg">
 
     <?php wp_head(); ?>

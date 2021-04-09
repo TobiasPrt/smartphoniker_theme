@@ -24,7 +24,7 @@ function smartphoniker_enqueue_scripts() {
  * @since 1.0.0
  */
 function smartphoniker_enqueue_stylesheets() {
-    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Condensed:wght@700&display=swap' );
+    // wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Condensed:wght@700&display=swap' );
     wp_enqueue_style( 'smartphoniker-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 }
 
