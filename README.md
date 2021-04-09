@@ -32,7 +32,7 @@
 - Continuus Deployment for staging and production server
 - minimal fully responsive design
 - 7-1 Architecture Pattern with Sass
-- 95+ Performance Score in Google Page Speed Insights
+- 90+ Performance Score in Google Page Speed Insights
 - no JQuery, no CSS-Library
 - simple and semantic HTML
 - 20+ custom Gutenberg Blocks for easy non-coding use [wip]
