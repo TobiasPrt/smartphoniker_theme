@@ -33,7 +33,7 @@ $manufacturers = get_categories( array(
         width="1"
         height="1"
         class="hero__image"
-        src="<?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phonex600.png"
+        src="<?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phone.svg"
         alt="Nachhaltiges Handy"
     />
 
