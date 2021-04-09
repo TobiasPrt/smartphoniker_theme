@@ -40,7 +40,7 @@
         'menu_icon'             => 'dashicons-smartphone',
         'has_archive'           => true,
         'show_in_rest'          => true,
-        'public'                => true,
+        'public'                => false,
         'publicly_queryable'    => true,
         'show_ui'               => true,
         'exclude_from_search'   => true,

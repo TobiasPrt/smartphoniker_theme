@@ -10,6 +10,7 @@
 
 
 $devices = new WP_Query( array(
+    'posts_per_page'   => -1,
     'post_type' => 'device',
     'orderby' => array(
         'title' => 'ASC'
@@ -99,6 +100,7 @@ $manufacturers = get_categories( array(
    
 
 </form>
-<script src="https://www.google.com/recaptcha/api.js?render=6LfMjnYaAAAAAGEDka5XbfUwvQPJHNP4hKvSnaed" async defer></script>
+<script id="grecaptcha" src="https://www.google.com/recaptcha/api.js?render=<?php echo RECAPTCHA_TOKEN; ?>" data-token="<?php echo RECAPTCHA_TOKEN; ?>" async defer></script>
+
 
 <?php get_template_part( 'template-parts/form', 'loadingscreen' ); ?>

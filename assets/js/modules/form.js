@@ -77,7 +77,8 @@ function toggleLoadingScreen(message = null) {
 async function getToken(form) {
     return new Promise((res, rej) => {
         grecaptcha.ready(() => {
-            grecaptcha.execute('6LfMjnYaAAAAAGEDka5XbfUwvQPJHNP4hKvSnaed', { action: form.id }).then((token) => {
+            const token = document.getElementById('grecaptcha').getAttribute('data-token');
+            grecaptcha.execute(token, { action: form.id }).then((token) => {
                 return res(token);
             })
         });
