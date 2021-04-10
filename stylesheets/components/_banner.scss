@@ -30,6 +30,12 @@
     align-items: center;
   }
 
+  &__link {
+    @include fg(white);
+    text-decoration: underline;
+    font-weight: 400;
+  }
+
   &__text {
     @include fg(white);
     @extend .text-sm;

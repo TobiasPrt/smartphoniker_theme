@@ -28,6 +28,7 @@ function smartphoniker_theme_options_home( Carbon_Fields\Container\Theme_Options
             Field::make( 'radio', 'banner_type', 'Welches Banner soll verwendet werden?' )
                 ->set_options( array(
                     'whatsapp-orange' => __( 'WhatsApp (orange)' ),
+                    'whatsapp-etermin' => __( 'WhatsApp (orange) + eTermin Link' ),
                     'custom'          => __( 'Eigener Text' ),
                 ) )
                 ->set_conditional_logic( array(
@@ -37,7 +38,7 @@ function smartphoniker_theme_options_home( Carbon_Fields\Container\Theme_Options
                     )
                 ) ),
             Field::make( 'html', 'banner_image_whatsapp-orange', __( 'banner_image_whatsapp-orange' ) )
-                ->set_html( '<img src="' . get_template_directory_uri() . '/assets/theme_options/banner_whatsapp-orange.jpg" style="max-width: 100%">' )
+                ->set_html( '<img src="' . get_template_directory_uri() . '/assets/theme_options/banner_whatsapp-orange.png" style="max-width: 100%">' )
                 ->set_conditional_logic( array(
                     array(
                         'field' => 'banner_is_enabled',
@@ -46,6 +47,18 @@ function smartphoniker_theme_options_home( Carbon_Fields\Container\Theme_Options
                     array(
                         'field' => 'banner_type',
                         'value' => 'whatsapp-orange'
+                    )
+                ) ),
+            Field::make( 'html', 'banner_image_whatsapp-etermin', __( 'banner_image_whatsapp-etermin' ) )
+                ->set_html( '<img src="' . get_template_directory_uri() . '/assets/theme_options/banner_whatsapp-etermin.png" style="max-width: 100%">' )
+                ->set_conditional_logic( array(
+                    array(
+                        'field' => 'banner_is_enabled',
+                        'value' => true,
+                    ),
+                    array(
+                        'field' => 'banner_type',
+                        'value' => 'whatsapp-etermin'
                     )
                 ) ),
             Field::make( 'text', 'banner_text', __( 'Eigener Banner Text' ) )

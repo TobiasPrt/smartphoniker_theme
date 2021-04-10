@@ -14,12 +14,23 @@
         <!-- Banner Content -->
         <p class="banner__text">
 
+            <!-- Whatsapp Banner (orange) -->
             <?php if ( 'whatsapp-orange' === $args['type'] ): ?>
                 Wir reparieren weiter! Schreib uns per &nbsp;
-                <a class="banner__link" href="https://wa.me/491628282353">
+                <a href="https://wa.me/491628282353">
                 <img class="banner__image" src="<?php echo get_template_directory_uri() ?>/assets/images/icons/whatsapp_button_orange.svg" alt="WhatsApp" /> 
                 </a>
                 &nbsp; unter 0162-8282353.
+            
+            <!-- Whatsapp Banner (orange) inkl. eTermin Link -->
+            <?php elseif ( 'whatsapp-etermin' === $args['type'] ): ?>
+                Wir reparieren weiter! Schreib uns per &nbsp;
+                <a href="https://wa.me/491628282353">
+                <img class="banner__image" src="<?php echo get_template_directory_uri() ?>/assets/images/icons/whatsapp_button_orange.svg" alt="WhatsApp" />
+                </a>
+                &nbsp; oder <a class="banner__link" href="https://www.etermin.net/Smartphoniker">buche einen Termin</a>.
+            
+            <!-- Custom Banner -->
             <?php else: ?>
                 <?php echo $args['content']; ?>
             <?php endif; ?>
