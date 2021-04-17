@@ -35,5 +35,6 @@ function smartphoniker_setup() {
      * Add support for custom styles for Gutenberg editor.
      */
     add_theme_support( 'editor-styles' );
+    add_theme_support( 'title-tag' );
     add_editor_style( 'editor-styles.css' );
 }
