@@ -104,7 +104,7 @@ $manufacturers = get_categories( array(
             </div>
 
         <!-- Submit button -->
-        <a class="block-form__button button" id="repair-device" href="">
+        <a class="block-form__button button" id="repair-device" href="" target="_blank">
             Handy reparieren lassen
         </a>
 

@@ -134,7 +134,7 @@
                 }
                 ?>
                 <a class="nav__phone"
-                    href="tel:+<?php echo carbon_get_theme_option('phone_number') ?>">
+                    href="tel:+<?php echo carbon_get_theme_option('phone_number') ?>" target="_blank">
                     <img class="nav__img" width="1" height="1"
                         src="<?php echo get_template_directory_uri() ?>/assets/images/icons/phone_<?php echo $phone_icon; ?>.svg"
                         alt="Smartphoniker anrufen" />

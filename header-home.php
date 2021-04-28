@@ -62,7 +62,7 @@
             <!-- Logo -->
             <div class="nav__wrapper">
                 <a class="nav__item logo"
-                    href="<?php echo get_home_url() ?>">
+                    href="<?php echo get_home_url() ?>" target="_blank">
                     <img class="logo__img" width="30" height="13"
                         src="<?php echo get_template_directory_uri() ?>/assets/images/logo/logo_blackorange.svg"
                         alt="Smartphoniker Logo" />
@@ -87,7 +87,7 @@
 
                 <!-- Telefon-Icon -->
                 <a class="nav__phone"
-                    href="tel:+<?php echo carbon_get_theme_option('phone_number') ?>">
+                    href="tel:+<?php echo carbon_get_theme_option('phone_number') ?>" target="_blank">
                     <img class="nav__img"
                         witth="1" height="1"
                         src="<?php echo get_template_directory_uri() ?>/assets/images/icons/phone_orangewhite.svg"
