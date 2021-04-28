@@ -29,13 +29,16 @@ $manufacturers = get_categories( array(
 <section class="content__section content__section--hero section hero">
 
     <!-- Hero image -->
-    <img
-        width="1"
-        height="1"
-        class="hero__image"
-        src="<?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phone.svg"
-        alt="Nachhaltiges Handy"
-    />
+    <picture class="hero__image">
+        <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phonex600.png" media="(max-width: 600px)">
+        <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phonex1000.png" media="(max-width: 1000px)">
+        <img
+            width="1"
+            height="1"
+            src="<?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phone.svg"
+            alt="Nachhaltiges Handy"
+        />
+    </picture>
 
     <!-- Slogan and subtitle -->
     <div class="hero__wrapper">
