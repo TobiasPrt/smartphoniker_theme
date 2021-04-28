@@ -30,8 +30,9 @@ $manufacturers = get_categories( array(
 
     <!-- Hero image -->
     <picture class="hero__image">
-        <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phonex600.png" media="(max-width: 600px)">
-        <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phonex1000.png" media="(max-width: 1000px)">
+        <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phonex600.webp" media="(max-width: 600px)" post_type="image/webp">
+        <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phonex600.png" media="(max-width: 600px)"  post_type="image/png">
+        <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phonex1000.png" media="(max-width: 1000px)"  post_type="image/png">
         <img
             width="1"
             height="1"
