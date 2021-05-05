@@ -19,6 +19,7 @@ function smartphoniker_allowed_block_types(): array {
     $custom_block_filenames = smartphoniker_get_custom_block_filenames();
     $custom_block_names = smartphoniker_extract_custom_block_names( $custom_block_filenames );
     $allowed_block_types = smartphoniker_generate_custom_block_identifiers( $custom_block_names );
+    array_push( $allowed_block_types, 'core/block' ); // adds reusable block functionality
     return $allowed_block_types;
 }
 
