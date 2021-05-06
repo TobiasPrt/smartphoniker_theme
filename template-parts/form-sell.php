@@ -6,6 +6,7 @@
  *
  * @package Smartphoniker
  * @since 1.0.0
+ * @since 1.0.5 added wp_action field
  */
 
 
@@ -27,6 +28,7 @@ $manufacturers = get_categories( array(
 <form class="section__content form" id="sell" data-admin-url="<?php echo admin_url( 'admin-ajax.php' ); ?>" enctype="multipart/form-data">
     
     <input type="hidden" name="Type_of_Enquiry" value="Ankaufanfrage">
+    <input type="hidden" name="wp_action" value="newsletter">
     
     <div class="form__half">
         <label for="sell_fname" class="form__label">
