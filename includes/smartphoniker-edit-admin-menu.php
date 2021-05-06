@@ -4,7 +4,7 @@
  * 
  * @package Smartphoniker
  * @since 1.0.0
- * @since 1.1.0 new function for adding entries to admin menu
+ * @since 1.0.5 new function for adding entries to admin menu
  */
 add_action( 'admin_menu', 'smartphoniker_edit_admin_menu' );
 
@@ -36,7 +36,7 @@ function smartphoniker_remove_menu_pages() {
 /**
  * Adds entries to admin menu
  *
- * @since 1.1.0
+ * @since 1.0.5
  */
 function smartphoniker_add_menu_pages() {
   add_menu_page(

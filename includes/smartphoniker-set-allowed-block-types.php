@@ -12,7 +12,7 @@ add_filter( 'allowed_block_types', 'smartphoniker_allowed_block_types' );
  * Returns only allowed Gutenberg Block types.
  * 
  * @since 1.0.0
- * @since 1.1.0 allowes core/block
+ * @since 1.0.5 allowes core/block
  * 
  * @return array $allowed_block_types Array of all allowed Gutenberg Block types.
  */

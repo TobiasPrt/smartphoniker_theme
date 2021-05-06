@@ -17,7 +17,7 @@ use Carbon_Fields\Field;
  * Registers Gutenberg Block section
  * 
  * @since 1.0.0
- * @since 1.1.0 now all blocks are allowed as innerblocks to allow for reusable block functionality
+ * @since 1.0.5 now all blocks are allowed as innerblocks to allow for reusable block functionality
  */
 (function() {
     Block::make( __( 'Section' ) )

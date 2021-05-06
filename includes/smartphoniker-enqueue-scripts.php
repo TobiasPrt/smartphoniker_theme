@@ -41,7 +41,7 @@ function smartphoniker_enqueue_javascript() {
 /**
  * Dequeues block library styles
  *
- * @since 1.1.0
+ * @since 1.0.5
  */
 function smartphoniker_dequeue_stylesheets() {
     wp_dequeue_style( 'wp-block-library' );
