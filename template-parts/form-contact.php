@@ -11,7 +11,7 @@
 <form class="section__content form" id="contact" data-admin-url="<?php echo admin_url( 'admin-ajax.php' ); ?>">
     
     <input type="hidden" name="Type_of_Enquiry" value="Kontaktanfrage">
-    <input type="hidden" name="wp_action" value="newsletter">
+    <input type="hidden" name="wp_action" value="form">
     
     <div class="form__half">
         <label for="contact_fname" class="form__label">
