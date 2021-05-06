@@ -94,6 +94,7 @@ async function getToken(form) {
  * @return {FormData} FormData object
  * 
  * @since 1.0.0
+ * @since 1.0.5 Added dynamic wordpress action hook.
  */
 function createFormDataObject(form, token) {
     document.getElementById('g-recaptcha-response').value = token;
@@ -104,7 +105,8 @@ function createFormDataObject(form, token) {
 
     const queryString = new URLSearchParams(new FormData(form)).toString();
     let formdata = new FormData;
-    formdata.append('action', 'form');
+    const wpAction = document.querySelector('input[name=wp_action]').value;
+    formdata.append('action', wpAction);
     formdata.append('data', queryString);
     formdata.append('token', token);
 
