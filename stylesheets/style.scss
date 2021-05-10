@@ -5,10 +5,10 @@ Author: Tobias Pörtner
 Author URI: https://tobiaspoertner.com
 Description: Custom WordPress-Theme for Smartphoniker GmbH
 Tags: responsive, minimal, block, sustainability
-Version: 1.0.0
+Version: 1.0.5
 Requires at least: 5.6
 Tested up to: 5.6.1
-Requires PHP: 7.0
+Requires PHP: 7.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: smartphoniker
@@ -28,47 +28,48 @@ Text Domain: smartphoniker
 @import "layout/footer";
 @import "layout/wrapper";
 
-@import "components/button";
 @import "components/banner";
+@import "components/block-2";
+@import "components/block-3";
+@import "components/block-5";
+@import "components/block-form";
+@import "components/block-list";
+@import "components/button";
+@import "components/card";
 @import "components/columns-1";
 @import "components/columns-2";
 @import "components/columns-3";
 @import "components/columns-5";
 @import "components/columns-9";
-@import "components/section";
-@import "components/block-2";
-@import "components/block-3";
-@import "components/block-5";
-@import "components/block-list";
-@import "components/loader";
-@import "components/grid-5";
-@import "components/block-form";
-@import "components/navigation";
-@import "components/menuicon";
+@import "components/contest";
 @import "components/form";
-@import "components/logo";
-@import "components/select";
-@import "components/jobs";
-@import "components/map";
-@import "components/card";
-@import "components/video";
-@import "components/infoblock";
-@import "components/list";
-@import "components/link-list";
-@import "components/long-text";
 @import "components/grid-4";
+@import "components/grid-5";
+@import "components/infoblock";
+@import "components/jobs";
+@import "components/link-list";
+@import "components/list";
+@import "components/loader";
+@import "components/logo";
+@import "components/long-text";
+@import "components/map";
+@import "components/menuicon";
+@import "components/navigation";
 @import "components/person";
+@import "components/section";
+@import "components/select";
+@import "components/video";
 
 @import "pages/agb";
 @import "pages/datenschutz";
 @import "pages/impressum";
 @import "pages/index";
 @import "pages/karriere";
-@import "pages/stellenangebot";
 @import "pages/kontakt";
 @import "pages/nachhaltigkeit";
 @import "pages/partner";
 @import "pages/services";
-@import "pages/standorte";
 @import "pages/standort";
+@import "pages/standorte";
+@import "pages/stellenangebot";
 @import "pages/ueberuns";

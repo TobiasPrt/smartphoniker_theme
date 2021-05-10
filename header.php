@@ -25,6 +25,8 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Condensed:wght@700&display=swap" rel="preload" as="style" onload="this.rel='stylesheet'">
+
     <?php wp_head(); ?>
 
     <?php if ( 'store' === get_post_type() && ! is_404() ): ?>
@@ -94,7 +96,7 @@
 
                 <a class="nav__item logo"
                     href="<?php echo get_home_url() ?>">
-                        <img class="logo__img"
+                        <img class="logo__img" width="30" height="13"
                             src="<?php echo get_template_directory_uri() ?>/assets/images/logo/logo_<?php echo $logo; ?>.svg"
                             alt="Smartphoniker Logo" />
                 </a>
@@ -134,8 +136,8 @@
                 }
                 ?>
                 <a class="nav__phone"
-                    href="tel:+<?php echo carbon_get_theme_option('phone_number') ?>">
-                    <img class="nav__img"
+                    href="tel:+<?php echo carbon_get_theme_option('phone_number') ?>" target="_blank">
+                    <img class="nav__img" width="1" height="1"
                         src="<?php echo get_template_directory_uri() ?>/assets/images/icons/phone_<?php echo $phone_icon; ?>.svg"
                         alt="Smartphoniker anrufen" />
                 </a>

@@ -1,6 +1,17 @@
+<?php
+/**
+ * Form: General contact form.
+ *
+ * @package Smartphoniker
+ * @since 1.0.0
+ * @since 1.0.5 added wp_action field
+ */
+?>
+
 <form class="section__content form" id="contact" data-admin-url="<?php echo admin_url( 'admin-ajax.php' ); ?>">
     
     <input type="hidden" name="Type_of_Enquiry" value="Kontaktanfrage">
+    <input type="hidden" name="wp_action" value="form">
     
     <div class="form__half">
         <label for="contact_fname" class="form__label">

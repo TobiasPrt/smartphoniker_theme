@@ -16,6 +16,7 @@ add_action( 'wp_enqueue_scripts', 'smartphoniker_enqueue_scripts' );
 function smartphoniker_enqueue_scripts() {
     smartphoniker_enqueue_stylesheets();
     smartphoniker_enqueue_javascript();
+    smartphoniker_dequeue_stylesheets();
 }
 
 /**
@@ -37,3 +38,11 @@ function smartphoniker_enqueue_javascript() {
     wp_enqueue_script( 'smartphoniker-app', get_template_directory_uri() . '/assets/js/app.js', array(), wp_get_theme()->get( 'Version' ), true );
 }
 
+/**
+ * Dequeues block library styles
+ *
+ * @since 1.0.5
+ */
+function smartphoniker_dequeue_stylesheets() {
+    wp_dequeue_style( 'wp-block-library' );
+}

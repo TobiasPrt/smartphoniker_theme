@@ -4,10 +4,62 @@
     display: flex;
     flex-wrap: wrap;
 
+    &--contest {
+        @include bg(orange);
+        border-radius: $border-radius;
+        padding: 2rem 3rem;
+
+        & .form__label, .form__info {
+            @include fg(white);
+        }
+
+        & .form__required {
+            @include fg(black);
+        }
+
+        & .form__button {
+            margin-top: 2rem;
+        }
+
+        & .form__info {
+            margin-bottom: 0;
+        }
+    }
+
+    &__checkbox {
+        position: relative;
+        left: 15px;
+        top: -4px;
+        z-index: 0;
+        -webkit-appearance: none;
+
+        & + label::before {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            border: 4px solid white;
+            background-color: #fff;
+            display: block;
+            content: "";
+            float: left;
+            margin-right: 1rem;
+            z-index: 5;
+            position: relative;
+        }
+
+        &:checked + label::before {
+            @include bg(orange);
+        }
+    }
+
     &__half, &__full {
         width: 100%;
         display: flex;
         flex-direction: column;
+
+        &--inline {
+            flex-direction: row;
+        }
 
         &:nth-of-type(n + 2) {
             margin-top: 3rem;
@@ -17,7 +69,7 @@
     &__label {
         @include fg(dark_grey);
         @extend .text-xs;
-        margin-bottom: 1rem;        
+        margin-bottom: 1rem;      
     }
 
     &__required {

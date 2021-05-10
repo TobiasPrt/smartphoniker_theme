@@ -29,13 +29,17 @@ $manufacturers = get_categories( array(
 <section class="content__section content__section--hero section hero">
 
     <!-- Hero image -->
-    <img
-        width="1"
-        height="1"
-        class="hero__image"
-        src="<?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phone.svg"
-        alt="Nachhaltiges Handy"
-    />
+    <picture class="hero__image">
+        <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phonex600.webp" media="(max-width: 600px)" post_type="image/webp">
+        <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phonex600.png" media="(max-width: 600px)"  post_type="image/png">
+        <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phonex1000.png" media="(max-width: 1000px)"  post_type="image/png">
+        <img
+            width="1"
+            height="1"
+            src="<?php echo get_template_directory_uri(); ?>/assets/images/hero_image_phone.svg"
+            alt="Nachhaltiges Handy"
+        />
+    </picture>
 
     <!-- Slogan and subtitle -->
     <div class="hero__wrapper">
@@ -100,7 +104,7 @@ $manufacturers = get_categories( array(
             </div>
 
         <!-- Submit button -->
-        <a class="block-form__button button" id="repair-device" href="">
+        <a class="block-form__button button" id="repair-device" href="" target="_blank">
             Handy reparieren lassen
         </a>
 

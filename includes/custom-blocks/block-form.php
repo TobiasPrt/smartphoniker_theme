@@ -30,6 +30,8 @@ use Carbon_Fields\Field;
                     'contact' => 'Kontaktformular',
                     'application' => 'Bewerbungsformular',
                     'sell' => 'Geräteankauf',
+                    'newsletter' => 'Newsletteranmeldung',
+                    'contest' => 'Gewinnspielanmeldung'
                 ) )
                 ->set_required( true ),
         ) )

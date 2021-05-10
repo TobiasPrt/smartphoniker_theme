@@ -1,6 +1,17 @@
+<?php
+/**
+ * Form: Application for jobs.
+ *
+ * @package Smartphoniker
+ * @since 1.0.0
+ * @since 1.0.5 added wp_action field
+ */
+?>
+
 <form class="section__content form" id="application" data-admin-url="<?php echo admin_url( 'admin-ajax.php' ); ?>" enctype="multipart/form-data">
     
     <input type="hidden" name="Type_of_Enquiry" value="Bewerbung">
+    <input type="hidden" name="wp_action" value="form">
     
     <div class="form__half">
         <label for="application_fname" class="form__label">

@@ -17,18 +17,18 @@
             <!-- Whatsapp Banner (orange) -->
             <?php if ( 'whatsapp-orange' === $args['type'] ): ?>
                 Wir reparieren weiter! Schreib uns per &nbsp;
-                <a href="https://wa.me/491628282353">
-                <img class="banner__image" src="<?php echo get_template_directory_uri() ?>/assets/images/icons/whatsapp_button_orange.svg" alt="WhatsApp" /> 
+                <a href="https://wa.me/491628282353" target="_blank">
+                <img width="5" height="1" class="banner__image" src="<?php echo get_template_directory_uri() ?>/assets/images/icons/whatsapp_button_orange.svg" alt="WhatsApp" /> 
                 </a>
                 &nbsp; unter 0162-8282353.
             
             <!-- Whatsapp Banner (orange) inkl. eTermin Link -->
             <?php elseif ( 'whatsapp-etermin' === $args['type'] ): ?>
                 Wir reparieren weiter! Schreib uns per &nbsp;
-                <a href="https://wa.me/491628282353">
-                <img class="banner__image" src="<?php echo get_template_directory_uri() ?>/assets/images/icons/whatsapp_button_orange.svg" alt="WhatsApp" />
+                <a href="https://wa.me/491628282353" target="_blank">
+                <img width="5" height="1" class="banner__image" src="<?php echo get_template_directory_uri() ?>/assets/images/icons/whatsapp_button_orange.svg" alt="WhatsApp" />
                 </a>
-                &nbsp; oder <a class="banner__link" href="https://www.etermin.net/Smartphoniker">buche einen Termin</a>.
+                &nbsp; oder <a class="banner__link" href="https://www.etermin.net/Smartphoniker" target="_blank">buche einen Termin</a>.
             
             <!-- Custom Banner -->
             <?php else: ?>
@@ -39,7 +39,7 @@
 
         <!-- Banner close button -->
         <button id="closeBanner" class="banner__button">
-            <img src="<?php echo get_template_directory_uri() ?>/assets/images/icons/banner_cross.svg" alt="Close Banner" />
+            <img width="1" height="1" src="<?php echo get_template_directory_uri() ?>/assets/images/icons/banner_cross.svg" alt="Close Banner" />
         </button>
 
     </div>
