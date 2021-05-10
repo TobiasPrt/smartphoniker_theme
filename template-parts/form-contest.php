@@ -32,10 +32,10 @@
         data-action='submit' class="g-recaptcha form__button button button--orange" type="submit" id="submit">Jetzt teilnehmen</button>
 
     <div class="form__info">
+        Wir passen auf Deine Daten auf. Erfahre mehr in unserer <a class="form__required" href="https://smartphoniker.de/datenschutz">Datenschutzerklärung</a>. <br>
         Diese Seite ist durch reCAPTCHA geschützt. Es gelten die 
         <a class="form__required" href="https://policies.google.com/privacy">Datenschutzerklärung</a> und
         <a class="form__required" href="https://policies.google.com/terms">Geschäftsbedingungen</a> von Google.
-        Wir passen auf Deine Daten auf. Erfahre mehr in unserer <a class="form__required" href="https://smartphoniker.de/datenschutz">Datenschutzerklärung</a>.
     </div>
 
     <input type="hidden" id="g-recaptcha-response" name="token">
