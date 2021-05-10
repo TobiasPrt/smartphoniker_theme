@@ -1,0 +1,80 @@
+// Contest component 3-column grid
+
+.contest {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 5rem;
+    @extend .text-sm;
+
+    &__heading {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end
+    }
+
+    &__content {
+        @include bg(light_grey);
+        padding: 2rem;
+        border-radius: $border-radius;
+    }
+
+    &__card {
+        @include bg(white);
+        border-radius: $border-radius;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    &__img {
+        max-height: 100px;
+    }
+
+    &__title {
+        @extend .text-lg;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    &__text {
+        & p {
+            @extend .text-sm;
+        }
+        & ul {
+            margin-left: 3rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__button {
+        margin: 0 auto;
+    }
+}
+
+@include lg {
+    .contest {
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 5rem;
+        align-items: end;
+
+        &__column {
+            &:nth-of-type(1) {
+                order: 2;
+            }
+            &:nth-of-type(2) {
+                order: 1;
+            }
+            &:nth-of-type(3) {
+                order: 3;
+            }
+        }
+    }
+}
