@@ -23,11 +23,23 @@ function process_newsletter_submission() {
 		wp_die();
 	}
     
-    /** @var string */
-    $email = extract_email();
+    /** @var array The data of the request. */
+    $data = extract_data();
     
-    /** @var bool|string */
-    $response = request_optin_email( $email );
+    
+
+    /** @var string The endpoint for the specific form to target */
+    if ( $data['target'] === 'newsletter' || $data['newsletter'] === 'on' ) {
+        $endpoint = 'https://api.newsletter2go.com/forms/submit/rjmpvj03-77lrtmjn-a4o';
+        /** @var bool|string */
+        $response = request_optin_email( $data['Email'], $endpoint );
+    }
+
+    if ( $data['target'] === 'contest' ) {
+        $endpoint = 'https://api.newsletter2go.com/forms/submit/rjmpvj03-dihpffpf-1b4p';
+        /** @var bool|string */
+        $response = request_optin_email( $data['Email'], $endpoint );
+    }
     
     send_response(
         $response,
@@ -45,9 +57,9 @@ function process_newsletter_submission() {
  * @return string The email address in the json body.
  * @since 1.0.5
  */
-function extract_email() {
+function extract_data() {
     $decoded_request = decode_request();
-    return $decoded_request['Email'];
+    return $decoded_request;
 }
 
 
@@ -57,7 +69,7 @@ function extract_email() {
  * @param string $email Email to send optin to.
  * @since 1.0.5
  */
-function request_optin_email( $email ) {
+function request_optin_email( $email, $endpoint ) {
     $json = json_encode( array(
         'recipient' => array(
             'email' => $email
@@ -69,7 +81,7 @@ function request_optin_email( $email ) {
      *
      * @var array|WP_Error
      */
-    $response = wp_remote_post( 'https://api.newsletter2go.com/forms/submit/rjmpvj03-77lrtmjn-a4o', 
+    $response = wp_remote_post( $endpoint, 
         array(
             'headers' => array(
                 'Content-Type' => 'application/json',
@@ -77,10 +89,10 @@ function request_optin_email( $email ) {
             'body' => $json,
         ) 
     );
-    
+ 
     
     if ( ! is_wp_error( $response ) ) {
-        if ( 200 == wp_remote_retrieve_response_code( $response ) ) {
+        if ( 201 == wp_remote_retrieve_response_code( $response ) ) {
             return true;
         } else {
             $response_body = json_decode( wp_remote_retrieve_body( $response ) );
