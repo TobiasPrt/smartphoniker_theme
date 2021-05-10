@@ -11,6 +11,7 @@
 
     <!-- WordPress Action Hook -->
     <input type="hidden" name="wp_action" value="newsletter">
+    <input type="hidden" name="target" value="newsletter">
 
     <div class="form__full">
         <label for="newsletter_email" class="form__label">
