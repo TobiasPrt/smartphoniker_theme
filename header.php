@@ -25,6 +25,8 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Condensed:wght@700&display=swap" rel="preload" as="style" onload="this.rel='stylesheet'">
+
     <?php wp_head(); ?>
 
     <?php if ( 'store' === get_post_type() && ! is_404() ): ?>

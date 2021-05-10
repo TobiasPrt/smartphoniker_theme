@@ -4,6 +4,7 @@
  * 
  * @package Smartphoniker
  * @since 1.0.0
+ * @since 1.0.5 Moved several general-purpose function to util file.
  */
 add_action( 'wp_ajax_form', 'process_ajax_request');
 add_action( 'wp_ajax_nopriv_form', 'process_ajax_request');
@@ -28,82 +29,13 @@ function process_ajax_request() {
 
 	delete_uploaded_file( $request_data['attachment'] );
 	
-	send_response( $message_was_sent );
-
-	wp_die();
-}
-
-
-/**
- * Validates if the request is malicious
- *
- * @return bool true if valid, false if malicious
- *
- * @since 1.0.0
- */
-function validate_ajax_request() {
-	return validate_nonce() && validate_recaptcha();
-}
-
-
-/**
- * Validates the WordPress Nonce for protection against csrf.
- * 
- * @return bool true if valid, false if malicious
- *
- * @since 1.0.0
- */
-function validate_nonce() {
-    $nonce = decode_request()['_wpnonce'];
-    return wp_verify_nonce( $nonce, 'csrf-protection' );
-}
-
-
-/**
- * Validates the request with Google reCaptcha v3
- * 
- * @return bool
- *
- * @since 1.0.0
- */
-function validate_recaptcha() {
-	// request recaptcha validation from Google
-    $response = request_recaptcha_validation();
-    
-    // evaluate response
-    return $response->success && $response->score >= 0.5;
-}
-
-
-/**
- * Sends validation request to Google by curl.
- * 
- * @return array decoded JSON response object
- *
- * @since 1.0.0
- */
-function request_recaptcha_validation() {
-	// set payload
-	$payload = array(
-		'secret' => RECAPTCHA_SECRET,
-        'response' => $_POST['token'],
+	send_response( 
+		$message_was_sent,
+		'Die Nachricht wurde erfolgreich verschickt. Wir werden uns so schnell wie möglich bei Dir melden!',
+		'Ein Fehler ist aufgetreten, die Nachricht konnte nicht gesendet werden.'
 	);
 
-	// setup curl
-	$curl_config = array(
-        CURLOPT_URL => 'https://www.google.com/recaptcha/api/siteverify',
-        CURLOPT_POST => true,
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_POSTFIELDS => $payload
-    );
-    
-    // request validation
-    $curl_session = curl_init();
-    curl_setopt_array( $curl_session, $curl_config );
-    $response = curl_exec( $curl_session );
-    curl_close( $curl_session );
-
-    return json_decode( $response );
+	wp_die();
 }
 
 
@@ -133,20 +65,6 @@ function get_request_data() {
 	// possibly get attachment
 	$request_data['attachment'] = get_request_attachment();
 		
-	return $request_data;
-}
-
-
-/**
- * Decodes string from request body
- * 
- * @return array decoded request body
- *
- * @since 1.0.0
- */
-function decode_request() {
-	$request_data = array();
-	wp_parse_str( $_POST['data'], $request_data );
 	return $request_data;
 }
 
@@ -274,21 +192,5 @@ function delete_uploaded_file( $path_to_attachment ) {
 	$file_path = realpath( $path_to_attachment );
 	if ( is_writable( $file_path ) ) {
 		unlink( $file_path );
-	}
-}
-
-
-/**
- * Sends json response to the frontend
- * 
- * @param bool $message_was_sent whether the message was sent successful or not
- *
- * @since 1.0.0
- */
-function send_response( $message_was_sent ) {
-	if ( $message_was_sent === true ) {
-		wp_send_json_success( 'Die Nachricht wurde erfolgreich verschickt. Wir werden uns so schnell wie möglich bei Dir melden!' );
-	} else {
-		wp_send_json_error( 'Ein Fehler ist aufgetreten, die Nachricht konnte nicht gesendet werden.' );
 	}
 }

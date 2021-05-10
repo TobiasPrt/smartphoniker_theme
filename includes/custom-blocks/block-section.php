@@ -17,6 +17,7 @@ use Carbon_Fields\Field;
  * Registers Gutenberg Block section
  * 
  * @since 1.0.0
+ * @since 1.0.5 now all blocks are allowed as innerblocks to allow for reusable block functionality
  */
 (function() {
     Block::make( __( 'Section' ) )
@@ -28,7 +29,6 @@ use Carbon_Fields\Field;
         // Disable preview mode as long as there is not a custom editor stylesheet.
         ->set_mode( 'edit' )
         // Only the blocks that have this block as a parent can be inserted.
-        ->set_allowed_inner_blocks( array() )
         ->add_fields(
             array(
                 Field::make( 'separator', 'separator', __( 'Section' ) ),
