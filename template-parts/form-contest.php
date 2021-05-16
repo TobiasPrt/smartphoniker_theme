@@ -7,7 +7,7 @@
  */
 ?>
 
-<form class="section__content form form--contest" id="contest" data-admin-url="<?php echo admin_url( 'admin-ajax.php' ); ?>">
+<form class="section__content form form--block" id="contest" data-admin-url="<?php echo admin_url( 'admin-ajax.php' ); ?>">
 
     <!-- WordPress Action Hook -->
     <input type="hidden" name="wp_action" value="newsletter">
