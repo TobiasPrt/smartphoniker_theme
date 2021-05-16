@@ -55,7 +55,7 @@ function get_request_data() {
     $request_data['sender_name'] = "{$decoded_request['First_Name']} {$decoded_request['Last_Name']}";
 	$request_data['sender_email'] = $decoded_request['Email'];
 	$request_data['subject'] = "{$decoded_request['Type_of_Enquiry']} von {$request_data['sender_name']}";
-    $request_data['message'] = "<html>{$decoded_request['Message']}</html>";
+    $request_data['message'] = "<html>Absender: {$decoded_request['Email']} <br><br> Nachricht: <br> {$decoded_request['Message']}</html>";
 
 	if ( $decoded_request['Type_of_Enquiry'] === 'Ankaufanfrage' ) {
 		$device_info = "Hersteller: {$decoded_request['manufacturer']} <br>Modell: {$decoded_request['modell']}<br><br>";
