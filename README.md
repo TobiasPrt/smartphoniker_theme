@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/TobiasPrt/smartphoniker_theme/blob/master/smartphoniker_2021_primary.png?raw=true" alt="Example of Theme" width="600">
+  <img src="https://github.com/TobiasPrt/smartphoniker_theme/blob/master/smartphoniker_2021_primary.png?raw=true" alt="Example of Theme" width="1000">
 <p>
 
 <h1 align="center">
@@ -28,7 +28,7 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com/TobiasPrt/smartphoniker_theme/blob/master/smartphoniker_2021_secondary.png?raw=true" alt="Example of Theme" width="600">
+  <img src="https://github.com/TobiasPrt/smartphoniker_theme/blob/master/smartphoniker_2021_secondary.png?raw=true" alt="Example of Theme" width="1000">
 <p>
 
 ## Key Features
