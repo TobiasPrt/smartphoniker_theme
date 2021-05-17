@@ -27,14 +27,13 @@ function process_newsletter_submission() {
     $data = extract_data();
     
     
-
     /** @var string The endpoint for the specific form to target */
     if ( $data['target'] === 'newsletter' || $data['newsletter'] === 'on' ) {
         $endpoint = 'https://api.newsletter2go.com/forms/submit/rjmpvj03-77lrtmjn-a4o';
         /** @var bool|string */
         $response = request_optin_email( $data['Email'], $endpoint );
     }
-
+    
     if ( $data['target'] === 'contest' ) {
         $endpoint = 'https://api.newsletter2go.com/forms/submit/rjmpvj03-dihpffpf-1b4p';
         /** @var bool|string */
@@ -89,14 +88,17 @@ function request_optin_email( $email, $endpoint ) {
             'body' => $json,
         ) 
     );
- 
+
+    
     
     if ( ! is_wp_error( $response ) ) {
-        if ( 201 == wp_remote_retrieve_response_code( $response ) ) {
+
+
+        if ( wp_remote_retrieve_response_code( $response ) == 201 ) {
             return true;
         } else {
             $response_body = json_decode( wp_remote_retrieve_body( $response ) );
-            $error_message = $response_body->errorMessage;
+            $error_message = $response_body->errorMessage ?? 'Ein Fehler ist aufgetreten. Bitte überprüfe Deine Daten.';
             return $error_message;
         }
     } else {
