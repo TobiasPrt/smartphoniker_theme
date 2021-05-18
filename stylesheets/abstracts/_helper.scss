@@ -18,3 +18,13 @@
     display: none;
   }
 }
+
+.bold {
+  @extend .text-md;
+  font-weight: 400 !important;
+
+  & > * {
+    @extend .text-md;
+    font-weight: 400 !important;
+  }
+}

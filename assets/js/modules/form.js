@@ -25,9 +25,21 @@ export function addFormEventListener() {
  * @param {event} event submit event
  *
  * @since 1.0.0
+ * @since 1.0.5 Added special case for contest form.
  */
 async function processFormEvent(event) {
     event.preventDefault();
+
+    if (!!document.querySelector('#contest')) {
+        const checkbox = document.querySelector('#contest_conditions');
+        if (!checkbox.checked) {
+            const error = document.querySelector('.form__error');
+            error.style.display = 'block';
+            const label = document.querySelector('#contest > div:nth-child(7) > label');
+            label.classList.toggle('bold');
+            return;
+        }
+    }
 
     toggleLoadingScreen();
 

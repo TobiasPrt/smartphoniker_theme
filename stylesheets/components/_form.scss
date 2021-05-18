@@ -52,6 +52,13 @@
         }
     }
 
+    &__error {
+        @extend .text-md;
+        font-weight: 400;
+        margin-bottom: 2rem;
+        display: none;
+    }
+
     &__half, &__full {
         width: 100%;
         display: flex;
