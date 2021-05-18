@@ -24,20 +24,20 @@ function process_newsletter_submission() {
 	}
     
     /** @var array The data of the request. */
-    $data = extract_data();
+    $decoded_request = extract_data();
     
     
     /** @var string The endpoint for the specific form to target */
-    if ( $data['target'] === 'newsletter' || $data['newsletter'] === 'on' ) {
+    if ( $decoded_request['target'] === 'newsletter' || $decoded_request['newsletter'] === 'on' ) {
         $endpoint = 'https://api.newsletter2go.com/forms/submit/rjmpvj03-77lrtmjn-a4o';
         /** @var bool|string */
-        $response = request_optin_email( $data['Email'], $endpoint );
+        $response = request_optin_email( $decoded_request, $endpoint );
     }
     
-    if ( $data['target'] === 'contest' ) {
+    if ( $decoded_request['target'] === 'contest' ) {
         $endpoint = 'https://api.newsletter2go.com/forms/submit/rjmpvj03-dihpffpf-1b4p';
         /** @var bool|string */
-        $response = request_optin_email( $data['Email'], $endpoint );
+        $response = request_optin_email( $decoded_request, $endpoint );
     }
     
     send_response(
@@ -57,6 +57,7 @@ function process_newsletter_submission() {
  * @since 1.0.5
  */
 function extract_data() {
+    /** @var string */
     $decoded_request = decode_request();
     return $decoded_request;
 }
@@ -68,10 +69,13 @@ function extract_data() {
  * @param string $email Email to send optin to.
  * @since 1.0.5
  */
-function request_optin_email( $email, $endpoint ) {
+function request_optin_email( $decoded_request, $endpoint ) {
+    /** @var string */
     $json = json_encode( array(
         'recipient' => array(
-            'email' => $email
+            'first_name' => $decoded_request['First_Name'],
+            'last_name' => $decoded_request['Last_Name'],
+            'email' => $decoded_request['Email'],
         ),
         ) );
     
@@ -92,12 +96,12 @@ function request_optin_email( $email, $endpoint ) {
     
     
     if ( ! is_wp_error( $response ) ) {
-
-
         if ( wp_remote_retrieve_response_code( $response ) == 201 ) {
             return true;
         } else {
+            /** @var mixed */
             $response_body = json_decode( wp_remote_retrieve_body( $response ) );
+            /** @var string */
             $error_message = $response_body->errorMessage ?? 'Ein Fehler ist aufgetreten. Bitte überprüfe Deine Daten.';
             return $error_message;
         }

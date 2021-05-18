@@ -13,6 +13,23 @@
     <input type="hidden" name="wp_action" value="newsletter">
     <input type="hidden" name="target" value="newsletter">
 
+    <!-- First Name -->
+    <div class="form__half">
+        <label for="newsletter_fname" class="form__label">
+            Vorname<span class="form__required">*</span>
+        </label>
+        <input id="newsletter_fname" class="form__input" name="First_Name" type="text" required>
+    </div>
+
+    <!-- Last Name -->
+    <div class="form__half">
+        <label for="newsletter_lname" class="form__label">
+            Nachname<span class="form__required">*</span>
+        </label>
+        <input id="newsletter_lname" class="form__input" name="Last_Name" type="text" required>
+    </div>
+
+    <!-- E-mail -->
     <div class="form__full">
         <label for="newsletter_email" class="form__label">
             E-Mail<span class="form__required">*</span>
@@ -20,6 +37,7 @@
         <input id="newsletter_email" type="email" class="form__input" name="Email" required>
     </div>
 
+    <!-- Information -->
     <div class="form__info">
         Wir passen auf Deine Daten auf. Erfahre mehr in unserer <a class="form__required" href="https://smartphoniker.de/datenschutz">Datenschutzerklärung</a>. <br>
         Diese Seite ist durch reCAPTCHA geschützt. Es gelten die 
