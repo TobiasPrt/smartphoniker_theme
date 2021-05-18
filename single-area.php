@@ -102,7 +102,7 @@ get_header();
                 <a href="<?php echo carbon_get_post_meta( get_the_ID(), 'link' ); ?>" class="grid-5__subtitle"><?php echo get_the_terms( get_the_ID(), 'manufacturer' )[0]->name . ' '; the_title(); ?></a>
             </div>
         <?php wp_reset_postdata(); ?>
-        <?php endwhile; endif: ?>
+        <?php endwhile; endif; ?>
     </div>
 </section>
 
