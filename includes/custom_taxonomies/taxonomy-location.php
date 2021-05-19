@@ -45,5 +45,5 @@
         'show_in_rest'          => true
     );
 
-    register_taxonomy( 'category', 'location', $args );
+    register_taxonomy( 'location', 'location', $args );
 })();
