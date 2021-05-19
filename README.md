@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/TobiasPrt/smartphoniker_theme/blob/master/smartphoniker_2021_primary.png?raw=true" alt="Example of Theme" width="1000">
+  <img src="https://github.com/TobiasPrt/smartphoniker_theme/blob/master/smartphoniker_2021_primary.png?raw=true" alt="Example of Theme" width="800">
 <p>
 
 <h1 align="center">
