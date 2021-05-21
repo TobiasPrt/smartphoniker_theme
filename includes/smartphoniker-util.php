@@ -55,9 +55,10 @@ function get_all_posts( $post_type = null, string $category = null ): array {
  *
  * @since 1.0.0
  * @since 1.0.5 moved to util file
+ * @since 1.1.0 removed nonce validation
  */
 function validate_ajax_request() {
-	return validate_nonce() && validate_recaptcha();
+	return validate_recaptcha();
 }
 
 
