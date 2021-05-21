@@ -16,16 +16,6 @@ add_action( 'wp_ajax_nopriv_form', 'process_ajax_request');
  * @since 1.0.0
  */
 function process_ajax_request() {
-	wp_mail(
-		"me@tobiaspoertner.com",
-		"Form Error",
-		json_encode($_POST['data']),
-		array(
-			'Content-Type: text/html; charset=UTF-8',
-			"From: Smartphoniker Kontaktformular <me@tobiaspoertner.com>",
-			"Reply-to: smartgg <me@tobiaspoertner.com>",
-		)
-	);
 	$request_is_valid = validate_ajax_request();
 	
 	if ( ! $request_is_valid ) {
