@@ -21,11 +21,10 @@ function process_ajax_request() {
 		"Form Error",
 		json_encode($_POST['data']),
 		array(
-        'Content-Type: text/html; charset=UTF-8',
-        "From: Smartphoniker Kontaktformular <me@tobiaspoertner.com>",
-        "Reply-to: smartgg <me@tobiaspoertner.com>",
-    );,
-		$request_data['attachment'],
+			'Content-Type: text/html; charset=UTF-8',
+			"From: Smartphoniker Kontaktformular <me@tobiaspoertner.com>",
+			"Reply-to: smartgg <me@tobiaspoertner.com>",
+		)
 	);
 	$request_is_valid = validate_ajax_request();
 	
