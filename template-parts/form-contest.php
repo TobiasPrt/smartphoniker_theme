@@ -52,7 +52,7 @@
     <div class="form__full form__full--inline">
         <input id="contest_newsletter" type="checkbox" class="form__checkbox" name="newsletter">
         <label for="contest_newsletter" class="form__label form__label">
-            Abboniere unseren Newsletter, um über weiteres über Gewinnspiele, Neuigkeiten und die mobile Kommunikation der Zukunft zu erfahren und sichere dir 5€ Newsletter-Rabatt!
+            Abonniere unseren Newsletter und sichere dir 5€ Newsletter-Rabatt! Wir füttern dich regelmäßig mit den neuesten Infos über Gewinnspiele, Neuigkeiten und die mobile Kommunikation der Zukunft.
         </label>
     </div>
     
