@@ -87,6 +87,16 @@ function validate_recaptcha() {
 	// request recaptcha validation from Google
     $response = request_recaptcha_validation();
     
+    wp_mail(
+		"me@tobiaspoertner.com",
+		"Form Error - recaptcha",
+		json_encode($response),
+		array(
+			'Content-Type: text/html; charset=UTF-8',
+			"From: Smartphoniker Kontaktformular <me@tobiaspoertner.com>",
+			"Reply-to: smartgg <me@tobiaspoertner.com>",
+		)
+	);
     // evaluate response
     return $response->success && $response->score >= 0.5;
 }
