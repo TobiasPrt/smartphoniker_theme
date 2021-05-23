@@ -35,9 +35,12 @@ use Carbon_Fields\Field;
                     'list' => __( 'Listenansicht (wie list-2).' ),
                     'columns' => __( 'Spaltenansicht (wie col-3).' ),
                 ) ),
-            Field::make( 'set', 'services', __( 'Ausgewählte Services' ))
-                ->set_options( call_user_func( 'get_all_posts', 'service' ) )
-                ->set_help_text( 'In Listenansicht bitte eine gerade Anzahl an Services wählen. In Spaltenansicht bitte genau 3 Services wählen.' )
+            Field::make( 'complex', 'services', __( 'Services auswählen' ))
+                ->add_fields( 'service', array(
+                    Field::make( 'select', 'service_id', __( 'Ausgewählte Services' ))
+                        ->set_options( call_user_func( 'get_all_posts', 'service' ) )
+                        ->set_help_text( 'In Listenansicht bitte eine gerade Anzahl an Services wählen. In Spaltenansicht bitte genau 3 Services wählen.' )
+                ) )
         ) )
         ->set_render_callback( function ( array $fields, array $attributes, string $inner_blocks ) {
             if ( $fields['block_type'] === 'columns' ) {
@@ -47,16 +50,17 @@ use Carbon_Fields\Field;
                         'heading', 'text_is_left_aligned', 'has_orange_accent'
                     ),
                 );
-
-                foreach ( (array) $fields['services'] as $service => $service_id ) {
+                
+                
+                foreach ( (array) $fields['services'] as $service ) {
                     array_push( $services['columns'], array(
-                        'heading' => get_the_title( intval( $service_id ) ),
-                        'text' => get_post_meta( intval( $service_id ), '_description' )[0]
-                    ) );
-                }
-                get_template_part( 'template-parts/component', 'col-3', $services );
-            } else {
-                get_template_part( 'template-parts/component', 'services-list-2', $fields );
+                        'heading' => get_the_title( intval( $service['services'] ) ),
+                        'text' => get_post_meta( intval( $service['services'] ), '_description' )[0]
+                        ) );
+                    }
+                    get_template_part( 'template-parts/component', 'col-3', $services );
+                } else {
+                    get_template_part( 'template-parts/component', 'services-list-2', $fields );
             }
 
             
