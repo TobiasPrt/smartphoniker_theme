@@ -13,8 +13,6 @@
     <!-- 1 Column per service -->
     <?php foreach ( (array) $args['services'] as $service ): ?>
 
-        <?php var_dump($service); ?>
-
         <div class="columns-2__column">
                 <?php echo wp_get_attachment_image( get_post_meta( intval( $service['service_id'] ), '_icon' )[0], 'thumbnail', false, array( 'class' => 'columns-2__icon' ) ); ?>
                 <div class="columns-2__contentwrapper">
