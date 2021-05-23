@@ -54,8 +54,8 @@ use Carbon_Fields\Field;
                 
                 foreach ( (array) $fields['services'] as $service ) {
                     array_push( $services['columns'], array(
-                        'heading' => get_the_title( intval( $service['services'] ) ),
-                        'text' => get_post_meta( intval( $service['services'] ), '_description' )[0]
+                        'heading' => get_the_title( intval( $service['service_id'] ) ),
+                        'text' => get_post_meta( intval( $service['service_id'] ), '_description' )[0]
                         ) );
                     }
                     get_template_part( 'template-parts/component', 'col-3', $services );
