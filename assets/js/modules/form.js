@@ -39,8 +39,17 @@ async function processFormEvent(event) {
             label.classList.toggle('bold');
             return;
         }
+
+        // Google Tag Manager Events
         if (window.dataLayer) {
             dataLayer.push({ 'event': 'contest-registration' });
+            if (!!document.querySelector('#contest_newsletter')) {
+                const newsletter_checkbox = document.querySelector('#contest_newsletter');
+
+                if (newsletter_checkbox.checked) {
+                    dataLayer.push({ 'event': 'newsletter-registration' });
+                }
+            }
         }
     }
 
