@@ -39,6 +39,9 @@ async function processFormEvent(event) {
             label.classList.toggle('bold');
             return;
         }
+        if (window.dataLayer) {
+            dataLayer.push({ 'event': 'contest-registration' });
+        }
     }
 
     toggleLoadingScreen();
