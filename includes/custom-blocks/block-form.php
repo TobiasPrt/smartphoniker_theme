@@ -31,7 +31,8 @@ use Carbon_Fields\Field;
                     'application' => 'Bewerbungsformular',
                     'sell' => 'Geräteankauf',
                     'newsletter' => 'Newsletteranmeldung',
-                    'contest' => 'Gewinnspielanmeldung'
+                    'contest' => 'Gewinnspielanmeldung',
+                    'sendin' => 'Einsendeformular'
                 ) )
                 ->set_required( true ),
         ) )

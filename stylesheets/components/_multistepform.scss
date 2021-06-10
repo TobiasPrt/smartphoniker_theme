@@ -1,0 +1,13 @@
+.multistepform {
+
+    & > div:not(.form__info) {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between;
+
+        &:not(.visible) {
+            display: none;
+        }
+    }
+}

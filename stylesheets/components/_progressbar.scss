@@ -1,0 +1,31 @@
+.progressbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7rem;
+
+    &__part {
+        width: 33%;
+
+        &--active > .progressbar__bar {
+            @include bg(orange);
+        }
+
+        &--active > .progressbar__text {
+            @include fg(black);
+        }
+    }
+
+
+    &__text {
+        @extend .text-xs;
+        @include fg(dark_grey);
+        margin-bottom: 1rem;
+    }
+
+    &__bar {
+        @include bg(light_grey);
+        height: 10px;
+        width: 100%;
+    }
+}
