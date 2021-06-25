@@ -1,1 +1,4 @@
 config.ini
+.vscode/settings.json
+.phpintel/*
+.gitignore

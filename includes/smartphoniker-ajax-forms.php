@@ -24,6 +24,7 @@ function process_ajax_request() {
 	}
 	
 	$request_data = get_request_data();
+	wp_send_json_success( $request_data['sender_name'] );
 
 	$message_was_sent = forward_request_by_mail( $request_data );
 

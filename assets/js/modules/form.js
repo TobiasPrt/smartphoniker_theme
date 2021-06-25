@@ -12,7 +12,7 @@
  * @since 1.0.0
  */
 export function addFormEventListener() {
-    const forms = document.querySelectorAll('.form');
+    const forms = document.querySelectorAll('.form:not(.multistepform)');
     forms.forEach(form => {
         form.addEventListener('submit', processFormEvent, false);
     })
@@ -99,12 +99,18 @@ function toggleLoadingScreen(message = null) {
  * @since 1.0.0
  */
 async function getToken(form) {
-    return new Promise((res, rej) => {
+    return new Promise((res) => {
+        // @ts-ignore
         grecaptcha.ready(() => {
             const token = document.getElementById('grecaptcha').getAttribute('data-token');
-            grecaptcha.execute(token, { action: form.id }).then((token) => {
-                return res(token);
-            })
+            // @ts-ignore
+            grecaptcha.execute(
+                token, { action: form.id })
+                .then(
+                    (/** @type {string | PromiseLike<string>} */ token) => {
+                        return res(token);
+                    }
+                );
         });
     });
 }

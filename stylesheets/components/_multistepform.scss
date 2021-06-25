@@ -1,0 +1,39 @@
+.multistepform {
+    &__group {
+        &--summary {
+            flex-direction: column;
+            text-align: center;
+
+            & > * {
+                margin: 2rem auto 0;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+
+            & > img {
+                width: 5rem;
+            }
+
+            & > h3:nth-child(4) {
+                margin-top: 5rem;
+            }
+        }
+    }
+
+    & > div:not(.form__info) {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between;
+
+        &:not(.visible) {
+            display: none;
+        }
+    }
+
+    &__button {
+        margin: 2rem auto;
+    }
+}

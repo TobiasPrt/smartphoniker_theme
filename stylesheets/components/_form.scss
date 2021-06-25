@@ -91,6 +91,10 @@
         -webkit-appearance: none;
         outline: none;
         border-radius: $border-radius;
+
+        &--error {
+            outline: 1px solid red;
+        }
     }
 
     &__input {
