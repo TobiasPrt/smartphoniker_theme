@@ -131,6 +131,7 @@ export class Form {
          * @type {FormData}
          */
         const formdata = new FormData(this.form);
+        formdata.append('token', this.recaptchaToken);
 
         /**
          * @type {AJAXRequest}
@@ -183,6 +184,7 @@ export class Form {
             // @ts-ignore
             grecaptcha.ready(() => {
                 const token = document.getElementById('grecaptcha').getAttribute('data-token');
+                console.log(token);
                 // @ts-ignore
                 grecaptcha.execute(
                     token, { action: this.formID })
