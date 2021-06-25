@@ -5,6 +5,7 @@
  * @package Smartphoniker
  * @since 1.0.0
  * @since 1.0.5 Added functions for validating ajax requests.
+ * @since 1.1.5 Added sanitize_string()
  */
 
 
@@ -87,6 +88,7 @@ function validate_nonce() {
 function validate_recaptcha() {
 	// request recaptcha validation from Google
     $response = request_recaptcha_validation();
+    wp_send_json_success( json_encode($response) );
     // evaluate response
     return $response->success && $response->score >= 0.5;
 }
@@ -156,4 +158,17 @@ function send_response( $message_was_sent, $success_message, $error_message ) {
 	} else {
 		wp_send_json_error( $error_message );
 	}
+}
+
+/**
+ * Sanitize string.
+ *
+ * @param string $string String to be sanitized
+ *
+ * @return string Sanitized string.
+ * 
+ * @since 1.1.5
+ */
+function sanitize_string(string $string) {
+    return filter_var($string, FILTER_SANITIZE_STRING);
 }
