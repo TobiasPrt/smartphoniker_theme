@@ -106,6 +106,116 @@ get_header();
     </div>
 </section>
 
+<section class="content__section section">
+    <h2 class="section__heading">In 3 einfachen Schritten dein Gerät reparieren</h2>
+    
+    <!-- Send in manual -->
+    <?php 
+    $manual_args = array(
+        'column_options' => array(
+            'text_is_left_aligned',
+            'has_orange_accent'
+        ),
+    );
+
+    // Text 1
+    $manual_args['list_items'][0]['_type'] = 'heading-text';
+    $manual_args['list_items'][0]['icon'] = 23;
+    $manual_args['list_items'][0]['text'] = "Schritt 1: Kostenlos dein Gerät an uns senden";
+
+    // Text 2
+    $manual_args['list_items'][1]['_type'] = 'heading-text';
+    $manual_args['list_items'][1]['icon'] = 23;
+    $manual_args['list_items'][1]['text'] = "Schritt 2: Wir reparieren dein Gerät";
+
+     // Text 3
+    $manual_args['list_items'][2]['_type'] = 'heading-text';
+    $manual_args['list_items'][2]['icon'] = 23;
+    $manual_args['list_items'][2]['text'] = "Schritt 3: Wir senden dir dein repariertes Gerät zurück";
+
+    get_template_part( 'template-parts/component', 'block-list', $manual_args );
+    ?>
+
+    <!-- Send in form -->
+    <?php get_template_part( "template-parts/form", "sendin", [] ); ?>
+
+    <!-- Seo Texts -->
+    <?php
+    $seo_args = array(
+        'column_options' => array(
+            'text_is_left_aligned'
+        ),
+    );
+    
+    // Text 1
+    $seo_args['columns'][0]['_type'] = 'heading-text';
+    $seo_args['columns'][0]['heading'] = "Mit gewohnter Smartphoniker-Qualität";
+    $seo_args['columns'][0]['text'] = 
+    "Dein Smartphone soll wieder wie neu sein und zwar je eher desto besser? 
+    Dann bist du bei Smartphoniker an der richtigen Adresse. 
+    Wir haben jahrelange Erfahrung in der Reparatur von mobilen Endgeräten 
+    und bringen dein Gerät wieder in Ordnung. 
+    Unser Team arbeitet zuverlässig, schnell und nachhaltig – 
+    und im Handumdrehen kannst du dein Gerät wie gewohnt nutzen.";
+    
+    // Text 2
+    $seo_args['columns'][1]['_type'] = 'heading-text';
+    $seo_args['columns'][1]['heading'] = "Wir kümmern uns um die Details";
+    $seo_args['columns'][1]['text'] = 
+    "Als Spezialisten für Handy- und Tablet-Reparaturen bringen wir dein Gerät wiederauf Vordermann. 
+    Ob iPhone, iPad, Samsung oder Huawei – unser Service kann sich sehen lassen. 
+    Mache es wie viele zufriedene Smartphoniker-Kunden und überzeuge dich selbst. 
+    Sende dein Gerät ein, wir kümmern uns um den Rest und du hältst dein Lieblingsgerät bald wieder in Händen.";
+    
+    // Text 3
+    $seo_args['columns'][2]['_type'] = 'heading-text';
+    $seo_args['columns'][2]['heading'] = "Dein nachhaltiger Reparatur-Dienst in [area]";
+    $seo_args['columns'][2]['heading'] = str_replace("[area]", get_the_title(), $seo_args['columns'][2]['heading'] );
+    $seo_args['columns'][2]['text'] = 
+    "Smartphoniker steht für hohe Qualität und exzellenten Service. 
+    Wir reparieren zerbrochene Displays, defekte Akkus und vieles mehr. 
+    So können wir gemeinsam dafür sorgen, dass weniger Ressourcen verbraucht werden 
+    und dadurch sogar bares Geld sparen. Also profitiere auch du von unseren nachhaltigen 
+    und regionalverankerten Smartphoniker-Angeboten und nutze unseren smarten Versandreparatur-Service.";
+    
+    get_template_part( "template-parts/component", "col-3", $seo_args ); 
+    ?>
+
+</section>
+
+<!-- FAQ Excerpt -->
+<section class="content__section section">
+    <h2 class="section__heading">Antworten auf häufige Fragen</h2>
+    <div class="long-text">
+        <h3>Wie kann ich den Status meiner Reparatur verfolgen?</h3>
+        <p>
+        Damit Sie ganz bequem auf dem Laufenden gehalten werden, erhalten Sie von uns 
+        zu verschiedenen Etappen des Vorgangs E-Mails mit dem aktuellen Status der Reparatur. 
+        Sollten Sie keine E-Mails erhalten oder mehr als 4 Tage keine E-Mail erhalten haben, 
+        kontaktieren Sie bitte unseren <a href="mailto:support@smartphoniker.de">Kundenservice</a>.
+        </p>
+
+        <h3>Wie läuft der Bezahlvorgang ab?</h3>
+        <p>
+        Privatkunden: Aktuell bieten wir eine Zahlung per Paypal, als Überweisung oder 
+        bei Abgabe in einer unserer Filialen in Bar, mit EC-Karte oder mit Kreditkarte an. 
+        Nachdem wir die Zahlung erhalten haben, senden wir Ihnen das Gerät umgehend und sicher verpackt zu. 
+        Bei vor Ort Reparaturen, händigen wir das Gerät nach Fertigstellung an Sie aus. 
+        Rechnungen sind vollständig, vor Ausgabe des Gerätes an Sie, zu zahlen. 
+        Ausnahme: Abtretungserklärung <a href="https://smartphoniker.shop/faq?q=12">siehe hier</a>. <br>
+        Geschäftskunden: Geschäftskunden profitieren ab der zweiten Reparatur, von einem Kauf auf Rechnung 
+        mit Zahlungsziel von 14 Tagen.
+        </p>
+
+        <h3>Welche Hersteller repariert ihr alles?</h3>
+        <p>
+        Momentan bieten wir gelistete Reparaturen für Apple, Huawei, Samsung, Sony, HTC, LG, Google, OnePlus, 
+        Nokia, Honor, Wiko, CAT, Xiaomi, Vivo, Motorola, Oppo und ZTE an. Sollte Ihr Gerät nicht dabei sein, 
+        kontaktieren Sie gerne unseren Kundenservice. Häufig bekommen wir auch für andere Hersteller passende 
+        Ersatzteile und können Ihnen dann ein individuelles Angebot unterbreiten.
+        </p>
+    </div>
+</section>
 
 
 <?php
