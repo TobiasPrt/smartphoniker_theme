@@ -169,6 +169,6 @@ function send_response( $message_was_sent, $success_message, $error_message ) {
  * 
  * @since 1.1.5
  */
-function sanitize_string(string $string) {
-    return filter_var($string, FILTER_SANITIZE_STRING);
+function sanitize_string( string $string ) {
+    return htmlspecialchars( filter_var( $string, FILTER_SANITIZE_STRING ) );
 }
