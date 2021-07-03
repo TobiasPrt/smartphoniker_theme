@@ -60,4 +60,15 @@ class Device
     public function __toString() {
         return $this->manufacturer . ' ' . $this->modell . ' - Code: ' . $this->code;
     }
+
+    /**
+     * Return name of the device
+     *
+     * @return string
+     * 
+     * @since 1.1.5
+     */
+    public function get_device_name() {
+        return $this->manufacturer . ' ' . $this->modell;
+    }
 }

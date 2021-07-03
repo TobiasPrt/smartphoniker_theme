@@ -53,7 +53,7 @@ function process_sendin_form() {
         'name' => (string) $customer,
         'address' => (string) $address,
         'email' => (string) $customer->get_email(),
-        'device' => (string) $device,
+        'device' => (string) $device->get_device_name(),
         'message' => (string) $inquiry->get_message()
     ) );
     $response->send();
