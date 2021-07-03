@@ -29,5 +29,7 @@ export function initSendinForm() {
      */
     let loadingScreen = new LoadingScreen(loadingScreenElement);
 
-    new SendinForm(sendinFormElement, loadingScreen);
+    if (sendinFormElement) {
+        new SendinForm(sendinFormElement, loadingScreen);
+    }
 }
