@@ -184,7 +184,6 @@ export class Form {
             // @ts-ignore
             grecaptcha.ready(() => {
                 const token = document.getElementById('grecaptcha').getAttribute('data-token');
-                console.log(token);
                 // @ts-ignore
                 grecaptcha.execute(
                     token, { action: this.formID })
