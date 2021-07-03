@@ -65,8 +65,10 @@ export class SendinForm extends MultistepForm {
                     this.renderSummary(this.responses[this.responseNumber].data);
 
                     // Google Tag Manager Event
+                    // @ts-ignore
                     if (window.dataLayer) {
-                        dataLayer.push({ 'event': 'sendin-device-success' });
+                        // @ts-ignore
+                        dataLayer.push({ 'event': 'sendin-device-success', 'content': this.responses[this.responseNumber].data.device });
                     }
 
                     // Move to the next step in form
