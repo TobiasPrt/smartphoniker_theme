@@ -28,6 +28,11 @@
     @include fg(white);
     @include bg(orange);
   }
+
+  &--grey {
+    @include fg(white);
+    @include bg(grey);
+  }
 }
 
 @include lg {

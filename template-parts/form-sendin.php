@@ -167,11 +167,11 @@ $manufacturers = get_categories( array(
         </div>
 
         <!-- Buttons -->
-        <button class="form__button button button--gray" type="button" data-value="-1" data-role="navigation">zurück</button>
+        <button class="form__button button button--grey multistepform__button" type="button" data-value="-1" data-role="navigation">zurück</button>
         <button
             data-sitekey="reCAPTCHA_site_key" 
             data-callback='onSubmit' 
-            data-action='submit' class="g-recaptcha form__button button button--white" type="submit" data-role="submit"
+            data-action='submit' class="g-recaptcha form__button button button--white multistepform__button" type="submit" data-role="submit"
         >Anfrage abschicken</button>
     </div>
 
