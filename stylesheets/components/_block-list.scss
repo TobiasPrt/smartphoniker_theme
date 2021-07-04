@@ -3,6 +3,12 @@
 .block-list {
     list-style: none;
 
+    &--columnlayout {
+        & li.block-list__item {
+            align-items: center;
+        }
+    }
+
     &__item {
         @include bg(light_grey);
         display: flex;
@@ -17,9 +23,32 @@
         max-height: 20px;
         max-width: 20px;
         margin-right: 2rem;
+
+        &--number {
+            @include fg(orange);
+            max-height: initial;
+            max-width: initial;
+        }
     }
 
     &__text {
         @extend .text-sm;
+    }
+}
+
+@include lg {
+    .block-list {
+        &--columnlayout {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__item {
+            width: 33%;
+
+            &:nth-child(n + 2) {
+                margin-top: 0;
+            }
+        }
     }
 }

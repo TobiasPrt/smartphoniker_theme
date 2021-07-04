@@ -41,7 +41,7 @@ get_header();
 
 <!-- Nächstgelegener shop -->
 <section class="content__section section">
-    <h2 class="section__heading">Unser nächstgelegener Shop</h2>
+    <h2 class="section__heading">Repariere dein Gerät vor Ort</h2>
     <?php 
     $store_id = carbon_get_post_meta( get_the_ID(), 'store' );
     $store_name = get_the_title( $store_id );
@@ -79,59 +79,31 @@ get_header();
     </div>
 </section>
 
-<!-- Devices -->
 <section class="content__section section">
-    <h2 class="section__heading">Unsere Top-Modelle</h2>
-    <?php 
-    $query = new WP_Query( array(
-        'posts_per_page' => 10,
-        'post_type' => 'device',
-        'meta_query' => array(
-            array(
-                'key' => 'is_bestseller',
-                'value' => 'yes'
-            )
-        )
-    ) );
-    ?>
-    <div class="section__content grid-5">
-        <?php if ($query->have_posts() ): while ( $query->have_posts() ): $query->the_post();?>
-
-            <div class="grid-5__card">
-                <?php echo wp_get_attachment_image( carbon_get_post_meta( get_the_ID(), 'device_image' ), 'medium', false, array( 'class' => 'grid-5__img grid-5__img--device') ); ?>
-                <a href="<?php echo carbon_get_post_meta( get_the_ID(), 'link' ); ?>" class="grid-5__subtitle"><?php echo get_the_terms( get_the_ID(), 'manufacturer' )[0]->name . ' '; the_title(); ?></a>
-            </div>
-        <?php wp_reset_postdata(); ?>
-        <?php endwhile; endif; ?>
-    </div>
-</section>
-
-<section class="content__section section">
-    <h2 class="section__heading">In 3 einfachen Schritten dein Gerät reparieren</h2>
+    <h2 class="section__heading">Versandreparatur in 3 einfachen Schritten:</h2>
     
     <!-- Send in manual -->
     <?php 
     $manual_args = array(
-        'column_options' => array(
-            'text_is_left_aligned',
-            'has_orange_accent'
+        'list_options' => array(
+            'columnlayout', 'numbers'
         ),
     );
 
     // Text 1
     $manual_args['list_items'][0]['_type'] = 'heading-text';
     $manual_args['list_items'][0]['icon'] = 23;
-    $manual_args['list_items'][0]['text'] = "Schritt 1: Kostenlos dein Gerät an uns senden";
+    $manual_args['list_items'][0]['text'] = "Kostenlos dein Gerät an uns senden";
 
     // Text 2
     $manual_args['list_items'][1]['_type'] = 'heading-text';
     $manual_args['list_items'][1]['icon'] = 23;
-    $manual_args['list_items'][1]['text'] = "Schritt 2: Wir reparieren dein Gerät";
+    $manual_args['list_items'][1]['text'] = "Wir reparieren dein Gerät";
 
      // Text 3
     $manual_args['list_items'][2]['_type'] = 'heading-text';
     $manual_args['list_items'][2]['icon'] = 23;
-    $manual_args['list_items'][2]['text'] = "Schritt 3: Wir senden dir dein repariertes Gerät zurück";
+    $manual_args['list_items'][2]['text'] = "Wir senden dir dein repariertes Gerät zurück";
 
     get_template_part( 'template-parts/component', 'block-list', $manual_args );
     ?>
@@ -214,6 +186,33 @@ get_header();
         kontaktieren Sie gerne unseren Kundenservice. Häufig bekommen wir auch für andere Hersteller passende 
         Ersatzteile und können Ihnen dann ein individuelles Angebot unterbreiten.
         </p>
+    </div>
+</section>
+
+<!-- Devices -->
+<section class="content__section section">
+    <h2 class="section__heading">Unsere Top-Modelle</h2>
+    <?php 
+    $query = new WP_Query( array(
+        'posts_per_page' => 10,
+        'post_type' => 'device',
+        'meta_query' => array(
+            array(
+                'key' => 'is_bestseller',
+                'value' => 'yes'
+            )
+        )
+    ) );
+    ?>
+    <div class="section__content grid-5">
+        <?php if ($query->have_posts() ): while ( $query->have_posts() ): $query->the_post();?>
+
+            <div class="grid-5__card">
+                <?php echo wp_get_attachment_image( carbon_get_post_meta( get_the_ID(), 'device_image' ), 'medium', false, array( 'class' => 'grid-5__img grid-5__img--device') ); ?>
+                <a href="<?php echo carbon_get_post_meta( get_the_ID(), 'link' ); ?>" class="grid-5__subtitle"><?php echo get_the_terms( get_the_ID(), 'manufacturer' )[0]->name . ' '; the_title(); ?></a>
+            </div>
+        <?php wp_reset_postdata(); ?>
+        <?php endwhile; endif; ?>
     </div>
 </section>
 
