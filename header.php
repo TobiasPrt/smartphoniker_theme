@@ -27,6 +27,12 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Condensed:wght@700&display=swap" rel="preload" as="style" onload="this.rel='stylesheet'">
 
+    <?php if ( 'area' === get_post_type() && ! is_404() ): ?>
+        <?php $metatext = 
+            str_replace("[area]", get_the_title(), "Deine Smartphoniker-Filiale in [area]: Wir bieten Smartphone, Tablet und Handy Reparatur, Zubehör oder Gebrauchtgeräte Ankauf." ); ?>
+        <meta name="description" content="<?php echo $metatext; ?>">
+    <?php endif;?>
+
     <?php wp_head(); ?>
 
     <?php if ( 'store' === get_post_type() && ! is_404() ): ?>
