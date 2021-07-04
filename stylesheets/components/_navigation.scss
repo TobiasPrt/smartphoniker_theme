@@ -15,10 +15,10 @@
   }
 
   &__button {
-    margin-left: 2rem;
-    max-height: 3.6rem;
-    min-width: 16rem;
-    font-size: 1.8rem;
+    margin-right: 1rem;
+    max-height: 3.2rem;
+    min-width: 11rem;
+    font-size: 1.6rem;
   }
 
   &__phone {
@@ -114,6 +114,14 @@
       & > a {
         @include fg(black);
       }
+    }
+
+    &__button {
+      margin-right: 0;
+      margin-left: 1rem;
+      max-height: 3.6rem;
+      min-width: 16rem;
+      font-size: 1.8rem;
     }
 
     &__phone {

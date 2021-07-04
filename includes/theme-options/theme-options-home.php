@@ -24,8 +24,8 @@ function smartphoniker_theme_options_home( Carbon_Fields\Container\Theme_Options
         ->add_fields( array(
             Field::make( 'html', 'startseite_description', __( 'Startseite Beschreibung' ) )
             ->set_html( 'Hier sind ein paar den ersten Abschnitt der Startseite betreffende Einstellungen. Die Inhalte darunter und auf allen anderen Seiten lassen sich im Block-Editor bearbeiten.' ),
-            Field::make( 'checkbox', 'logo_button_is_enabled', __( 'Button neben dem Logo anzeigen?' ) ),
-            Field::make( 'text', 'sendin_form_link', __( 'Link für Button rechts neben dem Logo auf der Startseite.' ) )
+            Field::make( 'checkbox', 'logo_button_is_enabled', __( 'Button neben dem Telefon-Icon anzeigen?' ) ),
+            Field::make( 'text', 'sendin_form_link', __( 'Link für Button rechts neben dem Telefon-Icon auf der Startseite.' ) )
                 ->set_required( true )
                 ->set_conditional_logic( array(
                     array(

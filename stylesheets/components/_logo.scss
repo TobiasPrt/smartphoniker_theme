@@ -7,3 +7,10 @@
     width: auto;
   }
 }
+
+
+@media screen and (max-width: 370px) {
+  .logo {
+    height: 3.5rem;
+  }
+}

@@ -68,10 +68,7 @@
                         alt="Smartphoniker Logo" />
                 </a>
 
-                <!-- Button for sending in device -->
-                <?php if (carbon_get_theme_option('logo_button_is_enabled') == true): ?>
-                    <a href="<?php echo carbon_get_theme_option('sendin_form_link') ?>" class="button button--white nav__button"><?php echo carbon_get_theme_option('sendin_form_button_text') ?></a>
-                <?php endif; ?>
+                
 
 
 
@@ -97,6 +94,11 @@
                         src="<?php echo get_template_directory_uri() ?>/assets/images/icons/phone_orangewhite.svg"
                         alt="Smartphoniker anrufen" />
                 </a>
+
+                <!-- Button for sending in device -->
+                <?php if (carbon_get_theme_option('logo_button_is_enabled') == true): ?>
+                    <a href="<?php echo carbon_get_theme_option('sendin_form_link') ?>" class="button button--white nav__button"><?php echo carbon_get_theme_option('sendin_form_button_text') ?></a>
+                <?php endif; ?>
 
 
                 <!-- Hamburger Menu Icon -->
