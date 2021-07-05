@@ -68,7 +68,7 @@ export class SendinForm extends MultistepForm {
                     // @ts-ignore
                     if (window.dataLayer) {
                         // @ts-ignore
-                        dataLayer.push({ 'event': 'sendin-device-success', 'sendin_device': this.responses[this.responseNumber].data.device });
+                        dataLayer.push({ 'event': 'sendin-device-success', 'sendin_device': this.responses[this.responseNumber].data.device.replace('&amp;', '&') });
                     }
 
                     // Move to the next step in form
