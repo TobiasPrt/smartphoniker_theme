@@ -88,7 +88,6 @@ function validate_nonce() {
 function validate_recaptcha() {
 	// request recaptcha validation from Google
     $response = request_recaptcha_validation();
-    wp_send_json_success( json_encode($response) );
     // evaluate response
     return $response->success && $response->score >= 0.5;
 }
