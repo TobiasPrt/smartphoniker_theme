@@ -97,6 +97,10 @@
         }
     }
 
+    &__button {
+        max-width: initial;
+    }
+
     &__input {
         min-height: 4.4rem;
         padding: 0 1rem;
