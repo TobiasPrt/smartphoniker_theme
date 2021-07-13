@@ -51,7 +51,7 @@
     <button
         data-sitekey="reCAPTCHA_site_key" 
         data-callback='onSubmit' 
-        data-action='submit' class="g-recaptcha form__button button button--orange" type="submit" id="submit">Newsletter abonnieren</button>
+        data-action='submit' class="g-recaptcha form__button button button--orange" type="submit" id="submit">SMARTLETTER ABONNIEREN</button>
    
 
 </form>
