@@ -37,9 +37,12 @@ use Carbon_Fields\Field;
             $employees = array();
 
             foreach ( $fields['employees'] as $employee => $employee_id ) {
-                $employees[$employee_id] = get_post_meta( $employee_id );
-                $employees[$employee_id]['id'] = $employee_id;
-                $employees[$employee_id]['name'] = get_the_title( $employee_id );
+                $status = get_post_status( $employee_id );
+                if ($status == 'publish') {
+                    $employees[$employee_id] = get_post_meta( $employee_id );
+                    $employees[$employee_id]['id'] = $employee_id;
+                    $employees[$employee_id]['name'] = get_the_title( $employee_id );
+                }
             }
 
             // sort by group and then by name
