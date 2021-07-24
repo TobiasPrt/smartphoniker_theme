@@ -41,14 +41,14 @@
         &--columnlayout {
             display: flex;
             justify-content: space-between;
-        }
+            
+            & .block-list__item {
+                width: 33%;
 
-        &__item {
-            width: 33%;
-
-            &:nth-child(n + 2) {
-                margin-top: 0;
+                &:nth-child(n + 2) {
+                    margin-top: 0;
+                }
             }
-        }
+        } 
     }
 }

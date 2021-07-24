@@ -5,6 +5,10 @@
  * @package Smartphoniker
  * @since 1.0.0
  */
+
+
+// Predefine empty list options if they weren't set
+$args['list_options'] = isset($args['list_options']) ? $args['list_options'] : array();
 ?>
 
 <ul class="section__content block-list <?php if ( in_array( 'columnlayout', $args['list_options'] ) ) echo "block-list--columnlayout" ?>">
