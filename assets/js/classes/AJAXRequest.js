@@ -11,6 +11,7 @@
  * Class representing an AJAX request.
  * 
  * @since 1.1.5
+ * @since 1.1.6 dynamic content type header
  */
 export class AJAXRequest {
     /**
@@ -29,6 +30,11 @@ export class AJAXRequest {
     body;
 
     /**
+     * @type {string} content-type header for request.
+     */
+     contentType;
+
+    /**
      * Creates new AJAXRequest.
      *
      * @param {string} endpoint Target URL for request.
@@ -37,10 +43,11 @@ export class AJAXRequest {
      * 
      * @since 1.1.5
      */
-    constructor(endpoint, method, body = '') {
+    constructor(endpoint, method, body = '', contentType = 'application/x-www-form-urlencoded') {
         this.endpoint = endpoint;
         this.method = method;
         this.body = body;
+        this.contentType = contentType;
     }
 
     /**
@@ -71,8 +78,7 @@ export class AJAXRequest {
             return await fetch(this.endpoint, {
                 method: this.method,
                 headers: {
-                    // 'Content-Type': 'application/json'
-                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Content-Type': this.contentType,
                 },
                 body: this.body
             });

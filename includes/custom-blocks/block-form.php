@@ -32,6 +32,7 @@ use Carbon_Fields\Field;
                     'sell' => 'Geräteankauf',
                     'newsletter' => 'Newsletteranmeldung',
                     'contest' => 'Gewinnspielanmeldung',
+                    'googleform' => 'Google-Formular',
                     'sendin' => 'Einsendeformular'
                 ) )
                 ->set_required( true ),

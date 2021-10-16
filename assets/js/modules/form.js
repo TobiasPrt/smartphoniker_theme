@@ -14,6 +14,9 @@
 export function addFormEventListener() {
     const forms = document.querySelectorAll('.form:not(.multistepform)');
     forms.forEach(form => {
+        if (form.id = 'googleform') {
+            return;
+        }
         form.addEventListener('submit', processFormEvent, false);
     })
 }

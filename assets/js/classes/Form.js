@@ -3,6 +3,7 @@
  * 
  * @package Smartphoniker
  * @since 1.1.5
+ * @since 1.1.6 dynamic content type
  */
 
 
@@ -61,6 +62,11 @@ export class Form {
     responseNumber = 0;
 
     /**
+     * @type {string} content-type header for request.
+     */
+     contentType;
+
+    /**
      * Create a Form.
      * 
      * @param {HTMLFormElement} form DOM-Element of the given form.
@@ -68,11 +74,12 @@ export class Form {
      * 
      * @since 1.1.5
      */
-    constructor(form, loadingScreen) {
+    constructor(form, loadingScreen, contentType = null) {
         this.form = form;
         this.formID = form.id;
         this.endpoint = form.getAttribute('data-admin-url');
         this.loadingScreen = loadingScreen;
+        this.contentType = contentType;
     }
 
     /**
@@ -84,10 +91,8 @@ export class Form {
         this.form.addEventListener('submit', event => {
             event.preventDefault();
 
-            this.validateInputs();
-
             if (!this.inputsAreValid) {
-                this.showError('Es wurden nicht alle Felder korrekt ausgefüllt.');
+                this.showError('Es wurden nicht alle Felder korrekt ausgefüllt. Überpüfen Sie ggf. auch die Checkboxen.');
                 this.inputsAreValid = true;
                 return;
             }
@@ -105,7 +110,7 @@ export class Form {
         /**
          * @type {NodeListOf<HTMLInputElement|HTMLTextAreaElement>}
          */
-        const inputFields = this.form.querySelectorAll('input[type=text], input[type=email], textarea');
+        const inputFields = this.form.querySelectorAll('input[type=text], input[type=email], textarea, input[checkboxtype=required]');
 
         inputFields.forEach(inputField => {
             /** 
@@ -113,7 +118,7 @@ export class Form {
              */
             const input = new Input(inputField);
 
-            this.inputsAreValid = this.inputsAreValid && input.isNotEmpty();
+            this.inputsAreValid = this.inputsAreValid && input.isValid();
         });
     }
 
@@ -136,7 +141,7 @@ export class Form {
         /**
          * @type {AJAXRequest}
          */
-        const request = new AJAXRequest(this.endpoint, 'POST');
+        const request = new AJAXRequest(this.endpoint, 'POST', null, this.contentType);
         request.setFormDataAsBody(formdata);
 
         /**
@@ -150,7 +155,13 @@ export class Form {
 
         this.responses[this.responseNumber] = await response.json();
 
-        this.loadingScreen.stop();
+        // TODO: change this when I have time
+        if (document.querySelector("#googleform > input[type=hidden]:nth-child(2)").value != "googleform") {
+            this.loadingScreen.stop();
+        } else {
+            this.loadingScreen.setMessage(this.responses[this.responseNumber].data);
+            this.loadingScreen.element.classList.toggle('loadingscreen--done');
+        }
     }
 
     /**

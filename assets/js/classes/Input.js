@@ -3,6 +3,7 @@
  * 
  * @package Smartphoniker
  * @since 1.1.5
+ * @since 1.1.6 checkbox support
  */
 
 "use strict";
@@ -45,8 +46,12 @@ export class Input {
      * @return {boolean}
      * 
      * @since 1.1.5
+     * @since 1.1.6 added checkbox validation
      */
-    isNotEmpty() {
+    isValid() {
+        if (this.type == 'checkbox') {
+            return this.element.checked;
+        }
         return this.value.length > 0 && true;
     }
 }

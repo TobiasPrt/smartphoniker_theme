@@ -51,9 +51,10 @@ export class LoadingScreen {
      * @since 1.1.5
      */
     stop() {
-        this.element.classList.remove('loadingscreen--active');
-        this.element.classList.add('loadingscreen--done');
-
+        if (this.message) {
+            this.element.classList.remove('loadingscreen--active');
+            this.element.classList.add('loadingscreen--done');
+        }
     }
 
     /**

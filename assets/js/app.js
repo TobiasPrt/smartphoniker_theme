@@ -14,6 +14,7 @@ import { setupTabs } from './modules/tabs.js';
 import { addFormEventListener } from './modules/form.js';
 import { addScrollEventListener } from './modules/scroll.js';
 import { initSendinForm } from './modules/sendin_form.js';
+import { initGoogleForm } from './modules/google_form.js';
 
 setupSelect();
 addVideoEventListeners();
@@ -24,3 +25,4 @@ addFormEventListener();
 addScrollEventListener();
 
 initSendinForm();
+initGoogleForm();
