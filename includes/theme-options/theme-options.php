@@ -34,6 +34,17 @@ function smartphoniker_theme_options(): Carbon_Fields\Container\Theme_Options_Co
                 ->set_attribute( 'pattern', '^[0-9-+\s()]*$' )
                 ->set_help_text( 'Nur Zahlen, -, +, () und Leerzeichen sind erlaubt.' )
                 ->set_required( true ),
+            Field::make( 'text', 'whatsapp_link', __( 'Whatsapp-Link' ) )
+                ->set_attribute( 'placeholder', 'z.B. https://wa.me/4943190700390' )
+                ->set_attribute( 'type', 'text')
+                ->set_help_text( 'Whatsapp Me Link.' )
+                ->set_required( true ),
+            Field::make( 'text', 'whatsapp_number', __( 'Whatsapp-Nummer zur Anzeige für Kund:innen' ) )
+                ->set_attribute( 'placeholder', 'z.B. 0431 90 700 39-0' )
+                ->set_attribute( 'type', 'tel' )
+                ->set_attribute( 'pattern', '^[0-9-+\s()]*$' )
+                ->set_help_text( 'Nur Zahlen, -, +, () und Leerzeichen sind erlaubt.' )
+                ->set_required( true ),
             Field::make( 'media_gallery', 'payment_methods', __( 'Zahlungsmethoden (Bitte genau 7 wählen)' ) )
                 ->set_duplicates_allowed( false )
                 ->set_required( true ),
