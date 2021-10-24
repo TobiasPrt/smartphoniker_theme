@@ -4,6 +4,7 @@
  * @package Smartphoniker
  * @since 1.0.0
  * @since 1.1.5 Added initMultistepForms.
+ * @since 1.1.6 Added googleForm
  */
 
 import { setupSelect } from './modules/select.js';

@@ -4,6 +4,7 @@
  *
  * @package Smartponiker
  * @since 1.0.0
+ * @since 1.1.6 dynamic whatsapp link and number
  */
 ?>
 

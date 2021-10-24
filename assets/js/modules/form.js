@@ -10,6 +10,7 @@
  * Sets up eventlistener for all forms
  *
  * @since 1.0.0
+ * @since 1.1.6 exception for googleform
  */
 export function addFormEventListener() {
     const forms = document.querySelectorAll('.form:not(.multistepform)');

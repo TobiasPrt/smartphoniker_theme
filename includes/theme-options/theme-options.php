@@ -14,6 +14,7 @@ use Carbon_Fields\Field;
  * Adds container with general theme options.
  * 
  * @since 1.0.0
+ * @since 1.1.6 Added dynamic whatsapp link and number
  *
  * @return Carbon_Fields\Container\Theme_Options_Container top-level theme options container
  */
