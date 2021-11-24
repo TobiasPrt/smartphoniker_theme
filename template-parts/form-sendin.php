@@ -24,7 +24,7 @@ $manufacturers = get_categories( array(
 ) );
 ?>
 
-<form class="section__content form multistepform" id="sendin" data-admin-url="<?php echo admin_url( 'admin-ajax.php' ); ?>" enctype="multipart/form-data">
+<form class="section__content form multistepform" id="sendin" data-admin-url="<?php echo admin_url( 'admin-ajax.php' ); ?>">
     
     <input type="hidden" name="type_of_inquiry" value="SendinDevice">
     <input type="hidden" name="action" value="sendin">

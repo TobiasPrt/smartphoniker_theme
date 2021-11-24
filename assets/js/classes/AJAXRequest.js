@@ -47,7 +47,11 @@ export class AJAXRequest {
         this.endpoint = endpoint;
         this.method = method;
         this.body = body;
-        this.contentType = contentType;
+        if (contentType == null) {
+            this.contentType = 'application/x-www-form-urlencoded';
+        } else {
+            this.contentType = contentType;
+        }
     }
 
     /**

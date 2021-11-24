@@ -156,7 +156,7 @@ export class Form {
         this.responses[this.responseNumber] = await response.json();
 
         // TODO: change this when I have time
-        if (document.querySelector("#googleform > input[type=hidden]:nth-child(2)").value != "googleform") {
+        if (document.querySelector("#" + this.formID + " > input[type=hidden]:nth-child(2)").value != "googleform") {
             this.loadingScreen.stop();
         } else {
             this.loadingScreen.setMessage(this.responses[this.responseNumber].data);
@@ -180,7 +180,6 @@ export class Form {
         errorElement.style.display = 'block';
         errorElement.style.width = '100%';
         errorElement.classList.add('visible');
-        console.error(message);
     }
 
     /**
