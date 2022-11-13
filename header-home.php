@@ -60,7 +60,7 @@
             <!-- Logo -->
             <div class="nav__wrapper">
                 <a class="nav__item logo"
-                    href="<?php echo get_home_url() ?>" target="_blank">
+                    href="<?php echo get_home_url() ?>" target="_self">
                     <img class="logo__img" width="30" height="13"
                         src="<?php echo get_template_directory_uri() ?>/assets/images/logo/logo_blackorange.svg"
                         alt="Smartphoniker Logo" />
