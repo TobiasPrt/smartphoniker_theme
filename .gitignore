@@ -2,3 +2,4 @@ config.ini
 .vscode/settings.json
 .phpintel/*
 .gitignore
+.DS_Store

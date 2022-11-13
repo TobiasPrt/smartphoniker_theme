@@ -38,12 +38,6 @@
   }
 }
 
-// Custom devices
-@mixin rwd($screen) {
-  @media (min-width: $screen+"px") {
-    @content;
-  }
-}
 
 // Mixin for header
 @mixin headercolor($color, $buttoncolor: false) {

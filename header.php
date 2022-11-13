@@ -16,7 +16,6 @@
 <head>
     <meta charset="<?php echo bloginfo('charset') ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -24,8 +23,6 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f58225">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
-
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Condensed:wght@700&display=swap" rel="preload" as="style" onload="this.rel='stylesheet'">
 
     <?php if ( 'area' === get_post_type() && ! is_404() ): ?>
         <?php $metatext = 
