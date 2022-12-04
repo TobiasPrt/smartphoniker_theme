@@ -1,0 +1,127 @@
+// Styles for repairs component
+
+.repairs {
+    &__table {
+        width: 100%;
+    }
+    
+    &__row {
+        display: flex;
+        flex-wrap: nowrap;
+
+        &:nth-child(1) {
+            @include bg(orange);
+            @include fg(white);
+            height: 50px;
+
+            & th {
+                @extend .text-sm;
+                font-family: $font-text;
+                font-weight: 700;
+            }
+        }
+
+        &:not(:first-child) {
+            border-bottom: 1px solid map-get($map: $colors, $key: grey);
+        }
+    }
+    
+    &__col {
+        display: none;
+        width: 50%;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        @extend .text-sm;
+        font-weight: 300;
+        padding: 8px 0px 8px 16px;
+
+        &:nth-child(2), &:nth-child(3) {
+            display: none;
+        }
+
+        &:last-child {
+            justify-content: end;
+        }
+
+        &:nth-child(3) {
+            font-weight: 300;
+        }
+    }
+
+    &__img {
+        display: inline;
+        width: 30px;
+        height: 30px;
+        margin-right: 8px;
+    }
+
+    &__repair {
+        @include bg(light_grey);
+        padding: 4px 8px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+
+        & div {
+            @include bg(grey);
+            border-radius: 100%;
+            width: 15px;
+            height: 15px;
+            margin-right: 8px;
+        }
+
+        &--green div{
+            @include bg(green);
+        }
+        &--darkblue div{
+            @include bg(dark_blue);
+        }
+        &--orange div{
+            @include bg(orange);
+        }
+        &--red div{
+            background-color: #D11E1E;
+        }
+        &--yellow div{
+            background-color: #FFDA56;
+        }
+        &--grey div{
+            @include bg(grey);
+        }
+
+        & p {
+            @extend .text-xs;
+        }
+    }
+}
+
+@include sm {
+    .repairs {
+        &__col {
+            width: 33%;
+
+            &:nth-child(3) {
+                display: flex;
+            }
+        }
+    }
+}
+
+@include md {
+    .repairs {
+        &__col {
+            width: 30%;
+
+            &:nth-child(3)  {
+                width: 24%;
+            }
+
+            &:nth-child(2) {
+                display: flex;
+            }
+        }
+    }
+}
+
