@@ -1,31 +1,33 @@
 <?php
 /**
- * Custom Block: Repairs
- * 
- * Gutenberg block that displays selected repairs and relevant information in a table format.
+ * Add theme options for area page.
  * 
  * @package Smartphoniker
- * @since 1.2.0
+ * @since 1.1.13
  */
 
-use Carbon_Fields\Block;
+
+use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
 /**
- * Register repair block.
+ * Adds container with theme options for area page
+ * as a submenu of the top-level theme options container.
+ * Here the text and devices shown in a table can be modified.
+ *
+ * @since 1.1.13
  * 
- * @since 1.2.0
+ * @param Carbon_Fields\Container\Theme_Options_Container $parent top-level theme options container
  */
-(function(){
+function smartphoniker_theme_options_area( Carbon_Fields\Container\Theme_Options_Container $parent ) {
     $devices = call_user_func( 'get_all_posts', 'device' );
 
-    Block::make( __('Repairs') )
-    ->set_description( __( 'Darstellung ausgewählter Reparaturen von Geräten in Tabellenformat.' ) )
-    ->set_category( 'widgets' )
-    ->set_parent( 'carbon-fields/section' )
-    ->set_icon( 'editor-table' )
-    ->add_fields( array(
-        Field::make( 'complex', 'rows', __( 'Reparaturen' ) )
+    Container::make( 'theme_options', __( 'Einzugsgebiete Einstellungen' ) )
+        ->set_page_parent( $parent )
+        ->add_fields( array(
+            Field::make( 'html', 'area_description', __( 'Einzugsgebiete Einstellungen' ) )
+            ->set_html( 'Die Einstellungen auf dieser Seite betreffen die Landing Pages der Einzugsgebiete' ),
+            Field::make( 'complex', 'area_rows', __( 'Reparaturen' ) )
             ->setup_labels( array(
                 'plural_name' => 'Reparaturen',
                 'singular_name' => 'Reparatur',
@@ -43,9 +45,6 @@ use Carbon_Fields\Field;
                         'charging_connector' => __( 'Ladebuchse' ),
                     ) ),
             ) )
-    ) )
-    ->set_render_callback( function( array $fields, array $attributes, string $inner_blocks ) {
-        # Call template part to render
-        get_template_part( 'template-parts/component', 'repairs', $fields );
-    } );
-})();
+
+        ) );
+}

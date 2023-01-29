@@ -4,11 +4,24 @@
  *
  * @package Smartphoniker
  * @since 1.1.0
+ * @since 1.1.13 added repairs block
  */
 
 get_header();
 
+$devices = new WP_Query( array(
+    'posts_per_page'   => -1,
+    'post_type' => 'device',
+    'orderby' => array(
+        'title' => 'ASC'
+    ),
+) );
 
+$manufacturers = get_categories( array(
+    'taxonomy' => 'manufacturer',
+    'orderby' => 'name',
+    'order' => 'ASC'
+) );
 
 ?>
 
@@ -19,23 +32,16 @@ get_header();
     <?php
     $col1_text = "Die Filiale in Nähe von [area] ist für dich da, wenn du für dein Gerät professionelle Hilfe benötigst. Dein Smartphone macht Probleme oder dein Notebook ist kaputt? Wir machen deine Teile heile!";
     $col1_args['text'] = str_replace("[area]", get_the_title(), $col1_text );
-    get_template_part( "template-parts/component", "col-1", $col1_args );
-
-    $repairs = get_all_posts( 'repair' );
-    $col3_args = array(
-        'column_options' => array(),
-    );
-    $i = 0;
-    foreach ( (array) $repairs as $id => $name ) {
-        $col3_args['columns'][$i]['_type'] = 'icon-heading-text';
-        $col3_args['columns'][$i]['icon'] = intval( carbon_get_post_meta( $id, 'icon' ) );
-        $col3_args['columns'][$i]['heading'] = $name;
-        $col3_args['columns'][$i]['text'] = carbon_get_post_meta( $id, 'description' );
-        $i++;
-    }
-
-    get_template_part( "template-parts/component", "col-3", $col3_args ); 
+    get_template_part( "template-parts/component", "col-1", $col1_args )
     ?>
+</section>
+
+<!-- The table with devices -->
+<section class="content__section section">
+    <h2 class="section__heading">Die beliebtesten Reparaturen</h2>
+    <?php
+    $repair_args['rows'] = carbon_get_theme_option('area_rows');
+    get_template_part( "template-parts/component", "repairs", $repair_args  ); ?>
 </section>
 
 
@@ -77,6 +83,24 @@ get_header();
         </div>          
     
     </div>
+
+    <!-- The 3 columns with services -->
+    <?php
+    $repairs = get_all_posts( 'repair' );
+    $col3_args = array(
+        'column_options' => array(),
+    );
+    $i = 0;
+    foreach ( (array) $repairs as $id => $name ) {
+        $col3_args['columns'][$i]['_type'] = 'icon-heading-text';
+        $col3_args['columns'][$i]['icon'] = intval( carbon_get_post_meta( $id, 'icon' ) );
+        $col3_args['columns'][$i]['heading'] = $name;
+        $col3_args['columns'][$i]['text'] = carbon_get_post_meta( $id, 'description' );
+        $i++;
+    }
+
+    get_template_part( "template-parts/component", "col-3", $col3_args );
+    ?>
 </section>
 
 <section class="content__section section">
@@ -186,33 +210,6 @@ get_header();
         kontaktieren Sie gerne unseren Kundenservice. Häufig bekommen wir auch für andere Hersteller passende 
         Ersatzteile und können Ihnen dann ein individuelles Angebot unterbreiten.
         </p>
-    </div>
-</section>
-
-<!-- Devices -->
-<section class="content__section section">
-    <h2 class="section__heading">Unsere Top-Modelle</h2>
-    <?php 
-    $query = new WP_Query( array(
-        'posts_per_page' => 10,
-        'post_type' => 'device',
-        'meta_query' => array(
-            array(
-                'key' => 'is_bestseller',
-                'value' => 'yes'
-            )
-        )
-    ) );
-    ?>
-    <div class="section__content grid-5">
-        <?php if ($query->have_posts() ): while ( $query->have_posts() ): $query->the_post();?>
-
-            <div class="grid-5__card">
-                <?php echo wp_get_attachment_image( carbon_get_post_meta( get_the_ID(), 'device_image' ), 'medium', false, array( 'class' => 'grid-5__img grid-5__img--device') ); ?>
-                <a href="<?php echo carbon_get_post_meta( get_the_ID(), 'link' ); ?>" class="grid-5__subtitle"><?php echo get_the_terms( get_the_ID(), 'manufacturer' )[0]->name . ' '; the_title(); ?></a>
-            </div>
-        <?php wp_reset_postdata(); ?>
-        <?php endwhile; endif; ?>
     </div>
 </section>
 
